@@ -1,0 +1,14 @@
+{
+  "name": "palosantohotel",
+  "version": "1.0.0",
+  "type":"module",
+  "main": "js/main.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

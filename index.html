@@ -1,0 +1,177 @@
+
+<!DOCTYPE html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palo Santo Hotel — Hotel boutique verde en Palermo, Buenos Aires</title>
+    <meta name="description" content="Somos un hotel boutique verde y de diseño en Palermo, Buenos Aires (Argentina). Habitaciones con balcón privado, jardines verticales y servicio excepcional." />
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="preload" href="/fonts/AvenirNextLTPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body class="bg-emerald-50 text-gray-800">
+<!-- MENÚ MOBILE -->
+<header class="lg:hidden sticky top-0 z-50 bg-white border-b border-emerald-100">
+  <div class="flex items-center justify-between px-6 py-4">
+    <a href="/" class="block">
+      <img src="./images/logo.jpg" alt="Palo Santo Hotel" class="h-10 w-auto">
+    </a>
+    <button
+      id="mobile-menu-toggle"
+      type="button"
+      class="flex flex-col items-center justify-center gap-1.5 rounded border border-emerald-200 px-3 py-2 text-emerald-700 transition hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Abrir menú</span>
+      <span class="block h-0.5 w-6 bg-current"></span>
+      <span class="block h-0.5 w-6 bg-current"></span>
+      <span class="block h-0.5 w-6 bg-current"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-emerald-100 bg-white">
+    <nav aria-label="Menú principal móvil" class="px-6 py-6 space-y-6 text-base">
+      <div>
+        <button
+          type="button"
+          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-bold"
+          aria-controls="mobile-submenu-hotel"
+          aria-expanded="false"
+          data-disclosure
+        >
+          <span>Hotel</span>
+          <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+        </button>
+        <ul id="mobile-submenu-hotel" class="mt-3 pl-2 space-y-3 text-base font-light hidden">
+          <li><a class="block" href="/es/el-hotel/">El hotel</a></li>
+          <li><a class="block" href="/es/servicios-del-hotel/">Servicios</a></li>
+          <li><a class="block" href="/green-hotel-buenos-aires/">Verde</a></li>
+          <li><a class="block" href="/es/desayuno-y-restaurante/">Desayuno y restaurante</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-bold"
+          aria-controls="mobile-submenu-habitaciones"
+          aria-expanded="false"
+          data-disclosure
+        >
+          <span>Habitaciones</span>
+          <svg class="chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+        </button>
+        <ul id="mobile-submenu-habitaciones" class="mt-3 pl-2 space-y-3 text-base font-light hidden">
+          <li><a class="block" href="/es/habitaciones/">Habitaciones</a></li>
+          <li><a class="block" href="/es/hotel-room/premium-rooms/">Premium</a></li>
+          <li><a class="block" href="/es/hotel-room/deluxe-rooms/">Deluxe</a></li>
+          <li><a class="block" href="/es/hotel-room/deluxe-suite-terrace/">Terrace Suite</a></li>
+          <li><a class="block" href="/es/hotel-room/palosanto-suite/">Palo Santo Suite</a></li>
+        </ul>
+      </div>
+
+      <ul class="space-y-3 uppercase tracking-wide font-bold">
+        <li><a href="/es/palermo/" class="block">Verde</a></li>
+        <li><a href="/es/desayuno-y-restaurante/" class="block">Desayuno y restaurante</a></li>
+        <li><a href="/es/palermo/" class="block">Palermo</a></li>
+        <li><a href="/es/galeria-de-fotos/" class="block">Fotos</a></li>
+        <li><a href="/es/blog/" class="block">Blog</a></li>
+        <li><a href="/es/contacto/" class="block">Contacto</a></li>
+        <li><a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="block">Reservar</a></li>
+        <li><a href="/en/" class="block">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MENÚ VERTICAL / SIDEBAR -->
+<aside class="hidden lg:block lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 bg-white pl-12 pr-8 py-10 overflow-y-auto border-r text-base">
+  <!-- Logo -->
+  <a href="/" class="block mb-16">
+    <img src="./images/logo.jpg" alt="Palo Santo Hotel" class="block w-32 h-auto mb-2">
+  </a>
+
+  <!-- Navegación -->
+  <nav aria-label="Menú principal" class="space-y-6 text-lg text-left">
+    <!-- 1) HOTEL (desplegable) -->
+    <div>
+      <button
+        type="button"
+        class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-bold font-semibold"
+        aria-controls="submenu-hotel"
+        aria-expanded="false"
+        data-disclosure
+      >
+        <span>Hotel</span>
+        <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+      </button>
+
+      <ul id="submenu-hotel" class="mt-4 pl-1 space-y-3 text-base font-thin hidden">
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/el-hotel/">El hotel</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/servicios-del-hotel/">Servicios</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/green-hotel-buenos-aires/">Verde</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/desayuno-y-restaurante/">Desayuno y restaurante</a></li>
+      </ul>
+    </div>
+
+    <!-- 2) HABITACIONES (desplegable con subitems visibles en la captura) -->
+    <div>
+      <button
+        type="button"
+        class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-bold font-semibold"
+        aria-controls="submenu-habitaciones"
+        aria-expanded="false"
+        data-disclosure
+      >
+        <span>Habitaciones</span>
+        <svg class="chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+      </button>
+
+      <ul id="submenu-habitaciones" class="mt-4 pl-1 space-y-3 text-base font-thin hidden">
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/habitaciones/">Habitaciones</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/premium-rooms/">Premium</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/deluxe-rooms/">Deluxe</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/deluxe-suite-terrace/">Terrace Suite</a></li>
+        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/palosanto-suite/">Palo Santo Suite</a></li>
+      </ul>
+    </div>
+
+    <!-- 3) Resto de ítems (no desplegables) -->
+    <ul class="space-y-3">
+      <li><a href="/es/palermo/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Verde</a></li>
+      <li><a href="/es/desayuno-y-restaurante/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Desayuno y restaurante</a></li>
+      <li><a href="/es/palermo/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Palermo</a></li>
+      <li><a href="/es/galeria-de-fotos/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Fotos</a></li>
+      <li><a href="/es/blog/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Blog</a></li>
+      <li><a href="/es/contacto/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Contacto</a></li>
+      <li><a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Reservar</a></li>
+      <li><a href="/en/" class="relative block uppercase tracking-wide font-bold text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">English</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<!-- contenedor para el resto del contenido a la derecha del menú -->
+<div class="lg:ml-72">
+  <!-- Hero video -->
+  <section class="relative w-full">
+    <div class="relative w-full bg-gray-200" style="aspect-ratio: 16 / 9;">
+      <video
+        id="hero-video"
+        class="absolute inset-0 h-full w-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      ></video>
+    </div>
+  </section>
+
+</div>
+
+</body>
+
+</html>
