@@ -13,22 +13,22 @@
 <body class="bg-emerald-50 text-gray-800">
 <!-- MENÚ MOBILE -->
 <header class="lg:hidden sticky top-0 z-50 bg-white border-b border-emerald-100">
-  <div class="flex items-center justify-between px-6 py-4">
-    <a href="/" class="block">
-      <img src="./images/logo.jpg" alt="Palo Santo Hotel" class="h-10 w-auto">
-    </a>
+  <div class="relative flex items-center justify-center px-6 py-4">
     <button
       id="mobile-menu-toggle"
       type="button"
-      class="flex flex-col items-center justify-center gap-1.5 rounded border border-emerald-200 px-3 py-2 text-emerald-700 transition hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+      class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-1.5 rounded border border-transparent p-2 transition focus:outline-none hover:border-gray-400"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
       <span class="sr-only">Abrir menú</span>
-      <span class="block h-0.5 w-6 bg-current"></span>
-      <span class="block h-0.5 w-6 bg-current"></span>
-      <span class="block h-0.5 w-6 bg-current"></span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
     </button>
+    <a href="/" class="block">
+      <img src="./images/logo.jpg" alt="Palo Santo Hotel" class="h-40 w-auto">
+    </a>
   </div>
 
   <div id="mobile-menu" class="hidden border-t border-emerald-100 bg-white">
@@ -156,7 +156,15 @@
 <div class="lg:ml-72">
   <!-- Hero video -->
   <section class="relative w-full">
-    <div class="relative w-full bg-gray-200" style="aspect-ratio: 16 / 9;">
+    <div class="relative w-full bg-gray-200 lg:hidden" style="aspect-ratio: 2 / 3;">
+      <img
+        src="./images/hero-image-mobile.jpg"
+        alt="Suite del hotel Palo Santo con vista a sus jardines verdes"
+        class="absolute inset-0 h-full w-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="relative hidden w-full bg-gray-200 lg:block" style="aspect-ratio: 16 / 9;">
       <video
         id="hero-video"
         class="absolute inset-0 h-full w-full object-cover"
