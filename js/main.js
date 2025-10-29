@@ -64,10 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm && checkinInput && checkoutInput) {
-    const adultsSelect = document.getElementById('booking-adults');
-    const childrenSelect = document.getElementById('booking-children');
-    const babiesSelect = document.getElementById('booking-babies');
-
     const formatForQuery = value => {
       if (!value) return '';
       const [year, month, day] = value.split('-');
@@ -80,16 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const checkinValue = checkinInput.value;
       const checkoutValue = checkoutInput.value;
-      const adultsValue = parseInt(adultsSelect?.value || '0', 10);
-      const childrenValue = parseInt(childrenSelect?.value || '0', 10);
-      const babiesValue = parseInt(babiesSelect?.value || '0', 10);
 
       const baseUrl = 'https://motor.winpax.com.ar/search.php?hotel_id=135&lang=es&currency_code=usd';
       const params = new URLSearchParams({
         date_from: formatForQuery(checkinValue),
         date_to: formatForQuery(checkoutValue),
-        adults: String(adultsValue + childrenValue),
-        kids: String(babiesValue),
       });
 
       window.location.href = `${baseUrl}&${params.toString()}`;

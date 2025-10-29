@@ -180,85 +180,48 @@
 
   <!-- Booking form -->
   <section class="px-6 py-10 lg:px-12 bg-white/90 backdrop-blur">
-    <form id="booking-form" class="mx-auto flex flex-col gap-4 lg:flex-row lg:flex-nowrap lg:items-end lg:gap-6 max-w-6xl">
-      <div class="flex-1">
-        <label for="booking-checkin" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Check in</label>
-        <input
-          id="booking-checkin"
-          name="checkin"
-          type="date"
-          min=""
-          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
-          required
-        />
-      </div>
+    <div class="mx-auto max-w-5xl">
 
-      <div class="flex-1">
-        <label for="booking-checkout" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Check out</label>
-        <input
-          id="booking-checkout"
-          name="checkout"
-          type="date"
-          min=""
-          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
-          required
-        />
-      </div>
+      <form id="booking-form" class="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center lg:flex-nowrap">
+        <div class="flex w-full flex-wrap gap-3 sm:flex-nowrap sm:items-center sm:gap-4 lg:flex-[1 1 auto]">
+          <div class="flex flex-1 items-center gap-2">
+            <label for="booking-checkin" class="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-gray-700">Check in</label>
+            <input
+              id="booking-checkin"
+              name="checkin"
+              type="date"
+              min=""
+              class="h-10 flex-1 rounded border border-black/30 px-3 text-sm text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30"
+              required
+            />
+          </div>
 
-      <div class="lg:w-32">
-        <label for="booking-adults" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Adultos</label>
-        <select
-          id="booking-adults"
-          name="adults"
-          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
-          required
-        >
-          <option value="">Seleccionar</option>
-          <option value="1" selected>1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </div>
+          <div class="flex flex-1 items-center gap-2">
+            <label for="booking-checkout" class="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-gray-700">Check out</label>
+            <input
+              id="booking-checkout"
+              name="checkout"
+              type="date"
+              min=""
+              class="h-10 flex-1 rounded border border-black/30 px-3 text-sm text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30"
+              required
+            />
+          </div>
+        </div>
 
-      <div class="lg:w-32">
-        <label for="booking-children" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Niños</label>
-        <select
-          id="booking-children"
-          name="children"
-          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
-        >
-          <option value="">Seleccionar</option>
-          <option value="0" selected>0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-      </div>
+        <div class="w-full sm:w-auto lg:mr-10">
+          <button type="submit" class="h-10 w-full sm:w-auto rounded bg-black px-5 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/30 focus:ring-offset-1">
+            Reservar
+          </button>
+        </div>
 
-      <div class="lg:w-48">
-        <label for="booking-babies" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Bebés <span class="font-light">(hasta 2 años)</span></label>
-        <select
-          id="booking-babies"
-          name="babies"
-          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
-        >
-          <option value="">Seleccionar</option>
-          <option value="0" selected>0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </div>
-
-      <div class="w-full lg:w-auto">
-        <button type="submit" class="w-full lg:w-auto rounded bg-black px-6 py-3 font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
-          Reservar
-        </button>
-      </div>
-    </form>
+        <div class="basis-full lg:basis-1/4 lg:max-w-[25%] sm:text-left text-center">
+          <div class="h-full rounded bg-white px-4 py-2 text-sm font-semibold uppercase leading-snug lg:border-l-8 lg:border-l-black">
+            Mejor precio online garantizado
+          </div>
+        </div>
+      </form>
+    </div>
   </section>
 
 </div>
