@@ -108,7 +108,7 @@
         <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
       </button>
 
-      <ul id="submenu-hotel" class="mt-4 pl-1 space-y-3 text-base font-thin hidden">
+      <ul id="submenu-hotel" class="mt-4 pl-1 space-y-3 text-base font-thin uppercase hidden">
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/el-hotel/">El hotel</a></li>
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/servicios-del-hotel/">Servicios</a></li>
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/green-hotel-buenos-aires/">Verde</a></li>
@@ -129,7 +129,7 @@
         <svg class="chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
       </button>
 
-      <ul id="submenu-habitaciones" class="mt-4 pl-1 space-y-3 text-base font-thin hidden">
+      <ul id="submenu-habitaciones" class="mt-4 pl-1 space-y-3 text-base font-thin uppercase hidden">
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/habitaciones/">Habitaciones</a></li>
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/premium-rooms/">Premium</a></li>
         <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/es/hotel-room/deluxe-rooms/">Deluxe</a></li>
@@ -152,7 +152,7 @@
   </nav>
 </aside>
 
-<!-- contenedor para el resto del contenido a la derecha del menú -->
+<!-- contenedor para contenido principal -->
 <div class="lg:ml-72">
   <!-- Hero video -->
   <section class="relative w-full">
@@ -176,6 +176,89 @@
         aria-hidden="true"
       ></video>
     </div>
+  </section>
+
+  <!-- Booking form -->
+  <section class="px-6 py-10 lg:px-12 bg-white/90 backdrop-blur">
+    <form id="booking-form" class="mx-auto flex flex-col gap-4 lg:flex-row lg:flex-nowrap lg:items-end lg:gap-6 max-w-6xl">
+      <div class="flex-1">
+        <label for="booking-checkin" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Check in</label>
+        <input
+          id="booking-checkin"
+          name="checkin"
+          type="date"
+          min=""
+          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
+          required
+        />
+      </div>
+
+      <div class="flex-1">
+        <label for="booking-checkout" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Check out</label>
+        <input
+          id="booking-checkout"
+          name="checkout"
+          type="date"
+          min=""
+          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
+          required
+        />
+      </div>
+
+      <div class="lg:w-32">
+        <label for="booking-adults" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Adultos</label>
+        <select
+          id="booking-adults"
+          name="adults"
+          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
+          required
+        >
+          <option value="">Seleccionar</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+
+      <div class="lg:w-32">
+        <label for="booking-children" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Niños</label>
+        <select
+          id="booking-children"
+          name="children"
+          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
+        >
+          <option value="">Seleccionar</option>
+          <option value="0" selected>0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <div class="lg:w-48">
+        <label for="booking-babies" class="block text-sm font-semibold uppercase tracking-wide text-gray-700 mb-2">Bebés <span class="font-light">(hasta 2 años)</span></label>
+        <select
+          id="booking-babies"
+          name="babies"
+          class="w-full rounded border border-black/30 px-4 py-3 text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/40"
+        >
+          <option value="">Seleccionar</option>
+          <option value="0" selected>0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+
+      <div class="w-full lg:w-auto">
+        <button type="submit" class="w-full lg:w-auto rounded bg-black px-6 py-3 font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
+          Reservar
+        </button>
+      </div>
+    </form>
   </section>
 
 </div>
