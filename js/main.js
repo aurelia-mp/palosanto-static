@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const checkinValue = checkinInput.value;
       const checkoutValue = checkoutInput.value;
 
-      const baseUrl = 'https://motor.winpax.com.ar/search.php?hotel_id=135&lang=es&currency_code=usd';
+      const baseUrl = 'https://motor.winpax.com.ar/search.php?hotel_id=135&lang=es&currency_code=';
       const params = new URLSearchParams({
         date_from: formatForQuery(checkinValue),
         date_to: formatForQuery(checkoutValue),
