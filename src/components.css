@@ -34,4 +34,15 @@
   .room-card__button {
     @apply inline-flex items-center justify-center gap-2 rounded bg-black px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/30 focus:ring-offset-2;
   }
+
+  .green-preview__image {
+    @apply block w-full object-cover;
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .green-preview__image {
+    aspect-ratio: 1 / 1;
+  }
 }
