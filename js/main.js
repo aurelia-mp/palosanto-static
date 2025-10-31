@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroVideo.dataset.loaded === 'true') return;
 
       const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-      const videoSrc = `./images/videos/${encodeURIComponent(selected)}`;
+      const videoSrc = `./images-source/hero/videos/${encodeURIComponent(selected)}`;
       heroVideo.src = videoSrc;
       heroVideo.dataset.loaded = 'true';
       heroVideo.load();

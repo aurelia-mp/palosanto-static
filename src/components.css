@@ -1,0 +1,37 @@
+@layer components {
+  .room-card {
+    @apply flex h-full flex-col overflow-hidden bg-white shadow-xs transition hover:shadow-sm;
+  }
+
+  .room-card__content {
+    @apply flex h-full flex-col p-6;
+  }
+
+  .room-card__header {
+    @apply flex flex-wrap items-center gap-3 ;
+  }
+
+  .room-card__title {
+    @apply text-lg font-semibold uppercase tracking-wide text-gray-900;
+  }
+
+  .room-card__icons {
+    @apply ml-auto flex items-center gap-3 pr-2 text-sm text-gray-600;
+  }
+
+  .room-card__icon-item {
+    @apply flex items-center gap-1;
+  }
+
+  .room-card__description {
+    @apply mt-3 flex-1 text-sm font-light leading-8 text-gray-600;
+  }
+
+  .room-card__cta {
+    @apply mt-6;
+  }
+
+  .room-card__button {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-black px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/30 focus:ring-offset-2;
+  }
+}

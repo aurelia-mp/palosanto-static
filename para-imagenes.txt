@@ -1,0 +1,150 @@
+Aquí tienes el bloque genérico y reutilizable ya adaptado a tu estructura actual 
+(carpeta /images en la raíz, con subcarpetas como heroMobile, hotel, gallery, thumbnails). 
+Solo cambiás el folder, el filename base y el alt.
+
+<!-- Imagen responsive optimizada (AVIF/WebP + fallback JPG) -->
+<!-- Usa /images/<carpeta>/<filename>-<ancho>.(avif|webp) y /images/<carpeta>/<filename>.jpg -->
+<picture>
+  <!-- AVIF -->
+  <source
+    srcset="
+      /images/{{folder}}/{{filename}}-600.avif 600w,
+      /images/{{folder}}/{{filename}}-1000.avif 1000w,
+      /images/{{folder}}/{{filename}}-1600.avif 1600w
+    "
+    type="image/avif" />
+
+  <!-- WebP -->
+  <source
+    srcset="
+      /images/{{folder}}/{{filename}}-600.webp 600w,
+      /images/{{folder}}/{{filename}}-1000.webp 1000w,
+      /images/{{folder}}/{{filename}}-1600.webp 1600w
+    "
+    type="image/webp" />
+
+  <!-- Fallback JPG (asegurate de que exista) -->
+  <img
+    src="/images/{{folder}}/{{filename}}.jpg"
+    alt="{{altText}}"
+    class="w-full h-auto object-cover rounded-2xl shadow-sm"
+    style="aspect-ratio: {{ratio}};"   <!-- ej: 3 / 2, 4 / 3, 1 / 1 -->
+    width="{{width}}"
+    height="{{height}}"
+    loading="lazy"
+    sizes="(max-width: 768px) 100vw, 600px" />
+</picture>
+
+
+
+PARA thumbnails
+
+<picture>
+  <!-- AVIF -->
+  <source
+    srcset="
+      /images/thumbnails/{{filename}}-400.avif 400w,
+      /images/thumbnails/{{filename}}-800.avif 800w,
+      /images/thumbnails/{{filename}}-1200.avif 1200w
+    "
+    type="image/avif" />
+
+  <!-- WebP -->
+  <source
+    srcset="
+      /images/thumbnails/{{filename}}-400.webp 400w,
+      /images/thumbnails/{{filename}}-800.webp 800w,
+      /images/thumbnails/{{filename}}-1200.webp 1200w
+    "
+    type="image/webp" />
+
+  <!-- Fallback JPG -->
+  <img
+    src="/images/thumbnails/{{filename}}.jpg"
+    alt="{{altText}}"
+    class="w-full h-auto object-cover rounded-xl shadow-sm"
+    style="aspect-ratio: 3 / 2;"
+    width="800"
+    height="800"
+    loading="lazy"
+    sizes="(max-width: 640px) 100vw, 400px" />
+</picture>
+
+
+
+Cómo usarlo
+
+{{folder}}: hotel, gallery, thumbnails, heroMobile, etc.
+
+{{filename}}: nombre base sin tamaño ni extensión (ej: TerraceSuite-MG_4886).
+
+{{altText}}: texto alternativo.
+
+{{ratio}}: proporción deseada (ej: 3 / 2).
+
+{{width}} / {{height}}: dimensiones que respeten el ratio (ej: 1000 y 667).
+
+<picture>
+  <source srcset="/images/hotel/TerraceSuite-MG_4886-600.avif 600w, /images/hotel/TerraceSuite-MG_4886-1000.avif 1000w, /images/hotel/TerraceSuite-MG_4886-1600.avif 1600w" type="image/avif" />
+  <source srcset="/images/hotel/TerraceSuite-MG_4886-600.webp 600w, /images/hotel/TerraceSuite-MG_4886-1000.webp 1000w, /images/hotel/TerraceSuite-MG_4886-1600.webp 1600w" type="image/webp" />
+  <img src="/images/hotel/TerraceSuite-MG_4886.jpg"
+       alt="Suite con terraza privada"
+       class="w-full h-auto object-cover rounded-2xl shadow-sm"
+       style="aspect-ratio: 3 / 2;"
+       width="1000" height="667"
+       loading="lazy"
+       sizes="(max-width: 768px) 100vw, 600px" />
+</picture>
+
+
+<!-- Preload opcional (recomendado solo para el hero principal) -->
+<!-- Elegí el AVIF “medio” que usarás con mayor probabilidad -->
+<link rel="preload"
+      as="image"
+      href="/images/heroMobile/hero-image-mobile-1000.avif"
+      imagesrcset="/images/heroMobile/hero-image-mobile-600.avif 600w, /images/heroMobile/hero-image-mobile-1000.avif 1000w, /images/heroMobile/hero-image-mobile-1600.avif 1600w"
+      imagesizes="100vw" />
+
+<div class="relative w-full bg-gray-200 lg:hidden" style="aspect-ratio: 2 / 3;">
+  <picture>
+    <source srcset="/images/heroMobile/hero-image-mobile-600.avif 600w, /images/heroMobile/hero-image-mobile-1000.avif 1000w, /images/heroMobile/hero-image-mobile-1600.avif 1600w" type="image/avif" />
+    <source srcset="/images/heroMobile/hero-image-mobile-600.webp 600w, /images/heroMobile/hero-image-mobile-1000.webp 1000w, /images/heroMobile/hero-image-mobile-1600.webp 1600w" type="image/webp" />
+    <img
+      src="/images/heroMobile/hero-image-mobile.jpg"   <!-- Asegurate de que exista -->
+      alt="Vista del jardín de invierno del hotel Palo Santo"
+      class="absolute inset-0 h-full w-full object-cover"
+      width="1000" height="1500"
+      fetchpriority="high" loading="eager"
+      sizes="100vw" />
+  </picture>
+</div>
+
+Notas rápidas (para que todo funcione a la primera)
+
+Rutas y nombres
+
+El script ahora trabaja en /images (raíz).
+
+Deben existir los archivos generados:
+/images/{{folder}}/{{filename}}-{600,1000,1600}.(avif|webp)
+y el fallback /images/{{folder}}/{{filename}}.jpg.
+
+Evitar 404
+
+Si aún no generaste AVIF/WebP, eliminá temporalmente los <source> y deja solo el <img> JPG; así no se rompe el render.
+
+MIME types del server
+
+Asegurate de servir image/avif y image/webp (Apache: .htaccess, Nginx: types).
+
+En local simple (file://) algunos viewers no respetan tipos; usá un server estático (Vite, http-server, etc.).
+
+sizes
+
+Para cards: sizes="(max-width: 768px) 100vw, 600px".
+
+Para hero: sizes="100vw".
+
+Aspect Ratio
+
+Ajustá style="aspect-ratio: X / Y;" al formato real para evitar CLS.
