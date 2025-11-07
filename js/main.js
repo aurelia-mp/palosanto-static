@@ -125,4 +125,75 @@ document.addEventListener('DOMContentLoaded', () => {
       desktopQuery.addListener(ensureVideoState);
     }
   }
+
+  const reviewsViewport = document.querySelector('[data-reviews-carousel]');
+  if (reviewsViewport) {
+    const track = reviewsViewport.querySelector('[data-reviews-track]');
+    const controlsContainer = reviewsViewport.parentElement;
+    const prevButton = controlsContainer?.querySelector('[data-reviews-prev]');
+    const nextButton = controlsContainer?.querySelector('[data-reviews-next]');
+    const slides = track ? Array.from(track.children) : [];
+
+    if (track && slides.length && prevButton && nextButton) {
+      let currentIndex = 0;
+
+      const getSlidesPerView = () => {
+        if (window.innerWidth >= 1280) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+      };
+
+      const getGap = () => {
+        const styles = window.getComputedStyle(track);
+        const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
+        return Number.isFinite(gapValue) ? gapValue : 0;
+      };
+
+      const updateButtons = (maxIndex, shouldShowControls) => {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+
+        const visibility = shouldShowControls ? 'visible' : 'hidden';
+        const pointerEvents = shouldShowControls ? 'auto' : 'none';
+        prevButton.style.visibility = visibility;
+        nextButton.style.visibility = visibility;
+        prevButton.style.pointerEvents = pointerEvents;
+        nextButton.style.pointerEvents = pointerEvents;
+      };
+
+      const updateCarousel = () => {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = Math.max(0, slides.length - slidesPerView);
+        currentIndex = Math.min(currentIndex, maxIndex);
+
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const offset = currentIndex * (slideWidth + getGap());
+        track.style.transform = `translateX(-${offset}px)`;
+
+        updateButtons(maxIndex, slides.length > slidesPerView);
+      };
+
+      prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+          updateCarousel();
+        }
+      });
+
+      nextButton.addEventListener('click', () => {
+        const slidesPerView = getSlidesPerView();
+        const maxIndex = Math.max(0, slides.length - slidesPerView);
+        if (currentIndex < maxIndex) {
+          currentIndex += 1;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        window.requestAnimationFrame(updateCarousel);
+      });
+
+      updateCarousel();
+    }
+  }
 });
