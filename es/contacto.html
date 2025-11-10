@@ -1,0 +1,313 @@
+<!DOCTYPE html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palo Santo Hotel — Hotel boutique verde en Palermo, Buenos Aires</title>
+    <meta name="description" content="Somos un hotel boutique verde y de diseño en Palermo, Buenos Aires (Argentina). Habitaciones con balcón privado, jardines verticales y servicio excepcional." />
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="preload" href="../fonts/AvenirNextLTPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- MENÚ MOBILE -->
+<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
+  <div class="relative flex items-center justify-center px-6 py-4">
+    <button
+      id="mobile-menu-toggle"
+      type="button"
+      class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-1.5 rounded border border-transparent p-2 transition focus:outline-none hover:border-gray-400"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Abrir menú</span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
+      <span class="block h-0.5 w-6 bg-gray-900"></span>
+    </button>
+    <a href="/" class="block">
+      <img src="../images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
+    </a>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t bg-white">
+    <nav aria-label="Menú principal móvil" class="px-6 py-6 space-y-1 font-base">
+      <div class="space-y-1">
+        <button
+          type="button"
+          class="group flex w-full items-center justify-between text-left uppercase tracking-wide py-1"
+          aria-controls="mobile-submenu-hotel"
+          aria-expanded="false"
+          data-disclosure
+        >
+          <span>Hotel</span>
+          <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+        </button>
+        <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
+          <li><a class="block" href="/es/el-hotel/">El hotel</a></li>
+          <li><a class="block" href="/es/servicios-del-hotel/">Servicios</a></li>
+          <li><a class="block" href="/green-hotel-buenos-aires/">Verde</a></li>
+          <li><a class="block" href="/es/desayuno-y-restaurante/">Desayuno y restaurante</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-2">
+        <button
+          type="button"
+          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-base"
+          aria-controls="mobile-submenu-habitaciones"
+          aria-expanded="false"
+          data-disclosure
+        >
+          <span>Habitaciones</span>
+          <svg class="block chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
+        </button>
+        <ul id="mobile-submenu-habitaciones" class="mt-1 pl-2 space-y-2 font-light hidden">
+          <li><a class="block" href="/es/habitaciones/">Habitaciones</a></li>
+          <li><a class="block" href="/es/hotel-room/premium-rooms/">Premium</a></li>
+          <li><a class="block" href="/es/hotel-room/deluxe-rooms/">Deluxe</a></li>
+          <li><a class="block" href="/es/hotel-room/deluxe-suite-terrace/">Terrace Suite</a></li>
+          <li><a class="block" href="/es/hotel-room/palosanto-suite/">Palo Santo Suite</a></li>
+        </ul>
+      </div>
+
+      <ul class="space-y-2 uppercase tracking-wide">
+        <li><a href="/es/palermo/" class="block">Verde</a></li>
+        <li><a href="/es/desayuno-y-restaurante/" class="block">Desayuno y restaurante</a></li>
+        <li><a href="/es/palermo/" class="block">Palermo</a></li>
+        <li><a href="/es/galeria-de-fotos/" class="block">Fotos</a></li>
+        <li><a href="/es/blog/" class="block">Blog</a></li>
+        <li><a href="/es/contacto/" class="block">Contacto</a></li>
+        <li class="flex">
+          <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener"
+            class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
+            Reservar
+          </a>
+        </li>
+        <li class="pt-10">
+          <a href="/en/" class="flex items-center gap-2">
+            <span>English</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MENÚ DESKTOP -->
+<header class="bg-white border-b max-[850px]:hidden">
+  <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-6 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] text-black">
+    <div class="flex w-full justify-center">
+      <a href="/" class="shrink-0" aria-label="Ir al inicio">
+        <img src="../images-source/logo.jpg" alt="Palo Santo Hotel" class="h-28 w-auto max-[1068px]:h-24" loading="lazy">
+      </a>
+    </div>
+
+    <nav aria-label="Menú principal" class="flex w-full flex-col items-center gap-6">
+      <ul class="flex flex-wrap items-center justify-center gap-6 xl:gap-10">
+        <li class="relative group">
+          <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
+            HABITACIONES
+            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
+            </svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <ul class="space-y-2 text-black">
+              <li><a href="/es/habitaciones/" class="block hover:text-gray-600">Todas</a></li>
+              <li><a href="/es/hotel-room/premium-rooms/" class="block text-gray-600">Premium</a></li>
+              <li><a href="/es/hotel-room/deluxe-rooms/" class="block hover:text-gray-600">Deluxe</a></li>
+              <li><a href="/es/hotel-room/deluxe-suite-terrace/" class="block hover:text-gray-600">Terrace Suite</a></li>
+              <li><a href="/es/hotel-room/palosanto-suite/" class="block hover:text-gray-600">Palo Santo Suite</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Hotel</a></li>
+        <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Verde</a></li>
+        <li><a href="/es/desayuno-y-restaurante/" class="hover:text-gray-600">Restaurante</a></li>
+        <li><a href="/es/galeria-de-fotos/" class="hover:text-gray-600">Fotos</a></li>
+        <li>
+          <a
+            href="/es/palermo/"
+            class="relative pb-1 hover:text-gray-600 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
+            aria-current="page"
+          >
+            Ubicación
+          </a>
+        </li>
+        <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
+        <li><a href="/es/contacto/" class="hover:text-gray-600">Contacto</a></li>
+      </ul>
+
+      <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">
+        Reservar
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="bg-white px-4 py-12 sm:px-6 lg:px-10">
+  <section class="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-stretch">
+    <div class="w-full lg:w-1/2">
+      <div class="h-full overflow-hidden shadow-lg">
+        <picture class="block h-full w-full">
+          <source
+            srcset="
+              /images/hero/palosanto-contacto-1920.avif 1920w,
+              /images/hero/palosanto-contacto-2000.avif 2000w
+            "
+            type="image/avif" />
+          <source
+            srcset="
+              /images/hero/palosanto-contacto-1920.webp 1920w,
+              /images/hero/palosanto-contacto-2000.webp 2000w
+            "
+            type="image/webp" />
+          <img
+            src="/images-source/hero/palosanto-contacto.jpg"
+            alt="Lobby del Hotel Palo Santo con jardines verticales"
+            class="h-full w-full object-cover"
+            style="aspect-ratio: 3 / 2;"
+            width="2000"
+            height="1333"
+            loading="eager"
+            fetchpriority="high"
+            sizes="(max-width: 1024px) 100vw, 50vw" />
+        </picture>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-1/2">
+      <div class="mb-6 text-center lg:text-left">
+        <h2 class="text-3xl font-bold uppercase tracking-[0.2em] text-gray-900">Contactanos</h2>
+        <p class="mt-2 text-base text-gray-600">Mandanos tu consulta, te responderemos a la brevedad</p>
+        <p class="mt-1 text-sm text-gray-500">También podés escribirnos por WhatsApp al <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener noreferrer" class="underline">+54 9 11 6357-2374</a></p>
+      </div>
+      <!--- FORMULARIO DE CONTACTO -->
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xldaeega"
+        method="POST"
+        class="w-full rounded border border-gray-200 bg-white p-6 shadow-sm space-y-4"
+      >
+        <label class="block">
+          <span class="block text-sm">Nombre</span>
+          <input name="name" type="text" required class="mt-1 w-full border rounded p-3" autocomplete="name">
+        </label>
+
+        <label class="block">
+          <span class="block text-sm">Email</span>
+          <input name="email" type="email" required class="mt-1 w-full border rounded p-3" autocomplete="email">
+        </label>
+
+        <label class="block">
+          <span class="block text-sm">Teléfono</span>
+          <input
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            class="mt-1 w-full border rounded p-3"
+            pattern="[0-9+\-\s()]*"
+            inputmode="tel"
+          >
+        </label>
+
+        <label class="block">
+          <span class="block text-sm">Mensaje</span>
+          <textarea name="message" rows="5" required class="mt-1 w-full border rounded p-3"></textarea>
+        </label>
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <div id="form-status" class="text-sm"></div>
+
+        <button type="submit" class="inline-flex items-center px-5 py-3 rounded bg-black text-white hover:opacity-90">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+
+<!-- component -->
+<div class="w-full min-h-[18vh] flex items-center justify-center bg-black px-6 pt-10 md:pt-12">
+        <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
+            <div class="w-full text-3xl md:text-5xl font-bold">
+                <h1>Los esperamos para vivir una verdadera experiencia boutique en Palermo</h1>
+            </div>
+            <!-- Nombre y dirección + redes -->
+            <div class="flex flex-col items-start mt-12 gap-6 w-full">
+                <div class="flex flex-col gap-1 w-full">
+                    <h3 class="font-semibold uppercase text-2xl text-left">Palo santo</h3>
+                    <div class="uppercase text-gray-400 text-left flex-1 leading-tight">
+                        <div class="lg:hidden">
+                            <p>Bonpland 2275 - Palermo</p>
+                            <p>Buenos Aires - ARGENTINA</p>
+                        </div>
+                        <p class="hidden lg:block whitespace-nowrap">Bonpland 2275 - Palermo - Buenos Aires - ARGENTINA</p>
+                    </div>
+                </div>
+                <div class="flex w-full flex-row space-x-8 items-center justify-start">
+                      <!-- WhatsApp -->
+                      <a href="https://api.whatsapp.com/send?phone=5491163572374"
+                        target="_blank" rel="noopener noreferrer"
+                        class="icon-social"
+                        aria-label="WhatsApp">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                          <svg width="360" height="362" viewBox="0 0 360 362" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M307.546 52.5655C273.709 18.685 228.706 0.0171895 180.756 0C81.951 0 1.53846 80.404 1.50408 179.235C1.48689 210.829 9.74646 241.667 25.4319 268.844L0 361.736L95.0236 336.811C121.203 351.096 150.683 358.616 180.679 358.625H180.756C279.544 358.625 359.966 278.212 360 179.381C360.017 131.483 341.392 86.4547 307.546 52.5741V52.5655ZM180.756 328.354H180.696C153.966 328.346 127.744 321.16 104.865 307.589L99.4242 304.358L43.034 319.149L58.0834 264.168L54.5423 258.53C39.6304 234.809 31.749 207.391 31.7662 179.244C31.8006 97.1036 98.6334 30.2707 180.817 30.2707C220.61 30.2879 258.015 45.8015 286.145 73.9665C314.276 102.123 329.755 139.562 329.738 179.364C329.703 261.513 262.871 328.346 180.756 328.346V328.354ZM262.475 216.777C257.997 214.534 235.978 203.704 231.869 202.209C227.761 200.713 224.779 199.966 221.796 204.452C218.814 208.939 210.228 219.029 207.615 222.011C205.002 225.002 202.389 225.372 197.911 223.128C193.434 220.885 179.003 216.158 161.891 200.902C148.578 189.024 139.587 174.362 136.975 169.875C134.362 165.389 136.7 162.965 138.934 160.739C140.945 158.728 143.412 155.505 145.655 152.892C147.899 150.279 148.638 148.406 150.133 145.423C151.629 142.432 150.881 139.82 149.764 137.576C148.646 135.333 139.691 113.287 135.952 104.323C132.316 95.5909 128.621 96.777 125.879 96.6309C123.266 96.5019 120.284 96.4762 117.293 96.4762C114.302 96.4762 109.454 97.5935 105.346 102.08C101.238 106.566 89.6691 117.404 89.6691 139.441C89.6691 161.478 105.716 182.785 107.959 185.776C110.202 188.767 139.544 234.001 184.469 253.408C195.153 258.023 203.498 260.782 210.004 262.845C220.731 266.257 230.494 265.776 238.212 264.624C246.816 263.335 264.71 253.786 268.44 243.326C272.17 232.866 272.17 223.893 271.053 222.028C269.936 220.163 266.945 219.037 262.467 216.794L262.475 216.777Z" fill="white"/>
+                          </svg>
+                      </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener noreferrer" class="icon-social">
+                            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z" fill="white"/>
+                            </svg>                            
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener noreferrer" class="icon-social">
+                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white"/>
+                                <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white"/>
+                                <path d="M11.6821 2.06975C11.5279 1.67138 11.2921 1.30961 10.99 1.00759C10.6879 0.705576 10.326 0.469972 9.92759 0.31586C9.46135 0.140842 8.9688 0.0462069 8.4709 0.0359839C7.82919 0.00799638 7.62594 0 5.99867 0C4.37139 0 4.16282 -6.70254e-08 3.52643 0.0359839C3.02891 0.0456842 2.53671 0.140339 2.07108 0.31586C1.67255 0.469792 1.31059 0.705333 1.00844 1.00737C0.706289 1.30941 0.47061 1.67127 0.316526 2.06975C0.141474 2.53595 0.0470554 3.02855 0.0373167 3.52643C0.00866281 4.16748 0 4.37072 0 5.99867C0 7.62594 -4.96485e-09 7.83319 0.0373167 8.4709C0.0473123 8.96935 0.14127 9.46113 0.316526 9.92825C0.471042 10.3266 0.70695 10.6883 1.00918 10.9903C1.3114 11.2923 1.6733 11.5279 2.07175 11.6821C2.5365 11.8642 3.0289 11.9656 3.52777 11.982C4.16948 12.01 4.37272 12.0187 6 12.0187C7.62728 12.0187 7.83585 12.0187 8.47223 11.982C8.97008 11.9719 9.46262 11.8775 9.92892 11.7028C10.3272 11.5483 10.689 11.3125 10.9911 11.0104C11.2932 10.7083 11.529 10.3466 11.6835 9.94825C11.8587 9.48179 11.9527 8.99 11.9627 8.49156C11.9913 7.85051 12 7.64727 12 6.01932C12 4.39138 12 4.18481 11.9627 3.54709C11.9549 3.04216 11.86 2.54237 11.6821 2.06975ZM10.8705 8.42159C10.8662 8.80562 10.7961 9.18608 10.6633 9.54642C10.5632 9.80555 10.41 10.0409 10.2135 10.2372C10.017 10.4336 9.78162 10.5867 9.52243 10.6866C9.16608 10.8188 8.78967 10.8889 8.4096 10.8938C7.77654 10.9231 7.59796 10.9305 5.97468 10.9305C4.35007 10.9305 4.18414 10.9305 3.53909 10.8938C3.15921 10.8892 2.78298 10.8191 2.42692 10.6866C2.16683 10.5873 1.93048 10.4345 1.73316 10.2381C1.53584 10.0417 1.38194 9.80605 1.28143 9.54642C1.15045 9.18995 1.08039 8.81398 1.07419 8.43425C1.04554 7.8012 1.03887 7.62261 1.03887 5.99933C1.03887 4.37539 1.03887 4.20946 1.07419 3.56375C1.0785 3.17993 1.14859 2.7997 1.28143 2.43958C1.48467 1.91382 1.90116 1.5 2.42692 1.29876C2.78316 1.16691 3.15928 1.09682 3.53909 1.09151C4.17281 1.06286 4.35073 1.05486 5.97468 1.05486C7.59862 1.05486 7.76522 1.05486 8.4096 1.09151C8.7897 1.09609 9.16617 1.1662 9.52243 1.29876C9.7816 1.39889 10.017 1.55211 10.2134 1.74858C10.4099 1.94504 10.5631 2.18041 10.6633 2.43958C10.7942 2.79606 10.8643 3.17203 10.8705 3.55175C10.8992 4.18547 10.9065 4.36339 10.9065 5.98734C10.9065 7.61062 10.9065 7.78521 10.8778 8.42226H10.8705V8.42159Z" fill="white"/>
+                            </svg>    
+
+                        <!-- TripAdvisor -->
+                        <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
+                          target="_blank" rel="noopener noreferrer"
+                          class="cursor-pointer hover:opacity-80 transition"
+                          aria-label="TripAdvisor">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.2 320.2" width="20" height="20" fill="white">
+                            <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
+                            <circle cx="128.4" cy="191.9" r="31.9"/>
+                            <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
+                            <circle cx="384.4" cy="191.9" r="31.9"/>
+                            <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
+                          </svg>
+                        </a>
+
+                        
+
+                        <!-- Google Maps -->
+                        <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-gray-600 hover:text-white" aria-label="Google Maps">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
+                          </svg>
+                        </a>
+
+                    </div>
+                </div>
+                <p class="uppercase w-full text-center my-12 text-gray-600">Copyright © 2025 Palo Santo Hotel</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/contact.js"></script>
+</body>
+</html>
