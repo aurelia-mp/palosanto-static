@@ -196,4 +196,155 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCarousel();
     }
   }
+
+  const premiumGallery = document.querySelector('[data-premium-gallery]');
+  if (premiumGallery) {
+    const heroImage = premiumGallery.querySelector('[data-premium-hero]');
+    const status = premiumGallery.querySelector('[data-premium-status]');
+    const prevButton = premiumGallery.querySelector('[data-premium-prev]');
+    const nextButton = premiumGallery.querySelector('[data-premium-next]');
+    const thumbButtons = Array.from(premiumGallery.querySelectorAll('[data-premium-thumb]'));
+    const picture = premiumGallery.querySelector('[data-premium-picture]');
+    const sourceAvif = picture?.querySelector('[data-premium-source-avif]');
+    const sourceWebp = picture?.querySelector('[data-premium-source-webp]');
+
+    if (heroImage && status && thumbButtons.length) {
+      const slides = thumbButtons
+        .map((button, index) => {
+          const slug = button.getAttribute('data-premium-slug');
+          if (!slug) return null;
+          const alt = button.getAttribute('data-premium-alt') || 'Habitación Premium en Palo Santo Hotel';
+          const dataIndex = Number(button.dataset.premiumThumb);
+          const order = Number.isNaN(dataIndex) ? index : dataIndex;
+          return { button, slug, alt, order };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.order - b.order);
+
+      if (!slides.length) return;
+
+      slides.forEach((slide, index) => {
+        slide.index = index;
+        slide.button.dataset.premiumThumb = String(index);
+      });
+
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+      let autoplayId;
+      const autoplayDelay = 5000;
+      const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const updateStatus = () => {
+        status.textContent = `${currentIndex + 1} / ${totalSlides}`;
+      };
+
+      const setActiveThumb = () => {
+        slides.forEach((slide, index) => {
+          const isActive = index === currentIndex;
+          slide.button.setAttribute('aria-pressed', String(isActive));
+          slide.button.classList.toggle('ring-2', isActive);
+          slide.button.classList.toggle('ring-black', isActive);
+          slide.button.classList.toggle('ring-1', !isActive);
+          slide.button.classList.toggle('ring-transparent', !isActive);
+        });
+      };
+
+      const buildSrcSet = (slug, format) => {
+        const sizes = [800, 1200, 1600];
+        return sizes
+          .map(size => `/images/hotel/${slug}-${size}.${format} ${size}w`)
+          .join(', ');
+      };
+
+      const updateSources = slug => {
+        if (sourceAvif) {
+          sourceAvif.setAttribute('srcset', buildSrcSet(slug, 'avif'));
+        }
+        if (sourceWebp) {
+          sourceWebp.setAttribute('srcset', buildSrcSet(slug, 'webp'));
+        }
+        heroImage.setAttribute('src', `/images-source/hotel/${slug}.jpg`);
+      };
+
+      const goToSlide = nextIndex => {
+        if (nextIndex < 0 || nextIndex >= totalSlides) return;
+        const slide = slides[nextIndex];
+        currentIndex = nextIndex;
+        updateSources(slide.slug);
+        heroImage.setAttribute('alt', slide.alt);
+        updateStatus();
+        setActiveThumb();
+      };
+
+      const getNextIndex = direction => {
+        if (direction === 'prev') {
+          return currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+        }
+        return currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+      };
+
+      const stopAutoplay = () => {
+        if (autoplayId) {
+          window.clearInterval(autoplayId);
+          autoplayId = undefined;
+        }
+      };
+
+      const startAutoplay = () => {
+        if (motionQuery.matches || totalSlides <= 1) return;
+        stopAutoplay();
+        autoplayId = window.setInterval(() => {
+          goToSlide(getNextIndex('next'));
+        }, autoplayDelay);
+      };
+
+      prevButton?.addEventListener('click', () => {
+        goToSlide(getNextIndex('prev'));
+        startAutoplay();
+      });
+
+      nextButton?.addEventListener('click', () => {
+        goToSlide(getNextIndex('next'));
+        startAutoplay();
+      });
+
+      slides.forEach((slide, index) => {
+        slide.button.addEventListener('click', () => {
+          goToSlide(index);
+          startAutoplay();
+        });
+      });
+
+      ['mouseenter', 'focusin'].forEach(eventName => {
+        premiumGallery.addEventListener(eventName, stopAutoplay);
+      });
+
+      premiumGallery.addEventListener('mouseleave', () => {
+        startAutoplay();
+      });
+
+      premiumGallery.addEventListener('focusout', event => {
+        if (!premiumGallery.contains(event.relatedTarget)) {
+          startAutoplay();
+        }
+      });
+
+      const handleMotionPreference = () => {
+        if (motionQuery.matches) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      };
+
+      if (typeof motionQuery.addEventListener === 'function') {
+        motionQuery.addEventListener('change', handleMotionPreference);
+      } else if (typeof motionQuery.addListener === 'function') {
+        motionQuery.addListener(handleMotionPreference);
+      }
+
+      goToSlide(0);
+      startAutoplay();
+    }
+  }
 });
