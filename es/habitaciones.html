@@ -11,7 +11,7 @@
 
 <body class="text-gray-800">
 
-    <!-- MENÚ MOBILE -->
+<!-- MENÚ MOBILE -->
 <header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
   <div class="relative flex items-center justify-center px-6 py-4">
     <button
@@ -129,7 +129,7 @@
         <li><a href="/es/galeria-de-fotos/" class="hover:text-gray-600">Fotos</a></li>
         <li>
           <a
-            href="/es/palermo/"
+            href="palermo.html"
             class="relative pb-1 hover:text-gray-600 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
             aria-current="page"
           >
@@ -137,7 +137,7 @@
           </a>
         </li>
         <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
-        <li><a href="/es/contacto/" class="hover:text-gray-600">Contacto</a></li>
+        <li><a href="contacto.html" class="hover:text-gray-600">Contacto</a></li>
       </ul>
 
       <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">
@@ -148,89 +148,328 @@
 </header>
 
 
-<main class="bg-white px-4 py-12 sm:px-6 lg:px-10">
-  <section class="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-stretch">
-    <div class="w-full lg:w-1/2">
-      <div class="h-full overflow-hidden shadow-lg">
-        <picture class="block h-full w-full">
-          <source
-            srcset="
-              /images/hero/palosanto-contacto-1920.avif 1920w,
-              /images/hero/palosanto-contacto-2000.avif 2000w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/hero/palosanto-contacto-1920.webp 1920w,
-              /images/hero/palosanto-contacto-2000.webp 2000w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/hero/palosanto-contacto.jpg"
-            alt="Lobby del Hotel Palo Santo con jardines verticales"
-            class="h-full w-full object-cover"
-            style="aspect-ratio: 3 / 2;"
-            width="2000"
-            height="1333"
-            loading="eager"
-            fetchpriority="high"
-            sizes="(max-width: 1024px) 100vw, 50vw" />
-        </picture>
+<!-- CONTENIDO PRINCIPAL -->
+<section class="bg-white px-0 pb-8 pt-0 sm:px-0 sm:pb-0 lg:pb-16" aria-labelledby="rooms-title">
+  <div class="relative isolate bg-black px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
+    <div class="mx-auto max-w-6xl text-center">
+      <h1 id="rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
+        Nuestras habitaciones
+      </h1>
+    </div>
+  </div>
+</section>
+
+<!-- Section habitaciones -->
+  <section class="pt-2 pb-16" aria-labelledby="habitaciones-intro">
+    <div class="mt-4 2xl:mt-10 px-2 sm:px-4 lg:px-12 xl:px-20">
+      <div class="grid gap-6 sm:grid-cols-2">
+      <article class="room-card">
+        <picture>
+      <!-- AVIF -->
+      <source
+        srcset="
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
+        "
+        type="image/avif" />
+
+      <!-- WebP -->
+      <source
+        srcset="
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
+          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
+        "
+        type="image/webp" />
+
+      <!-- Fallback JPG -->
+        <img
+          src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
+          alt="Habitación Premium con balcón privado"
+          class="w-full object-cover"
+          style="aspect-ratio: 3 / 2;"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </picture>
+
+        <div class="room-card__content">
+          <div class="room-card__header">
+            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Premium</h3>
+            <div class="room-card__icons">
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+                  <path d="m14.5 12.5 2-2"/>
+                  <path d="m11.5 9.5 2-2"/>
+                  <path d="m8.5 6.5 2-2"/>
+                  <path d="m17.5 15.5 2-2"/>
+                </svg>
+                <span>35m2</span>
+              </div>
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 10h.01"/>
+                  <path d="M12 14h.01"/>
+                  <path d="M12 6h.01"/>
+                  <path d="M16 10h.01"/>
+                  <path d="M16 14h.01"/>
+                  <path d="M16 6h.01"/>
+                  <path d="M8 10h.01"/>
+                  <path d="M8 14h.01"/>
+                  <path d="M8 6h.01"/>
+                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                </svg>
+                <span>Pisos 1 a 3 + Piso 8</span>
+              </div>
+            </div>
+          </div>
+          <p class="room-card__description">
+            Nuestras habitaciones más populares: espaciosas, cómodas y luminosas, las habitaciones Premium (una cama King o dos camas Single) son perfectas tanto para parejas como para amigos o familias. Todas cuentan con balcón privado, salvo las dos habitaciones Premium conectadas ubicadas en el piso 8, perfectas para los que viajan con niños.
+          </p>
+          <div class="room-card__cta">
+            <a href="/es/hotel-room/premium-rooms/" class="room-card__button">> Explorar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <picture>
+      <!-- AVIF -->
+      <source
+        srcset="
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w,
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w,
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w
+        "
+        type="image/avif" />
+
+      <!-- WebP -->
+      <source
+        srcset="
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w,
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w,
+          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w
+        "
+        type="image/webp" />
+
+      <!-- Fallback JPG -->
+        <img
+          src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg"
+          alt="Habitación Deluxe con vista a los jardines verticales"
+          class="w-full object-cover"
+          style="aspect-ratio: 3 / 2;"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </picture>
+        <div class="room-card__content">
+          <div class="room-card__header">
+            <h3 class="room-card__title">Deluxe</h3>
+            <div class="room-card__icons">
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+                  <path d="m14.5 12.5 2-2"/>
+                  <path d="m11.5 9.5 2-2"/>
+                  <path d="m8.5 6.5 2-2"/>
+                  <path d="m17.5 15.5 2-2"/>
+                </svg>
+                <span>35m2</span>
+              </div>
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 10h.01"/>
+                  <path d="M12 14h.01"/>
+                  <path d="M12 6h.01"/>
+                  <path d="M16 10h.01"/>
+                  <path d="M16 14h.01"/>
+                  <path d="M16 6h.01"/>
+                  <path d="M8 10h.01"/>
+                  <path d="M8 14h.01"/>
+                  <path d="M8 6h.01"/>
+                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                </svg>
+                <span>Pisos 4 a 6</span>
+              </div>
+            </div>
+          </div>
+          <p class="room-card__description">
+            Para un nivel máximo de confort y tranquilidad. Ubicadas en los pisos superiores, nuestras habitaciones Deluxe son elegantes, llenas de luz natural e increíblemente cómodas. Muebles de diseño, balcón privado, baño con ducha extra- grande y una cama King perfecta para descansar.
+          </p>
+          <div class="room-card__cta">
+            <a href="/es/hotel-room/deluxe-rooms/" class="room-card__button">> Explorar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <picture>
+      <!-- AVIF -->
+      <source
+        srcset="
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-400.avif 400w,
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-800.avif 800w,
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-1200.avif 1200w
+        "
+        type="image/avif" />
+
+      <!-- WebP -->
+      <source
+        srcset="
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-400.webp 400w,
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-800.webp 800w,
+          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-1200.webp 1200w
+        "
+        type="image/webp" />
+
+      <!-- Fallback JPG -->
+        <img
+          src="/images-source/thumbnails/TerraceSuite-MG_4886-thumbnail.jpg"
+          alt="Suite con terraza privada"
+          class="w-full object-cover"
+          style="aspect-ratio: 3 / 2;"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </picture>
+        <div class="room-card__content">
+          <div class="room-card__header">
+            <h3 ¡>Terrace Suite</h3>
+            <div class="room-card__icons">
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+                  <path d="m14.5 12.5 2-2"/>
+                  <path d="m11.5 9.5 2-2"/>
+                  <path d="m8.5 6.5 2-2"/>
+                  <path d="m17.5 15.5 2-2"/>
+                </svg>
+                <span>55m2</span>
+              </div>
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 10h.01"/>
+                  <path d="M12 14h.01"/>
+                  <path d="M12 6h.01"/>
+                  <path d="M16 10h.01"/>
+                  <path d="M16 14h.01"/>
+                  <path d="M16 6h.01"/>
+                  <path d="M8 10h.01"/>
+                  <path d="M8 14h.01"/>
+                  <path d="M8 6h.01"/>
+                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                </svg>
+                <span>Piso 6</span>
+              </div>
+            </div>
+          </div>
+          <p class="room-card__description">
+            Nuestra Terrace Suite, con su terraza privada, es un oasis en el cielo porteño. Una suite de dos ambientes de lujo contemporáneo y extrema comodidad: hermosas maderas naturales, piezas icónicas de diseño y equipamiento de última generación.
+          </p>
+          <div class="room-card__cta">
+            <a href="/es/hotel-room/deluxe-suite-terrace/" class="room-card__button">> Explorar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <picture>
+      <!-- AVIF -->
+      <source
+        srcset="
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.avif 400w,
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.avif 800w,
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.avif 1200w
+        "
+        type="image/avif" />
+
+      <!-- WebP -->
+      <source
+        srcset="
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.webp 400w,
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.webp 800w,
+          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.webp 1200w
+        "
+        type="image/webp" />
+
+      <!-- Fallback JPG -->
+        <img
+          src="/images-source/thumbnails/PaloSantoSuite-8343-thumbnail.jpg"
+          alt="Suite Palo Santo con amplio estar"
+          class="w-full object-cover"
+          style="aspect-ratio: 3 / 2;"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </picture>
+        <div class="room-card__content">
+          <div class="room-card__header">
+            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Palo Santo Suite</h3>
+            <div class="room-card__icons">
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+                  <path d="m14.5 12.5 2-2"/>
+                  <path d="m11.5 9.5 2-2"/>
+                  <path d="m8.5 6.5 2-2"/>
+                  <path d="m17.5 15.5 2-2"/>
+                </svg>
+                <span>65m2</span>
+              </div>
+              <div class="room-card__icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 10h.01"/>
+                  <path d="M12 14h.01"/>
+                  <path d="M12 6h.01"/>
+                  <path d="M16 10h.01"/>
+                  <path d="M16 14h.01"/>
+                  <path d="M16 6h.01"/>
+                  <path d="M8 10h.01"/>
+                  <path d="M8 14h.01"/>
+                  <path d="M8 6h.01"/>
+                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                </svg>
+                <span>Piso 7</span>
+              </div>
+            </div>
+          </div>
+          <p class="room-card__description">
+            La Suite Palo Santo es la más amplia del hotel. Cuenta dos cómodos ambientes en 65m2, cama King size, living separado, dos televisores Smart 4K, baño con hidromasaje, balcones privados y hermosas vistas al skyline palermitano.
+          </p>
+          <div class="room-card__cta">
+            <a href="/es/hotel-room/palosanto-suite/" class="room-card__button">> Explorar</a>
+          </div>
+        </div>
+      </article>
       </div>
     </div>
 
-    <div class="w-full lg:w-1/2">
-      <div class="mb-6 text-center lg:text-left">
-        <h2 class="text-3xl font-bold uppercase tracking-[0.2em] text-gray-900">Contactanos</h2>
-        <p class="mt-2 text-base text-gray-600">Mandanos tu consulta, te responderemos a la brevedad</p>
-        <p class="mt-1 text-sm text-gray-500">También podés escribirnos por WhatsApp al <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener noreferrer" class="underline">+54 9 11 6357-2374</a></p>
-      </div>
-      <!--- FORMULARIO DE CONTACTO -->
-      <form
-        id="contact-form"
-        action="https://formspree.io/f/xldaeega"
-        method="POST"
-        class="w-full rounded border border-gray-200 bg-white p-6 shadow-sm space-y-4"
-      >
-        <label class="block">
-          <span class="block text-sm">Nombre</span>
-          <input name="name" type="text" required class="mt-1 w-full border rounded p-3" autocomplete="name">
-        </label>
-
-        <label class="block">
-          <span class="block text-sm">Email</span>
-          <input name="email" type="email" required class="mt-1 w-full border rounded p-3" autocomplete="email">
-        </label>
-
-        <label class="block">
-          <span class="block text-sm">Teléfono</span>
-          <input
-            name="phone"
-            type="tel"
-            autocomplete="tel"
-            class="mt-1 w-full border rounded p-3"
-            pattern="[0-9+\-\s()]*"
-            inputmode="tel"
-          >
-        </label>
-
-        <label class="block">
-          <span class="block text-sm">Mensaje</span>
-          <textarea name="message" rows="5" required class="mt-1 w-full border rounded p-3"></textarea>
-        </label>
-
-        <!-- Honeypot anti-spam -->
-        <input type="text" name="_gotcha" style="display:none">
-
-        <div id="form-status" class="text-sm"></div>
-
-        <button type="submit" class="inline-flex items-center px-5 py-3 rounded bg-black text-white hover:opacity-90">
-          Enviar
-        </button>
-      </form>
+    <div class="mx-auto mt-16 max-w-4xl px-6 sm:px-8">
+        <h2 id="habitaciones-intro" class="text-center text-2xl font-semibold uppercase tracking-wide text-gray-900">Habitaciones cómodas, espaciosas y perfectamente equipadas</h2>
+        <div class="mt-6 space-y-5 text-base leading-relaxed text-gray-600 sm:text-lg">
+            <p>Contamos con 26 habitaciones en cuatro categorías:</p>
+            <ul class="list-disc pl-5 mt-2 mb-4">
+                <li>Habitaciones Premium del piso 1 a 3 y en el piso 8</li>
+                <li>Habitaciones Deluxe del piso 4 a 6</li>
+                <li>Suites en los pisos 6 y 7</li>
+            </ul>
+            <p>Con tan solo cuatro habitaciones por piso, disfrute de la tranquilidad y privacidad de un verdadero hotel boutique. Elegimos cuidadosamente cada mueble y objeto del hotel, con piezas clásicas de diseño, artefactos de emprendedores argentinos, tejidos de comercio justo y obras de arte únicas.
+</p>
+            <p>Todas nuestras habitaciones son muy amplias (35m2 o más) y luminosas, gracias a grandes ventanales con vistas a nuestro jardín o a la ciudad. Las habitaciones están perfectamente equipadas: minibar, caja de seguridad con capacidad para laptop, escritorio, piso de madera natural de palo santo, aire acondicionado / calefacción individuales. </p>
+            <p>Todas las habitaciones cuentan con balcón privado, con la excepción de nuestras dos habitaciones Premium ubicadas en el piso 8, que tienen acceso directo al rooftop e impresionantes vistas a la ciudad.</p>
+        </div>
     </div>
   </section>
-</main>
 
 <!-- FOOTER -->
 
@@ -308,6 +547,5 @@
         </div>
     </div>
 </div>
-<script src="../js/contact.js"></script>
+
 </body>
-</html>
