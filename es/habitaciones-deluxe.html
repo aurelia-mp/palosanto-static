@@ -149,23 +149,23 @@
 
 <!-- CONTENIDO PRINCIPAL -->
 
-<section class="bg-white px-0 pb-16 pt-0 sm:px-0 md:pb-20" aria-labelledby="premium-rooms-title">
+<section class="bg-white px-0 pb-16 pt-0 sm:px-0 md:pb-20" aria-labelledby="deluxe-rooms-title">
   <div class="relative isolate bg-black px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
     <div class="mx-auto max-w-6xl text-center">
-      <h1 id="premium-rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
-        Habitaciones Premium
+      <h1 id="deluxe-rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
+        Habitaciones Deluxe
       </h1>
-      <h3 class="mt-3 text-lg font-light uppercase tracking-[0.3em] text-white/90 md:text-xl">Diseño Contemporáneo</h3>
+      <h3 class="mt-3 text-lg font-light uppercase tracking-[0.3em] text-white/90 md:text-xl">Lujo Moderno</h3>
     </div>
   </div>
 
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6" data-premium-gallery>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6" data-room-gallery>
     <div class="relative -mt-10 space-y-6 sm:-mt-12 md:-mt-16 lg:-mt-20">
       <div class="relative">
         <figure class="aspect-[4/3] overflow-hidden bg-gray-200 shadow-lg">
-          <picture class="block h-full w-full" data-premium-picture>
+          <picture class="block h-full w-full" data-room-picture>
             <source
-              data-premium-source-avif
+              data-room-source-avif
               srcset="
                 /images/hotel/PaloSanto-PremiumRoom-IMG_7987-2000-800.avif 800w,
                 /images/hotel/PaloSanto-PremiumRoom-IMG_7987-2000-1200.avif 1200w,
@@ -174,7 +174,7 @@
               type="image/avif"
             />
             <source
-              data-premium-source-webp
+              data-room-source-webp
               srcset="
                 /images/hotel/PaloSanto-PremiumRoom-IMG_7987-2000-800.webp 800w,
                 /images/hotel/PaloSanto-PremiumRoom-IMG_7987-2000-1200.webp 1200w,
@@ -183,7 +183,7 @@
               type="image/webp"
             />
             <img
-              data-premium-hero
+              data-room-hero
               src="/images-source/hotel/PaloSanto-PremiumRoom-IMG_7987-2000.jpg"
               alt="Cama king y sillón en la Habitación Premium"
               width="2000"
@@ -199,8 +199,8 @@
         <button
           type="button"
           aria-label="Ver foto anterior de la Habitación Premium"
-          class="premium-gallery__control absolute left-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
-          data-premium-prev
+          class="room-gallery__control absolute left-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
+          data-room-prev
         >
           <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
             <path d="M12.78 4.22a.75.75 0 0 0-1.06 0L6.94 8.94a1.5 1.5 0 0 0 0 2.12l4.78 4.72a.75.75 0 1 0 1.06-1.06L8.5 10l4.28-4.22a.75.75 0 0 0 0-1.06z"/>
@@ -210,24 +210,24 @@
         <button
           type="button"
           aria-label="Ver próxima foto de la Habitación Premium"
-          class="premium-gallery__control absolute right-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
-          data-premium-next
+          class="room-gallery__control absolute right-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
+          data-room-next
         >
           <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
             <path d="M7.22 4.22a.75.75 0 0 1 1.06 0L13.06 8.94a1.5 1.5 0 0 1 0 2.12l-4.78 4.72a.75.75 0 1 1-1.06-1.06L11.5 10 7.22 5.78a.75.75 0 0 1 0-1.06z"/>
           </svg>
         </button>
 
-        <div class="premium-gallery__status absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white" aria-live="polite" data-premium-status>1 / 12</div>
+        <div class="room-gallery__status absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white" aria-live="polite" data-room-status>1 / 12</div>
       </div>
 
-      <div class="hidden gap-3 overflow-x-auto pb-3 md:flex" data-premium-thumbs aria-label="Miniaturas de Habitaciones Premium">
+      <div class="hidden gap-3 overflow-x-auto pb-3 md:flex" data-room-thumbs aria-label="Miniaturas de Habitaciones Premium">
         <button
           type="button"
-          class="premium-gallery__thumb premium-gallery__thumb--active relative overflow-hidden border border-transparent ring-2 ring-black transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="0"
-          data-premium-slug="PaloSanto-PremiumRoom-IMG_7987-2000"
-          data-premium-alt="Cama king y sillón en la Habitación Premium"
+          class="room-gallery__thumb room-gallery__thumb--active relative overflow-hidden border border-transparent ring-2 ring-black transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="0"
+          data-room-slug="PaloSanto-PremiumRoom-IMG_7987-2000"
+          data-room-alt="Cama king y sillón en la Habitación Premium"
           aria-pressed="true"
         >
           <picture class="block h-20 w-32">
@@ -251,10 +251,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="1"
-          data-premium-slug="PremiumTwin-083b-2000"
-          data-premium-alt="Habitación Premium Twin con dos camas y luz natural"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="1"
+          data-room-slug="PremiumTwin-083b-2000"
+          data-room-alt="Habitación Premium Twin con dos camas y luz natural"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -278,10 +278,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="2"
-          data-premium-slug="Premium-238a-2000"
-          data-premium-alt="Vista general de la Habitación Premium con escritorio"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="2"
+          data-room-slug="Premium-238a-2000"
+          data-room-alt="Vista general de la Habitación Premium con escritorio"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -305,10 +305,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="3"
-          data-premium-slug="PremiumTwin-044a-2000"
-          data-premium-alt="Habitación Premium Twin con amplia ventana"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="3"
+          data-room-slug="PremiumTwin-044a-2000"
+          data-room-alt="Habitación Premium Twin con amplia ventana"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -332,10 +332,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="4"
-          data-premium-slug="Premium-207a-2000"
-          data-premium-alt="Habitación Premium con cama queen y balcón verde"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="4"
+          data-room-slug="Premium-207a-2000"
+          data-room-alt="Habitación Premium con cama queen y balcón verde"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -359,10 +359,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="5"
-          data-premium-slug="Premium-252a-2000"
-          data-premium-alt="Detalle del living en la Habitación Premium"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="5"
+          data-room-slug="Premium-252a-2000"
+          data-room-alt="Detalle del living en la Habitación Premium"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -386,10 +386,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="6"
-          data-premium-slug="Premium-217a-2000"
-          data-premium-alt="Habitación Premium con escritorio y balcón"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="6"
+          data-room-slug="Premium-217a-2000"
+          data-room-alt="Habitación Premium con escritorio y balcón"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -413,10 +413,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="7"
-          data-premium-slug="Premium-241a-2000"
-          data-premium-alt="Habitación Premium con ventanal y plantas"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="7"
+          data-room-slug="Premium-241a-2000"
+          data-room-alt="Habitación Premium con ventanal y plantas"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -440,10 +440,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="8"
-          data-premium-slug="Premium-235a-2000"
-          data-premium-alt="Detalles de diseño en la Habitación Premium"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="8"
+          data-room-slug="Premium-235a-2000"
+          data-room-alt="Detalles de diseño en la Habitación Premium"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -467,10 +467,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="9"
-          data-premium-slug="PaloSanto-Bathrooms-IMG_8147-2000"
-          data-premium-alt="Baño de mármol con bañera amplia"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="9"
+          data-room-slug="PaloSanto-Bathrooms-IMG_8147-2000"
+          data-room-alt="Baño de mármol con bañera amplia"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -494,10 +494,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="10"
-          data-premium-slug="Bathroom_MG_8318-2000"
-          data-premium-alt="Lavamanos moderno del baño Premium"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="10"
+          data-room-slug="Bathroom_MG_8318-2000"
+          data-room-alt="Lavamanos moderno del baño Premium"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -521,10 +521,10 @@
 
         <button
           type="button"
-          class="premium-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-premium-thumb="11"
-          data-premium-slug="Bata_MG_0792-2000"
-          data-premium-alt="Bata de baño y amenities en Palo Santo"
+          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
+          data-room-thumb="11"
+          data-room-slug="Bata_MG_0792-2000"
+          data-room-alt="Bata de baño y amenities en Palo Santo"
           aria-pressed="false"
         >
           <picture class="block h-20 w-32">
@@ -550,6 +550,28 @@
   </div>
 
   <div class="mx-auto mt-14 max-w-5xl space-y-12 px-4 text-gray-700 sm:px-6 lg:px-0">
+    <!-- AMENITIES -->
+    <div class="space-y-4 rounded-3xl border border-gray-200 p-6 md:p-8">
+      <ul class="grid gap-4 text-sm tracking-[0.1em] font-thin sm:grid-cols-2 md:grid-cols-3">
+        <li>/ 1 cama King Size o 2 Single</li>
+        <li>/ 35 m²</li>
+        <li>/ Balcón privado (salvo piso 8)</li>
+        <li>/ Baño con ducha extra-grande</li>
+        <li>/ Batas</li>
+        <li>/ Secador de pelo</li>
+        <li>/ Caja de seguridad con capacidad para laptop</li>
+        <li>/ Cama adicional (con costo)</li>
+        <li>/ Escritorio</li>
+        <li>/ Minibar</li>
+        <li>/ Pava eléctrica y cafetera Nespresso</li>
+        <li>/ Tabla de planchar (a pedido)</li>
+        <li>/ Televisor Smart 4K de 50 pulgadas</li>
+        <li>/ Aire acondicionado individual</li>
+        <li>/ No fumadores</li>
+        <li>/ Ubicación: Pisos 1 a 3 + Piso 8</li>
+      </ul>
+    </div>
+
     <div class="space-y-4 text-lg leading-relaxed">
       <p>
         Habitaciones amplias, muy luminosas, con balcón privado y vistas a los jardines verticales del hotel.

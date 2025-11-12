@@ -197,23 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const premiumGallery = document.querySelector('[data-premium-gallery]');
-  if (premiumGallery) {
-    const heroImage = premiumGallery.querySelector('[data-premium-hero]');
-    const status = premiumGallery.querySelector('[data-premium-status]');
-    const prevButton = premiumGallery.querySelector('[data-premium-prev]');
-    const nextButton = premiumGallery.querySelector('[data-premium-next]');
-    const thumbButtons = Array.from(premiumGallery.querySelectorAll('[data-premium-thumb]'));
-    const picture = premiumGallery.querySelector('[data-premium-picture]');
-    const sourceAvif = picture?.querySelector('[data-premium-source-avif]');
-    const sourceWebp = picture?.querySelector('[data-premium-source-webp]');
+  const roomGallery = document.querySelector('[data-room-gallery]');
+  if (roomGallery) {
+    const heroImage = roomGallery.querySelector('[data-room-hero]');
+    const status = roomGallery.querySelector('[data-room-status]');
+    const prevButton = roomGallery.querySelector('[data-room-prev]');
+    const nextButton = roomGallery.querySelector('[data-room-next]');
+    const thumbButtons = Array.from(roomGallery.querySelectorAll('[data-room-thumb]'));
+    const picture = roomGallery.querySelector('[data-room-picture]');
+    const sourceAvif = picture?.querySelector('[data-room-source-avif]');
+    const sourceWebp = picture?.querySelector('[data-room-source-webp]');
 
     if (heroImage && status && thumbButtons.length) {
       const slides = thumbButtons
         .map((button, index) => {
-          const slug = button.getAttribute('data-premium-slug');
+          const slug = button.getAttribute('data-room-slug');
           if (!slug) return null;
-          const alt = button.getAttribute('data-premium-alt') || 'Habitación Premium en Palo Santo Hotel';
+          const alt = button.getAttribute('data-room-alt') || 'Habitación Premium en Palo Santo Hotel';
           const dataIndex = Number(button.dataset.premiumThumb);
           const order = Number.isNaN(dataIndex) ? index : dataIndex;
           return { button, slug, alt, order };
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       slides.forEach((slide, index) => {
         slide.index = index;
-        slide.button.dataset.premiumThumb = String(index);
+          slide.button.dataset.roomThumb = String(index);
       });
 
       const totalSlides = slides.length;
@@ -316,15 +316,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       ['mouseenter', 'focusin'].forEach(eventName => {
-        premiumGallery.addEventListener(eventName, stopAutoplay);
+        roomGallery.addEventListener(eventName, stopAutoplay);
       });
 
-      premiumGallery.addEventListener('mouseleave', () => {
+      roomGallery.addEventListener('mouseleave', () => {
         startAutoplay();
       });
 
-      premiumGallery.addEventListener('focusout', event => {
-        if (!premiumGallery.contains(event.relatedTarget)) {
+      roomGallery.addEventListener('focusout', event => {
+        if (!roomGallery.contains(event.relatedTarget)) {
           startAutoplay();
         }
       });
