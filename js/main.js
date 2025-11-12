@@ -347,4 +347,26 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     }
   }
+
+  document.querySelectorAll('[data-room-accordion]').forEach(accordion => {
+    const summary = accordion.querySelector('summary');
+    if (!summary) return;
+    const icon = summary.querySelector('svg');
+
+    const updateIcon = () => {
+      if (!icon) return;
+      const isOpen = accordion.open;
+      if (isOpen) {
+        icon.classList.add('rotate-180');
+      } else {
+        icon.classList.remove('rotate-180');
+      }
+    };
+
+    summary.addEventListener('click', () => {
+      requestAnimationFrame(updateIcon);
+    });
+
+    updateIcon();
+  });
 });

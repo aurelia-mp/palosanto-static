@@ -551,85 +551,185 @@
 
   <div class="mx-auto mt-14 max-w-5xl space-y-12 px-4 text-gray-700 sm:px-6 lg:px-0">
     <!-- AMENITIES -->
-    <div class="space-y-4 rounded-3xl border border-gray-200 p-6 md:p-8">
-      <ul class="grid gap-4 text-sm tracking-[0.1em] font-thin sm:grid-cols-2 md:grid-cols-3">
-        <li>/ 1 cama King Size o 2 Single</li>
-        <li>/ 35 m²</li>
-        <li>/ Balcón privado (salvo piso 8)</li>
-        <li>/ Baño con ducha extra-grande</li>
-        <li>/ Batas</li>
-        <li>/ Secador de pelo</li>
-        <li>/ Caja de seguridad con capacidad para laptop</li>
-        <li>/ Cama adicional (con costo)</li>
-        <li>/ Escritorio</li>
-        <li>/ Minibar</li>
-        <li>/ Pava eléctrica y cafetera Nespresso</li>
-        <li>/ Tabla de planchar (a pedido)</li>
-        <li>/ Televisor Smart 4K de 50 pulgadas</li>
-        <li>/ Aire acondicionado individual</li>
-        <li>/ No fumadores</li>
-        <li>/ Ubicación: Pisos 1 a 3 + Piso 8</li>
-      </ul>
+    <div class="rounded-xl border border-gray-200 p-4 md:p-8">
+      <details class="group md:hidden" open>
+        <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em]">
+          Características
+          <svg class="h-5 w-5 transition duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+        <div class="mt-4 border-t border-gray-200 pt-4">
+          <ul class="grid gap-3 text-sm tracking-[0.1em] font-thin">
+            <li>/ 1 cama King Size o 2 Single</li>
+            <li>/ Ubicación: Pisos 1 a 3 + Piso 8</li>
+            <li>/ 35 m²</li>
+            <li>/ Balcón privado (salvo piso 8)</li>
+            <li>/ Baño con ducha extra-grande</li>
+            <li>/ Batas</li>
+            <li>/ Secador de pelo</li>
+            <li>/ Caja de seguridad con capacidad para laptop</li>
+            <li>/ Cama adicional (con costo)</li>
+            <li>/ Escritorio</li>
+            <li>/ Minibar</li>
+            <li>/ Pava eléctrica y cafetera Nespresso</li>
+            <li>/ Tabla de planchar (a pedido)</li>
+            <li>/ Televisor Smart 4K de 50 pulgadas</li>
+            <li>/ Aire acondicionado individual</li>
+            <li>/ No fumadores</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="hidden space-y-3 md:block">
+        <h2 class="text-xl font-semibold uppercase tracking-[0.2em] text-gray-900">Características</h2>
+        <ul class="grid gap-4 text-sm tracking-[0.1em] font-thin sm:grid-cols-2 md:grid-cols-3">
+          <li>/ 1 cama King Size o 2 Single</li>
+          <li>/ Ubicación: Pisos 1 a 3 + Piso 8</li>
+          <li>/ 35 m²</li>
+          <li>/ Balcón privado (salvo piso 8)</li>
+          <li>/ Baño con ducha extra-grande</li>
+          <li>/ Batas</li>
+          <li>/ Secador de pelo</li>
+          <li>/ Caja de seguridad con capacidad para laptop</li>
+          <li>/ Cama adicional (con costo)</li>
+          <li>/ Escritorio</li>
+          <li>/ Minibar</li>
+          <li>/ Pava eléctrica y cafetera Nespresso</li>
+          <li>/ Tabla de planchar (a pedido)</li>
+          <li>/ Televisor Smart 4K de 50 pulgadas</li>
+          <li>/ Aire acondicionado individual</li>
+          <li>/ No fumadores</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="space-y-4 text-lg leading-relaxed">
-      <p>
+    <div class="space-y-4 text-base leading-relaxed md:text-lg md:leading-loose">
+      <p class="text-gray-700">
         Habitaciones amplias, muy luminosas, con balcón privado y vistas a los jardines verticales del hotel.
       </p>
-      <p>
+      <p class="text-gray-700">
         El ambiente es fresco, distendido. El mobiliario de diseño contemporáneo incluye íconos como el sillón Noguchi,
         la poltrona Eames, la cama estilo Charles y la silla Jacobsen. El baño es moderno con artefactos de última
         generación.
       </p>
     </div>
 
-    <div class="space-y-4">
+    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
+      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
+        Detalles de la habitación
+        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </summary>
+      <div class="space-y-4 pt-4 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
+        <p class="text-gray-700">
+          Las habitaciones Premium tienen una superficie de 35&nbsp;m² y disponen de una cama matrimonial o dos camas Twin,
+          a pedido. Los colchones super confortables, las gruesas cortinas con blackout y la insonorización con doble vidrio
+          le garantizarán una buena noche de sueño.
+        </p>
+        <p class="text-gray-700">
+          Un escritorio permite trabajar cómodamente, con WiFi de alta velocidad sin cargo. La zona de living está equipada
+          con un sillón, mesa ratona y poltrona. Junto al minibar, encontrarán una pava eléctrica, tazas y copas. El televisor
+          Smart 4K de 50 pulgadas les permitirá acceder a sus cuentas de streaming o a canales locales de cable.
+        </p>
+        <p class="text-gray-700">
+          El baño es amplio y cómodo, con ducha extra-grande, secador de pelo, batas y amenities de baño completos.
+        </p>
+        <p class="text-gray-700">
+          Las habitaciones Premium ubicadas del primer al tercer piso – cuatro habitaciones por piso – disponen de un balcón
+          privado, con vistas a la calle o al jardín. Las dos habitaciones Premium del piso 8 tienen salida directa a la
+          terraza del hotel y hermosas vistas a la ciudad.
+        </p>
+        <p class="text-gray-700">
+          Todas nuestras habitaciones son libres de humo, incluyendo el balcón. Por un costo adicional, se puede agregar una
+          cama extra para un tercer adulto o niño mayor de 3 años. Tenemos cunas sin cargo (confirmar disponibilidad con el
+          hotel) para bebés y niños pequeños.
+        </p>
+      </div>
+    </details>
+
+    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
+      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
+        Experiencia Boutique
+        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </summary>
+      <div class="space-y-4 pt-4 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
+        <p class="text-gray-700">Todo nuestro staff está a su disposición para ayudarlos en su estadía y para que disfruten de Buenos Aires.</p>
+        <p class="text-gray-700">
+          Seleccionamos restaurantes cercanos que creemos que les van a gustar. Redactamos también una guía de la ciudad con
+          recorridos arquitectónicos y culturales, y recomendaciones personales del equipo.
+        </p>
+        <p class="text-gray-700">
+          Nuestro equipo de Recepción estará a su disposición las 24 horas para ayudarlos con sus reservas, transfers,
+          conserjería, etc.
+        </p>
+      </div>
+    </details>
+
+    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
+      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
+        Nuestras tarifas siempre incluyen
+        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </summary>
+      <div class="pt-4">
+        <ul class="list-disc space-y-2 pl-5 text-base">
+          <li>Desayuno Buffet</li>
+          <li>WiFi</li>
+          <li>Bicicletas de cortesía a disposición (sujeto a disponibilidad)</li>
+          <li>Copia impresa de nuestra guía Palo Santo, disponible en español e inglés</li>
+          <li>Acceso a nuestro gimnasio en el 7mo piso, abierto de 9 a 21&nbsp;hs</li>
+          <li>En meses de calor: acceso a nuestro rooftop con piscina de poca profundidad e hidromasaje (zona al aire libre, no climatizada)</li>
+        </ul>
+      </div>
+    </details>
+    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
       <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Detalles de la habitación</h2>
-      <p>
+      <p class="text-gray-700">
         Las habitaciones Premium tienen una superficie de 35&nbsp;m² y disponen de una cama matrimonial o dos camas Twin,
         a pedido. Los colchones super confortables, las gruesas cortinas con blackout y la insonorización con doble vidrio
         le garantizarán una buena noche de sueño.
       </p>
-      <p>
+      <p class="text-gray-700">
         Un escritorio permite trabajar cómodamente, con WiFi de alta velocidad sin cargo. La zona de living está equipada
-        con un sillón, mesa ratona y poltrona. Junto al minibar, encontrará una pava eléctrica, tazas y copas. El televisor
-        Smart 4K de 50 pulgadas le permitirá acceder a sus cuentas de streaming o a canales locales de cable.
+        con un sillón, mesa ratona y poltrona. Junto al minibar, encontrarán una pava eléctrica, tazas y copas. El televisor
+        Smart 4K de 50 pulgadas les permitirá acceder a sus cuentas de streaming o a canales locales de cable.
       </p>
-      <p>
+      <p class="text-gray-700">
         El baño es amplio y cómodo, con ducha extra-grande, secador de pelo, batas y amenities de baño completos.
       </p>
-      <p>
+      <p class="text-gray-700">
         Las habitaciones Premium ubicadas del primer al tercer piso – cuatro habitaciones por piso – disponen de un balcón
         privado, con vistas a la calle o al jardín. Las dos habitaciones Premium del piso 8 tienen salida directa a la
         terraza del hotel y hermosas vistas a la ciudad.
       </p>
-      <p>
+      <p class="text-gray-700">
         Todas nuestras habitaciones son libres de humo, incluyendo el balcón. Por un costo adicional, se puede agregar una
         cama extra para un tercer adulto o niño mayor de 3 años. Tenemos cunas sin cargo (confirmar disponibilidad con el
         hotel) para bebés y niños pequeños.
       </p>
     </div>
 
-    <div class="space-y-4">
+    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
       <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Experiencia Boutique</h2>
-      <p>Todo nuestro staff está a su disposición para ayudarlo en su estadía y para que disfrute de Buenos Aires.</p>
-      <p>
-        Seleccionamos restaurantes cercanos que creemos que le van a gustar. Redactamos también una guía de la ciudad con
+      <p class="text-gray-700">Todo nuestro staff está a su disposición para ayudarlos en su estadía y para que disfruten de Buenos Aires.</p>
+      <p class="text-gray-700">
+        Seleccionamos restaurantes cercanos que creemos que les van a gustar. Redactamos también una guía de la ciudad con
         recorridos arquitectónicos y culturales, y recomendaciones personales del equipo.
       </p>
-      <p>
-        Nuestro equipo de Recepción estará a su disposición las 24 horas para ayudarlo con sus reservas, transfers,
+      <p class="text-gray-700">
+        Nuestro equipo de Recepción estará a su disposición las 24 horas para ayudarlos con sus reservas, transfers,
         conserjería, etc.
-      </p>
-      <p>
-        ¿Prefiere no salir del hotel? Reserve un masaje para realizar en su habitación o relájese en su balcón privado o
-        en nuestro jardín.
       </p>
     </div>
 
-    <div class="space-y-4">
+    <div class="hidden p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
       <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Nuestras tarifas siempre incluyen</h2>
-      <ul class="list-disc space-y-2 pl-5 text-base">
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
         <li>Desayuno Buffet</li>
         <li>WiFi</li>
         <li>Bicicletas de cortesía a disposición (sujeto a disponibilidad)</li>
@@ -637,7 +737,9 @@
         <li>Acceso a nuestro gimnasio en el 7mo piso, abierto de 9 a 21&nbsp;hs</li>
         <li>En meses de calor: acceso a nuestro rooftop con piscina de poca profundidad e hidromasaje (zona al aire libre, no climatizada)</li>
       </ul>
-      <div class="space-y-5 pt-8">
+    </div>
+
+    <div class="space-y-5 pt-8">
         <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Explorar las otras categorías</p>
         <div class="grid gap-6 sm:grid-cols-3">
           <a href="/es/hotel-room/deluxe-rooms/" class="group block focus:outline-none focus:ring-2 focus:ring-black/30">
