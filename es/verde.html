@@ -2,8 +2,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palo Santo Hotel — Hotel boutique verde en Palermo, Buenos Aires</title>
-    <meta name="description" content="Somos un hotel boutique verde y de diseño en Palermo, Buenos Aires (Argentina). Habitaciones con balcón privado, jardines verticales y servicio excepcional." />
+    <title>Palo Santo Hotel — Arquitectura verde y hotel sustentable</title>
+    <meta name="description" content="Descubrí cómo Palo Santo Hotel combina jardines verticales y diseño responsable para crear el primer hotel urbano sustentable de Argentina." />
     <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../dist/output.css" />
     <link rel="preload" href="../fonts/AvenirNextLTPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -47,7 +47,7 @@
         <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
           <li><a class="block" href="/es/el-hotel/">El hotel</a></li>
           <li><a class="block" href="/es/servicios-del-hotel/">Servicios</a></li>
-          <li><a class="block" href="/green-hotel-buenos-aires/">Verde</a></li>
+          <li><a class="block" href="verde.html" aria-current="page">Verde</a></li>
           <li><a class="block" href="/es/desayuno-y-restaurante/">Desayuno y restaurante</a></li>
         </ul>
       </div>
@@ -73,7 +73,7 @@
       </div>
 
       <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="/es/palermo/" class="block">Verde</a></li>
+        <li><a href="verde.html" class="block" aria-current="page">Verde</a></li>
         <li><a href="/es/desayuno-y-restaurante/" class="block">Desayuno y restaurante</a></li>
         <li><a href="/es/palermo/" class="block">Palermo</a></li>
         <li><a href="/es/galeria-de-fotos/" class="block">Fotos</a></li>
@@ -124,10 +124,18 @@
           </div>
         </li>
         <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Hotel</a></li>
-        <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Verde</a></li>
+        <li>
+          <a
+            href="verde.html"
+            class="relative pb-1 hover:text-gray-600 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
+            aria-current="page"
+          >
+            Verde
+          </a>
+        </li>
         <li><a href="/es/desayuno-y-restaurante/" class="hover:text-gray-600">Restaurante</a></li>
         <li><a href="/es/galeria-de-fotos/" class="hover:text-gray-600">Fotos</a></li>
-        <li><a href="palermo.html" class="hover:text-gray-600"> Ubicación</a></li>
+        <li><a href="palermo.html" class="hover:text-gray-600">Ubicación</a></li>
         <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
         <li><a href="contacto.html" class="hover:text-gray-600">Contacto</a></li>
       </ul>
@@ -141,327 +149,264 @@
 
 
 <!-- CONTENIDO PRINCIPAL -->
-<section class="bg-white px-0 pb-8 pt-0 sm:px-0 sm:pb-0 lg:pb-16" aria-labelledby="rooms-title">
-  <div class="relative isolate bg-black px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
-    <div class="mx-auto max-w-6xl text-center">
-      <h1 id="rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
-        Nuestras habitaciones
-      </h1>
+<section class="bg-white px-4 py-16 sm:px-5 md:py-24 lg:px-6">
+  <div class="mx-auto max-w-3xl text-center space-y-4">
+    <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Sustentabilidad</p>
+    <h1 class="text-4xl font-bold uppercase leading-tight text-gray-900 sm:text-5xl lg:text-[3.25rem]">
+      Una arquitectura verde única
+    </h1>
+    <p class="text-base leading-relaxed text-gray-600 md:text-lg">
+      Palo Santo es el primer hotel sustentable urbano de Argentina
+    </p>
+  </div>
+
+  <div class="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2">
+    <picture class="block overflow-hidden shadow-lg">
+      <source
+        srcset="
+          /images/thumbnails/Verde-Psanto04-1200-400.avif 400w,
+          /images/thumbnails/Verde-Psanto04-1200-800.avif 800w,
+          /images/thumbnails/Verde-Psanto04-1200-1000.avif 1000w
+        "
+        type="image/avif" />
+      <source
+        srcset="
+          /images/thumbnails/Verde-Psanto04-1200-400.webp 400w,
+          /images/thumbnails/Verde-Psanto04-1200-800.webp 800w,
+          /images/thumbnails/Verde-Psanto04-1200-1000.webp 1000w
+        "
+        type="image/webp" />
+      <img
+        src="/images-source/thumbnails/Verde-Psanto04-1200.jpg"
+        alt="Detalle de la fachada verde de Palo Santo Hotel"
+        class="h-full w-full object-cover"
+        style="aspect-ratio: 4 / 3;"
+        width="1200"
+        height="900"
+        loading="lazy"
+        decoding="async" />
+    </picture>
+
+    <picture class="block overflow-hidden shadow-lg">
+      <source
+        srcset="
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.avif 400w,
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.avif 800w,
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.avif 1000w
+        "
+        type="image/avif" />
+      <source
+        srcset="
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.webp 400w,
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.webp 800w,
+          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.webp 1000w
+        "
+        type="image/webp" />
+      <img
+        src="/images-source/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000.jpg"
+        alt="Jardín principal del hotel con abundante vegetación"
+        class="h-full w-full object-cover"
+        style="aspect-ratio: 4 / 3;"
+        width="1000"
+        height="750"
+        loading="lazy"
+        decoding="async" />
+    </picture>
+  </div>
+
+  <div class="mx-auto mt-10 max-w-4xl text-base leading-relaxed text-gray-700 md:text-lg">
+    <p class="pt-4">
+      Creemos que el lujo moderno debe comprometerse con la preservación del medio ambiente. El hotel ha sido construido siguiendo estándares LEED (Leadership in Energy and Environmental Design), los más altos estándares de construcción sustentable de Estados Unidos. 
+    </p>
+    <p class="pt-4">
+      Las operaciones de Palo Santo son amigables con el medio ambiente. Hemos seleccionado cuidadosamente materiales, equipos y proveedores para reducir el impacto ambiental de la construcción y operaciones del hotel.
+    </p>
+    <p class="pt-4">
+      <b>Descubrí por qué somos el primer hotel sustentable en Buenos Aires.</b>
+    </p>
+    
+  </div>
+</section>
+
+<section class="bg-stone-100 px-4 py-16 sm:px-5 md:py-24 lg:px-6">
+  <div class="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-center">
+    <div class="md:w-1/3 lg:w-5/12">
+      <picture class="block overflow-hidden shadow-lg">
+        <source
+          media="(max-width: 768px)"
+          srcset="
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.avif 400w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.avif 800w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.avif 1000w
+          "
+          type="image/avif" />
+        <source
+          media="(max-width: 768px)"
+          srcset="
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.webp 400w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.webp 800w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.webp 1000w
+          "
+          type="image/webp" />
+        <source
+          media="(min-width: 769px)"
+          srcset="
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-400.avif 400w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-781.avif 781w
+          "
+          type="image/avif" />
+        <source
+          media="(min-width: 769px)"
+          srcset="
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-400.webp 400w,
+            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-781.webp 781w
+          "
+          type="image/webp" />
+        <img
+          src="/images-source/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200.jpg"
+          alt="Vista del jardín vertical con balcones verdes"
+          class="h-full w-full object-cover"
+          width="781"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 33vw" />
+      </picture>
+    </div>
+
+    <div class="md:w-2/3 lg:w-7/12 space-y-6">
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Jardines verticales</p>
+      <h2 class="text-2xl uppercase font-semibold text-gray-900 md:text-4xl">
+        Jardines Verticales: Belleza con Propósito
+      </h2>
+      <p class="text-base leading-relaxed text-gray-700 md:text-lg">
+        El edificio de Palo Santo Hotel se caracteriza por su estructura verde. Son verdes sus fachadas, sus patios, sus jardines, sus balcones, sus terrazas. Las fachadas cuentan con estructuras de hierro especialmente diseñadas para guiar el crecimiento de dos jardines verticales de 28 metros de altura. En total, más de 900 plantas componen los jardines verticales del hotel.
+      </p>
+      <p class="text-base leading-relaxed text-gray-700 md:text-lg">
+        Además de su maravillosa presencia estética, las cortinas de plantas tienen un propósito ecológico. Por un lado, los jardines verticales otorgan al edificio un aislamiento natural. Por otro lado, las plantas en constante crecimiento absorben continuamente nuestras emisiones de CO₂, mejorando la calidad del aire urbano y creando un microclima más fresco.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Section habitaciones -->
-  <section class="pt-2 pb-16" aria-labelledby="habitaciones-intro">
-    <div class="mt-4 2xl:mt-10 px-2 sm:px-4 lg:px-12 xl:px-20">
-      <div class="grid gap-6 sm:grid-cols-2">
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
-          alt="Habitación Premium con balcón privado"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Premium</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>Pisos 1 a 3 + Piso 8</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            Nuestras habitaciones más populares: espaciosas, cómodas y luminosas, las habitaciones Premium (una cama King o dos camas Single) son perfectas tanto para parejas como para amigos o familias. Todas cuentan con balcón privado, salvo las dos habitaciones Premium conectadas ubicadas en el piso 8, perfectas para los que viajan con niños.
-          </p>
-          <div class="room-card__cta">
-            <a href="/es/hotel-room/premium-rooms/" class="room-card__button">> Explorar</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg"
-          alt="Habitación Deluxe con vista a los jardines verticales"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="room-card__title">Deluxe</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>Pisos 4 a 6</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            Para un nivel máximo de confort y tranquilidad. Ubicadas en los pisos superiores, nuestras habitaciones Deluxe son elegantes, llenas de luz natural e increíblemente cómodas. Muebles de diseño, balcón privado, baño con ducha extra- grande y una cama King perfecta para descansar.
-          </p>
-          <div class="room-card__cta">
-            <a href="/es/hotel-room/deluxe-rooms/" class="room-card__button">> Explorar</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-400.avif 400w,
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-800.avif 800w,
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-400.webp 400w,
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-800.webp 800w,
-          /images/thumbnails/TerraceSuite-MG_4886-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/TerraceSuite-MG_4886-thumbnail.jpg"
-          alt="Suite con terraza privada"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 ¡>Terrace Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>55m2</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>Piso 6</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            Nuestra Terrace Suite, con su terraza privada, es un oasis en el cielo porteño. Una suite de dos ambientes de lujo contemporáneo y extrema comodidad: hermosas maderas naturales, piezas icónicas de diseño y equipamiento de última generación.
-          </p>
-          <div class="room-card__cta">
-            <a href="/es/hotel-room/deluxe-suite-terrace/" class="room-card__button">> Explorar</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSantoSuite-8343-thumbnail.jpg"
-          alt="Suite Palo Santo con amplio estar"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Palo Santo Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>65m2</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>Piso 7</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            La Suite Palo Santo es la más amplia del hotel. Cuenta dos cómodos ambientes en 65m2, cama King size, living separado, dos televisores Smart 4K, baño con hidromasaje, balcones privados y hermosas vistas al skyline palermitano.
-          </p>
-          <div class="room-card__cta">
-            <a href="/es/hotel-room/palosanto-suite/" class="room-card__button">> Explorar</a>
-          </div>
-        </div>
-      </article>
-      </div>
+<section class="bg-white px-4 py-16 sm:px-5 md:py-24 lg:px-6">
+  <div class="mx-auto max-w-6xl space-y-10">
+    <div class="space-y-4 text-center md:text-left">
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Programa verde</p>
+      <h2 class="text-2xl uppercase font-semibold text-gray-900 md:text-4xl">Hotelería Sustentable: Nuestro Programa</h2>
     </div>
 
-    <div class="mx-auto mt-16 max-w-4xl px-6 sm:px-8">
-        <h2 id="habitaciones-intro" class="text-center text-2xl font-semibold uppercase tracking-wide text-gray-900">Habitaciones cómodas, espaciosas y perfectamente equipadas</h2>
-        <div class="mt-6 space-y-5 text-base leading-relaxed text-gray-600 sm:text-lg">
-            <p>Contamos con 26 habitaciones en cuatro categorías:</p>
-            <ul class="list-disc pl-5 mt-2 mb-4">
-                <li>Habitaciones Premium del piso 1 a 3 y en el piso 8</li>
-                <li>Habitaciones Deluxe del piso 4 a 6</li>
-                <li>Suites en los pisos 6 y 7</li>
-            </ul>
-            <p>Con tan solo cuatro habitaciones por piso, disfrute de la tranquilidad y privacidad de un verdadero hotel boutique. Elegimos cuidadosamente cada mueble y objeto del hotel, con piezas clásicas de diseño, artefactos de emprendedores argentinos, tejidos de comercio justo y obras de arte únicas.
-</p>
-            <p>Todas nuestras habitaciones son muy amplias (35m2 o más) y luminosas, gracias a grandes ventanales con vistas a nuestro jardín o a la ciudad. Las habitaciones están perfectamente equipadas: minibar, caja de seguridad con capacidad para laptop, escritorio, piso de madera natural de palo santo, aire acondicionado / calefacción individuales. </p>
-            <p>Todas las habitaciones cuentan con balcón privado, con la excepción de nuestras dos habitaciones Premium ubicadas en el piso 8, que tienen acceso directo al rooftop e impresionantes vistas a la ciudad.</p>
-        </div>
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Card 1 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Operaciones</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Trabajamos con una cooperativa para la separación de residuos</li>
+          <li>Donamos nuestros blancos usados para que puedan ser revalorizados y reutilizados</li>
+          <li>Ponemos bicicletas a disposición de los huéspedes para incentivar la movilidad sustentable</li>
+          <li>Seleccionamos una lavandería certificada y de bajo impacto</li>
+          <li>Nuestros productos de limpieza son de bajo impacto</li>
+          <li>Invitamos a nuestros huéspedes a reutilizar sábanas y toallas si lo desean</li>
+          <li>Ponemos a disposición de los huéspedes un botellón de agua recargable en la habitación</li>
+          <li>Limitamos el uso de materiales impresos. Utilizamos papel reciclado, sin blanqueadores</li>
+          <li>Seleccionamos servidores eco-certificados para el hosting</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Energía</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          La racionalización del uso de energía es uno de los pilares de nuestro programa sustentable. Desde la construcción del edificio, fue un eje central para diseñar habitaciones eficientes y seleccionar el equipamiento.
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Uso de leds y artefactos de bajo consumo</li>
+          <li>Detectores de movimiento para evitar consumo innecesario</li>
+          <li>Equipos de aire acondicionado VRV con sistema Inverter</li>
+          <li>Optimización de las aislaciones</li>
+          <li>Ascensores de bajo consumo</li>
+          <li>Tarjetas de corte de energía en las habitaciones</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Agua</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          En Palo Santo, cuidamos cada gota:
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Recuperamos el agua de lluvia</li>
+          <li>Usamos inodoros eficientes con sistema de doble descarga</li>
+          <li>Disponemos de medios de absorción de agua de lluvia para minimizar la carga al sistema pluvial de la ciudad</li>
+          <li>Utilizamos riego por goteo</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Materiales</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          Nos centramos en utilizar materiales duraderos, para evitar desperdiciar los recursos:
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Utilizamos maderas certificadas por FSC</li>
+          <li>Usamos mármoles y porcelanatos porque son materiales de alta duración</li>
+          <li>Empleamos materiales nobles: hierro, piedras, hormigón, maderas</li>
+          <li>Empleamos algodones naturales</li>
+        </ul>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Aislaciones</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          Además de brindar comfort acústico, maximizar las aislaciones es una forma muy eficiente de cuidar el gasto energético:
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Contamos con ventanas con DVH (vidrios dobles herméticos con cámara de aire)</li>
+          <li>Aislación acústica y térmica de los pisos y paredes</li>
+          <li>Utilizamos jardines verticales verdes y enredaderas como método de aislación</li>
+        </ul>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Aire</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          Cuidamos el aire interior del hotel, reduciendo la contaminación:
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>El aire que llega a las habitaciones está filtrado</li>
+          <li>El aire externo entra a las habitaciones dosificado y regulado para que sea puro y optimizar el consumo energético</li>
+          <li>En lo posible, utilizamos papel en vez de pintura en habitaciones para reducir los efectos contaminantes de los solventes</li>
+        </ul>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Dióxido de carbono</h3>
+        <p class="mt-2 text-base leading-relaxed">
+          Controlamos nuestras emisiones de CO₂:
+        </p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li>Más de 800 plantas de crecimiento permanente absorben el CO₂</li>
+          <li>Tratamos la poda para no generar CO₂</li>
+          <li>Instalamos equipos de aire acondicionado con un gas que no daña la capa de ozono</li>
+        </ul>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="bg-stone-100 p-6 text-gray-700 shadow-sm border-l-[3px] border-black">
+        <h3 class="text-xl font-bold uppercase text-gray-900">Certificaciones y Reconocimientos</h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+          <li><span class="font-semibold">Normas LEED:</span> Seguimos detalladamente las normas de construcciones verdes definidas por el US Green Building Council para la certificación LEED.</li>
+          <li><span class="font-semibold">Hoteles Más Verdes:</span> Recibimos el premio Hoteles Más Verdes como mejor proyecto hotelero sustentable en 2013.</li>
+        </ul>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- FOOTER -->
 
