@@ -2,8 +2,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palo Santo Hotel — Hotel boutique verde en Palermo, Buenos Aires</title>
-    <meta name="description" content="Somos un hotel boutique verde y de diseño en Palermo, Buenos Aires (Argentina). Habitaciones con balcón privado, jardines verticales y servicio excepcional." />
+    <title>Palo Santo Hotel — Un hotel boutique verde en Palermo</title>
+    <meta name="description" content="Conocé la historia de Palo Santo Hotel, un hotel boutique verde y de diseño en Palermo, Buenos Aires, inspirado por la arquitectura sustentable." />
     <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../dist/output.css" />
     <link rel="preload" href="../fonts/AvenirNextLTPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,14 +41,12 @@
           aria-expanded="false"
           data-disclosure
         >
-          <span>Hotel</span>
+          <span>HOTEL</span>
           <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
         </button>
         <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/es/el-hotel/">El hotel</a></li>
-          <li><a class="block" href="/es/servicios-del-hotel/">Servicios</a></li>
-          <li><a class="block" href="/green-hotel-buenos-aires/">Verde</a></li>
-          <li><a class="block" href="/es/desayuno-y-restaurante/">Desayuno y restaurante</a></li>
+          <li><a class="block" href="hotel.html" aria-current="page">Servicios</a></li>
+          <li><a class="block" href="quienes-somos.html">Quiénes somos</a></li>
         </ul>
       </div>
 
@@ -73,12 +71,12 @@
       </div>
 
       <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="/es/palermo/" class="block">Verde</a></li>
+        <li><a href="verde.html" class="block">Verde</a></li>
         <li><a href="/es/desayuno-y-restaurante/" class="block">Desayuno y restaurante</a></li>
-        <li><a href="/es/palermo/" class="block">Palermo</a></li>
+        <li><a href="palermo.html" class="block">Palermo</a></li>
         <li><a href="/es/galeria-de-fotos/" class="block">Fotos</a></li>
         <li><a href="/es/blog/" class="block">Blog</a></li>
-        <li><a href="/es/contacto/" class="block">Contacto</a></li>
+        <li><a href="contacto.html" class="block">Contacto</a></li>
         <li class="flex">
           <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener"
             class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
@@ -123,19 +121,28 @@
             </ul>
           </div>
         </li>
-        <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Hotel</a></li>
-        <li><a href="/green-hotel-buenos-aires/" class="hover:text-gray-600">Verde</a></li>
+        <li class="relative group">
+          <button
+            type="button"
+            class="relative flex items-center gap-2 pb-1 hover:text-gray-600 focus:outline-none after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
+            aria-haspopup="true"
+          >
+            HOTEL
+            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
+            </svg>
+          </button>
+          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <ul class="space-y-2 text-black">
+              <li><a href="hotel.html" class="block text-gray-600" aria-current="page">Servicios</a></li>
+              <li><a href="quienes-somos.html" class="block hover:text-gray-600">Quiénes somos</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="verde.html" class="hover:text-gray-600">Verde</a></li>
         <li><a href="/es/desayuno-y-restaurante/" class="hover:text-gray-600">Restaurante</a></li>
         <li><a href="/es/galeria-de-fotos/" class="hover:text-gray-600">Fotos</a></li>
-        <li>
-          <a
-            href="palermo.html"
-            class="relative pb-1 hover:text-gray-600 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
-            aria-current="page"
-          >
-            Ubicación
-          </a>
-        </li>
+        <li><a href="palermo.html" class="hover:text-gray-600">Ubicación</a></li>
         <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
         <li><a href="contacto.html" class="hover:text-gray-600">Contacto</a></li>
       </ul>
@@ -147,269 +154,72 @@
   </div>
 </header>
 
-
-<!-- CONTENIDO PRINCIPAL -->
-<!-- PHOTO + INTRO -->
+<!-- CONTENIDO PRINCIPAL-->
 <section class="bg-white px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-stretch">
-    <div class="md:w-2/3 lg:w-3/4">
-      <div class="h-full overflow-hidden shadow-xl">
-        <picture class="block h-full w-full">
-          <source
-            srcset="
-              /images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.avif 1920w,
-              /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.avif 2560w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.webp 1920w,
-              /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.webp 2560w
-            "
-            type="image/webp" />
-          <img
-            src="/images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.webp"
-            alt="Jardín principal del hotel rodeado de vegetación en Palermo Hollywood"
-            class="h-full w-full object-cover"
-            style="aspect-ratio: 4 / 3;"
-            width="1920"
-            height="1440"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 66vw" />
-        </picture>
+  <div class="mx-auto max-w-6xl space-y-8 text-center">
+    <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Quienes somos</p>
+    <h1 class="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
+      Un lujo moderno, inteligente y sustentable
+    </h1>
+  </div>
+
+<!-- MANIFIESTO -->
+  <div class="mx-auto mt-12 max-w-6xl">
+    <section class="rounded border border-gray-200 p-6 text-base leading-relaxed text-gray-700 shadow-sm" aria-label="Manifesto resumen">
+      <p class="text-xs uppercase tracking-[0.4em] text-gray-500">Manifiesto</p>
+      <div class="mt-4 space-y-4">
+        <p>Nos gusta pensar que en ocasiones lo finito puede contener lo infinito. Como en ese cuento de Borges en el que un poeta descubre en el sótano de su casa un espacio que contiene el universo entero.</p>
+        <p>Nos inspira pensar que un viaje revela una esencia, que ciertos lugares expresan el todo en una parte. Nos emociona encontrar simetrías, relaciones, vínculos secretos: las disonancias y los contrapuntos del jazz en un tango de Piazzolla, el empleo de la forma y del color de Paul Klee en su contemporáneo porteño Xul Solar.</p>
+        <p>Nuestros viajes son búsquedas, son aventuras intelectuales, son experiencias. Al movernos por la ciudad, una mirada nos recuerda a Monica Vitti en La Noche de Antonioni, un gesto con el pelo nos hace pensar en Anna Karina en El Soldadito, un Martini nos evoca ese entrañable personaje de Hemingway, el coronel Cantwell.</p>
+        <p>Recorremos las mismas rutas, jornadas similares. Somos eclécticos, nos apasiona la diversidad y el detalle. Somos contemporáneos, somos nómades, somos una nueva generación.</p>
+        <p>Imaginamos la arquitectura del futuro y pensamos en esos icónicos edificios verdes con jardines verticales: el Musée du Quai Branly de Jean Nouvel en París, la Academy of Sciences de Renzo Piano en San Francisco, la sede de la Caixa Forum en Madrid.</p>
+        <p>En Palo Santo Hotel proponemos lujo moderno, inteligente. Un ser green porque no concebimos un mundo que no sea hermoso para siempre. Amamos el confort, la privacidad, la elegancia, la belleza.</p>
       </div>
+    </section>
+  </div>
+
+<!-- HISTORIA DEL HOTEL -->
+  <section class="mx-auto mt-12 max-w-6xl rounded-xl border border-gray-100 bg-white px-6 py-12 shadow-[0_20px_45px_rgba(15,23,42,0.08)] md:flex md:items-center md:gap-10" aria-labelledby="historia-hotel">
+    <div class="md:w-1/2">
+      <picture class="block overflow-hidden rounded-lg shadow-lg">
+        <source
+          srcset="
+            /images/hotel/Pasillos-800.avif 800w,
+            /images/hotel/Pasillos-1200.avif 1200w,
+            /images/hotel/Pasillos-1600.avif 1600w
+          "
+          type="image/avif" />
+        <source
+          srcset="
+            /images/hotel/Pasillos-800.webp 800w,
+            /images/hotel/Pasillos-1200.webp 1200w,
+            /images/hotel/Pasillos-1600.webp 1600w
+          "
+          type="image/webp" />
+        <img
+          src="/images-source/hotel/Pasillos.jpg"
+          alt="Pasillo interior con vegetación en Palo Santo Hotel"
+          class="h-full w-full object-cover"
+          style="aspect-ratio: 4 / 3;"
+          width="1600"
+          height="1066"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 50vw" />
+      </picture>
     </div>
 
-    <div class="md:w-1/3 lg:w-1/4 flex max-w-2xl flex-col gap-6">
-      <h1 class="text-4xl font-bold uppercase leading-tight text-gray-900 sm:text-5xl lg:text-[3.25rem]">
-        Palermo
-      </h1>
-      <p class="text-base leading-relaxed text-gray-600 md:text-lg">
-        Palo Santo está ubicado en Palermo, el barrio con el lifestyle más agradable de Buenos Aires. 
-        Con sus veredas arboladas, cafés al aire libre y una vibrante escena gastronómica, es el lugar ideal para explorar la ciudad.
-      </p>
-      <p class="text-base leading-relaxed text-gray-600 md:text-lg">
-        Los bosques de Palermo, el Distrito Arcos y el epicentro de la escena gastronómica porteña están a minutos caminando.
-        También estamos conectados con la línea D del subte, el Metrobús y ciclovías para moverte con comodidad por la ciudad.
-      </p>
-      <ul class="mt-2 space-y-3 text-base leading-relaxed text-gray-900 md:text-lg">
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Restaurantes premiados, wine bars y rooftops a menos de 5 minutos.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Galerías de arte, tiendas de diseño independiente y ferias de fin de semana.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Acceso directo a parques, circuitos para correr y alquiler de bicicletas BA EcoBici.</span>
-        </li>
-      </ul>
-      <a
-        href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex w-full items-center justify-center rounded-full border border-black px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-center transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30 sm:w-auto">
-        Ver en Google Maps
-      </a>
+    <div class="mt-8 space-y-4 text-base leading-relaxed text-gray-700 md:mt-0 md:w-1/2" id="historia-hotel">
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Sustentabilidad</p>
+      <h3 class="text-3xl font-semibold uppercase text-gray-900">La historia detrás de Palo Santo</h3>
+      <p>En 2005 Pablo deja Buenos Aires para vivir con su novia francesa. Reside en París cuando se produce la revolución de la arquitectura verde. Nacen edificios icónicos como el Musée du Quai Branly y Bosco Verticale.</p>
+      <p>Unos años después, cuando vuelve a su ciudad natal con la que ahora es su esposa, tiene un proyecto: construir un hotel verde. Pero no quiere que sólo sea verde por fuera, sino que también sea sustentable. Es 2010 y le indigna que todavía se construyan edificios nuevos que no tengan en cuenta el cuidado del medio ambiente.</p>
+      <p>Consigue rápidamente inversores que confían en su visión. Así nace Palo Santo, un hotel en que se hospedan viajeros de todo el mundo que aman la vida urbana, el diseño y el confort moderno, viajeros que desean que el planeta se conserve tan hermoso como es.</p>
     </div>
-  </div>
+  </section>
+
 </section>
 
-
-<!-- GUIA RÁPIDA DE PALERMO -->
-<section class="bg-stone-50 px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <!-- VERSIÓN MOBILE -->
-
-  <div class="mx-auto max-w-6xl space-y-10">
-    <div class="space-y-4 text-gray-700">
-      <p class="uppercase text-xs tracking-[0.3em] text-gray-500 md:text-sm">Guía rápida</p>
-      <h2 class="text-3xl font-light text-gray-900 md:text-4xl">Preguntas frecuentes sobre Palermo</h2>
-      <p class="text-base leading-relaxed md:text-lg">
-        Palo Santo está ubicado en Palermo, uno de los barrios más extensos de Buenos Aires. El barrio se divide en
-        sub-barrios, entre los cuales los más importantes son Palermo Hollywood, Bosques de Palermo, Palermo Soho y
-        Palermo Chico.
-      </p>
-    </div>
-
-    <div class="space-y-4 md:hidden">
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Palermo Hollywood
-        </summary>
-        <div class="mt-3 space-y-3 text-base leading-relaxed text-gray-700">
-          <p>
-            Palermo Hollywood, donde se encuentra Palo Santo, lleva ese nombre por la principal actividad económica del
-            lugar: es un polo de producción audiovisual. El barrio se fue transformando y los edificios modernos fueron
-            reemplazando las casas familiares. Palermo Hollywood se convirtió en un barrio de moda, trendy y de aspecto
-            moderno.
-          </p>
-          <p>
-            El barrio está repleto de restaurantes de todo tipo. Encontrará las mesas más caras de la ciudad y algunos
-            lugares relativamente económicos. Hay restaurantes elegantes, parrillas, cocina étnica, antiguas cantinas,
-            pizzerías… las alternativas son incontables. Muchos aprovechan el espacio exterior: hermosas mesas bajo los
-            plátanos, en patios tranquilos o terrazas soleadas.
-          </p>
-          <p class="font-medium text-gray-900">
-            ¡Siempre estamos felices de compartir nuestras recomendaciones de restaurantes para aprovechar la gran oferta culinaria de Palermo!
-          </p>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Bosques de Palermo
-        </summary>
-        <div class="mt-3 space-y-3 text-base leading-relaxed text-gray-700">
-          <p>
-            Los Bosques de Palermo, oficialmente llamado Parque 3 de febrero, son los pulmones de la ciudad. Con sus 400
-            hectáreas y más de 12.000 árboles, es la zona verde más grande de la ciudad. Aloja un rosedal, diferentes lagos,
-            un planetario, un zoológico, un museo, el jardín japonés y muchas invaluables esculturas.
-          </p>
-          <p>
-            <span class="font-medium text-gray-900">Los Bosques de Palermo se encuentran a tan sólo 15 minutos de caminata de Palo Santo Hotel. </b> Aprovechen una de
-            nuestras bicicletas de cortesía para recorrer los parques. También <b>es un lugar perfecto para los amantes del
-            running</b>. En los días soleados, y particularmente en primavera, el rosedal y el jardín japonés son paseos
-            hermosos.
-          </p>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Palermo Soho
-        </summary>
-        <div class="mt-3 space-y-3 text-base leading-relaxed text-gray-700">
-          <p>
-            El Soho es la parte más bohemia de Palermo. Encontrarán allí mucha oferta de ropa, tiendas de decoración y lindos
-            cafés. De noche, el barrio tiene un ambiente muy joven y ruidoso, con muchos bares al aire libre.
-          </p>
-          <p>
-            <span class="font-medium text-gray-900">Desde Palo Santo, llegarán al Soho caminando en 10 a 15 minutos.</span> Plaza Serrano, el corazón de Palermo Soho,
-            está a tan sólo 1.600 metros del hotel.
-          </p>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          ¿A qué distancia estamos de otros barrios?
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5">
-            <li>Microcentro, Plaza de Mayo u Obelisco: 20 minutos en subte (línea D). La parada está a 5 cuadras.</li>
-            <li>El cementerio de Recoleta y Plaza Francia: 15 minutos en taxi.</li>
-            <li>El barrio histórico de San Telmo: 30 minutos en taxi.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          ¿Cómo llegar desde los aeropuertos?
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5">
-            <li>Desde Aeroparque Jorge Newbery (AEP): 15 a 20 minutos en taxi.</li>
-            <li>Desde el Aeropuerto Internacional Ezeiza (EZE): 50 minutos en taxi.</li>
-            <li class="font-medium text-gray-900">Podemos organizar su transfer hacia/desde los aeropuertos. Contáctenos.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Otros puntos de interés cercanos
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li><span class="font-semibold">Sanatorio de Los Arcos</span>: 400 metros (5 minutos caminando)</li>
-          <li><span class="font-semibold">La Rural</span>: 1.300 metros (20 minutos caminando / 5 minutos en taxi)</li>
-          <li><span class="font-semibold">Centro de Atención al Solicitante – Visa Estados Unidos</span>: 1.900 metros (25 minutos caminando / 5 a 10 minutos en taxi)</li>
-          <li><span class="font-semibold">Movistar Arena</span>: 2.400 metros (30 minutos caminando / 5 a 10 minutos en taxi)</li>
-        </ul>
-        </div>
-      </details>
-    </div>
-
-    <!-- VERSIÓN DESKTOP -->
-    <div class="hidden gap-6 sm:gap-8 md:grid md:grid-cols-2 md:gap-10">
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Palermo Hollywood</h3>
-        <p>
-          Palermo Hollywood, donde se encuentra Palo Santo, lleva ese nombre por la principal actividad económica del
-          lugar: es un polo de producción audiovisual. El barrio se fue transformando y los edificios modernos fueron
-          reemplazando las casas familiares. Palermo Hollywood se convirtió en un barrio de moda, trendy y de aspecto
-          moderno.
-        </p>
-        <p>
-          El barrio está repleto de restaurantes de todo tipo. Encontrará las mesas más caras de la ciudad y algunos
-          lugares relativamente económicos. Hay restaurantes elegantes, parrillas, cocina étnica, antiguas cantinas,
-          pizzerías… las alternativas son incontables. Muchos aprovechan el espacio exterior: hermosas mesas bajo los
-          plátanos, en patios tranquilos o terrazas soleadas.
-        </p>
-        <p class="font-medium text-gray-900">
-          ¡Siempre estamos felices de compartir nuestras recomendaciones de restaurantes para aprovechar la gran oferta culinaria de Palermo!        </p>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Bosques de Palermo</h3>
-        <p>
-          Los Bosques de Palermo, oficialmente llamado Parque 3 de febrero, son los pulmones de la ciudad. Con sus 400
-          hectáreas y más de 12.000 árboles, es la zona verde más grande de la ciudad. Aloja un rosedal, diferentes lagos,
-          un planetario, un zoológico, un museo, el jardín japonés y muchas invaluables esculturas.
-        </p>
-        <p>
-          <span class="font-medium text-gray-900">Los Bosques de Palermo se encuentran a tan sólo 15 minutos de caminata de Palo Santo Hotel. </span> Aprovechen una de
-            nuestras bicicletas de cortesía para recorrer los parques. También <span class="font-medium text-gray-900">es un lugar perfecto para los amantes del
-            running</span>. En los días soleados, y particularmente en primavera, el rosedal y el jardín japonés son paseos
-            hermosos.
-        </p>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Palermo Soho</h3>
-        <p>
-          El Soho es la parte más bohemia de Palermo. Encontrará allí mucha oferta de ropa, tiendas de decoración y lindos
-          cafés. De noche, el barrio tiene un ambiente muy joven y ruidoso, con muchos bares al aire libre.
-        </p>
-        <p>
-           <span class="font-medium text-gray-900">Desde Palo Santo, llegarán al Soho caminando en 10 a 15 minutos.</span> Plaza Serrano, el corazón de Palermo Soho,
-          está a tan sólo 1.600 metros del hotel.
-        </p>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">¿A qué distancia estamos de otros barrios?</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li>Microcentro, Plaza de Mayo u Obelisco: 20 minutos en subte (línea D). La parada está a 5 cuadras.</li>
-          <li>El cementerio de Recoleta y Plaza Francia: 15 minutos en taxi.</li>
-          <li>El barrio histórico de San Telmo: 30 minutos en taxi.</li>
-        </ul>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">¿Cómo llegar desde los aeropuertos?</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li>Desde Aeroparque Jorge Newbery (AEP): 15 a 20 minutos en taxi.</li>
-          <li>Desde el Aeropuerto Internacional Ezeiza (EZE): 50 minutos en taxi.</li>
-          <li class="font-medium text-gray-900">Podemos organizar su transfer hacia/desde los aeropuertos. <a href="/es/contacto.html" class="underline underline-offset-2 hover:text-blue-600">Contáctenos</a>.</li>
-        </ul>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Otros puntos de interés cercanos</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li><span class="font-semibold">Sanatorio de Los Arcos</span>: 400 metros (5 minutos caminando)</li>
-          <li><span class="font-semibold">La Rural</span>: 1.300 metros (20 minutos caminando / 5 minutos en taxi)</li>
-          <li><span class="font-semibold">Centro de Atención al Solicitante – Visa Estados Unidos</span>: 1.900 metros (25 minutos caminando / 5 a 10 minutos en taxi)</li>
-          <li><span class="font-semibold">Movistar Arena</span>: 2.400 metros (30 minutos caminando / 5 a 10 minutos en taxi)</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <div class="w-full min-h-[18vh] flex items-center justify-center bg-black px-6 pt-10 md:pt-12">
@@ -483,7 +293,7 @@
                 <p class="uppercase w-full text-center my-12 text-gray-600">Copyright © 2025 Palo Santo Hotel</p>
         </div>
 </div>
-    </div>
-</div>
 
 </body>
+
+</html>

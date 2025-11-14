@@ -197,6 +197,124 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const experienceGallery = document.querySelector('[data-experience-gallery]');
+  if (experienceGallery) {
+    const viewport = experienceGallery.querySelector('[data-experience-viewport]');
+    const track = experienceGallery.querySelector('[data-experience-track]');
+    const slides = track ? Array.from(track.children) : [];
+    const prevButton = document.querySelector('[data-experience-gallery-prev]');
+    const nextButton = document.querySelector('[data-experience-gallery-next]');
+    const status = document.querySelector('[data-experience-gallery-status]');
+    let currentIndex = 0;
+
+    if (viewport && track && slides.length && prevButton && nextButton) {
+      const updateStatus = () => {
+        if (status) status.textContent = `${currentIndex + 1} / ${slides.length}`;
+      };
+
+      const updateTransform = () => {
+        const width = viewport.getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+      };
+
+      const goToSlide = nextIndex => {
+        currentIndex = (nextIndex + slides.length) % slides.length;
+        updateTransform();
+        updateStatus();
+      };
+
+      prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+      window.addEventListener('resize', () => {
+        window.requestAnimationFrame(updateTransform);
+      });
+
+      updateStatus();
+      updateTransform();
+    }
+  }
+
+  const featureGallery = document.querySelector('[data-feature-gallery]');
+  if (featureGallery) {
+    const viewport = featureGallery.querySelector('[data-feature-viewport]');
+    const track = featureGallery.querySelector('[data-feature-track]');
+    const slides = track ? Array.from(track.children) : [];
+    const prevButton = featureGallery.querySelector('[data-feature-gallery-prev]');
+    const nextButton = featureGallery.querySelector('[data-feature-gallery-next]');
+    const status = featureGallery.querySelector('[data-feature-gallery-status]');
+    let currentIndex = 0;
+
+    if (viewport && track && slides.length && prevButton && nextButton) {
+      const updateStatus = () => {
+        if (status) status.textContent = `${currentIndex + 1} / ${slides.length}`;
+      };
+
+      const updateTransform = () => {
+        const width = viewport.getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+      };
+
+      const goToSlide = index => {
+        currentIndex = (index + slides.length) % slides.length;
+        updateTransform();
+        updateStatus();
+      };
+
+      prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+      window.addEventListener('resize', () => {
+        window.requestAnimationFrame(updateTransform);
+      });
+
+      updateStatus();
+      updateTransform();
+    }
+  }
+
+  const experienceAccordion = document.querySelector('[data-experience-accordion]');
+  if (experienceAccordion) {
+    const items = Array.from(experienceAccordion.querySelectorAll('[data-experience-accordion-item]'));
+
+    const setIconState = (trigger, expanded) => {
+      const icon = trigger.querySelector('svg');
+      if (icon) icon.style.transform = expanded ? 'rotate(45deg)' : 'rotate(0deg)';
+    };
+
+    const closeAll = () => {
+      items.forEach(item => {
+        const trigger = item.querySelector('[data-experience-accordion-trigger]');
+        const panel = item.querySelector('[data-experience-accordion-panel]');
+        if (trigger && panel) {
+          trigger.setAttribute('aria-expanded', 'false');
+          panel.style.maxHeight = '0px';
+          setIconState(trigger, false);
+        }
+      });
+    };
+
+    items.forEach((item, index) => {
+      const trigger = item.querySelector('[data-experience-accordion-trigger]');
+      const panel = item.querySelector('[data-experience-accordion-panel]');
+      if (!trigger || !panel) return;
+
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        closeAll();
+        if (!isExpanded) {
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
+          setIconState(trigger, true);
+        }
+      });
+
+      if (index === 0) {
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+        setIconState(trigger, true);
+      }
+    });
+  }
+
   const roomGallery = document.querySelector('[data-room-gallery]');
   if (roomGallery) {
     const heroImage = roomGallery.querySelector('[data-room-hero]');
