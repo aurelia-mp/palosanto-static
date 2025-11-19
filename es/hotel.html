@@ -158,167 +158,265 @@
 <!-- BLOQUE SERVICIOS -->
 <section class="bg-white px-4 py-16 sm:px-5 md:py-24 lg:px-6">
   <div class="mx-auto max-w-6xl space-y-8 text-center">
-    <p class="text-xs uppercase tracking-[0.3em] text-gray-500">El hotel</p>
+    <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Servicios del hotel</p>
     <h1 class="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
       Un hotel boutique verde y de diseño en Palermo, Buenos Aires
     </h1>
   </div>
 
-    <div class="mx-auto mt-12 max-w-6xl lg:grid lg:grid-cols-2 lg:items-start lg:gap-10">
+    <div class="mx-auto mt-12 max-w-6xl lg:grid lg:grid-cols-3 lg:items-start lg:gap-10">
       <!-- CAROUSEL DE PHOTOS -->
-      <section class="space-y-4" aria-label="Galería de experiencias" data-feature-gallery>
-        <div class="flex items-center justify-end gap-4 text-sm uppercase tracking-[0.3em] text-gray-500">
-          <span data-feature-gallery-status>1 / 2</span>
-          <div class="flex gap-2">
-            <button type="button" aria-label="Foto anterior" data-feature-gallery-prev class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition hover:border-black hover:text-black">
-              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M12.707 15.707a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 1 1 1.414 1.414L9.414 10l3.293 3.293a1 1 0 0 1 0 1.414Z" />
+      <section class="space-y-4 lg:col-span-2" aria-label="Galería de experiencias" data-feature-gallery>
+        <div class="relative overflow-hidden" data-feature-viewport>
+          <div class="absolute right-0 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg">
+            <button type="button" aria-label="Foto anterior" data-feature-gallery-prev class="group relative flex h-12 w-12 items-center justify-center px-3 text-gray-900 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 transition-transform group-hover:-translate-x-0.5">
+                <path d="M15 6l-6 6 6 6"/>
               </svg>
             </button>
-            <button type="button" aria-label="Foto siguiente" data-feature-gallery-next class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition hover:border-black hover:text-black">
-              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M7.293 4.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 1 1-1.414-1.414L10.586 10 7.293 6.707a1 1 0 0 1 0-1.414Z" />
+            <button type="button" aria-label="Foto siguiente" data-feature-gallery-next class="group relative flex h-12 w-12 items-center justify-center px-3 text-gray-900 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 transition-transform group-hover:translate-x-0.5">
+                <path d="M9 6l6 6-6 6"/>
               </svg>
             </button>
           </div>
-        </div>
-
-        <div class="overflow-hidden rounded-lg shadow-xl" data-feature-viewport>
           <div class="flex transition-transform duration-500 ease-out" data-feature-track>
             <figure class="min-w-full shrink-0">
-              <div class="relative w-full overflow-hidden rounded-lg" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/PaloSantoGuide-0851-800.avif 800w,
-                    /images/hotel/PaloSantoGuide-0851-1200.avif 1200w,
-                    /images/hotel/PaloSantoGuide-0851-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/PaloSantoGuide-0851-800.webp 800w,
-                    /images/hotel/PaloSantoGuide-0851-1200.webp 1200w,
-                    /images/hotel/PaloSantoGuide-0851-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/PaloSantoGuide-0851.jpg"
-                  alt="Detalle fotográfico de Palo Santo Hotel"
-                  class="h-full w-full object-cover"
-                  width="1600"
-                  height="1200"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
+              <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <picture class="absolute inset-0 block h-full w-full">
+                  <source
+                    srcset="
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-800.avif 800w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-1200.avif 1200w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-1600.avif 1600w
+                    "
+                    type="image/avif" />
+                  <source
+                    srcset="
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-800.webp 800w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-1200.webp 1200w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000-1600.webp 1600w
+                    "
+                    type="image/webp" />
+                  <img
+                    src="/images-source/hotel/Rooftop-Piscina-Hidromasaje-IMG_6151-2000.jpg"
+                    alt="Rooftop con piscina e hidromasaje en la terraza de Palo Santo"
+                    class="h-full w-full object-cover"
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                </picture>
               </div>
             </figure>
 
             <figure class="min-w-full shrink-0">
-              <div class="relative w-full overflow-hidden rounded-lg" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Pasillos-800.avif 800w,
-                    /images/hotel/Pasillos-1200.avif 1200w,
-                    /images/hotel/Pasillos-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Pasillos-800.webp 800w,
-                    /images/hotel/Pasillos-1200.webp 1200w,
-                    /images/hotel/Pasillos-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Pasillos.jpg"
-                  alt="Pasillos interiores con vegetación en Palo Santo Hotel"
-                  class="h-full w-full object-cover"
-                  width="1600"
-                  height="1066"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
+              <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <picture class="absolute inset-0 block h-full w-full">
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-800.avif 800w,
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-1200.avif 1200w,
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-1600.avif 1600w
+                    "
+                    type="image/avif" />
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-800.webp 800w,
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-1200.webp 1200w,
+                      /images/hotel/PaloSanto-Gimnasio-IMG_1744-2000-1600.webp 1600w
+                    "
+                    type="image/webp" />
+                  <img
+                    src="/images-source/hotel/PaloSanto-Gimnasio-IMG_1744-2000.jpg"
+                    alt="Gimnasio equipado de Palo Santo Hotel"
+                    class="h-full w-full object-cover"
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                </picture>
               </div>
             </figure>
+
+            <figure class="min-w-full shrink-0">
+              <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <picture class="absolute inset-0 block h-full w-full">
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-800.avif 800w,
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-1200.avif 1200w,
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-1600.avif 1600w
+                    "
+                    type="image/avif" />
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-800.webp 800w,
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-1200.webp 1200w,
+                      /images/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000-1600.webp 1600w
+                    "
+                    type="image/webp" />
+                  <img
+                    src="/images-source/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000.jpg"
+                    alt="Salón de desayuno buffet con vista al jardín"
+                    class="h-full w-full object-cover"
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                </picture>
+              </div>
+            </figure>
+
+            <figure class="min-w-full shrink-0">
+              <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <picture class="absolute inset-0 block h-full w-full">
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.avif 800w,
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.avif 1200w,
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1600.avif 1600w
+                    "
+                    type="image/avif" />
+                  <source
+                    srcset="
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.webp 800w,
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.webp 1200w,
+                      /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1600.webp 1600w
+                    "
+                    type="image/webp" />
+                  <img
+                    src="/images-source/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000.jpg"
+                    alt="Huésped con las bicicletas de cortesía del hotel"
+                    class="h-full w-full object-cover"
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                </picture>
+              </div>
+            </figure>
+
+            <!-- <figure class="min-w-full shrink-0">
+              <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <picture class="absolute inset-0 block h-full w-full">
+                  <source
+                    srcset="
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-800.avif 800w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-1200.avif 1200w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-1600.avif 1600w
+                    "
+                    type="image/avif" />
+                  <source
+                    srcset="
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-800.webp 800w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-1200.webp 1200w,
+                      /images/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000-1600.webp 1600w
+                    "
+                    type="image/webp" />
+                  <img
+                    src="/images-source/hotel/Rooftop-Piscina-Hidromasaje-IMG_6202-2000.jpg"
+                    alt="Vista panorámica del rooftop con piscina e hidromasaje"
+                    class="h-full w-full object-cover"
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 50vw" />
+                </picture>
+              </div>
+            </figure> -->
           </div>
         </div>
       </section>
 
       <!-- COPY CON ACCORDIONS -->
-      <section class="mt-10 space-y-6 text-gray-700 lg:mt-0" aria-label="Detalles de experiencias" data-experience-accordion>
+      <section class="mt-10 space-y-6 text-gray-700 lg:col-span-1 lg:mt-0" aria-label="Detalles de experiencias" data-experience-accordion>
         <div class="space-y-3">
           <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Experiencias</p>
           <h3 class="text-3xl font-semibold uppercase text-gray-900">Lujo boutique pensado en cada detalle</h3>
           <p class="text-base leading-relaxed">
-            Sumergite en nuestras amenidades exclusivas: desde un rooftop íntimo hasta tratamientos en la habitación. Elegí una experiencia para conocer más.
+            Disfruta de una experiencia boutique. Nuestro staff estará a tu disposición para que tu visita a Buenos Aires sea perfecta, ya sea que estés de paseo o viajando por trabajo.
+            Nuestro equipo de Recepción está disponible las 24 horas para ayudarte con tus reservas y transfers, y para brindarte recomendaciones.
           </p>
         </div>
 
         <div class="space-y-4" data-experience-accordion-list>
-                  <div class="rounded border border-gray-200" data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-semibold uppercase tracking-[0.2em]" data-experience-accordion-trigger aria-expanded="false">
-              <span>Bicicletas</span>
+                  <div data-experience-accordion-item>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Desayuno buffet</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M10 5a.75.75 0 0 1 .75.75V9.25h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5H5.25a.75.75 0 0 1 0-1.5h3.5V5.75A.75.75 0 0 1 10 5Z" />
+                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
             </button>
-            <div class="max-h-0 overflow-hidden px-4 text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
-              <div class="space-y-3 py-3">
-                <p>Descubrí Buenos Aires desde otra perspectiva con nuestras bicicletas de cortesía. El hotel está ubicado cerca de numerosas ciclovías y hermosos parques.</p>
-                <p>Podés recorrer fácilmente Palermo Hollywood y Palermo Soho, o pedalear hasta Recoleta vía la elegante Avenida del Libertador. Los Bosques de Palermo son también un lugar de predilección para ciclistas.</p>
+            <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
+              <div class="space-y-3 py-3 pl-0">
+                <p>El desayuno buffet está incluido en tu estadía. Servimos panes artesanales, pastelería, frutas frescas, yogures, jugos naturales y opciones calientes preparadas al momento.</p>                
+                <p><a href="restaurante.html" class="text-blue-600 underline hover:text-blue-700">> Más sobre nuestro desayuno</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div data-experience-accordion-item>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Bicicletas</h4>
+              <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
+              </svg>
+            </button>
+            <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
+              <div class="space-y-3 py-3 pl-0">
+                <p>Descubre Buenos Aires desde otra perspectiva con nuestras bicicletas de cortesía. Palo Santo está ubicado cerca de numerosas ciclovías y hermosos parques.</p>
+                <p>Puedes recorrer fácilmente Palermo Hollywood y Palermo Soho, o pedalear hasta Recoleta vía la elegante Avenida del Libertador. Los Bosques de Palermo son también un lugar de predilección para ciclistas.</p>
                 <p class="text-sm text-gray-600">Las bicicletas son sujetas a disponibilidad y se entregan por orden de llegada.</p>
               </div>
             </div>
           </div>
 
-          <div class="rounded border border-gray-200" data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-semibold uppercase tracking-[0.2em]" data-experience-accordion-trigger aria-expanded="false">
-              <span>Rooftop con hidromasaje</span>
+          <div data-experience-accordion-item>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Rooftop con hidromasaje</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M10 5a.75.75 0 0 1 .75.75V9.25h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5H5.25a.75.75 0 0 1 0-1.5h3.5V5.75A.75.75 0 0 1 10 5Z" />
+                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
             </button>
-            <div class="max-h-0 overflow-hidden px-4 text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
-              <div class="space-y-3 py-3">
-                <p>Rooftop Terrace con piscina de poca profundidad, solarium e hidromasaje. Relájese en nuestro jacuzzi después de un día de turismo.</p>
+            <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
+              <div class="space-y-3 py-3 pl-0">
+                <p>Nuestra terraza en el piso 8 cuenta con una piscina de poca profundidad, solarium e hidromasaje. Relajate y disfruta del sol porteño después de un día de turismo.</p>
                 <p>Si bien el agua está templada todo el año, el espacio se disfruta más con clima cálido – usualmente de diciembre a marzo.</p>
-                
               </div>
             </div>
           </div>
 
-          <div class="rounded border border-gray-200" data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-semibold uppercase tracking-[0.2em]" data-experience-accordion-trigger aria-expanded="false">
-              <span>Gimnasio</span>
+          <div data-experience-accordion-item>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Gimnasio</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M10 5a.75.75 0 0 1 .75.75V9.25h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5H5.25a.75.75 0 0 1 0-1.5h3.5V5.75A.75.75 0 0 1 10 5Z" />
+                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
             </button>
-            <div class="max-h-0 overflow-hidden px-4 text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
-              <div class="space-y-3 py-3">
-                <p>¡Que los viajes no interrumpan el entrenamiento! Nuestro gimnasio, ubicado en el 7.º piso del hotel, cuenta con máquina multifunción, pesas, banco de abdominales, fitball, mats, cinta para correr y bicicleta fija.</p>
+            <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
+              <div class="space-y-3 py-3 pl-0">
+                <p>¡Que los viajes no interrumpan tu entrenamiento! Nuestro gimnasio, ubicado en el 7.º piso del hotel, cuenta con máquina multifunción, pesas, banco de abdominales, fitball, mats, cinta para correr y bicicleta fija.</p>
                 <p>Horarios de apertura: todos los días de 9 a 21 hs.</p>
-                
               </div>
             </div>
           </div>
 
-          <div class="rounded border border-gray-200" data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-semibold uppercase tracking-[0.2em]" data-experience-accordion-trigger aria-expanded="false">
-              <span>Masajes y tratamientos</span>
+          <div data-experience-accordion-item>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Masajes y tratamientos</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M10 5a.75.75 0 0 1 .75.75V9.25h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5H5.25a.75.75 0 0 1 0-1.5h3.5V5.75A.75.75 0 0 1 10 5Z" />
+                <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
             </button>
-            <div class="max-h-0 overflow-hidden px-4 text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
-              <div class="space-y-3 py-3">
-                <p>Ofrecemos a nuestros huéspedes un servicio de masajes y tratamientos faciales, que se brindan en las habitaciones con reserva previa.</p>
-                
-                
+            <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
+              <div class="space-y-3 py-3 pl-0">
+                <p>Ofrecemos a nuestros huéspedes un servicio de masajes y tratamientos faciales, que se brindan en las habitaciones con reserva previa.</p>            
               </div>
             </div>
           </div>
@@ -326,6 +424,98 @@
         </div>
       </section>
     </div>
+</section>
+
+<!-- SECTION FAQ -->
+<section class="bg-gray-50 px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-5xl space-y-10">
+    <div class="text-center space-y-3">
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-500">FAQ</p>
+      <h2 class="text-3xl font-semibold text-gray-900">Preguntas frecuentes</h2>
+      <p class="text-base text-gray-600">Respondemos las consultas más habituales para ayudarte a planificar cada detalle de tu estadía.</p>
+    </div>
+
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Políticas del Hotel</p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿A qué hora es el check-in y el check-out?</p>
+            <p class="mt-2 text-sm text-gray-600">El check-in es a partir de las 15:00 y el check-out se realiza hasta las 12:00 (mediodía).</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">Mi vuelo llega temprano, ¿puedo hacer early check-in?</p>
+            <div class="mt-3 space-y-2 text-sm text-gray-600">
+              <p>El early check-in depende de la disponibilidad del día. Para garantizar el acceso temprano a la habitación, te recomendamos reservar la noche anterior.</p>
+              <p>De todas formas, puedes dejar tu equipaje en Recepción para disfrutar la ciudad mientras preparamos tu habitación.</p>
+            </div>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Tienen depósito de equipaje?</p>
+            <div class="mt-3 space-y-2 text-sm text-gray-600">
+              <p>Sí. Podemos guardar tu equipaje si llegas antes del check-in o si tu vuelo sale más tarde del check-out.</p>
+              <p>También podemos guardar una valija por persona entre dos estadías (el espacio es limitado).</p>
+            </div>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿El hotel ofrece servicio de lavandería?</p>
+            <p class="mt-2 text-sm text-gray-600">Sí, contamos con servicio de lavandería con entrega al día siguiente (según horario de solicitud).</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Puedo solicitar un late check-out?</p>
+            <p class="mt-2 text-sm text-gray-600">Sí. Ofrecemos late check-out hasta las 18:00, con tarifa adicional y sujeto a disponibilidad. Consultanos en Recepción el día previo o al momento de tu llegada.</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Aceptan mascotas?</p>
+            <p class="mt-2 text-sm text-gray-600">No aceptamos mascotas.</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Está permitido fumar en Palo Santo Hotel?</p>
+            <div class="mt-3 space-y-2 text-sm text-gray-600">
+              <p>No. El hotel es 100% libre de humo, incluyendo habitaciones, balcones, jardines y terrazas.</p>
+              <p>Esto forma parte de nuestra política de sustentabilidad y calidad del aire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Servicios</p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Cuentan con estacionamiento?</p>
+            <p class="mt-2 text-sm text-gray-600">No contamos con estacionamiento propio, pero hay varios parkings privados a menos de 400 metros del hotel.</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Pueden organizar un transfer desde el aeropuerto?</p>
+            <p class="mt-2 text-sm text-gray-600">Sí. Podemos coordinar un transfer privado desde o hacia los aeropuertos de Buenos Aires. Solo necesitamos los datos de tu vuelo.</p>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿El hotel es accesible para personas con movilidad reducida?</p>
+            <p class="mt-2 text-sm text-gray-600">Sí. Todas las áreas comunes son accesibles, sin escalones en planta baja y con ascensor a todos los pisos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Desayuno</p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Cuál es el horario del desayuno?</p>
+            <div class="mt-3 space-y-1 text-sm text-gray-600">
+              <p>Lunes a viernes: 7:00 a 10:30</p>
+              <p>Sábados, domingos y feriados: 8:00 a 11:00</p>
+              <p>Si tienes un vuelo temprano, podemos prepararte un desayuno para llevar. Avisanos con anticipación.</p>
+            </div>
+          </div>
+          <div class="rounded border border-gray-200 bg-white px-5 py-4">
+            <p class="text-lg font-semibold text-gray-900">¿Ofrecen opciones para dietas especiales?</p>
+            <p class="mt-2 text-sm text-gray-600">Sí. Nuestro buffet incluye opciones vegetarianas y veganas. Si necesitas opciones sin gluten, por favor avisanos antes de tu llegada para prepararlas adecuadamente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->

@@ -241,13 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = track ? Array.from(track.children) : [];
     const prevButton = featureGallery.querySelector('[data-feature-gallery-prev]');
     const nextButton = featureGallery.querySelector('[data-feature-gallery-next]');
-    const status = featureGallery.querySelector('[data-feature-gallery-status]');
     let currentIndex = 0;
 
     if (viewport && track && slides.length && prevButton && nextButton) {
-      const updateStatus = () => {
-        if (status) status.textContent = `${currentIndex + 1} / ${slides.length}`;
-      };
 
       const updateTransform = () => {
         const width = viewport.getBoundingClientRect().width;
@@ -257,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const goToSlide = index => {
         currentIndex = (index + slides.length) % slides.length;
         updateTransform();
-        updateStatus();
       };
 
       prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
@@ -266,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.requestAnimationFrame(updateTransform);
       });
 
-      updateStatus();
       updateTransform();
     }
   }
@@ -277,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const setIconState = (trigger, expanded) => {
       const icon = trigger.querySelector('svg');
-      if (icon) icon.style.transform = expanded ? 'rotate(45deg)' : 'rotate(0deg)';
+      if (icon) icon.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
     };
 
     const closeAll = () => {
