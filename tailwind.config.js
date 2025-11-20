@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Avenir', 'sans-serif'],
-        heading: ['Avenir', 'sans-serif'],
+        sans: ['Lato', 'sans-serif'],
+        heading: ['Lato', 'sans-serif'],
       },
     },
   },
