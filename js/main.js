@@ -482,3 +482,124 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIcon();
   });
 });
+
+// Galería de fotos
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[data-filter]');
+  const items = document.querySelectorAll('.photo-item');
+  const removablePositionClasses = [
+    'md:col-start-1',
+    'md:col-start-2',
+    'md:col-start-3',
+    'md:col-start-4',
+    'md:row-start-1',
+    'md:row-start-2',
+    'md:row-start-3',
+    'md:row-start-4',
+    'md:row-start-5',
+    'md:row-start-6',
+    'md:row-start-7',
+    'md:row-start-8',
+    'md:row-start-9',
+    'md:row-start-10',
+    'md:row-start-11',
+    'md:row-start-12',
+    'md:row-start-13',
+    'md:row-start-14',
+    'md:row-start-15',
+    'md:row-start-16',
+    'md:row-start-17',
+    'md:row-start-18',
+    'md:row-start-19',
+    'md:row-start-20',
+  ];
+  const layoutPositions = {
+    pileta: ['md:col-start-1', 'md:row-start-1'],
+    deluxe: ['md:col-start-3', 'md:row-start-1'],
+    jardin: ['md:col-start-3', 'md:row-start-2'],
+    pasillos: ['md:col-start-4', 'md:row-start-1'],
+    'suite-8032': ['md:col-start-1', 'md:row-start-3'],
+    'bath-8147': ['md:col-start-1', 'md:row-start-4'],
+    'cama-8119': ['md:col-start-2', 'md:row-start-3'],
+    'bath-8250': ['md:col-start-2', 'md:row-start-4'],
+    'jardin-3054': ['md:col-start-3', 'md:row-start-3'],
+    'fachada-verde': ['md:col-start-1', 'md:row-start-5'],
+    'lobby-16': ['md:col-start-3', 'md:row-start-5'],
+    'jardin-0825': ['md:col-start-4', 'md:row-start-5'],
+    'terrace-5255': ['md:col-start-1', 'md:row-start-7'],
+    'suite-cama-5323': ['md:col-start-1', 'md:row-start-8'],
+    'lobby-2509': ['md:col-start-2', 'md:row-start-7'],
+    'lobby-escultura': ['md:col-start-4', 'md:row-start-7'],
+    'premium-8336': ['md:col-start-1', 'md:row-start-9'],
+    'premium-7987': ['md:col-start-3', 'md:row-start-9'],
+    'suite-8343': ['md:col-start-1', 'md:row-start-11'],
+    'fachada-psanto05': ['md:col-start-2', 'md:row-start-11'],
+    'deluxe-8266': ['md:col-start-1', 'md:row-start-12'],
+    'desayuno-2345': ['md:col-start-2', 'md:row-start-12'],
+    'desayuno-2250': ['md:col-start-3', 'md:row-start-11'],
+    'palier-5190': ['md:col-start-1', 'md:row-start-13'],
+    'resto-byn-2139': ['md:col-start-3', 'md:row-start-13'],
+    'bikes-0299': ['md:col-start-1', 'md:row-start-15'],
+    'resto-8187': ['md:col-start-1', 'md:row-start-16'],
+    'desayuno-dic23': ['md:col-start-2', 'md:row-start-15'],
+    'resto-byn-2113': ['md:col-start-4', 'md:row-start-15'],
+    'bath-vertical-8318': ['md:col-start-1', 'md:row-start-19'],
+    'fachada-205': ['md:col-start-2', 'md:row-start-19'],
+    'rooftop-3142': ['md:col-start-2', 'md:row-start-20'],
+    'gimnasio-1744': ['md:col-start-3', 'md:row-start-19'],
+  };
+
+  const setActiveButton = activeButton => {
+    buttons.forEach(btn => {
+      const isActive = btn === activeButton;
+      btn.classList.toggle('border', isActive);
+      btn.classList.toggle('border-gray-400', isActive);
+      btn.classList.toggle('border-none', !isActive);
+    });
+  };
+
+  const applyFilter = filter => {
+    items.forEach(item => {
+      const tags = item.dataset.tags
+        .split(',')
+        .map(t => t.trim().toLowerCase());
+
+      if (filter === 'all' || tags.includes(filter)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  };
+
+  const applyLayout = isAll => {
+    items.forEach(item => {
+      removablePositionClasses.forEach(cls => item.classList.remove(cls));
+
+      if (!isAll) return;
+
+      const key = (item.dataset.layout || '').trim().toLowerCase();
+      const classes = layoutPositions[key];
+      if (!classes) return;
+      classes.forEach(cls => item.classList.add(cls));
+    });
+  };
+
+  buttons.forEach(button => {
+    button.classList.add('border-none');
+
+    button.addEventListener('click', () => {
+      const filter = (button.dataset.filter || '').toLowerCase();
+      applyFilter(filter);
+      applyLayout(filter === 'all');
+      setActiveButton(button);
+    });
+  });
+
+  if (buttons.length) {
+    const first = buttons[0];
+    applyLayout(true);
+    applyFilter((first.dataset.filter || 'all').toLowerCase());
+    setActiveButton(first);
+  }
+});

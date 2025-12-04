@@ -1,4 +1,8 @@
-// optimize-images.js
+/// optimize-images.js
+/// Para procesar una sola imagen: npm run optimize:images -- hotel/nueva-habitacion.jpg
+/// Para procesar un carpeta: npm run optimize:images -- hotel
+/// Para procesar todo: npm run optimize:images
+
 // Requiere Node 18+ y "type": "module" en package.json
 import fs from "fs";
 import path from "path";
@@ -34,7 +38,6 @@ const PRESETS = {
     webpQuality: 85, 
     avifQuality: 65 
   },
-
 };
 
 // Extensiones admitidas como entrada
@@ -80,7 +83,7 @@ async function processFile(inputPath, outDir, baseName, sizes, webpQuality, avif
   }
 }
 
-async function processFolder(folderName, preset) {
+async function processFolder(folderName, preset, onlyFileBaseName = null) {
   const inDir = path.join(INPUT_ROOT, folderName);
   const outDir = path.join(OUTPUT_ROOT, folderName);
   ensureDir(outDir);
@@ -91,10 +94,24 @@ async function processFolder(folderName, preset) {
     return;
   }
 
-  console.log(`\n▶︎ Procesando "${folderName}" (${files.length} archivo/s) …`);
+  // Si se especificó un archivo, filtramos por ese baseName
+  const filteredFiles = onlyFileBaseName
+    ? files.filter((f) => path.basename(f, path.extname(f)) === onlyFileBaseName)
+    : files;
 
-  // Secuencial para no saturar CPU/memoria en entornos chicos; si querés, podés paralelizar con Promise.all
-  for (const file of files) {
+  if (filteredFiles.length === 0) {
+    console.log(`ℹ️  No se encontró el archivo "${onlyFileBaseName}" en ${inDir}`);
+    return;
+  }
+
+  console.log(
+    `\n▶︎ Procesando "${folderName}" (${filteredFiles.length} archivo/s)${
+      onlyFileBaseName ? ` (solo "${onlyFileBaseName}")` : ""
+    }…`
+  );
+
+  // Secuencial para no saturar CPU/memoria
+  for (const file of filteredFiles) {
     const ext = path.extname(file);
     const baseName = path.basename(file, ext);
 
@@ -111,13 +128,35 @@ async function main() {
   console.time("⏱ Optimización total");
   ensureDir(OUTPUT_ROOT);
 
-  // Sólo procesa las carpetas definidas en PRESETS si existen en src/images
-  const tasks = [];
+  // Lee argumento opcional: carpeta o carpeta/archivo
+  // Ej:
+  //  node optimize-images.js hotel
+  //  node optimize-images.js hotel/nueva-habitacion.jpg
+  const args = process.argv.slice(2);
+  let onlyFolder = null;
+  let onlyFileBaseName = null;
+
+  if (args[0]) {
+    const parts = args[0].split(/[\\/]/); // soporta "hotel" o "hotel/nombre.jpg"
+    if (parts.length === 1) {
+      // solo carpeta
+      onlyFolder = parts[0];
+    } else {
+      // carpeta + archivo
+      onlyFolder = parts[0];
+      const fileName = parts.slice(1).join("/"); // "nueva-habitacion.jpg"
+      onlyFileBaseName = fileName.replace(/\.[^.]+$/, ""); // sin extensión
+    }
+  }
+
+  // Sólo procesa las carpetas definidas en PRESETS si existen en images-source
   for (const [folder, preset] of Object.entries(PRESETS)) {
+    // Si se pidió una carpeta concreta y esta no es, la salteamos
+    if (onlyFolder && folder !== onlyFolder) continue;
+
     const folderPath = path.join(INPUT_ROOT, folder);
     if (fs.existsSync(folderPath)) {
-      // Ejecuta secuencial para logs ordenados; cambia a Promise.all si querés paralelizar por carpeta
-      await processFolder(folder, preset);
+      await processFolder(folder, preset, onlyFileBaseName);
     } else {
       console.log(`ℹ️  Carpeta omitida (no existe): ${folderPath}`);
     }
