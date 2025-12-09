@@ -6,7 +6,7 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();                       // ← evita la navegación a la Thank-you page
-    statusBox.textContent = 'Enviando...';
+    statusBox.textContent = 'Enviando... / Sending...';
 
     try {
       const res = await fetch(form.action, {
@@ -17,14 +17,14 @@
 
       if (res.ok) {
         form.reset();
-        statusBox.textContent = '¡Gracias! Tu mensaje fue enviado.';
+        statusBox.textContent = '¡Gracias! Tu mensaje fue enviado. / Thank you! Your message has been sent.';
       } else {
         // Formspree devuelve JSON con detalles si hay error de validación
         const data = await res.json().catch(() => ({}));
-        statusBox.textContent = data?.error || 'Hubo un problema. Intentalo más tarde.';
+      statusBox.textContent = data?.error || 'Hubo un problema. Intentalo más tarde. / There was an issue. Please try again later.';
       }
     } catch (err) {
-      statusBox.textContent = 'Error de red. Intentalo más tarde.';
+      statusBox.textContent = 'Error de red. Intentalo más tarde. / Network error. Please try again later.';
     }
   });
 })();

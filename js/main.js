@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroVideo) {
     const desktopQuery = window.matchMedia('(min-width: 1024px)');
     const videoFiles = ['Video Suite con sushi.mp4', 'video-colibri-edit.mp4'];
+    const videoBase = heroVideo.dataset.videoBase || './images-source/hero/videos/';
 
     const ensureVideoState = () => {
       if (!desktopQuery.matches) {
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroVideo.dataset.loaded === 'true') return;
 
       const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-      const videoSrc = `./images-source/hero/videos/${encodeURIComponent(selected)}`;
+      const videoSrc = `${videoBase}${encodeURIComponent(selected)}`;
       heroVideo.src = videoSrc;
       heroVideo.dataset.loaded = 'true';
       heroVideo.load();

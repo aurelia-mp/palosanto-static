@@ -12,7 +12,7 @@
 <body class="text-gray-800">
 
 <!-- MENÚ MOBILE -->
-<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
+<header class="lg:hidden sticky top-0 z-50 bg-white border-b">
   <div class="relative flex items-center justify-center px-6 py-4">
     <button
       id="mobile-menu-toggle"
@@ -41,12 +41,12 @@
           aria-expanded="false"
           data-disclosure
         >
-          <span>HOTEL</span>
+          <span>Hotel</span>
           <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
         </button>
         <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="hotel.html" aria-current="page">Servicios</a></li>
-          <li><a class="block" href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a class="block" href="/es/hotel.html">Servicios</a></li>
+          <li><a class="block" href="/es/quienes-somos.html">Quienes somos</a></li>
         </ul>
       </div>
 
@@ -62,21 +62,21 @@
           <svg class="block chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
         </button>
         <ul id="mobile-submenu-habitaciones" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/es/habitaciones/">Habitaciones</a></li>
-          <li><a class="block" href="/es/hotel-room/premium-rooms/">Premium</a></li>
-          <li><a class="block" href="/es/hotel-room/deluxe-rooms/">Deluxe</a></li>
-          <li><a class="block" href="/es/hotel-room/suite-terrace/">Terrace Suite</a></li>
-          <li><a class="block" href="/es/hotel-room/palosanto-suite/">Palo Santo Suite</a></li>
+          <li><a class="block" href="/es/habitaciones.html">Habitaciones</a></li>
+          <li><a class="block" href="/es/habitaciones-premium.html">Premium</a></li>
+          <li><a class="block" href="/es/habitaciones-deluxe.html">Deluxe</a></li>
+          <li><a class="block" href="/es/suite-terrace.html">Terrace Suite</a></li>
+          <li><a class="block" href="/es/suite-palo-santo.html">Palo Santo Suite</a></li>
         </ul>
       </div>
 
       <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="verde.html" class="block">Verde</a></li>
-        <li><a href="/es/desayuno-y-restaurante/" class="block">Desayuno y restaurante</a></li>
-        <li><a href="palermo.html" class="block">Palermo</a></li>
-        <li><a href="/es/galeria-de-fotos/" class="block">Fotos</a></li>
+        <li><a href="/es/verde.html" class="block">Verde</a></li>
+        <li><a href="/es/restaurante.html" class="block">Desayuno y restaurante</a></li>
+        <li><a href="/es/palermo.html" class="block">Palermo</a></li>
+        <li><a href="/es/galeria-de-fotos.html" class="block">Fotos</a></li>
         <li><a href="/es/blog/" class="block">Blog</a></li>
-        <li><a href="contacto.html" class="block">Contacto</a></li>
+        <li><a href="/es/contacto.html" class="block">Contacto</a></li>
         <li class="flex">
           <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener"
             class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
@@ -84,7 +84,7 @@
           </a>
         </li>
         <li class="pt-10">
-          <a href="/en/" class="flex items-center gap-2">
+          <a href="/en/index.html" class="flex items-center gap-2">
             <span>English</span>
           </a>
         </li>
@@ -345,8 +345,8 @@
 
         <div class="space-y-4" data-experience-accordion-list>
                   <div data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
-              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Desayuno buffet</h4>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-base" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-base">Desayuno buffet</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
@@ -360,8 +360,8 @@
           </div>
 
           <div data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
-              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Bicicletas</h4>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-base" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-base">Bicicletas</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
@@ -376,8 +376,8 @@
           </div>
 
           <div data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
-              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Rooftop con hidromasaje</h4>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-base" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-base">Rooftop con hidromasaje</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
@@ -391,8 +391,8 @@
           </div>
 
           <div data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
-              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Gimnasio</h4>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-base" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-base">Gimnasio</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
@@ -400,14 +400,14 @@
             <div class="max-h-0 overflow-hidden text-base leading-relaxed text-gray-700 transition-[max-height] duration-300" data-experience-accordion-panel>
               <div class="space-y-3 py-3 pl-0">
                 <p>¡Que los viajes no interrumpan tu entrenamiento! Nuestro gimnasio, ubicado en el 7.º piso del hotel, cuenta con máquina multifunción, pesas, banco de abdominales, fitball, mats, cinta para correr y bicicleta fija.</p>
-                <p>Horarios de apertura: todos los días de 9 a 21 hs.</p>
+                <p class="text-sm text-gray-600">Horarios de apertura: todos los días de 9 a 21 hs.</p>
               </div>
             </div>
           </div>
 
           <div data-experience-accordion-item>
-            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-base font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-lg" data-experience-accordion-trigger aria-expanded="false">
-              <h4 class="text-base font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-lg">Masajes y tratamientos</h4>
+            <button type="button" class="flex w-full items-center justify-between border-b-2 border-black pb-3 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 transition-colors sm:text-base" data-experience-accordion-trigger aria-expanded="false">
+              <h4 class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-900 sm:text-base">Masajes y tratamientos</h4>
               <svg class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.08 1.04l-4.25 4.25a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
               </svg>
@@ -430,7 +430,6 @@
     <div class="text-center space-y-3">
       <p class="text-xs uppercase tracking-[0.3em] text-gray-500">FAQ</p>
       <h2 class="text-3xl font-semibold text-gray-900">Preguntas frecuentes</h2>
-      <p class="text-base text-gray-600">Todo lo que necesitás saber sobre nuestras habitaciones, comodidades y configuraciones.</p>
     </div>
 
     <div class="space-y-10">
