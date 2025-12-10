@@ -138,6 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (track && slides.length && prevButton && nextButton) {
       let currentIndex = 0;
 
+      const setUniformHeights = () => {
+        slides.forEach((slide) => {
+          slide.style.minHeight = '';
+        });
+
+        const tallest = slides.reduce((max, slide) => {
+          const { height } = slide.getBoundingClientRect();
+          return height > max ? height : max;
+        }, 0);
+
+        if (tallest > 0) {
+          slides.forEach((slide) => {
+            slide.style.minHeight = `${tallest}px`;
+          });
+        }
+      };
+
       const getSlidesPerView = () => {
         if (window.innerWidth >= 1280) return 3;
         if (window.innerWidth >= 768) return 2;
@@ -190,11 +207,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      window.addEventListener('resize', () => {
-        window.requestAnimationFrame(updateCarousel);
-      });
+      const handleResize = () => {
+        window.requestAnimationFrame(() => {
+          setUniformHeights();
+          updateCarousel();
+        });
+      };
 
+      window.addEventListener('resize', handleResize);
+
+      setUniformHeights();
       updateCarousel();
+
+      window.addEventListener('load', () => {
+        setUniformHeights();
+      });
     }
   }
 
