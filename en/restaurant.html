@@ -2,11 +2,59 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Palo Santo Hotel — Design and Green Boutique Hotel in Palermo, Buenos Aires</title>
-    <meta name="description" content="Somos un hotel boutique verde y de diseño en Palermo, Buenos Aires (Argentina). Habitaciones con balcón privado, jardines verticales y servicio excepcional." />
+    <title>Breakfast & Dining – Palo Santo Hotel Buenos Aires</title>
+    <meta name="description" content="Discover Palo Santo Hotel’s breakfast and dining spaces, featuring a fresh buffet, seasonal dishes, and a relaxed atmosphere in Palermo, Buenos Aires." />  
     <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../dist/output.css" />
     <link rel="preload" href="../fonts/lato-v25-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      @media (min-width: 1160px) {
+        .breakfast-hero {
+          display: grid;
+          grid-template-columns: 1.4fr 1fr;
+          gap: 2.5rem;
+          align-items: flex-start;
+        }
+        .breakfast-hero > *:not(:first-child) {
+          margin-top: 0;
+        }
+        .breakfast-copy {
+          max-width: 30rem;
+          margin-left: auto;
+        }
+      }
+      .breakfast-copy-shell {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .breakfast-menu-card {
+        background: #f3f7f0;
+        box-shadow: 0 18px 35px -25px rgba(0, 0, 0, 0.35);
+      }
+      .breakfast-menu-bullet {
+        background-color: #b6c9ad;
+      }
+      .breakfast-menu-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.95rem;
+        background-color: #b6c9ad;
+        color: #0f1b0d;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+      }
+      .slideshow-shell {
+        max-width: 1000px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
 </head>
 
 <body class="text-gray-800">
@@ -160,9 +208,9 @@
 
 <!-- CONTENIDO PRINCIPAL -->
 <!-- DESAYUNO -->
-<section class="bg-white px-4 pt-4 pb-16 sm:px-5 md:pt-8 md:pb-24 lg:px-6 border-t border-gray-200">
-  <div class="mx-auto max-w-7xl space-y-10 lg:grid lg:grid-cols-3 lg:items-start lg:gap-10 lg:space-y-0">
-    <section class="space-y-4 lg:col-span-2" aria-label="Galería de Palermo" data-feature-gallery>
+<section class="bg-white px-4 pt-4 pb-10 sm:px-5 md:pt-8 md:pb-16 lg:px-6 border-t border-gray-200">
+  <div class="mx-auto max-w-6xl space-y-10 breakfast-hero">
+    <section class="space-y-4 slideshow-shell" aria-label="Galería de Palermo" data-feature-gallery>
       <div class="relative overflow-hidden shadow-xl" data-feature-viewport>
         <div class="absolute right-0 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg">
           <button type="button" aria-label="Foto anterior" data-feature-gallery-prev class="group relative flex h-12 w-12 items-center justify-center px-3 text-gray-900 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30">
@@ -182,21 +230,21 @@
               <picture class="absolute inset-0 block h-full w-full">
                 <source
                   srcset="
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.avif 800w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.avif 1200w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.avif 1600w
+                    /images/hotel/Desayuno-DIC23-2000-800.avif 800w,
+                    /images/hotel/Desayuno-DIC23-2000-1200.avif 1200w,
+                    /images/hotel/Desayuno-DIC23-2000-1600.avif 1600w
                   "
                   type="image/avif" />
                 <source
                   srcset="
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.webp 800w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.webp 1200w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.webp 1600w
+                    /images/hotel/Desayuno-DIC23-2000-800.webp 800w,
+                    /images/hotel/Desayuno-DIC23-2000-1200.webp 1200w,
+                    /images/hotel/Desayuno-DIC23-2000-1600.webp 1600w
                   "
                   type="image/webp" />
                 <img
-                  src="/images-source/hotel/Grupo-Jardin-IMG_3054-324-2000.jpg"
-                  alt="Jardín principal del hotel rodeado de vegetación en Palermo Hollywood"
+                  src="/images-source/hotel/Desayuno-DIC23-2000.jpg"
+                  alt="Breakfast buffet spread at Palo Santo Hotel"
                   class="h-full w-full object-cover"
                   width="1000"
                   height="750"
@@ -212,21 +260,21 @@
               <picture class="absolute inset-0 block h-full w-full">
                 <source
                   srcset="
-                    /images/hotel/Palermo-tigre-morado-1600-800.avif 800w,
-                    /images/hotel/Palermo-tigre-morado-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-tigre-morado-1600-1600.avif 1600w
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-800.avif 800w,
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-1200.avif 1200w,
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-1600.avif 1600w
                   "
                   type="image/avif" />
                 <source
                   srcset="
-                    /images/hotel/Palermo-tigre-morado-1600-800.webp 800w,
-                    /images/hotel/Palermo-tigre-morado-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-tigre-morado-1600-1600.webp 1600w
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-800.webp 800w,
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-1200.webp 1200w,
+                    /images/hotel/2507-Desayuno-Salon_2162_2000-1600.webp 1600w
                   "
                   type="image/webp" />
                 <img
-                  src="/images-source/hotel/Palermo-tigre-morado-1600.jpg"
-                  alt="Fachada iluminada del restaurante Tigre Morado en Palermo"
+                  src="/images-source/hotel/2507-Desayuno-Salon_2162_2000.jpg"
+                  alt="Breakfast dining room with garden views at Palo Santo"
                   class="h-full w-full object-cover"
                   width="1000"
                   height="750"
@@ -242,21 +290,21 @@
               <picture class="absolute inset-0 block h-full w-full">
                 <source
                   srcset="
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-800.avif 800w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1600.avif 1600w
+                    /images/hotel/Desayuno-Salon-2233-2000-800.avif 800w,
+                    /images/hotel/Desayuno-Salon-2233-2000-1200.avif 1200w,
+                    /images/hotel/Desayuno-Salon-2233-2000-1600.avif 1600w
                   "
                   type="image/avif" />
                 <source
                   srcset="
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-800.webp 800w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1600.webp 1600w
+                    /images/hotel/Desayuno-Salon-2233-2000-800.webp 800w,
+                    /images/hotel/Desayuno-Salon-2233-2000-1200.webp 1200w,
+                    /images/hotel/Desayuno-Salon-2233-2000-1600.webp 1600w
                   "
                   type="image/webp" />
                 <img
-                  src="/images-source/hotel/Palermo-palermo-hollywood-1-1600.jpg"
-                  alt="Calles de Palermo Hollywood con bares y arquitectura moderna"
+                  src="/images-source/hotel/Desayuno-Salon-2233-2000.jpeg"
+                  alt="Breakfast salon at Palo Santo with morning light"
                   class="h-full w-full object-cover"
                   width="1000"
                   height="750"
@@ -272,21 +320,21 @@
               <picture class="absolute inset-0 block h-full w-full">
                 <source
                   srcset="
-                    /images/hotel/Palermo-StreetArt-2000-800.avif 800w,
-                    /images/hotel/Palermo-StreetArt-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-StreetArt-2000-1600.avif 1600w
+                    /images/hotel/Desayuno-Buffet-2260-2000-800.avif 800w,
+                    /images/hotel/Desayuno-Buffet-2260-2000-1200.avif 1200w,
+                    /images/hotel/Desayuno-Buffet-2260-2000-1600.avif 1600w
                   "
                   type="image/avif" />
                 <source
                   srcset="
-                    /images/hotel/Palermo-StreetArt-2000-800.webp 800w,
-                    /images/hotel/Palermo-StreetArt-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-StreetArt-2000-1600.webp 1600w
+                    /images/hotel/Desayuno-Buffet-2260-2000-800.webp 800w,
+                    /images/hotel/Desayuno-Buffet-2260-2000-1200.webp 1200w,
+                    /images/hotel/Desayuno-Buffet-2260-2000-1600.webp 1600w
                   "
                   type="image/webp" />
                 <img
-                  src="/images-source/hotel/Palermo-StreetArt-2000.jpg"
-                  alt="Arte callejero colorido en una pared de Palermo"
+                  src="/images-source/hotel/Desayuno-Buffet-2260-2000.jpeg"
+                  alt="Buffet de desayuno en Palo Santo con opciones dulces y saladas"
                   class="h-full w-full object-cover"
                   width="1000"
                   height="750"
@@ -302,21 +350,21 @@
               <picture class="absolute inset-0 block h-full w-full">
                 <source
                   srcset="
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-800.avif 800w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1600.avif 1600w
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-800.avif 800w,
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-1200.avif 1200w,
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-1600.avif 1600w
                   "
                   type="image/avif" />
                 <source
                   srcset="
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-800.webp 800w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1600.webp 1600w
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-800.webp 800w,
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-1200.webp 1200w,
+                    /images/hotel/Desayuno-Jardin-Invierno-2237-2000-1600.webp 1600w
                   "
                   type="image/webp" />
                 <img
-                  src="/images-source/hotel/Palermo-Eterna-Cadencia-1600.jpg"
-                  alt="Librería Eterna Cadencia en Palermo Soho"
+                  src="/images-source/hotel/Desayuno-Jardin-Invierno-2237-2000.jpeg"
+                  alt="Breakfast served in the garden at Palo Santo"
                   class="h-full w-full object-cover"
                   width="1000"
                   height="750"
@@ -327,143 +375,56 @@
             </div>
           </figure>
 
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal1-2000-800.avif 800w,
-                    /images/hotel/Palermo-rosedal1-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-rosedal1-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal1-2000-800.webp 800w,
-                    /images/hotel/Palermo-rosedal1-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-rosedal1-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-rosedal1-2000.jpg"
-                  alt="Sendero arbolado del Rosedal de Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal2-2000-800.avif 800w,
-                    /images/hotel/Palermo-rosedal2-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-rosedal2-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal2-2000-800.webp 800w,
-                    /images/hotel/Palermo-rosedal2-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-rosedal2-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-rosedal2-2000.jpg"
-                  alt="Lago y puente del Rosedal de Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
         </div>
       </div>
     </section>
 
-    <div class="flex max-w-2xl flex-col gap-6 lg:col-span-1">
-      <p class="uppercase text-xs tracking-[0.3em] text-gray-500">Desayuno buffet</p>
+    <div class="flex max-w-2xl flex-col gap-6 breakfast-copy breakfast-copy-shell">
+      <p class="uppercase text-xs tracking-[0.3em] text-gray-500">Buffet Breakfast</p>
       <h2 class="text-3xl font-bold uppercase leading-tight text-gray-900 sm:text-4xl lg:text-[2.75rem]">
-        Desayuno
+        Breakfast
       </h2>
       <p class="text-base leading-relaxed text-gray-600">
-        En Palo Santo, hasta el primer bocado del día tiene consciencia verde. Nuestro buffet celebra ingredientes locales, de estación y sustentables, servidos en nuestro salón con hermosas vistas verdes.
+        At Palo Santo, we care about sustainability from the very first bite of your day. Our buffet features local, seasonal and sustainable ingredients, served in our dining room with garden views.
       </p>
       <p class="text-base leading-relaxed text-gray-600">
-        Nuestro buffet cuenta con opciones vegetarianas y veganas. Si sigue una dieta sin gluten, por favor déjenoslo saber con anticipación para poder ofrecerle opciones adaptadas.
+       Our buffet includes vegetarian and vegan options. If you follow a gluten-free diet, please let us know in advance so we can offer you adapted options.
       </p>
-      <p class="text-base leading-relaxed text-gray-600">
-        Disfrute del desayuno en el área más relajante del hotel, con una variedad de opciones dulces y saladas.
-      </p>
+
+        <div class="space-y-2 rounded-2xl bg-stone-100 p-6 text-base leading-relaxed text-gray-900 shadow-sm ring-1 ring-gray-200">
+          <p class="font-semibold uppercase tracking-[0.2em] text-gray-800">Breakfast hours</p>
+          <ul class="space-y-2">
+            <li><span class="font-semibold">Weekdays:</span> 7am to 10:30am</li>
+            <li><span class="font-semibold">Weekends and bank holidays:</span> 8am to 11am</li>
+          </ul>
+          <p class="text-sm text-gray-700">If you have an early flight, just let us know so we can prepare you a takeaway breakfast.</p>
+        </div>
     </div>
   </div>
   </section>
 
   <section class="bg-white px-4 pb-16 sm:px-5 lg:px-6">
-    <div class="mx-auto max-w-6xl space-y-6 border-t border-gray-200 pt-10">
-      <div class="grid gap-8 md:grid-cols-2 md:items-start">
-        <div class="space-y-3">
-          <p class="uppercase text-xs tracking-[0.3em] text-gray-500">Menú desayuno</p>
-          <h3 class="text-2xl font-semibold text-gray-900">Buffet Palo Santo</h3>
-          <ul class="grid grid-cols-1 gap-3 text-base leading-relaxed text-gray-700 sm:grid-cols-2 sm:gap-4">
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Bebidas calientes</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Leche y leche vegetal</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Panes y dips</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Cereales</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Quesos y fiambres</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Pastelería del día</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Fruta fresca</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Huevos revueltos</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Panceta</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-              <span>Facturas</span>
-            </li>
+    <div class="mx-auto max-w-4xl space-y-8">
+      <div class="rounded-sm breakfast-menu-card p-6 sm:p-10">
+        <div class="grid gap-8 md:grid-cols-3 md:items-start">
+          <div class="space-y-3 text-left">
+            <h3 class="text-3xl font-bold uppercase tracking-[0.18em] text-gray-900 sm:text-4xl leading-tight">Buffet Breakfast menu</h3>
+            <p class="font-regular leading-relaxed text-gray-500 max-w-xs">
+              Comforting classics, fresh fruit, and plenty of plant-based options.
+            </p>
+          </div>
+          <ul class="md:col-span-2 grid grid-cols-1 gap-3 text-base leading-relaxed text-gray-800 sm:grid-cols-2">
+            <li>Hot drinks</li>
+            <li>Regular and plant-based milk</li>
+            <li>Breads and dips</li>
+            <li>Cereals</li>
+            <li>Cheeses and cold cuts</li>
+            <li>Freshly baked pastries</li>
+            <li>Fresh fruit</li>
+            <li>Scrambled eggs</li>
+            <li>Grilled bacon</li>
+            <li>Medialunas &amp; pastries</li>
           </ul>
-        </div>
-        <div class="space-y-2 rounded-2xl bg-stone-100 p-6 text-base leading-relaxed text-gray-900 shadow-sm ring-1 ring-gray-200">
-          <p class="font-semibold uppercase tracking-[0.2em] text-gray-800">Horarios de desayuno</p>
-          <ul class="space-y-2">
-            <li><span class="font-semibold">De lunes a viernes:</span> de 7 a 10.30 hs</li>
-            <li><span class="font-semibold">Sábado, domingo y feriados:</span> de 8 a 11 hs</li>
-          </ul>
-          <p class="text-gray-700">Si tiene un vuelo temprano, ¡no dude en avisarnos para que le preparemos un desayuno para llevar!</p>
         </div>
       </div>
     </div>
@@ -477,21 +438,21 @@
           <picture class="block h-full w-full">
             <source
               srcset="
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.avif 400w,
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.avif 800w,
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.avif 1000w
+                /images/hotel/Charqui-1600-800.avif 800w,
+                /images/hotel/Charqui-1600-1200.avif 1200w,
+                /images/hotel/Charqui-1600-1600.avif 1600w
               "
               type="image/avif" />
             <source
               srcset="
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.webp 400w,
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.webp 800w,
-                /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.webp 1000w
+                /images/hotel/Charqui-1600-800.webp 800w,
+                /images/hotel/Charqui-1600-1200.webp 1200w,
+                /images/hotel/Charqui-1600-1600.webp 1600w
               "
               type="image/webp" />
             <img
-              src="/images-source/hotel/PaloSanto-Breakfast-Desayuno-Salon-IMG_2233-2000.jpeg"
-              alt="Salón del restaurante Charqui con vista al jardín"
+              src="/images-source/hotel/Charqui-1600.jpg"
+              alt="Charqui restaurant dining room with garden view"
               class="h-full w-full object-cover"
               style="aspect-ratio: 4 / 3;"
               loading="lazy"
@@ -503,21 +464,21 @@
             <picture class="block h-full w-full">
               <source
                 srcset="
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.avif 400w,
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.avif 800w,
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.avif 1000w
+                  /images/hotel/Restaurante-IMG_8187-2000-800.avif 800w,
+                  /images/hotel/Restaurante-IMG_8187-2000-1200.avif 1200w,
+                  /images/hotel/Restaurante-IMG_8187-2000-1600.avif 1600w
                 "
                 type="image/avif" />
               <source
                 srcset="
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.webp 400w,
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.webp 800w,
-                  /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.webp 1000w
+                  /images/hotel/Restaurante-IMG_8187-2000-800.webp 800w,
+                  /images/hotel/Restaurante-IMG_8187-2000-1200.webp 1200w,
+                  /images/hotel/Restaurante-IMG_8187-2000-1600.webp 1600w
                 "
                 type="image/webp" />
               <img
-                src="/images-source/hotel/Verde-Grupo-Jardin-IMG_2972-2000.jpg"
-                alt="Mesas al aire libre junto al jardín de Palo Santo"
+                src="/images-source/hotel/Restaurante-IMG_8187-2000.jpg"
+                alt="Interior of Charqui restaurant"
                 class="h-full w-full object-cover"
                 style="aspect-ratio: 4 / 3;"
                 loading="lazy"
@@ -528,21 +489,21 @@
             <picture class="block h-full w-full">
               <source
                 srcset="
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.avif 400w,
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.avif 800w,
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.avif 1000w
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-800.avif 800w,
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-1200.avif 1200w,
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-1600.avif 1600w
                 "
                 type="image/avif" />
               <source
                 srcset="
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.webp 400w,
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.webp 800w,
-                  /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.webp 1000w
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-800.webp 800w,
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-1200.webp 1200w,
+                  /images/hotel/Grupo-Jardin-IMG_3054-2000-1600.webp 1600w
                 "
                 type="image/webp" />
               <img
-                src="/images-source/hotel/Verde-PaloSanto%20-%20Jardin%20-%200784-2000.jpg"
-                alt="Detalle del patio verde de Palo Santo Hotel"
+                src="/images-source/hotel/Grupo-Jardin-IMG_3054-2000.jpg"
+                alt="Main garden at Palo Santo Hotel"
                 class="h-full w-full object-cover"
                 style="aspect-ratio: 4 / 3;"
                 loading="lazy"
@@ -554,27 +515,30 @@
 
       <div class="grid gap-6 md:grid-cols-5 md:items-center">
         <div class="space-y-3 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 md:col-span-2">
-          <p class="font-semibold uppercase tracking-[0.18em] text-gray-800">Horarios del restaurante</p>
+          <p class="font-semibold uppercase tracking-[0.18em] text-gray-800">Restaurant hours:</p>
           <ul class="space-y-2 text-base leading-relaxed text-gray-900">
-            <li><span class="font-semibold">Martes:</span> solamente al mediodía</li>
-            <li><span class="font-semibold">Miércoles a viernes:</span> al mediodía y a la noche</li>
-            <li><span class="font-semibold">Sábado:</span> de 12 hs hasta la medianoche</li>
-            <li><span class="font-semibold">Domingo:</span> de 12 a 19 hs</li>
-            <li><span class="font-semibold">Lunes:</span> cerrado</li>
+            <li><span class="font-semibold">Tuesday:</span> 12pm-3.30pm</li>
+            <li><span class="font-semibold">Wednesday to Friday:</span> 12pm – 3:30pm / 7pm – 12am</li>
+            <li><span class="font-semibold">Saturday:</span> 12pm – 12am</li>
+            <li><span class="font-semibold">Sunday:</span> 12pm-7pm</li>
+            <li><span class="font-semibold">Monday:</span> closed</li>
           </ul>
         </div>
         <div class="space-y-3 text-gray-700 md:col-span-3">
           <p class="uppercase text-xs tracking-[0.3em] text-gray-500">Restaurante Charqui</p>
           <h2 class="text-3xl font-bold text-gray-900">Restaurante Charqui</h2>
           <p class="text-base leading-relaxed">
-            El restaurante Charqui ofrece una carta de cocina argentina con productos frescos, embutidos artesanales y una propuesta de brunch muy popular entre nuestros huéspedes y vecinos del barrio.
+            Charqui Restaurant specializes in tasty, hearty, homemade Argentine cuisine. Taste their slow-cooked ojo de bife (rib eye) with Andean potatoes or the braised pork with ñoquis and mushrooms.
+          </p>
+          <p class="text-base leading-relaxed"></p>
+            Charqui’s weekend brunch is very popular as well with its offer of sweet and savory options: dulce de leche alfajor, fresh pastry, avocado toast, pulled-pork sandwich, etc.
           </p>
           <a
             href="https://www.instagram.com/charquirestaurantok/"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex w-full items-center justify-center rounded-full border border-black px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-center transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30 sm:w-auto">
-            Más info en su cuenta de Instagram
+            Check out Charqui on Instagram
           </a>
         </div>
       </div>
