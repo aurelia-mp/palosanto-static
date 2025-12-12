@@ -1,4 +1,11 @@
 
 /* === Tailwind === */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+
 @import "./components.css";
+
+@tailwind utilities;
+
+
+
