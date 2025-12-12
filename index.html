@@ -4,9 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Palo Santo Hotel — Hotel boutique sustentable en Palermo, Buenos Aires</title>
     <meta name="description" content="Descubrí Palo Santo Hotel, un hotel boutique sustentable en Palermo que combina diseño elegante, jardines verticales y un servicio excepcional en uno de los barrios más vibrantes de Buenos Aires." />
-    <script src="./js/main.js"></script>
-    <link rel="stylesheet" href="./dist/output.css" />
-    <link rel="preload" href="/fonts/lato-v25-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Main JS -->
+    <script src="/js/main.js" defer></script>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="/fonts/lato-v25-latin-ext-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 </head>
 
 <body class="text-gray-800">
@@ -27,7 +35,7 @@
         <span class="block h-0.5 w-6 bg-gray-900"></span>
       </button>
       <a href="/" class="block">
-        <img src="./images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
+        <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
       </a>
     </div>
 
@@ -97,7 +105,7 @@
 <aside class="hidden lg:block lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 bg-white pl-12 pr-8 py-10 overflow-y-auto border-r text-base">
   <!-- Logo -->
   <a href="/" class="block mb-16">
-    <img src="./images-source/logo.jpg" alt="Palo Santo Hotel" class="block w-28 h-auto mb-2">
+    <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="block w-28 h-auto mb-2">
   </a>
 
   <!-- Navegación -->
@@ -610,7 +618,7 @@
           Palo Santo es el primer hotel urbano sustentable de Argentina.
           <br>Construido según normas LEED (Leadership in Energy and Environmental Design), Palo Santo es un hotel responsable con una arquitectura verde basada en la presencia de jardines verticales y un programa ambiental abarcativo que comprende las diferentes ramas de la edificación sustentable.
         </p>
-        <a href="es/verde.html" class="mt-4 inline-flex items-center uppercase tracking-wide font-semibold text-blue-600 hover:text-blue-700 ">
+        <a href="/es/verde.html" class="mt-4 inline-flex items-center uppercase tracking-wide font-semibold text-blue-600 hover:text-blue-700 ">
           > Descubri nuestro programa sustentable
         </a>
       </div>
