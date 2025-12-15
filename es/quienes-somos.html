@@ -20,7 +20,7 @@
 <body class="text-gray-800">
 
 <!-- MENÚ MOBILE -->
-<header class="lg:hidden sticky top-0 z-50 bg-white border-b">
+<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
   <div class="relative flex items-center justify-center px-6 py-4">
     <button
       id="mobile-menu-toggle"
@@ -111,7 +111,7 @@
     </div>
 
     <nav aria-label="Menú principal" class="flex w-full flex-col items-center gap-6">
-      <ul class="flex flex-wrap items-center justify-center gap-6 xl:gap-10">
+      <ul class="flex flex-nowrap items-center justify-center gap-6 xl:gap-10">
         <li class="relative group">
           <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
             HABITACIONES
@@ -121,11 +121,11 @@
           </button>
           <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
             <ul class="space-y-2 text-black">
-              <li><a href="/es/habitaciones/" class="block hover:text-gray-600">Todas</a></li>
-              <li><a href="/es/hotel-room/premium-rooms/" class="block hover:text-gray-600">Premium</a></li>
-              <li><a href="/es/hotel-room/deluxe-rooms/" class="block hover:text-gray-600">Deluxe</a></li>
-              <li><a href="/es/hotel-room/suite-terrace/" class="block hover:text-gray-600">Terrace Suite</a></li>
-              <li><a href="/es/hotel-room/palosanto-suite/" class="block hover:text-gray-600">Palo Santo Suite</a></li>
+              <li><a href="/es/habitaciones.html" class="block hover:text-gray-600">Todas</a></li>
+              <li><a href="/es/habitaciones-premium.html" class="block hover:text-gray-600">Premium</a></li>
+              <li><a href="/es/habitaciones-deluxe.html" class="block hover:text-gray-600">Deluxe</a></li>
+              <li><a href="/es/suite-terrace.html" class="block hover:text-gray-600">Terrace Suite</a></li>
+              <li><a href="/es/suite-palo-santo.html" class="block hover:text-gray-600">Palo Santo Suite</a></li>
             </ul>
           </div>
         </li>
@@ -153,6 +153,8 @@
         <li><a href="/es/palermo.html" class="hover:text-gray-600">Ubicación</a></li>
         <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
         <li><a href="/es/contacto.html" class="hover:text-gray-600">Contacto</a></li>
+        <li aria-hidden="true" class="text-gray-400">|</li>
+        <li><a href="/en/about-us.html" class="pl-2 text-gray-400 hover:text-gray-600" aria-label="Ver esta página en inglés">EN</a></li>
       </ul>
 
       <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">

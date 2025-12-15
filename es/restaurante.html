@@ -68,7 +68,7 @@
 <body class="text-gray-800">
 
 <!-- MENÚ MOBILE -->
-<header class="lg:hidden sticky top-0 z-50 bg-white border-b">
+<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
   <div class="relative flex items-center justify-center px-6 py-4">
     <button
       id="mobile-menu-toggle"
@@ -159,7 +159,7 @@
     </div>
 
     <nav aria-label="Menú principal" class="flex w-full flex-col items-center gap-6">
-      <ul class="flex flex-wrap items-center justify-center gap-6 xl:gap-10">
+      <ul class="flex flex-nowrap items-center justify-center gap-6 xl:gap-10">
         <li class="relative group">
           <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
             HABITACIONES
@@ -205,6 +205,8 @@
         <li><a href="/es/palermo.html" class="hover:text-gray-600">Ubicación</a></li>
         <li><a href="/es/blog/" class="hover:text-gray-600">Blog</a></li>
         <li><a href="/es/contacto.html" class="hover:text-gray-600">Contacto</a></li>
+        <li aria-hidden="true" class="text-gray-400">|</li>
+        <li><a href="/en/restaurant.html" class="pl-2 text-gray-400 hover:text-gray-600" aria-label="Ver esta página en inglés">EN</a></li>
       </ul>
 
       <a href="https://motor.winpax.com.ar/search.php?hotel_id=135" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">
