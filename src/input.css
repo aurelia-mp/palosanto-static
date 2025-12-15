@@ -1,11 +1,9 @@
 
+@import "./components.css";
+
 /* === Tailwind === */
 @tailwind base;
 @tailwind components;
-
-@import "./components.css";
-
 @tailwind utilities;
-
 
 

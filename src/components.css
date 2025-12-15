@@ -38,7 +38,7 @@
 
 @layer components {
   .room-card {
-    @apply flex h-full flex-col overflow-hidden bg-white shadow-xs transition hover:shadow-sm;
+    @apply flex h-full flex-col overflow-hidden bg-white shadow-sm transition hover:shadow-md;
   }
 
   .room-card__content {
