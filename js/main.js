@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const toAbsoluteUrl = path => {
+    try {
+      return new URL(path, window.location.origin).href;
+    } catch (error) {
+      return path;
+    }
+  };
+
   document.querySelectorAll('[data-disclosure]').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('aria-controls');
@@ -90,8 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     const desktopQuery = window.matchMedia('(min-width: 1024px)');
-    const videoFiles = ['Video Suite con sushi.mp4', 'video-colibri-edit.mp4'];
-    const videoBase = heroVideo.dataset.videoBase || './images-source/hero/videos/';
+    const videoFiles = [
+      { name: 'Video Suite con sushi.mp4', external: false },
+      { name: 'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-colibri-edit.mp4', external: true },
+    ];
+    const videoBase = toAbsoluteUrl(heroVideo.dataset.videoBase || '/images-source/hero/videos/');
 
     const ensureVideoState = () => {
       if (!desktopQuery.matches) {
@@ -107,7 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heroVideo.dataset.loaded === 'true') return;
 
       const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-      const videoSrc = `${videoBase}${encodeURIComponent(selected)}`;
+      const videoSrc = selected.external
+        ? selected.name
+        : `${videoBase}${encodeURIComponent(selected.name)}`;
       heroVideo.src = videoSrc;
       heroVideo.dataset.loaded = 'true';
       heroVideo.load();
@@ -392,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const buildSrcSet = (slug, format) => {
         const sizes = [800, 1200, 1600];
         return sizes
-          .map(size => `/images/hotel/${slug}-${size}.${format} ${size}w`)
+          .map(size => `${toAbsoluteUrl(`/images/hotel/${slug}-${size}.${format}`)} ${size}w`)
           .join(', ');
       };
 
@@ -403,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sourceWebp) {
           sourceWebp.setAttribute('srcset', buildSrcSet(slug, 'webp'));
         }
-        heroImage.setAttribute('src', `/images-source/hotel/${slug}.jpg`);
+        heroImage.setAttribute('src', toAbsoluteUrl(`/images-source/hotel/${slug}.jpg`));
       };
 
       const goToSlide = nextIndex => {
