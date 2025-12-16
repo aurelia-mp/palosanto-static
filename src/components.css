@@ -160,9 +160,8 @@
 
   @media (max-width: 768px) {
     [data-room-gallery] [data-room-hero] {
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
-      background-color: #f3f4f6;
     }
   }
 }
