@@ -147,20 +147,21 @@
 
   /* Room gallery: keep the hero image contained on small screens */
   [data-room-gallery] figure {
-    @apply relative;
+    @apply relative flex items-center justify-center;
   }
 
   [data-room-gallery] [data-room-picture] {
-    @apply block h-full w-full;
+    @apply absolute inset-0 flex h-full w-full items-center justify-center;
   }
 
   [data-room-gallery] [data-room-hero] {
-    @apply h-full w-full object-cover;
+    @apply h-full w-full max-h-full max-w-full object-cover;
   }
 
   @media (max-width: 768px) {
     [data-room-gallery] [data-room-hero] {
       object-fit: contain;
+      object-position: center;
       background-color: #f3f4f6;
     }
   }
