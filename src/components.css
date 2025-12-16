@@ -144,6 +144,26 @@
     cursor: pointer;
     color: #ffffff;
   }
+
+  /* Room gallery: keep the hero image contained on small screens */
+  [data-room-gallery] figure {
+    @apply relative;
+  }
+
+  [data-room-gallery] [data-room-picture] {
+    @apply block h-full w-full;
+  }
+
+  [data-room-gallery] [data-room-hero] {
+    @apply h-full w-full object-cover;
+  }
+
+  @media (max-width: 768px) {
+    [data-room-gallery] [data-room-hero] {
+      object-fit: contain;
+      background-color: #f3f4f6;
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
