@@ -1,3 +1,7 @@
+# Force www
+https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
+
+
 # Blog index
 /blog https://blog.palosantohotel.com/en/ 301
 /blog/ https://blog.palosantohotel.com/en/ 301
