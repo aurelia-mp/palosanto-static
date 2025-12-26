@@ -1,6 +1,47 @@
 # Force www
 https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 
+# Web nueva
+# Inglés
+/contact-us/ https://www.palosantohotel.com/en/contact-us/ 301
+/portfolio-item/restaurant/ https://www.palosantohotel.com/en/restaurant/ 301
+/hotel-room/deluxe-rooms/ https://www.palosantohotel.com/en/deluxe-rooms/ 301
+/portfolio-item/hotel/ https://www.palosantohotel.com/en/hotel/ 301
+/portfolio-item/hotel-services/ https://www.palosantohotel.com/en/hotel/ 301
+/portfolio-item/palermo/ https://www.palosantohotel.com/en/palermo/ 301
+/hotel-room/premium-rooms/ https://www.palosantohotel.com/en/premium-rooms/ 301
+/hotel-room/palosanto-suite/ https://www.palosantohotel.com/en/palo-santo-suite/ 301
+/hotel-room/terrace-suite/ https://www.palosantohotel.com/en/terrace-suite/ 301
+/portfolio-item/green/ https://www.palosantohotel.com/en/green/ 301
+/manifesto/ https://www.palosantohotel.com/en/about-us/ 301
+/our-rooms/ https://www.palosantohotel.com/en/rooms/ 301
+/city-hotel/contact-us/ https://www.palosantohotel.com/en/contact-us/ 301
+/city-hotel/manifesto/ https://www.palosantohotel.com/en/about-us/ 301
+/photo-gallery/ https://www.palosantohotel.com/en/hotel/ 301
+/restaurant/ https://www.palosantohotel.com/en/restaurant/ 301
+/city-hotel/our-rooms/ https://www.palosantohotel.com/en/rooms/ 301
+
+# Español
+/es/palo-santo-hotel/habitaciones/ https://www.palosantohotel.com/es/habitaciones/ 301
+/palo-santo-hotel/habitaciones/ https://www.palosantohotel.com/es/habitaciones/ 301
+/es/hotel-room/habitaciones-premium/ https://www.palosantohotel.com/es/habitaciones-premium/ 301
+/es/hotel-room/habitaciones-deluxe/ https://www.palosantohotel.com/es/habitaciones-deluxe/ 301
+/es/hotel-room/suite-terrace/ https://www.palosantohotel.com/es/suite-terrace/ 301
+/hotel-room/suite-terrace/ https://www.palosantohotel.com/es/suite-terrace/ 301
+/es/hotel-room/suite-palo-santo/ https://www.palosantohotel.com/es/suite-palo-santo/ 301
+/es/home-esp/ https://www.palosantohotel.com/ 301
+/es/home-esp  https://www.palosantohotel.com/ 301
+/es/palo-santo-hotel/contactenos/ https://www.palosantohotel.com/es/contacto/ 301
+/es/portfolio-item/restaurante/ https://www.palosantohotel.com/es/restaurante/ 301
+/es/galeria-de-fotos/ https://www.palosantohotel.com/es/galeria-de-fotos/ 301
+/es/portfolio-item/hotel/ https://www.palosantohotel.com/es/hotel/ 301
+/portfolio-item/servicios/ https://www.palosantohotel.com/es/hotel/ 301
+/es/portfolio-item/verde/ https://www.palosantohotel.com/es/verde/ 301
+/es/vacaciones-de-invierno-2021-paseos-en-familia-en-palermo/ https://blog.palosantohotel.com/es/vacaciones-de-invierno-paseos-en-familia-en-palermo/ 301
+/es/manifiesto/manifiesto/ https://www.palosantohotel.com/es/quienes-somos/ 301
+/es/palo-santo-hotel/manifiesto/ https://www.palosantohotel.com/es/quienes-somos/ 301
+/bienvenidos-a-palo-santo/ https://blog.palosantohotel.com/es/bienvenidos-a-palo-santo/ 301
+
 
 # Blog index
 /blog https://blog.palosantohotel.com/en/ 301
@@ -66,3 +107,9 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /category/travel-tips/ https://blog.palosantohotel.com/en/category/travel-tips/ 301
 /category/informacion-practica/ https://blog.palosantohotel.com/en/welcome-to-palo-santo/ 301
 /category/recoleta/ https://blog.palosantohotel.com/en/category/recoleta-en/ 301
+
+# Limpieza general de index.php
+/index.php/* /:splat 301
+
+# Fallback: unknown URLs should be 404 (not home)
+/* /404.html 404
