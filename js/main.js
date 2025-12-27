@@ -97,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
-    const desktopQuery = window.matchMedia('(min-width: 1024px)');
+    // Load video from 851px upwards to match design breakpoints
+    const desktopQuery = window.matchMedia('(min-width: 851px)');
     const videoFiles = [
       { name: 'Video Suite con sushi.mp4', external: false },
       { name: 'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-colibri-edit.mp4', external: true },
