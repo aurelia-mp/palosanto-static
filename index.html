@@ -31,7 +31,7 @@
       type="font/woff2"
       crossorigin
     />
-    
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -216,6 +216,7 @@
         /images/heroMobile/hero-image-mobile-1600.avif 1600w
       "
       type="image/avif"
+      sizes="(max-width: 640px) 90vw, 800px"
     />
 
     <!-- WebP: fallback si el navegador no soporta AVIF -->
@@ -226,6 +227,8 @@
         /images/heroMobile/hero-image-mobile-1600.webp 1600w
       "
       type="image/webp"
+      sizes="(max-width: 640px) 90vw, 800px"
+
     />
 
     <!-- JPG: fallback final -->
@@ -237,7 +240,6 @@
       height="1500"
       loading="eager"
       fetchpriority="high"
-      sizes="100vw"
     />
   </picture>
     </div>
