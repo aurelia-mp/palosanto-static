@@ -21,6 +21,17 @@
 
     <!-- Main JS -->
     <script src="/js/main.js" defer></script>
+
+    <!-- 🔥 PRELOAD HERO MOBILE -->
+    <link
+    rel="preload"
+    as="image"
+    href="/images/heroMobile/hero-image-mobile-600.webp"
+    fetchpriority="high"
+    media="(max-width: 850px)"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/dist/output.css" />
 
     <!-- Fonts -->
@@ -215,39 +226,42 @@
   <!-- Hero video -->
   <section class="relative w-full">
     <div class="relative w-full bg-gray-200 hero-mobile" style="aspect-ratio: 2 / 3;">
-     <picture>
-    <!-- AVIF: formato más liviano -->
-    <source
-      srcset="
-        /images/heroMobile/hero-image-mobile-600.avif 600w,
-        /images/heroMobile/hero-image-mobile-1000.avif 1000w,
-        /images/heroMobile/hero-image-mobile-1600.avif 1600w
-      "
-      type="image/avif"
-    />
+    <picture>
+  <!-- AVIF -->
+  <source
+    type="image/avif"
+    srcset="
+      /images/heroMobile/hero-image-mobile-480.avif 480w,
+      /images/heroMobile/hero-image-mobile-600.avif 600w,
+      /images/heroMobile/hero-image-mobile-800.avif 800w
+    "
+    sizes="(max-width: 640px) 90vw, 800px"
+  />
 
-    <!-- WebP: fallback si el navegador no soporta AVIF -->
-    <source
-      srcset="
-        /images/heroMobile/hero-image-mobile-600.webp 600w,
-        /images/heroMobile/hero-image-mobile-1000.webp 1000w,
-        /images/heroMobile/hero-image-mobile-1600.webp 1600w
-      "
-      type="image/webp"
-    />
+    <!-- WebP -->
+  <source
+    type="image/webp"
+    srcset="
+      /images/heroMobile/hero-image-mobile-480.webp 480w,
+      /images/heroMobile/hero-image-mobile-600.webp 600w,
+      /images/heroMobile/hero-image-mobile-800.webp 800w
+    "
+    sizes="(max-width: 640px) 90vw, 800px"
+  />
 
-    <!-- JPG: fallback final -->
+    <!-- JPG fallback (solo si no soporta nada) -->
     <img
-      src="/images-source/heroMobile/hero-image-mobile.jpg"
-      alt="Vista de los pasillos del hotel boutique Palo Santo en Palermo Buenos Aires"
-      class="absolute inset-0 h-full w-full object-cover"
-      width="1000"
-      height="1500"
-      loading="eager"
-      fetchpriority="high"
-      sizes="100vw"
+    src="/images/heroMobile/hero-image-mobile-600.jpg"
+    alt="Vista de los pasillos del hotel boutique Palo Santo en Palermo Buenos Aires"
+    width="1000"
+    height="1500"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    class="absolute inset-0 h-full w-full object-cover"
     />
   </picture>
+
     </div>
     <!-- VIDEO PARA DESKTOP -->
     <div class="relative w-full bg-gray-200 hero-desktop" style="aspect-ratio: 3 / 2;">

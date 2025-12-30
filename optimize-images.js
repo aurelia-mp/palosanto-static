@@ -34,7 +34,7 @@ const PRESETS = {
     avifQuality: 55,
   },
   heroMobile: { 
-    sizes: [600, 1000, 1600], 
+    sizes: [480, 600, 800], 
     webpQuality: 85, 
     avifQuality: 65 
   },
