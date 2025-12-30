@@ -84,7 +84,21 @@
 
   .hero-palermo__media {
     @apply relative isolate flex min-h-[32rem] w-full overflow-hidden bg-black sm:min-h-[40rem] md:min-h-[48rem];
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px 512px; /* 32rem */
+    }
+
+    @media (min-width: 640px) { /* sm */
+      .hero-palermo__media {
+        contain-intrinsic-size: 1200px 640px; /* 40rem */
+      }
+    }
+
+    @media (min-width: 768px) { /* md */
+      .hero-palermo__media {
+        contain-intrinsic-size: 1400px 768px; /* 48rem */
   }
+}
 
   .hero-palermo__picture {
     @apply absolute inset-0 block h-full w-full;
