@@ -22,13 +22,17 @@
     <!-- Main JS -->
     <script src="/js/main.js" defer></script>
 
-    <!-- 🔥 PRELOAD HERO MOBILE -->
+    <!-- PRELOAD HERO MOBILE -->
     <link
     rel="preload"
     as="image"
-    href="/images/heroMobile/hero-image-mobile-600.webp"
-    fetchpriority="high"
+    href="/images/heroMobile/hero-image-mobile-600.avif"
+    imagesrcset="
+    /images/heroMobile/hero-image-mobile-480.avif 480w,
+    /images/heroMobile/hero-image-mobile-600.avif 600w"
+    imagesizes="100vw"
     media="(max-width: 850px)"
+    fetchpriority="high"
     />
 
     <!-- CSS -->
@@ -233,6 +237,7 @@
     srcset="
       /images/heroMobile/hero-image-mobile-480.avif 480w,
       /images/heroMobile/hero-image-mobile-600.avif 600w,
+      /images/heroMobile/hero-image-mobile-800.avif 800w
     "
     sizes="100vw"
   />
@@ -243,6 +248,7 @@
     srcset="
       /images/heroMobile/hero-image-mobile-480.webp 480w,
       /images/heroMobile/hero-image-mobile-600.webp 600w,
+      /images/heroMobile/hero-image-mobile-800.webp 800w  
     "
     sizes="100vw"
   />
@@ -251,8 +257,8 @@
     <img
     src="/images/heroMobile/hero-image-mobile-600.jpg"
     alt="Vista de los pasillos del hotel boutique Palo Santo en Palermo Buenos Aires"
-    width="1000"
-    height="1500"
+    width="600"
+    height="900"
     loading="eager"
     decoding="async"
     fetchpriority="high"
