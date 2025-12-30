@@ -26,12 +26,12 @@
     <link
       rel="preload"
       as="image"
+      type="image/avif"
       imagesrcset="
         /images/heroMobile/hero-image-mobile-480.avif 480w,
         /images/heroMobile/hero-image-mobile-600.avif 600w,
         /images/heroMobile/hero-image-mobile-800.avif 800w"
       imagesizes="100vw"
-      type="image/avif"
       media="(max-width: 850px)"
       fetchpriority="high"
     />
@@ -250,7 +250,7 @@
     srcset="
       /images/heroMobile/hero-image-mobile-480.webp 480w,
       /images/heroMobile/hero-image-mobile-600.webp 600w,
-      /images/heroMobile/hero-image-mobile-800.webp 800w  
+      /images/heroMobile/hero-image-mobile-800.webp 800w
     "
     sizes="100vw"
   />
@@ -262,7 +262,6 @@
     width="600"
     height="900"
     loading="eager"
-    decoding="async"
     fetchpriority="high"
     class="absolute inset-0 h-full w-full object-cover"
     />
@@ -705,8 +704,8 @@
           class="hero-palermo__image group-hover:scale-105"
           width="3000"
           height="2000"
-          loading="eager"
-          fetchpriority="high"
+          loading="lazy"
+          decoding="async"
           sizes="100vw"
         />
       </picture>
