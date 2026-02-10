@@ -30,6 +30,9 @@
       type="font/woff2"
       crossorigin
     />
+    <!-- hCaptcha-->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
 </head>
 
 <body class="text-gray-800">
@@ -256,6 +259,9 @@
 
         <!-- Honeypot anti-spam -->
         <input type="text" name="_gotcha" style="display:none">
+
+        <!-- hCaptcha -->
+        <div class="h-captcha" data-sitekey="5fd27c60-cfc2-4f64-8470-ba546b70122a"></div>
 
         <div id="form-status" class="text-sm"></div>
 
