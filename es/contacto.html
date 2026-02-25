@@ -31,8 +31,8 @@
       type="font/woff2"
       crossorigin
     />
-    <!-- hCaptcha-->
-     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <!-- captcha - TURNSTILE-->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 </head>
 
@@ -261,8 +261,8 @@
         <!-- Honeypot anti-spam -->
         <input type="text" name="_gotcha" style="display:none">
 
-        <!-- hCaptcha -->
-        <div class="h-captcha" data-sitekey="5fd27c60-cfc2-4f64-8470-ba546b70122a"></div>
+        <!-- Cloudflare Turnstile -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACiIfOaHLoDobYjd"></div>
 
         <div id="form-status" class="text-sm"></div>
 
