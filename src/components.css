@@ -159,6 +159,13 @@
     color: #ffffff;
   }
 
+  .footer-heading {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
   /* Room gallery: keep the hero image contained on small screens */
   [data-room-gallery] figure {
     @apply relative flex items-center justify-center;
