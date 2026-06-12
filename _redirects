@@ -57,9 +57,9 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /what-to-see-in-buenos-aires-in-october-2025-the-best-art-exhibitions-and-cultural-events/ https://blog.palosantohotel.com/en/what-to-see-in-buenos-aires-in-october-2025-the-best-art-exhibitions-and-cultural-events/ 301
 /discovering-galerias-pacifico-a-buenos-aires-gem/ https://blog.palosantohotel.com/en/discovering-galerias-pacifico-a-buenos-aires-gem/ 301
 /secret-buenos-aires-remarkable-buildings-on-diagonal-norte/ https://blog.palosantohotel.com/en/secret-buenos-aires-remarkable-buildings-on-diagonal-norte/ 301
-/self-guided-bike-tour-in-buenos-aires-from-palermo-hollywood-to-recoleta/ https://blog.palosantohotel.com/en/self-guided-bike-tour-in-buenos-aires-from-palermo-hollywood-to-recoleta/ 301
+/self-guided-bike-tour-in-buenos-aires-from-palermo-hollywood-to-recoleta/ https://blog.palosantohotel.com/en/self-guided-bike-tour-in-buenos-aires-palermo-hollywood-to-recoleta/ 301
 /cultural-events-buenos-aires-september-2025/ https://blog.palosantohotel.com/en/cultural-events-buenos-aires-september-2025/ 301
-/buenos-aires-with-children-family-friendly-adventures/ https://blog.palosantohotel.com/en/buenos-aires-with-children-family-friendly-adventures/ 301
+/buenos-aires-with-children-family-friendly-adventures/ https://blog.palosantohotel.com/en/family-friendly-activities-buenos-aires/ 301
 /uptown-bar/ https://blog.palosantohotel.com/en/uptown-bar/ 301
 /best-italian-pasta-restaurants-near-palo-santo-hotel/ https://blog.palosantohotel.com/en/best-italian-pasta-restaurants-near-palo-santo-hotel/ 301
 /buenos-aires-half-marathon-your-perfect-race-base/ https://blog.palosantohotel.com/en/buenos-aires-half-marathon-your-perfect-race-base/ 301
@@ -67,7 +67,7 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /casa-cavia-pure-sophistication-in-palermo-chico/ https://blog.palosantohotel.com/en/casa-cavia-pure-sophistication-in-palermo-chico/ 301
 /buenos-aires-best-bookshops-our-favorites/ https://blog.palosantohotel.com/en/buenos-aires-best-bookshops-our-favorites/ 301
 /la-mar-cebicheria-a-culinary-trip-to-peru/ https://blog.palosantohotel.com/en/la-mar-cebicheria-a-culinary-trip-to-peru/ 301
-/don-julio-from-a-family-parrilla-to-latin-american-best-restaurant/ https://blog.palosantohotel.com/en/don-julio-from-a-family-parrilla-to-latin-american-best-restaurant/ 301
+/don-julio-from-a-family-parrilla-to-latin-american-best-restaurant/ https://blog.palosantohotel.com/en/don-julio-restaurant-buenos-aires/ 301
 /welcome-to-palo-santo/ https://blog.palosantohotel.com/en/welcome-to-palo-santo/ 301
 
 # Español
@@ -78,7 +78,7 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /es/descubri-el-malba-museo-de-arte-latinoamericano-de-buenos-aires/ https://blog.palosantohotel.com/es/descubri-el-malba-museo-de-arte-latinoamericano-de-buenos-aires/ 301
 /es/hotel-cerca-movistar-arena-palermo/ https://blog.palosantohotel.com/es/hotel-cerca-movistar-arena-palermo/ 301
 /es/los-mejores-restaurantes-de-pasta-italiana-cerca-del-palo-santo-hotel/ https://blog.palosantohotel.com/es/los-mejores-restaurantes-de-pasta-italiana-cerca-del-palo-santo-hotel/ 301
-/es/media-maraton-de-buenos-aires-tu-base-perfecta-para-la-carrera/ https://blog.palosantohotel.com/es/media-maraton-de-buenos-aires-tu-base-perfecta-para-la-carrera/ 301
+/es/media-maraton-de-buenos-aires-tu-base-perfecta-para-la-carrera/ https://blog.palosantohotel.com/es/hotel-media-maraton-buenos-aires/ 301
 /es/vacaciones-de-invierno-paseos-en-familia-en-palermo/ https://blog.palosantohotel.com/es/vacaciones-de-invierno-paseos-en-familia-en-palermo/ 301
 /es/bienvenidos-a-palo-santo/ https://blog.palosantohotel.com/es/bienvenidos-a-palo-santo/ 301
 
@@ -107,6 +107,24 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /category/travel-tips/ https://blog.palosantohotel.com/en/category/travel-tips/ 301
 /category/informacion-practica/ https://blog.palosantohotel.com/en/welcome-to-palo-santo/ 301
 /category/recoleta/ https://blog.palosantohotel.com/en/category/recoleta-en/ 301
+
+# === Agregados auditoría 12/06/2026 ===
+# Posts del blog que faltaban (daban 404/home)
+/green-hotel-buenos-aires/ https://blog.palosantohotel.com/en/green-hotel-buenos-aires/ 301
+/buenos-aires-best-bookshops-our-6-favorites/ https://blog.palosantohotel.com/en/buenos-aires-best-bookshops-our-favorites/ 301
+/palermo-hollywood/la-mar-cebicheria-a-culinary-trip-to-peru/ https://blog.palosantohotel.com/en/la-mar-cebicheria-a-culinary-trip-to-peru/ 301
+/palermo-hollywood/self-guided-bike-tour-in-buenos-aires-from-palermo-hollywood-to-recoleta/ https://blog.palosantohotel.com/en/self-guided-bike-tour-in-buenos-aires-palermo-hollywood-to-recoleta/ 301
+/vacaciones-de-invierno-2021-paseos-en-familia-en-palermo/ https://blog.palosantohotel.com/es/vacaciones-de-invierno-paseos-en-familia-en-palermo/ 301
+
+# Páginas viejas .html del sitio principal (destinos confirmados por patrón existente)
+/en/palo-santo-suite.html https://www.palosantohotel.com/en/palo-santo-suite 301
+/en/restaurant.html https://www.palosantohotel.com/en/restaurant 301
+/en/deluxe-rooms.html https://www.palosantohotel.com/en/deluxe-rooms 301
+/es/habitaciones-deluxe.html https://www.palosantohotel.com/es/habitaciones-deluxe 301
+
+# Contacto viejo sin /es/ (variante huérfana)
+/palo-santo-hotel/contactenos/ https://www.palosantohotel.com/es/contacto 301
+
 
 # Limpieza general de index.php
 /index.php/* /:splat 301
