@@ -46,7 +46,7 @@
       type="font/woff2"
       crossorigin
     />
-<style>
+    <style>
       /* Show video hero from 851px upward; keep image on mobile */
       .hero-desktop { display: none; }
       @media (min-width: 851px) {
@@ -54,6 +54,34 @@
         .hero-desktop { display: block; }
       }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Palo Santo Hotel",
+        "url": "https://www.palosantohotel.com/en/",
+        "logo": "https://www.palosantohotel.com/images-source/logo.jpg",
+        "image": "https://www.palosantohotel.com/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg",
+        "description": "Sustainable design boutique hotel in Palermo, Buenos Aires — Argentina's first urban green hotel, with vertical gardens and LEED-based construction.",
+        "telephone": "+54 11 5280 6100",
+        "starRating": { "@type": "Rating", "ratingValue": "4" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bonpland 2275",
+          "addressLocality": "Buenos Aires",
+          "addressRegion": "Ciudad Autónoma de Buenos Aires",
+          "postalCode": "C1425FWC",
+          "addressCountry": "AR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/palosantohotel/",
+          "https://www.facebook.com/palosantohotel",
+          "https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
+        ]
+      }
+      </script>
 </head>
 
 <body class="text-gray-800">

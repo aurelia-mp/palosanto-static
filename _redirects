@@ -40,8 +40,11 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /es/vacaciones-de-invierno-2021-paseos-en-familia-en-palermo/ https://blog.palosantohotel.com/es/vacaciones-de-invierno-paseos-en-familia-en-palermo/ 301
 /es/manifiesto/manifiesto/ https://www.palosantohotel.com/es/quienes-somos 301
 /es/palo-santo-hotel/manifiesto/ https://www.palosantohotel.com/es/quienes-somos 301
-/bienvenidos-a-palo-santo/ https://blog.palosantohotel.com/es/bienvenidos-a-palo-santo 301
+/bienvenidos-a-palo-santo/ https://blog.palosantohotel.com/es/bienvenidos-a-palo-santo/ 301
 
+# Interino — repuntar a /en/offers y /es/ofertas cuando se publiquen
+/special-offers/ https://www.palosantohotel.com/en/ 301
+/es/ofertas-especiales/ https://www.palosantohotel.com/ 301
 
 # Blog index
 /blog https://blog.palosantohotel.com/en/ 301
@@ -91,12 +94,12 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 /es/category/culture-es/ https://blog.palosantohotel.com/es/category/cultura-es/ 301
 /es/category/sustainability-es/ https://blog.palosantohotel.com/es/category/sustentabilidad-es/ 301
 /es/category/esp/news-es-es/ https://blog.palosantohotel.com/es/ 301
-/es/category/esp/palermo-hollywood-es-es/ https://blog.palosantohotel.com/es/category/palermo-hollywood-es/ 301
+/es/category/esp/palermo-hollywood-es-es/ https://blog.palosantohotel.com/es/category/palermo-buenos-aires-es/ 301
 /es/category/esp/museos/ https://blog.palosantohotel.com/es/category/museos-es/ 301
 /es/category/esp/sustentabilidad/ https://blog.palosantohotel.com/es/category/sustentabilidad-es/ 301
 
 # Inglés
-/category/palermo-hollywood/ https://blog.palosantohotel.com/en/category/palermo-hollywood-en/ 301
+/category/palermo-hollywood/ https://blog.palosantohotel.com/en/category/palermo-buenos-aires-en/ 301
 /category/restaurants-bars/ https://blog.palosantohotel.com/en/category/restaurants-bars-en/ 301
 /category/culture/ https://blog.palosantohotel.com/en/category/culture-en/ 301
 /category/museums/ https://blog.palosantohotel.com/en/category/museums-en/ 301
@@ -128,6 +131,13 @@ https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
 
 # Limpieza general de index.php
 /index.php/* /:splat 301
+
+# === Recuperación de autoridad de marca — 19JUN26 ===
+/es/ https://www.palosantohotel.com/ 301
+/es/portfolio-item/el-hotel/ https://www.palosantohotel.com/es/hotel 301
+/es/contactenos/ https://www.palosantohotel.com/es/contacto 301
+/es/portfolio-item/servicios-del-hotel/ https://www.palosantohotel.com/es/hotel 301
+/es/portfolio-item/palermo-es/ https://www.palosantohotel.com/es/palermo 301
 
 # Fallback: unknown URLs should be 404 (not home)
 /* /404.html 404
