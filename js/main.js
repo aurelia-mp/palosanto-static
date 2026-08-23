@@ -72,26 +72,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm && checkinInput && checkoutInput) {
-    const formatForQuery = value => {
-      if (!value) return '';
-      const [year, month, day] = value.split('-');
-      return `${day}-${month}-${year}`;
-    };
+    const guestsInput = document.getElementById('booking-guests');
 
     bookingForm.addEventListener('submit', event => {
       event.preventDefault();
       if (!bookingForm.reportValidity()) return;
 
-      const checkinValue = checkinInput.value;
-      const checkoutValue = checkoutInput.value;
+      // El motor sirve cada idioma en su propia ruta (/es, /en), no como parametro.
+      const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
 
-      const baseUrl = 'https://motor.winpax.com.ar/search.php?hotel_id=135&lang=es&currency_code=';
+      // Los campos date ya entregan YYYY-MM-DD, que es el formato que espera el motor.
       const params = new URLSearchParams({
-        date_from: formatForQuery(checkinValue),
-        date_to: formatForQuery(checkoutValue),
+        entrada: checkinInput.value,
+        salida: checkoutInput.value,
+        adultos: guestsInput ? guestsInput.value : '2',
       });
 
-      window.location.href = `${baseUrl}&${params.toString()}`;
+      window.open(`https://reservas.palosantohotel.com/${lang}?${params.toString()}`, '_blank', 'noopener');
     });
   }
 
