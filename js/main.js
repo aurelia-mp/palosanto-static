@@ -365,9 +365,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const slug = button.getAttribute('data-room-slug');
           if (!slug) return null;
           const alt = button.getAttribute('data-room-alt') || 'Habitación Premium en Palo Santo Hotel';
+          const widths = (button.getAttribute('data-room-widths') || '800,1200,1600')
+            .split(',')
+            .map(value => Number(value.trim()))
+            .filter(value => Number.isFinite(value) && value > 0);
           const dataIndex = Number(button.dataset.premiumThumb);
           const order = Number.isNaN(dataIndex) ? index : dataIndex;
-          return { button, slug, alt, order };
+          return { button, slug, alt, widths, order };
         })
         .filter(Boolean)
         .sort((a, b) => a.order - b.order);
@@ -400,19 +404,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       };
 
-      const buildSrcSet = (slug, format) => {
-        const sizes = [800, 1200, 1600];
+      const buildSrcSet = (slug, format, sizes) => {
         return sizes
           .map(size => `${toAbsoluteUrl(`/images/hotel/${slug}-${size}.${format}`)} ${size}w`)
           .join(', ');
       };
 
-      const updateSources = slug => {
+      const updateSources = (slug, widths) => {
+        const sizes = widths && widths.length ? widths : [800, 1200, 1600];
         if (sourceAvif) {
-          sourceAvif.setAttribute('srcset', buildSrcSet(slug, 'avif'));
+          sourceAvif.setAttribute('srcset', buildSrcSet(slug, 'avif', sizes));
         }
         if (sourceWebp) {
-          sourceWebp.setAttribute('srcset', buildSrcSet(slug, 'webp'));
+          sourceWebp.setAttribute('srcset', buildSrcSet(slug, 'webp', sizes));
         }
         heroImage.setAttribute('src', toAbsoluteUrl(`/images-source/hotel/${slug}.jpg`));
       };
@@ -421,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nextIndex < 0 || nextIndex >= totalSlides) return;
         const slide = slides[nextIndex];
         currentIndex = nextIndex;
-        updateSources(slide.slug);
+        updateSources(slide.slug, slide.widths);
         heroImage.setAttribute('alt', slide.alt);
         updateStatus();
         setActiveThumb();

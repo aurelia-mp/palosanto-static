@@ -1,7 +1,9 @@
 /// optimize-images.js
 /// Para procesar una sola imagen: npm run optimize:images -- hotel/nueva-habitacion.jpg
 /// Para procesar un carpeta: npm run optimize:images -- hotel
+/// Para procesar una subcarpeta: npm run optimize:images -- hotel/Terrace-Suite-NEW
 /// Para procesar todo: npm run optimize:images
+/// (Las subcarpetas heredan el preset de su carpeta raíz y sólo se procesan si se piden explícitamente.)
 
 // Requiere Node 18+ y "type": "module" en package.json
 import fs from "fs";
@@ -41,7 +43,7 @@ const PRESETS = {
 };
 
 // Extensiones admitidas como entrada
-const VALID_EXT = new Set([".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".avif"]);
+const VALID_EXT = new Set([".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".avif", ".heic", ".heif"]);
 
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -137,28 +139,46 @@ async function main() {
   let onlyFileBaseName = null;
 
   if (args[0]) {
-    const parts = args[0].split(/[\\/]/); // soporta "hotel" o "hotel/nombre.jpg"
-    if (parts.length === 1) {
-      // solo carpeta
-      onlyFolder = parts[0];
+    // Soporta "hotel", "hotel/Terrace-Suite-NEW" (subcarpeta) y "hotel/nombre.jpg"
+    const rel = args[0].replace(/\\/g, "/").replace(/\/+$/, "");
+    const asPath = path.join(INPUT_ROOT, rel);
+
+    if (fs.existsSync(asPath) && fs.statSync(asPath).isDirectory()) {
+      // carpeta o subcarpeta
+      onlyFolder = rel;
     } else {
-      // carpeta + archivo
-      onlyFolder = parts[0];
-      const fileName = parts.slice(1).join("/"); // "nueva-habitacion.jpg"
-      onlyFileBaseName = fileName.replace(/\.[^.]+$/, ""); // sin extensión
+      // carpeta (o subcarpeta) + archivo
+      const parts = rel.split("/");
+      const fileName = parts.pop();
+      onlyFolder = parts.join("/") || fileName;
+      onlyFileBaseName = parts.length ? fileName.replace(/\.[^.]+$/, "") : null;
     }
   }
 
-  // Sólo procesa las carpetas definidas en PRESETS si existen en images-source
-  for (const [folder, preset] of Object.entries(PRESETS)) {
-    // Si se pidió una carpeta concreta y esta no es, la salteamos
-    if (onlyFolder && folder !== onlyFolder) continue;
+  if (onlyFolder) {
+    // Una ruta concreta: el preset lo define su carpeta raíz ("hotel/Sub" usa el preset "hotel")
+    const rootFolder = onlyFolder.split("/")[0];
+    const preset = PRESETS[rootFolder];
+    const folderPath = path.join(INPUT_ROOT, onlyFolder);
 
-    const folderPath = path.join(INPUT_ROOT, folder);
-    if (fs.existsSync(folderPath)) {
-      await processFolder(folder, preset, onlyFileBaseName);
+    if (!preset) {
+      console.log(
+        `ℹ️  No hay preset para "${rootFolder}". Disponibles: ${Object.keys(PRESETS).join(", ")}`
+      );
+    } else if (fs.existsSync(folderPath)) {
+      await processFolder(onlyFolder, preset, onlyFileBaseName);
     } else {
       console.log(`ℹ️  Carpeta omitida (no existe): ${folderPath}`);
+    }
+  } else {
+    // Sin argumento: procesa las carpetas definidas en PRESETS si existen en images-source
+    for (const [folder, preset] of Object.entries(PRESETS)) {
+      const folderPath = path.join(INPUT_ROOT, folder);
+      if (fs.existsSync(folderPath)) {
+        await processFolder(folder, preset, null);
+      } else {
+        console.log(`ℹ️  Carpeta omitida (no existe): ${folderPath}`);
+      }
     }
   }
 
