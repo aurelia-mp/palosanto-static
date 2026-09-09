@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load video from 851px upwards to match design breakpoints
     const desktopQuery = window.matchMedia('(min-width: 851px)');
     const videoFiles = [
-      { name: 'Video Suite con sushi.mp4', external: false },
-      { name: 'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-colibri-edit.mp4', external: true },
+      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/terraza-flores.mp4',
+      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-colibri-edit-2.mp4',
+      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-suite-sushi.mp4',
     ];
-    const videoBase = toAbsoluteUrl(heroVideo.dataset.videoBase || '/images-source/hero/videos/');
 
     const ensureVideoState = () => {
       if (!desktopQuery.matches) {
@@ -115,11 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (heroVideo.dataset.loaded === 'true') return;
 
-      const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-      const videoSrc = selected.external
-        ? selected.name
-        : `${videoBase}${encodeURIComponent(selected.name)}`;
-      heroVideo.src = videoSrc;
+      heroVideo.src = videoFiles[Math.floor(Math.random() * videoFiles.length)];
       heroVideo.dataset.loaded = 'true';
       heroVideo.load();
       const playAttempt = heroVideo.play();
