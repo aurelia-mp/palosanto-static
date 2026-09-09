@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load video from 851px upwards to match design breakpoints
     const desktopQuery = window.matchMedia('(min-width: 851px)');
     const videoFiles = [
-      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/terraza-flores.mp4',
-      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-colibri-edit-2.mp4',
-      'https://pub-00da9cfdf6e34fbf9e52cfbe7f5dffc7.r2.dev/video-suite-sushi.mp4',
+      'https://media.palosantohotel.com/terraza-flores.mp4',
+      'https://media.palosantohotel.com/video-colibri-edit-2.mp4',
+      'https://media.palosantohotel.com/video-suite-sushi.mp4',
     ];
 
     const ensureVideoState = () => {
