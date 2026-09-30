@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Home ES -->
   <url>
     <loc>https://www.palosantohotel.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/"/>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -12,6 +15,9 @@
   <!-- Home EN -->
   <url>
     <loc>https://www.palosantohotel.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/"/>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -20,6 +26,9 @@
   <!-- Habitaciones -->
   <url>
     <loc>https://www.palosantohotel.com/es/habitaciones</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,6 +36,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/rooms</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,6 +47,9 @@
   <!-- Habitaciones individuales -->
   <url>
     <loc>https://www.palosantohotel.com/es/habitaciones-premium</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones-premium"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/premium-rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/premium-rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -42,6 +57,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/premium-rooms</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones-premium"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/premium-rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/premium-rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -49,6 +67,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/es/habitaciones-deluxe</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones-deluxe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/deluxe-rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/deluxe-rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -56,6 +77,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/deluxe-rooms</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/habitaciones-deluxe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/deluxe-rooms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/deluxe-rooms"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -63,6 +87,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/es/suite-palo-santo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/suite-palo-santo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/palo-santo-suite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/palo-santo-suite"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -70,6 +97,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/palo-santo-suite</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/suite-palo-santo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/palo-santo-suite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/palo-santo-suite"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -77,6 +107,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/es/suite-terrace</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/suite-terrace"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/terrace-suite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/terrace-suite"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -84,6 +117,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/terrace-suite</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/suite-terrace"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/terrace-suite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/terrace-suite"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -92,6 +128,9 @@
   <!-- Páginas clave -->
   <url>
     <loc>https://www.palosantohotel.com/es/verde</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/verde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/green"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/green"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -99,6 +138,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/green</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/verde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/green"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/green"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -106,6 +148,9 @@
 
     <url>
     <loc>https://www.palosantohotel.com/es/hotel-palermo-buenos-aires</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/hotel-palermo-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/hotel-palermo-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/hotel-palermo-buenos-aires"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -113,21 +158,20 @@
 
     <url>
     <loc>https://www.palosantohotel.com/en/hotel-palermo-buenos-aires</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/hotel-palermo-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/hotel-palermo-buenos-aires"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/hotel-palermo-buenos-aires"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     </url>
 
 
-    <url>
-    <loc>https://www.palosantohotel.com/es/verde</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://www.palosantohotel.com/es/hotel</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/hotel"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -135,6 +179,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/hotel</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/hotel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/hotel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/hotel"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -142,6 +189,9 @@
 
    <url>
     <loc>https://www.palosantohotel.com/es/quienes-somos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/about-us"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -149,6 +199,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/about-us"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -156,6 +209,9 @@
 
    <url>
     <loc>https://www.palosantohotel.com/es/galeria-de-fotos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/galeria-de-fotos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/photo-gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/photo-gallery"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -163,6 +219,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/photo-gallery</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/galeria-de-fotos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/photo-gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/photo-gallery"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -170,6 +229,9 @@
 
    <url>
     <loc>https://www.palosantohotel.com/es/palermo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/palermo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/palermo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/palermo"/>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -177,6 +239,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/palermo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/palermo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/palermo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/palermo"/>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,6 +249,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/es/restaurante</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/restaurante"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/restaurant"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -191,6 +259,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/en/restaurant</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/restaurante"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/restaurant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/restaurant"/>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -198,6 +269,9 @@
 
   <url>
     <loc>https://www.palosantohotel.com/es/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/contact-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/contact-us"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -205,6 +279,9 @@
 
    <url>
     <loc>https://www.palosantohotel.com/en/contact-us</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.palosantohotel.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.palosantohotel.com/en/contact-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.palosantohotel.com/en/contact-us"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
