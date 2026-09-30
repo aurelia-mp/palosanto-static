@@ -5,7 +5,9 @@
   "main": "js/main.js",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "hreflang": "node scripts/hreflang.mjs",
+    "hreflang:check": "node scripts/hreflang.mjs --check",
+    "build": "npm run hreflang:check && npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "optimize:images": "node optimize-images.js",
     "optimize:clean": "rimraf images/* && mkdir -p images/{hero,heroMobile,hotel,gallery,thumbnails}"
   },
