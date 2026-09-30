@@ -1,5 +1,5 @@
-# Force www
-https://palosantohotel.com/* https://www.palosantohotel.com/:splat 301
+# Force www: el redirect de palosantohotel.com a www.palosantohotel.com lo hace una
+# Redirect Rule en Cloudflare. _redirects no admite redirecciones por dominio.
 
 # Web nueva
 # Inglés
