@@ -192,3 +192,107 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+/* === Rediseño 2026 =========================================================
+   Tipografía: Avenir Next (institucional) se usa directo donde está instalada
+   (Mac, iPhone, iPad). En el resto se descarga Nunito Sans (licencia OFL),
+   la alternativa libre más parecida. Solo se usan los pesos 400, 600 y 700. */
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin-wght.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer components {
+  .ps-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ps-muted;
+  }
+
+  .ps-h2 {
+    @apply text-balance text-[34px] font-normal leading-[1.1] tracking-[-0.015em] md:text-[52px] md:leading-[1.08];
+  }
+
+  .ps-lead {
+    @apply text-base leading-relaxed text-ps-muted md:text-lg;
+  }
+
+  .ps-btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-3 bg-ps-ink px-7 text-[13px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ps-ink;
+  }
+
+  .ps-btn-light {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-3 bg-white px-8 text-[13px] font-semibold uppercase tracking-[0.14em] text-ps-text transition-colors hover:bg-ps-panel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .ps-link {
+    @apply inline-flex min-h-[44px] items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] underline-offset-4 hover:underline;
+  }
+
+  .ps-tag {
+    @apply bg-ps-panel px-3 py-1.5 text-[13px] font-semibold;
+  }
+
+  .ps-tag-outline {
+    @apply border border-ps-rule px-4 py-2.5 text-sm;
+  }
+
+  /* Logo vertical en una pestaña clara que cuelga sobre el hero.
+     El JPG original se funde con el fondo gris con mix-blend-mode, sin tocar el archivo. */
+  .ps-logo-tab {
+    @apply absolute left-1/2 top-0 z-10 block -translate-x-1/2 bg-ps-ground px-4 pb-3 pt-3.5 xl:left-12 xl:translate-x-0 xl:px-[30px] xl:pb-6 xl:pt-[26px];
+  }
+
+  .ps-logo-tab img {
+    @apply block h-auto w-[60px] mix-blend-multiply xl:w-[92px];
+  }
+
+  /* Hero: deja lugar para la barra de reservas dentro de la primera pantalla */
+  .ps-hero {
+    height: 540px;
+    height: clamp(420px, calc(100vh - 160px), 560px);
+    height: clamp(420px, calc(100svh - 160px), 560px);
+  }
+
+  @media (min-width: 768px) {
+    .ps-hero {
+      height: 680px;
+      height: clamp(480px, calc(100vh - 144px), 760px);
+      height: clamp(480px, calc(100svh - 144px), 760px);
+    }
+  }
+
+  .ps-hero video {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .ps-hero video.is-playing {
+    opacity: 1;
+  }
+
+  /* Reservas: barra flotante en desktop, panel inferior en mobile y tablet */
+  @media (max-width: 1023px) {
+    .ps-booking {
+      display: none;
+    }
+
+    .ps-booking.is-open {
+      @apply fixed inset-x-0 bottom-0 z-[60] block bg-white px-4 pb-6 pt-4 shadow-[0_-12px_32px_rgba(20,20,20,0.18)];
+    }
+  }
+
+  .ps-faq summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .ps-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ps-faq details[open] .ps-faq__v {
+    display: none;
+  }
+}

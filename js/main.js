@@ -92,47 +92,99 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const heroVideo = document.getElementById('hero-video');
-  if (heroVideo) {
-    // Load video from 851px upwards to match design breakpoints
-    const desktopQuery = window.matchMedia('(min-width: 851px)');
-    const videoFiles = [
-      'https://media.palosantohotel.com/terraza-flores.mp4',
-      'https://media.palosantohotel.com/video-colibri-edit-2.mp4',
-      'https://media.palosantohotel.com/video-suite-sushi.mp4',
-    ];
+  // Reservas en mobile y tablet: el formulario se abre como panel inferior
+  const bookingPanel = document.getElementById('booking-panel');
+  const bookingOpeners = document.querySelectorAll('[data-booking-open]');
+  if (bookingPanel && bookingOpeners.length) {
+    const bookingBackdrop = document.querySelector('[data-booking-backdrop]');
+    const setBookingOpen = open => {
+      bookingPanel.classList.toggle('is-open', open);
+      if (bookingBackdrop) bookingBackdrop.hidden = !open;
+      bookingOpeners.forEach(btn => btn.setAttribute('aria-expanded', String(open)));
+      if (open && checkinInput) checkinInput.focus();
+    };
 
-    const ensureVideoState = () => {
-      if (!desktopQuery.matches) {
-        if (heroVideo.dataset.loaded === 'true') {
-          heroVideo.pause();
-          heroVideo.removeAttribute('src');
-          heroVideo.load();
-          heroVideo.dataset.loaded = 'false';
+    bookingOpeners.forEach(btn => btn.addEventListener('click', () => setBookingOpen(true)));
+    document.querySelectorAll('[data-booking-close]').forEach(el => {
+      el.addEventListener('click', () => setBookingOpen(false));
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && bookingPanel.classList.contains('is-open')) setBookingOpen(false);
+    });
+  }
+
+  // Hero: la opción se elige al azar en el HTML. Si es un video, se carga cuando la página
+  // ya terminó, encima de su imagen inicial. No se carga con ahorro de datos ni con movimiento reducido.
+  const hero = document.querySelector('[data-hero]');
+  const heroPick = hero ? hero.querySelector('[data-hero-active]') : null;
+  if (hero && heroPick && heroPick.dataset.video) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+    const toggle = hero.querySelector('[data-hero-toggle]');
+
+    const startHeroVideo = () => {
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      const src = isMobile ? heroPick.dataset.videoMobile : heroPick.dataset.video;
+      if (!src) return;
+
+      const video = document.createElement('video');
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('aria-hidden', 'true');
+      video.preload = 'auto';
+      video.className = 'absolute inset-0 h-full w-full object-cover';
+      video.addEventListener('playing', () => {
+        video.classList.add('is-playing');
+        if (toggle) {
+          toggle.classList.remove('hidden');
+          toggle.classList.add('flex');
         }
-        return;
-      }
+      }, { once: true });
+      // Si el video no existe o falla, queda la imagen inicial
+      video.addEventListener('error', () => video.remove(), { once: true });
+      video.src = src;
+      heroPick.after(video);
 
-      if (heroVideo.dataset.loaded === 'true') return;
-
-      heroVideo.src = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-      heroVideo.dataset.loaded = 'true';
-      heroVideo.load();
-      const playAttempt = heroVideo.play();
-      if (playAttempt && typeof playAttempt.then === 'function') {
+      const playAttempt = video.play();
+      if (playAttempt && typeof playAttempt.catch === 'function') {
         playAttempt.catch(() => {
-          /* Ignore autoplay rejection; user interaction will start playback */
+          /* Si el navegador bloquea la reproducción automática, queda la imagen inicial */
         });
       }
     };
 
-    ensureVideoState();
-    if (typeof desktopQuery.addEventListener === 'function') {
-      desktopQuery.addEventListener('change', ensureVideoState);
-    } else if (typeof desktopQuery.addListener === 'function') {
-      desktopQuery.addListener(ensureVideoState);
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const video = hero.querySelector('video');
+        if (!video) return;
+        const pausing = !video.paused;
+        if (pausing) {
+          video.pause();
+        } else {
+          video.play();
+        }
+        toggle.setAttribute('aria-pressed', String(pausing));
+        toggle.setAttribute('aria-label', pausing ? toggle.dataset.labelPlay : toggle.dataset.labelPause);
+        toggle.querySelector('[data-icon-pause]').classList.toggle('hidden', pausing);
+        toggle.querySelector('[data-icon-play]').classList.toggle('hidden', !pausing);
+      });
+    }
+
+    if (!reduceMotion && !saveData) {
+      if (document.readyState === 'complete') {
+        startHeroVideo();
+      } else {
+        window.addEventListener('load', startHeroVideo, { once: true });
+      }
     }
   }
+
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = String(new Date().getFullYear());
+  });
 
   const reviewsViewport = document.querySelector('[data-reviews-carousel]');
   if (reviewsViewport) {
