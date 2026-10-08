@@ -31,9 +31,9 @@
 
 <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Saltar al contenido</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Abrir menú</span>
@@ -42,7 +42,7 @@
       <nav aria-label="Menú principal" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
         <a href="/es/habitaciones" class="underline-offset-8 hover:underline">Habitaciones</a>
         <a href="/es/hotel" class="underline-offset-8 hover:underline">Hotel</a>
-        <a href="/es/verde" class="underline-offset-8 hover:underline underline" aria-current="page">Verde</a>
+        <a href="/es/verde" class="underline underline-offset-8" aria-current="page">Verde</a>
         <a href="/es/restaurante" class="underline-offset-8 hover:underline">Desayuno</a>
         <a href="/es/palermo" class="underline-offset-8 hover:underline">Ubicación</a>
       </nav>
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Menú principal móvil" class="flex flex-col px-5 py-4 text-lg">
       <a href="/es/habitaciones" class="flex min-h-[48px] items-center">Habitaciones</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -85,279 +85,317 @@
   </div>
 </header>
 
-<main id="contenido">
+<main id="contenido" class="ps-claro bg-ps-ground">
 
-
-<!-- CONTENIDO PRINCIPAL -->
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-3xl text-center space-y-4">
-    <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Sustentabilidad</p>
-    <h1 class="text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-      Una arquitectura verde única
-    </h1>
-    <p class="text-base leading-relaxed text-ps-muted md:text-lg">
-      Palo Santo es el primer hotel sustentable urbano de Argentina
-    </p>
-  </div>
-
-  <div class="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2">
-    <picture class="block overflow-hidden shadow-lg">
-      <source
-        srcset="
-          /images/thumbnails/Verde-Psanto04-1200-400.avif 400w,
-          /images/thumbnails/Verde-Psanto04-1200-800.avif 800w,
-          /images/thumbnails/Verde-Psanto04-1200-1000.avif 1000w
-        "
-        type="image/avif" />
-      <source
-        srcset="
-          /images/thumbnails/Verde-Psanto04-1200-400.webp 400w,
-          /images/thumbnails/Verde-Psanto04-1200-800.webp 800w,
-          /images/thumbnails/Verde-Psanto04-1200-1000.webp 1000w
-        "
-        type="image/webp" />
-      <img
-        src="/images-source/thumbnails/Verde-Psanto04-1200.jpg"
-        alt="Detalle de la fachada verde de Palo Santo Hotel"
-        class="h-full w-full object-cover"
-        style="aspect-ratio: 4 / 3;"
-        width="1200"
-        height="900"
-        loading="lazy"
-        decoding="async" />
+  <!-- PORTADA -->
+  <section aria-labelledby="titulo" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/FachadaP-IMG_2480-205-2000-800.avif 800w, /images/hotel/FachadaP-IMG_2480-205-2000-1200.avif 1200w, /images/hotel/FachadaP-IMG_2480-205-2000-1600.avif 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/FachadaP-IMG_2480-205-2000-800.webp 800w, /images/hotel/FachadaP-IMG_2480-205-2000-1200.webp 1200w, /images/hotel/FachadaP-IMG_2480-205-2000-1600.webp 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <img src="/images-source/hotel/FachadaP-IMG_2480-205-2000.jpg" alt="Fachada de Palo Santo vista entre las hojas, con plantas en cada balcón" width="1600" height="1067" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[62%_50%] md:object-[50%_45%]">
     </picture>
-
-    <picture class="block overflow-hidden shadow-lg">
-      <source
-        srcset="
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.avif 400w,
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.avif 800w,
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.avif 1000w
-        "
-        type="image/avif" />
-      <source
-        srcset="
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-400.webp 400w,
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-800.webp 800w,
-          /images/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000-1000.webp 1000w
-        "
-        type="image/webp" />
-      <img
-        src="/images-source/thumbnails/Verde-PaloSanto%20-%20Jardin%20-%200784-1000.jpg"
-        alt="Jardín principal del hotel con abundante vegetación"
-        class="h-full w-full object-cover"
-        style="aspect-ratio: 4 / 3;"
-        width="1000"
-        height="750"
-        loading="lazy"
-        decoding="async" />
-    </picture>
-  </div>
-
-  <div class="mx-auto mt-10 max-w-4xl text-base leading-relaxed text-ps-body md:text-lg">
-    <p class="pt-4">
-      Creemos que el lujo moderno debe comprometerse con la preservación del medio ambiente. El hotel ha sido construido siguiendo estándares LEED (Leadership in Energy and Environmental Design), los más altos estándares de construcción sustentable de Estados Unidos. 
-    </p>
-    <p class="pt-4">
-      Las operaciones de Palo Santo son amigables con el medio ambiente. Hemos seleccionado cuidadosamente materiales, equipos y proveedores para reducir el impacto ambiental de la construcción y operaciones del hotel.
-    </p>
-    <p class="pt-4">
-      <b>Descubrí por qué somos el primer hotel sustentable en Buenos Aires.</b>
-    </p>
-    
-  </div>
-</section>
-
-<section class="bg-ps-panel px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-center">
-    <div class="md:w-1/3 lg:w-5/12">
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          media="(max-width: 768px)"
-          srcset="
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.avif 400w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.avif 800w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.avif 1000w
-          "
-          type="image/avif" />
-        <source
-          media="(max-width: 768px)"
-          srcset="
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-400.webp 400w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-800.webp 800w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-1000-1000.webp 1000w
-          "
-          type="image/webp" />
-        <source
-          media="(min-width: 769px)"
-          srcset="
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-400.avif 400w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-781.avif 781w
-          "
-          type="image/avif" />
-        <source
-          media="(min-width: 769px)"
-          srcset="
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-400.webp 400w,
-            /images/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200-781.webp 781w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/thumbnails/Verde-Grupo-Jardin-IMG_2972-Vertical-1200.jpg"
-          alt="Grupo de amigos disfrutando del jardín del hotel Palo Santo"
-          class="h-full w-full object-cover"
-          width="781"
-          height="1200"
-          loading="lazy"
-          decoding="async"
-          sizes="(max-width: 768px) 100vw, 33vw" />
-      </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">Sustentabilidad</p>
+          <h1 id="titulo" class="max-w-[12em] text-balance text-[42px] leading-none tracking-[-0.03em] [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">Una arquitectura verde única</h1>
+        </div>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">Palo Santo es el primer hotel urbano sustentable de Argentina.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="md:w-2/3 lg:w-7/12 space-y-6">
-      <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Jardines verticales</p>
-      <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-        Jardines Verticales: Belleza con Propósito
-      </h2>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        El edificio de Palo Santo Hotel se caracteriza por su estructura verde. Son verdes sus fachadas, sus patios, sus jardines, sus balcones, sus terrazas. Las fachadas cuentan con estructuras de hierro especialmente diseñadas para guiar el crecimiento de dos jardines verticales de 28 metros de altura. En total, más de 900 plantas componen los jardines verticales del hotel.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Además de su maravillosa presencia estética, las cortinas de plantas tienen un propósito ecológico. Por un lado, los jardines verticales otorgan al edificio un aislamiento natural. Por otro lado, las plantas en constante crecimiento absorben continuamente nuestras emisiones de CO₂, mejorando la calidad del aire urbano y creando un microclima más fresco.
-      </p>
+  <!-- CIFRAS -->
+  <section aria-label="Palo Santo en cifras" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] grid-cols-2 gap-x-5 py-1 md:grid-cols-4 md:gap-x-8 md:py-0">
+      <div class="flex flex-col-reverse justify-end gap-2 border-b border-ps-line py-5 md:gap-2.5 md:border-b-0 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">de altura en nuestros dos jardines verticales</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">28 m</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 border-b border-ps-line py-5 md:gap-2.5 md:border-b-0 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">plantas componen los jardines verticales</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">+900</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 py-5 md:gap-2.5 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">normas de construcción sustentable</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">LEED</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 py-5 md:gap-2.5 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">premio Hoteles Más Verdes</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">2013</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- CONSTRUCCIÓN SUSTENTABLE -->
+  <section aria-labelledby="intro-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 md:gap-[72px]">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-24">
+        <div class="flex flex-col gap-3 md:gap-[18px] lg:flex-1">
+          <p class="ps-eyebrow">Construcción sustentable</p>
+          <h2 id="intro-titulo" class="ps-h2 max-w-[11em]">Un lujo moderno que cuida el ambiente</h2>
+        </div>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg lg:flex-1 lg:pt-[34px]">
+          <p>Creemos que el lujo moderno debe comprometerse con la preservación del medio ambiente. El hotel fue construido siguiendo las normas LEED (Leadership in Energy and Environmental Design), los estándares de construcción sustentable más exigentes de Estados Unidos.</p>
+          <p>Las operaciones de Palo Santo también son amigables con el medio ambiente: seleccionamos cuidadosamente materiales, equipos y proveedores para reducir el impacto de la construcción y del funcionamiento del hotel.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 md:gap-4 lg:h-[600px] lg:grid-cols-3 lg:grid-rows-2">
+        <picture class="col-span-2 block lg:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Grupo-Jardin-IMG_3054-2000-800.avif 800w, /images/hotel/Grupo-Jardin-IMG_3054-2000-1200.avif 1200w, /images/hotel/Grupo-Jardin-IMG_3054-2000-1600.avif 1600w" sizes="(min-width: 1024px) 62vw, 100vw">
+          <source type="image/webp" srcset="/images/hotel/Grupo-Jardin-IMG_3054-2000-800.webp 800w, /images/hotel/Grupo-Jardin-IMG_3054-2000-1200.webp 1200w, /images/hotel/Grupo-Jardin-IMG_3054-2000-1600.webp 1600w" sizes="(min-width: 1024px) 62vw, 100vw">
+          <img src="/images-source/hotel/Grupo-Jardin-IMG_3054-2000.jpg" alt="Huéspedes desayunando en el patio, rodeados de muros verdes" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] h-full w-full object-cover lg:aspect-auto">
+        </picture>
+        <picture class="block">
+          <source type="image/avif" srcset="/images/hotel/Fachada-Psanto05-2000-800.avif 800w" sizes="(min-width: 1024px) 31vw, 50vw">
+          <source type="image/webp" srcset="/images/hotel/Fachada-Psanto05-2000-800.webp 800w" sizes="(min-width: 1024px) 31vw, 50vw">
+          <img src="/images-source/hotel/Fachada-Psanto05-2000.jpg" alt="Balcón de noche, con plantas y la estructura de hierro de la fachada" width="1200" height="800" loading="lazy" decoding="async" class="aspect-square h-full w-full object-cover lg:aspect-auto">
+        </picture>
+        <picture class="block">
+          <source type="image/avif" srcset="/images/hotel/PaloSanto-Jardin-0784-2000-800.avif 800w" sizes="(min-width: 1024px) 31vw, 50vw">
+          <source type="image/webp" srcset="/images/hotel/PaloSanto-Jardin-0784-2000-800.webp 800w" sizes="(min-width: 1024px) 31vw, 50vw">
+          <img src="/images-source/hotel/PaloSanto-Jardin-0784-2000.jpg" alt="Jardín de planta baja con mesas, junto al salón" width="1200" height="800" loading="lazy" decoding="async" class="aspect-square h-full w-full object-cover lg:aspect-auto">
+        </picture>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl space-y-10">
-    <div class="space-y-4 text-center md:text-left">
-      <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Programa verde</p>
-      <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">Hotelería Sustentable: Nuestro Programa</h2>
+  <!-- JARDINES VERTICALES -->
+  <section id="jardines-verticales" aria-labelledby="jardines-titulo" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-24">
+      <div class="grid grid-cols-2 gap-3 md:gap-4 lg:flex-[1.2_1_0%]">
+        <picture class="block">
+          <source type="image/avif" srcset="/images/hotel/PaloSanto-Fachada-Verde-2000-800.avif 800w, /images/hotel/PaloSanto-Fachada-Verde-2000-1200.avif 1200w" sizes="(min-width: 1024px) 28vw, 50vw">
+          <source type="image/webp" srcset="/images/hotel/PaloSanto-Fachada-Verde-2000-800.webp 800w, /images/hotel/PaloSanto-Fachada-Verde-2000-1200.webp 1200w" sizes="(min-width: 1024px) 28vw, 50vw">
+          <img src="/images-source/hotel/PaloSanto-Fachada-Verde-2000.jpg" alt="Fachada con las estructuras de hierro que guían a las plantas trepadoras" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover">
+        </picture>
+        <picture class="block">
+          <source type="image/avif" srcset="/images/hotel/PaloSanto-Jardin-IMG_0825-2000-800.avif 800w, /images/hotel/PaloSanto-Jardin-IMG_0825-2000-1200.avif 1200w" sizes="(min-width: 1024px) 28vw, 50vw">
+          <source type="image/webp" srcset="/images/hotel/PaloSanto-Jardin-IMG_0825-2000-800.webp 800w, /images/hotel/PaloSanto-Jardin-IMG_0825-2000-1200.webp 1200w" sizes="(min-width: 1024px) 28vw, 50vw">
+          <img src="/images-source/hotel/PaloSanto-Jardin-IMG_0825-2000.jpg" alt="Muro cubierto de enredaderas en el jardín del hotel" width="1200" height="1600" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover">
+        </picture>
+      </div>
+      <div class="flex flex-col items-start gap-4 md:gap-6 lg:flex-1">
+        <p class="ps-eyebrow">Jardines verticales</p>
+        <h2 id="jardines-titulo" class="ps-h2 max-w-[11em]">Belleza con propósito</h2>
+        <p class="max-w-[32em] text-base leading-relaxed text-ps-body md:text-[17px]">Son verdes las fachadas, los patios, los jardines, los balcones y las terrazas. En las fachadas, unas estructuras de hierro diseñadas especialmente guían el crecimiento de dos jardines verticales de 28 metros de altura, con más de 900 plantas en total.</p>
+        <p class="max-w-[32em] text-base leading-relaxed text-ps-body md:text-[17px]">Además de su presencia estética, estas cortinas de plantas tienen un propósito ecológico:</p>
+        <ul class="mt-1 grid self-stretch border-b border-ps-line sm:grid-cols-2 sm:gap-x-8">
+          <li class="flex flex-col gap-1 border-t border-ps-line py-4">
+            <strong class="text-base font-semibold md:text-[17px]">Aislación natural</strong>
+            <span class="text-[15px] leading-relaxed text-ps-body">Las plantas aíslan el edificio de manera natural.</span>
+          </li>
+          <li class="flex flex-col gap-1 border-t border-ps-line py-4">
+            <strong class="text-base font-semibold md:text-[17px]">Absorben CO₂</strong>
+            <span class="text-[15px] leading-relaxed text-ps-body">En constante crecimiento, absorben nuestras emisiones.</span>
+          </li>
+          <li class="flex flex-col gap-1 border-t border-ps-line py-4">
+            <strong class="text-base font-semibold md:text-[17px]">Aire más limpio</strong>
+            <span class="text-[15px] leading-relaxed text-ps-body">Mejoran la calidad del aire de la ciudad.</span>
+          </li>
+          <li class="flex flex-col gap-1 border-t border-ps-line py-4">
+            <strong class="text-base font-semibold md:text-[17px]">Un microclima más fresco</strong>
+            <span class="text-[15px] leading-relaxed text-ps-body">Refrescan el entorno del hotel.</span>
+          </li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="grid gap-6 md:grid-cols-2">
-      <!-- Card 1 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Operaciones</h3>
-        <p class="mt-2 text-base leading-relaxed">
-            Nuestras operaciones diarias están diseñadas para preservar los recursos y reciclar o reutilizar siempre que sea posible.</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Trabajamos con una cooperativa para la separación de residuos</li>
-          <li>Donamos nuestros blancos usados para que puedan ser revalorizados y reutilizados</li>
-          <li>Ponemos bicicletas a disposición de los huéspedes para incentivar la movilidad sustentable</li>
-          <li>Seleccionamos una lavandería certificada y de bajo impacto</li>
-          <li>Nuestros productos de limpieza son de bajo impacto</li>
-          <li>Invitamos a nuestros huéspedes a reutilizar sábanas y toallas si lo desean</li>
-          <li>Ponemos a disposición de los huéspedes un botellón de agua recargable en la habitación</li>
-          <li>Limitamos el uso de materiales impresos. Utilizamos papel reciclado, sin blanqueadores</li>
-          <li>Seleccionamos servidores eco-certificados para el hosting</li>
-        </ul>
-      </article>
+  <!-- PROGRAMA SUSTENTABLE -->
+  <section id="programa" aria-labelledby="programa-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:sticky lg:top-10 lg:self-start">
+        <p class="ps-eyebrow">Hotelería sustentable</p>
+        <h2 id="programa-titulo" class="ps-h2">Nuestro programa verde</h2>
+        <p class="ps-lead">Descubre por qué somos el primer hotel sustentable de Buenos Aires: estas son las prácticas que aplicamos todos los días.</p>
+        <nav aria-label="Áreas del programa" class="mt-2 self-stretch lg:mt-4">
+          <ol class="flex flex-wrap gap-2 lg:flex-col lg:gap-0 lg:border-b lg:border-ps-line">
+            <li><a href="#operaciones" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">01</span>Operaciones</a></li>
+            <li><a href="#energia" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">02</span>Energía</a></li>
+            <li><a href="#agua" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">03</span>Agua</a></li>
+            <li><a href="#materiales" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">04</span>Materiales</a></li>
+            <li><a href="#aislaciones" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">05</span>Aislaciones</a></li>
+            <li><a href="#aire" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">06</span>Aire</a></li>
+            <li><a href="#dioxido-de-carbono" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">07</span>Dióxido de carbono</a></li>
+            <li><a href="#reconocimientos" class="flex min-h-[44px] items-center gap-3 border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline lg:min-h-[48px] lg:border-0 lg:border-t lg:border-ps-line lg:px-0 lg:text-base"><span class="hidden w-6 tabular-nums text-ps-muted lg:inline">08</span>Reconocimientos</a></li>
+          </ol>
+        </nav>
+      </div>
 
-      <!-- Card 2 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Energía</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          La racionalización del uso de energía es uno de los pilares de nuestro programa sustentable. Desde la construcción del edificio, fue un eje central para diseñar habitaciones eficientes y seleccionar el equipamiento.
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Uso de leds y artefactos de bajo consumo</li>
-          <li>Detectores de movimiento para evitar consumo innecesario</li>
-          <li>Equipos de aire acondicionado VRV con sistema Inverter</li>
-          <li>Optimización de las aislaciones</li>
-          <li>Ascensores de bajo consumo</li>
-          <li>Tarjetas de corte de energía en las habitaciones</li>
-        </ul>
-      </article>
+      <div class="flex flex-col gap-14 md:gap-20">
+        <article id="operaciones" aria-labelledby="operaciones-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.4-6.4L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.4 6.4L3 16"/><path d="M3 21v-5h5"/></svg>
+            <h3 id="operaciones-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Operaciones</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">01</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">Nuestras operaciones diarias están pensadas para preservar los recursos y para reciclar o reutilizar siempre que sea posible.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Trabajamos con una cooperativa para la separación de residuos</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Donamos los blancos usados para que puedan ser revalorizados y reutilizados</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Prestamos bicicletas a los huéspedes para incentivar la movilidad sustentable</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Elegimos una lavandería certificada y de bajo impacto</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Usamos productos de limpieza de bajo impacto</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Te invitamos a reutilizar sábanas y toallas, si lo deseas</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Dejamos un botellón de agua recargable en cada habitación</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Limitamos los materiales impresos y usamos papel reciclado, sin blanqueadores</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Elegimos servidores con certificación ecológica para el sitio web</li>
+          </ul>
+        </article>
 
-      <!-- Card 3 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Agua</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          En Palo Santo, cuidamos cada gota:
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Recuperamos el agua de lluvia</li>
-          <li>Usamos inodoros eficientes con sistema de doble descarga</li>
-          <li>Disponemos de medios de absorción de agua de lluvia para minimizar la carga al sistema pluvial de la ciudad</li>
-          <li>Utilizamos riego por goteo</li>
-        </ul>
-      </article>
+        <article id="energia" aria-labelledby="energia-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+            <h3 id="energia-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Energía</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">02</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">El uso racional de la energía es uno de los pilares de nuestro programa. Desde la construcción del edificio, fue un eje central para diseñar habitaciones eficientes y elegir el equipamiento.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Luces led y artefactos de bajo consumo</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Detectores de movimiento para evitar consumos innecesarios</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Aire acondicionado VRV con sistema Inverter</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Aislaciones optimizadas</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Ascensores de bajo consumo</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Tarjetas de corte de energía en las habitaciones</li>
+          </ul>
+        </article>
 
-      <!-- Card 4 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Materiales</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          Nos centramos en utilizar materiales duraderos, para evitar desperdiciar los recursos:
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Utilizamos maderas certificadas por FSC</li>
-          <li>Usamos mármoles y porcelanatos porque son materiales de alta duración</li>
-          <li>Empleamos materiales nobles: hierro, piedras, hormigón, maderas</li>
-          <li>Empleamos algodones naturales</li>
-        </ul>
-      </article>
+        <article id="agua" aria-labelledby="agua-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"/></svg>
+            <h3 id="agua-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Agua</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">03</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">En Palo Santo cuidamos cada gota.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Recuperamos el agua de lluvia</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Usamos inodoros eficientes, con doble descarga</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Absorbemos agua de lluvia para aliviar los desagües pluviales de la ciudad</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Regamos por goteo</li>
+          </ul>
+        </article>
 
-      <!-- Card 5 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Aislaciones</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          Además de brindar comfort acústico, maximizar las aislaciones es una forma muy eficiente de cuidar el gasto energético:
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Contamos con ventanas con DVH (vidrios dobles herméticos con cámara de aire)</li>
-          <li>Aislación acústica y térmica de los pisos y paredes</li>
-          <li>Utilizamos jardines verticales verdes y enredaderas como método de aislación</li>
-        </ul>
-      </article>
+        <article id="materiales" aria-labelledby="materiales-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+            <h3 id="materiales-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Materiales</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">04</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">Elegimos materiales duraderos, para no desperdiciar recursos.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Maderas certificadas por FSC</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Mármoles y porcelanatos, por su larga duración</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Materiales nobles: hierro, piedra, hormigón y madera</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Algodones naturales</li>
+          </ul>
+        </article>
 
-      <!-- Card 6 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Aire</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          Cuidamos el aire interior del hotel, reduciendo la contaminación:
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>El aire que llega a las habitaciones está filtrado</li>
-          <li>El aire externo entra a las habitaciones dosificado y regulado para que sea puro y optimizar el consumo energético</li>
-          <li>En lo posible, utilizamos papel en vez de pintura en habitaciones para reducir los efectos contaminantes de los solventes</li>
-        </ul>
-      </article>
+        <article id="aislaciones" aria-labelledby="aislaciones-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16v18H4z"/><path d="M12 3v18"/><path d="M4 12h16"/></svg>
+            <h3 id="aislaciones-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Aislaciones</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">05</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">Además de dar confort acústico, maximizar las aislaciones es una forma muy eficiente de reducir el gasto de energía.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Ventanas con DVH (doble vidriado hermético, con cámara de aire)</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Aislación acústica y térmica en pisos y paredes</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Jardines verticales y enredaderas que aíslan el edificio</li>
+          </ul>
+        </article>
 
-      <!-- Card 7 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Dióxido de carbono</h3>
-        <p class="mt-2 text-base leading-relaxed">
-          Controlamos nuestras emisiones de CO₂:
-        </p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li>Más de 900 plantas de crecimiento permanente absorben el CO₂</li>
-          <li>Tratamos la poda para no generar CO₂</li>
-          <li>Instalamos equipos de aire acondicionado con un gas que no daña la capa de ozono</li>
-        </ul>
-      </article>
+        <article id="aire" aria-labelledby="aire-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h6"/></svg>
+            <h3 id="aire-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Aire</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">06</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">Cuidamos el aire interior del hotel y reducimos la contaminación.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">El aire que llega a las habitaciones está filtrado</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">El aire exterior entra dosificado y regulado: llega puro y se optimiza el consumo de energía</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Siempre que es posible, usamos empapelado en lugar de pintura, para evitar los solventes contaminantes</li>
+          </ul>
+        </article>
 
-      <!-- Card 8 -->
-      <article class="bg-ps-panel p-6 text-ps-body shadow-sm border-l-[3px] border-white">
-        <h3 class="text-xl font-bold uppercase text-white">Certificaciones y Reconocimientos</h3>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
-          <li><span class="font-semibold">Normas LEED:</span> Seguimos detalladamente las normas de construcciones verdes definidas por el US Green Building Council para la certificación LEED.</li>
-          <li><span class="font-semibold">Hoteles Más Verdes:</span> Recibimos el premio Hoteles Más Verdes como mejor proyecto hotelero sustentable en 2013.</li>
-        </ul>
-      </article>
+        <article id="dioxido-de-carbono" aria-labelledby="co2-titulo" class="flex scroll-mt-6 flex-col gap-4 md:gap-5">
+          <div class="flex items-center gap-3.5 border-t border-ps-text pt-5 md:gap-4 md:pt-6">
+            <svg class="h-6 w-6 shrink-0 md:h-7 md:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 4.5 20 4c0 10-5.5 15-15 15Z"/><path d="M5 19 14 10"/></svg>
+            <h3 id="co2-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Dióxido de carbono</h3>
+            <span class="ml-auto text-sm tabular-nums text-ps-muted">07</span>
+          </div>
+          <p class="max-w-[40em] text-base leading-relaxed text-ps-body md:text-[17px]">Controlamos nuestras emisiones de CO₂.</p>
+          <ul class="grid border-b border-ps-line text-[15px] leading-relaxed md:grid-cols-2 md:gap-x-8 md:text-base">
+            <li class="border-t border-ps-line py-3 md:py-3.5">Más de 900 plantas en crecimiento permanente absorben CO₂</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Tratamos los restos de poda para no generar CO₂</li>
+            <li class="border-t border-ps-line py-3 md:py-3.5">Los equipos de aire acondicionado usan un gas que no daña la capa de ozono</li>
+          </ul>
+        </article>
+
+        <article id="reconocimientos" aria-labelledby="reconocimientos-titulo" class="flex scroll-mt-6 flex-col gap-6 border border-ps-line bg-white px-6 py-8 md:gap-8 md:px-12 md:py-12">
+          <div class="flex flex-col gap-3">
+            <p class="ps-eyebrow">Certificaciones y reconocimientos</p>
+            <h3 id="reconocimientos-titulo" class="text-[26px] leading-tight tracking-[-0.02em] md:text-[34px]">Un compromiso reconocido</h3>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 md:gap-10">
+            <div class="flex flex-col gap-2 border-t border-ps-line pt-4 md:pt-5">
+              <h4 class="text-base font-semibold md:text-[17px]">Normas LEED</h4>
+              <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Seguimos en detalle las normas de construcción verde que define el US Green Building Council para la certificación LEED.</p>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-ps-line pt-4 md:pt-5">
+              <h4 class="text-base font-semibold md:text-[17px]">Premio Hoteles Más Verdes</h4>
+              <p class="text-[15px] leading-relaxed text-ps-body md:text-base">En 2013 recibimos el premio Hoteles Más Verdes al mejor proyecto hotelero sustentable.</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- SIGUE RECORRIENDO -->
+  <section aria-labelledby="mas-titulo" class="px-5 pb-12 md:px-12 md:pb-24">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <h2 id="mas-titulo" class="ps-eyebrow">Sigue recorriendo</h2>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/es/habitaciones" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Habitaciones</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/es/hotel" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Lobby-IMG_2509-213-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Hotel y servicios</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/es/restaurante" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Desayuno-DIC23-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Desayuno-DIC23-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Desayuno-DIC23-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Desayuno y restaurante</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Reservar" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">Los esperamos para vivir una verdadera experiencia boutique en Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Reservar</a>
+    </div>
+  </section>
 </main>
-
-<!-- CIERRE -->
-<section aria-label="Reservar" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">Los esperamos para vivir una verdadera experiencia boutique en Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Reservar</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
