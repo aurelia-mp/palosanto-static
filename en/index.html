@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1C1C1C" />
 
     <title>Palo Santo Hotel — Green Boutique Hotel in Palermo, Buenos Aires</title>
     <meta name="description" content="Discover Palo Santo Hotel, Buenos Aires’ green boutique hotel in Palermo, blending elegant design, vertical gardens, and exceptional service in one of the city’s most vibrant neighborhoods." />
@@ -19,6 +20,8 @@
     <!-- Robots -->
     <meta name="robots" content="index, follow">
 
+    <!-- Fondo: ?fondo=verde muestra el verde #0E1B14 para comparar (ver src/components.css) -->
+    <script>try{var f=new URLSearchParams(location.search).get('fondo');if(f)sessionStorage.setItem('ps-fondo',f);f=sessionStorage.getItem('ps-fondo');if(f&&f!=='carbon')document.documentElement.setAttribute('data-fondo',f)}catch(e){}</script>
     <!-- CSS -->
     <link rel="stylesheet" href="/dist/output.css" />
 
@@ -59,7 +62,7 @@
           { "@type": "LocationFeatureSpecification", "name": "Buffet breakfast included", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "24-hour reception", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Rooftop pool and hot tub", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Rooftop shallow pool and hot tub", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Gym", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Complimentary bikes", "value": true },
           { "@type": "LocationFeatureSpecification", "name": "Laundry service", "value": true },
@@ -111,38 +114,41 @@
 
 <body class="bg-ps-ground pb-24 font-brand text-ps-text antialiased lg:pb-0">
 
-<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3">Skip to content</a>
+<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
 
-<!-- HEADER -->
-<header class="relative z-30">
-  <div class="flex min-h-[64px] items-center justify-between gap-6 pl-1.5 pr-3 xl:min-h-[88px] xl:pl-[232px] xl:pr-12">
-    <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="sr-only">Open menu</span>
-      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
-    </button>
+<!-- HEADER: transparente sobre el video -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
+    <div class="flex items-center">
+      <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
+      </button>
+      <nav aria-label="Main menu" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/rooms" class="underline-offset-8 hover:underline">Rooms</a>
+        <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
+        <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
+        <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
+        <a href="/en/palermo" class="underline-offset-8 hover:underline">Location</a>
+      </nav>
+    </div>
 
-    <a href="/en/" class="ps-logo-tab" aria-label="Palo Santo Hotel, home">
-      <img src="/images-source/logo.jpg" alt="Palo Santo" width="348" height="614">
+    <a href="/en/" class="block" aria-label="Palo Santo Hotel, home">
+      <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" class="h-auto w-[50px] xl:w-[72px]">
     </a>
 
-    <nav aria-label="Main menu" class="hidden items-center gap-8 text-[15px] xl:flex">
-      <a href="/en/rooms" class="underline-offset-8 hover:underline">Rooms</a>
-      <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
-      <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
-      <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
-      <a href="/en/palermo" class="underline-offset-8 hover:underline">Location</a>
-      <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
-      <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
-      <a href="/en/contact-us" class="underline-offset-8 hover:underline">Contact</a>
-    </nav>
-
-    <div class="flex items-center gap-5">
-      <a href="/" lang="es" class="hidden text-[13px] font-semibold tracking-[0.12em] text-ps-muted hover:text-ps-text xl:inline" aria-label="Versión en español">ES</a>
-      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn min-h-[44px] px-4 text-[11px] xl:min-h-[48px] xl:px-7 xl:text-[13px]">Book now</a>
+    <div class="flex items-center justify-end gap-x-[30px]">
+      <nav aria-label="More sections" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
+        <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
+        <a href="/en/contact-us" class="underline-offset-8 hover:underline">Contact</a>
+      </nav>
+      <a href="/" lang="es" class="hidden text-sm font-semibold tracking-[0.12em] underline-offset-8 hover:underline xl:inline" aria-label="Versión en español">ES</a>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-ghost min-h-[44px] px-3.5 text-[11px] tracking-[0.14em] xl:min-h-[48px] xl:px-[26px] xl:text-[13px] xl:tracking-[0.16em]">Book now</a>
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-t border-ps-line bg-white shadow-lg xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
       <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -166,164 +172,189 @@
 
 <main id="content">
 
-  <!-- HERO: one of the videos or the garden photo, picked at random on each visit -->
-  <section class="ps-hero relative mx-3 overflow-hidden bg-[#3A3A38] md:mx-6" data-hero>
-    <div class="absolute inset-0" data-hero-media>
-      <picture class="absolute inset-0" data-hero-option hidden
-        data-video="https://media.palosantohotel.com/terraza-flores.mp4"
-        data-video-mobile="https://media.palosantohotel.com/terraza-flores-mobile.mp4">
-        <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.avif 480w, /images/heroMobile/hero-terraza-flores-mobile-600.avif 600w, /images/heroMobile/hero-terraza-flores-mobile-708.avif 708w" sizes="100vw">
-        <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.webp 480w, /images/heroMobile/hero-terraza-flores-mobile-600.webp 600w, /images/heroMobile/hero-terraza-flores-mobile-708.webp 708w" sizes="100vw">
-        <source type="image/avif" srcset="/images/hero/hero-terraza-flores-1620.avif 1620w" sizes="100vw">
-        <source type="image/webp" srcset="/images/hero/hero-terraza-flores-1620.webp 1620w" sizes="100vw">
-        <img src="/images-source/hero/hero-terraza-flores.jpg" alt="Wisteria in bloom on one of the hotel's terraces" width="1620" height="1080" loading="lazy" decoding="async" class="h-full w-full object-cover">
-      </picture>
-      <picture class="absolute inset-0" data-hero-option hidden
+  <!-- HERO: los tres videos se encadenan con un fundido; el primero se elige al azar -->
+  <section class="ps-hero relative overflow-hidden bg-ps-deep text-white" aria-label="Palo Santo on video" data-hero>
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 opacity-100 transition-opacity duration-[1200ms]" data-hero-clip data-hero-active
         data-video="https://media.palosantohotel.com/video-colibri-edit-2.mp4"
         data-video-mobile="https://media.palosantohotel.com/video-colibri-edit-2-mobile.mp4">
-        <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-colibri-mobile-480.avif 480w, /images/heroMobile/hero-colibri-mobile-600.avif 600w, /images/heroMobile/hero-colibri-mobile-708.avif 708w" sizes="100vw">
-        <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-colibri-mobile-480.webp 480w, /images/heroMobile/hero-colibri-mobile-600.webp 600w, /images/heroMobile/hero-colibri-mobile-708.webp 708w" sizes="100vw">
-        <source type="image/avif" srcset="/images/hero/hero-colibri-1620.avif 1620w" sizes="100vw">
-        <source type="image/webp" srcset="/images/hero/hero-colibri-1620.webp 1620w" sizes="100vw">
-        <img src="/images-source/hero/hero-colibri.jpg" alt="Agapanthus in bloom in the hotel garden" width="1620" height="1080" loading="lazy" decoding="async" class="h-full w-full object-cover">
-      </picture>
-      <picture class="absolute inset-0" data-hero-option hidden
+        <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-colibri-mobile-480.avif 480w, /images/heroMobile/hero-colibri-mobile-600.avif 600w, /images/heroMobile/hero-colibri-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-colibri-mobile-480.webp 480w, /images/heroMobile/hero-colibri-mobile-600.webp 600w, /images/heroMobile/hero-colibri-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-colibri-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-colibri-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-colibri.jpg" alt="Agapanthus in bloom in the hotel garden" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
+        data-video="https://media.palosantohotel.com/terraza-flores.mp4"
+        data-video-mobile="https://media.palosantohotel.com/terraza-flores-mobile.mp4">
+        <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.avif 480w, /images/heroMobile/hero-terraza-flores-mobile-600.avif 600w, /images/heroMobile/hero-terraza-flores-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.webp 480w, /images/heroMobile/hero-terraza-flores-mobile-600.webp 600w, /images/heroMobile/hero-terraza-flores-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-terraza-flores-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-terraza-flores-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-terraza-flores.jpg" alt="Wisteria in bloom on one of the hotel's terraces" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
         data-video="https://media.palosantohotel.com/video-suite-sushi.mp4"
         data-video-mobile="https://media.palosantohotel.com/video-suite-sushi-mobile.mp4">
-        <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.avif 480w, /images/heroMobile/hero-suite-sushi-mobile-600.avif 600w, /images/heroMobile/hero-suite-sushi-mobile-708.avif 708w" sizes="100vw">
-        <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.webp 480w, /images/heroMobile/hero-suite-sushi-mobile-600.webp 600w, /images/heroMobile/hero-suite-sushi-mobile-708.webp 708w" sizes="100vw">
-        <source type="image/avif" srcset="/images/hero/hero-suite-sushi-1620.avif 1620w" sizes="100vw">
-        <source type="image/webp" srcset="/images/hero/hero-suite-sushi-1620.webp 1620w" sizes="100vw">
-        <img src="/images-source/hero/hero-suite-sushi.jpg" alt="Sushi and champagne in one of the hotel suites" width="1620" height="1080" loading="lazy" decoding="async" class="h-full w-full object-cover">
-      </picture>
-      <picture class="absolute inset-0" data-hero-option hidden>
-        <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-jardin-mobile-480.avif 480w, /images/heroMobile/hero-jardin-mobile-600.avif 600w, /images/heroMobile/hero-jardin-mobile-800.avif 800w" sizes="100vw">
-        <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-jardin-mobile-480.webp 480w, /images/heroMobile/hero-jardin-mobile-600.webp 600w, /images/heroMobile/hero-jardin-mobile-800.webp 800w" sizes="100vw">
-        <source type="image/avif" srcset="/images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.avif 1920w, /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.avif 2560w" sizes="100vw">
-        <source type="image/webp" srcset="/images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.webp 1920w, /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.webp 2560w" sizes="100vw">
-        <img src="/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg" alt="Guests in Palo Santo's garden patio, surrounded by green walls" width="3000" height="2000" loading="lazy" decoding="async" class="h-full w-full object-cover">
-      </picture>
-      <noscript>
-        <img src="/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg" alt="Guests in Palo Santo's garden patio, surrounded by green walls" width="3000" height="2000" class="absolute inset-0 h-full w-full object-cover">
-      </noscript>
+        <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.avif 480w, /images/heroMobile/hero-suite-sushi-mobile-600.avif 600w, /images/heroMobile/hero-suite-sushi-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.webp 480w, /images/heroMobile/hero-suite-sushi-mobile-600.webp 600w, /images/heroMobile/hero-suite-sushi-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-suite-sushi-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-suite-sushi-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-suite-sushi.jpg" alt="Sushi and champagne in one of the hotel suites" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
     </div>
     <script>
       (function () {
-        var options = document.querySelectorAll('[data-hero-option]');
-        var pick = options[Math.floor(Math.random() * options.length)];
+        var clips = document.querySelectorAll('[data-hero-clip]');
+        var pick = clips[Math.floor(Math.random() * clips.length)];
+        for (var i = 0; i < clips.length; i++) {
+          var on = clips[i] === pick;
+          clips[i].classList.toggle('hidden', !on);
+          clips[i].classList.toggle('opacity-0', !on);
+          clips[i].classList.toggle('opacity-100', on);
+          if (on) clips[i].setAttribute('data-hero-active', '');
+          else clips[i].removeAttribute('data-hero-active');
+        }
         var img = pick.querySelector('img');
-        pick.hidden = false;
-        pick.setAttribute('data-hero-active', '');
         img.loading = 'eager';
         img.setAttribute('fetchpriority', 'high');
       })();
     </script>
 
-    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 via-45% to-transparent to-70%"></div>
+    <div aria-hidden="true" class="ps-hero__scrim pointer-events-none absolute inset-0"></div>
 
-    <button type="button" class="absolute right-3 top-3 z-10 hidden h-11 w-11 items-center justify-center border border-white/70 bg-black/30 text-white md:right-6 md:top-6" data-hero-toggle aria-pressed="false" aria-label="Pause video" data-label-pause="Pause video" data-label-play="Play video">
-      <svg data-icon-pause class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
-      <svg data-icon-play class="hidden h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
-    </button>
+    <div class="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-5 px-5 pb-[104px] md:px-12 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-x-16 lg:gap-y-10 lg:pb-[156px]">
+      <div class="flex flex-col gap-5 lg:gap-[26px]">
+        <h1 class="flex flex-col gap-3 [text-shadow:0_2px_30px_rgba(0,0,0,0.18)] lg:gap-[22px]">
+          <span class="flex flex-col text-[46px] leading-[0.98] tracking-[-0.03em] md:text-[clamp(56px,7.2vw,104px)] md:leading-[0.95] md:tracking-[-0.035em]"><span>Boutique, green</span><span>&amp; design-led</span></span>
+          <span class="text-[17px] leading-snug md:text-[22px]">hotel in Palermo, Buenos Aires</span>
+        </h1>
+        <p class="max-w-[31em] text-[15px] leading-relaxed text-white/85 md:text-[17px]">Discover why travelers looking for a <a href="/en/hotel-palermo-buenos-aires" class="text-white underline underline-offset-4">boutique stay in Palermo Hollywood</a> choose Palo Santo as their base to explore the city.</p>
+      </div>
 
-    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-3.5 px-5 pb-12 text-white md:gap-5 md:px-16 md:pb-28">
-      <h1 class="flex flex-col gap-3 md:gap-4">
-        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-[13px]">Palo Santo Hotel</span>
-        <span class="max-w-[14em] text-balance text-[38px] leading-[1.08] tracking-[-0.015em] md:text-[64px] md:leading-[1.05]">A green, design-led boutique hotel in Palermo, Buenos Aires</span>
-      </h1>
-      <p class="max-w-[34em] text-[15px] leading-relaxed md:text-lg">Discover why travelers looking for a <a href="/en/hotel-palermo-buenos-aires" class="underline underline-offset-4">boutique stay in Palermo Hollywood</a> choose Palo Santo as their base to explore the city.</p>
+      <div class="hidden items-end gap-4 lg:gap-7" data-hero-controls>
+        <div role="group" aria-label="Hotel videos" class="flex min-w-0 flex-1 gap-2.5 lg:flex-none lg:gap-5">
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">01</span><span>Hummingbird</span></span>
+          </button>
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">02</span><span>Terrace</span></span>
+          </button>
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">03</span><span>Suite</span></span>
+          </button>
+        </div>
+        <button type="button" class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/60 text-white transition-colors hover:bg-white/10 lg:h-12 lg:w-12" data-hero-toggle aria-label="Pause video" data-label-pause="Pause video" data-label-play="Play video">
+          <svg data-icon-pause class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+          <svg data-icon-play class="hidden h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- BOOKING: floating bar on desktop, bottom sheet on mobile -->
-  <div class="fixed inset-0 z-[55] bg-black/40 lg:hidden" data-booking-backdrop data-booking-close hidden></div>
-  <div id="booking-panel" class="ps-booking relative z-20 mx-auto lg:-mt-12 lg:w-[calc(100%-96px)] lg:max-w-[1080px]" aria-label="Check availability">
+  <!-- RESERVAS: franja sobre el pie del video en desktop, panel inferior en mobile -->
+  <div class="fixed inset-0 z-[55] bg-black/60 lg:hidden" data-booking-backdrop data-booking-close hidden></div>
+  <div id="booking-panel" class="ps-booking relative z-20 lg:-mt-[104px]" aria-label="Check availability">
     <div class="mb-3 flex items-center justify-between lg:hidden">
       <p class="text-lg font-semibold">Choose your dates</p>
       <button type="button" class="flex h-11 w-11 items-center justify-center" data-booking-close aria-label="Close">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
       </button>
     </div>
-    <form id="booking-form" class="flex flex-col bg-white lg:flex-row lg:items-stretch lg:shadow-[0_18px_40px_rgba(20,20,20,0.14)]">
-      <label for="booking-checkin" class="flex flex-1 flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-ps-ink lg:border-b-0 lg:border-r lg:py-3.5 lg:pl-8 lg:pr-6">
-        <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-ps-muted">Check-in</span>
-        <input id="booking-checkin" name="checkin" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-ps-text focus:outline-none">
+    <form id="booking-form" class="flex flex-col lg:min-h-[104px] lg:flex-row lg:items-stretch lg:border-t lg:border-ps-line lg:bg-ps-ground/75 lg:px-12 lg:backdrop-blur-lg">
+      <div class="hidden lg:flex lg:flex-[1_1_260px] lg:flex-col lg:justify-center lg:gap-1 lg:py-[18px] lg:pr-8">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Book direct</span>
+        <span class="flex items-center gap-2 text-base font-semibold">
+          <svg class="h-[18px] w-[18px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Best rate guaranteed
+        </span>
+      </div>
+      <label for="booking-checkin" class="flex flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_170px] lg:border-b-0 lg:border-l lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Check-in</span>
+        <input id="booking-checkin" name="checkin" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none">
       </label>
-      <label for="booking-checkout" class="flex flex-1 flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-ps-ink lg:border-b-0 lg:border-r lg:px-6 lg:py-3.5">
-        <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-ps-muted">Check-out</span>
-        <input id="booking-checkout" name="checkout" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-ps-text focus:outline-none">
+      <label for="booking-checkout" class="flex flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_170px] lg:border-b-0 lg:border-l lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Check-out</span>
+        <input id="booking-checkout" name="checkout" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none">
       </label>
-      <label for="booking-guests" class="flex flex-col justify-center gap-1 px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-ps-ink lg:w-44 lg:px-6 lg:py-3.5">
-        <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-ps-muted">Guests</span>
-        <select id="booking-guests" name="guests" class="h-8 border-0 bg-transparent p-0 text-base font-semibold text-ps-text focus:outline-none">
+      <label for="booking-guests" class="flex flex-col justify-center gap-1 px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_150px] lg:border-l lg:border-ps-line lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Guests</span>
+        <select id="booking-guests" name="guests" class="h-8 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none [&_option]:bg-ps-ground [&_option]:text-white">
           <option value="1">1 adult</option>
           <option value="2" selected>2 adults</option>
           <option value="3">3 adults</option>
           <option value="4">4 adults</option>
         </select>
       </label>
-      <button type="submit" class="ps-btn mt-4 min-h-[56px] lg:mt-0 lg:min-h-[80px] lg:px-10">Check availability</button>
+      <div class="mt-4 lg:mt-0 lg:flex lg:items-center lg:py-[18px] lg:pl-7">
+        <button type="submit" class="ps-btn min-h-[56px] w-full lg:min-h-[64px] lg:w-auto lg:px-10">Check availability</button>
+      </div>
     </form>
-    <p class="mt-3 flex items-center justify-center gap-2 text-sm text-ps-muted">
+    <p class="mt-3 flex items-center justify-center gap-2 text-sm text-ps-muted lg:hidden">
       <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
       Best rate guaranteed when you book on our official website
     </p>
   </div>
 
-  <!-- PRACTICAL INFORMATION -->
-  <section aria-label="Practical information" class="px-5 pb-6 pt-8 md:px-12 md:pb-8 md:pt-16">
-    <dl class="mx-auto grid max-w-[1240px] grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-3 md:gap-8 xl:grid-cols-6">
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <dt class="text-[13px] text-ps-muted">Check-in</dt>
+  <!-- DATOS PRÁCTICOS -->
+  <section aria-label="Practical information" class="px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] grid-cols-2 gap-x-4 gap-y-[22px] border-b border-ps-line py-7 md:grid-cols-3 md:gap-6 md:py-9 xl:grid-cols-6">
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Check-in</dt>
         <dd class="text-base font-semibold md:text-lg">From 3:00 PM</dd>
       </div>
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
-        <dt class="text-[13px] text-ps-muted">Check-out</dt>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Check-out</dt>
         <dd class="text-base font-semibold md:text-lg">Until 12:00 PM</dd>
       </div>
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 9V7"/><path d="M10 7h4"/></svg>
-        <dt class="text-[13px] text-ps-muted">Reception</dt>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 9V7"/><path d="M10 7h4"/></svg>Reception</dt>
         <dd class="text-base font-semibold md:text-lg">Open 24 hours</dd>
       </div>
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>
-        <dt class="text-[13px] text-ps-muted">Breakfast</dt>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Breakfast</dt>
         <dd class="text-base font-semibold md:text-lg">Buffet included</dd>
       </div>
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
-        <dt class="text-[13px] text-ps-muted">Rooms</dt>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Rooms</dt>
         <dd class="text-base font-semibold md:text-lg">26 across 8 floors</dd>
       </div>
-      <div class="flex flex-col gap-1.5">
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-        <dt class="text-[13px] text-ps-muted">Aeroparque airport</dt>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Aeroparque airport</dt>
         <dd class="text-base font-semibold md:text-lg">15–20 min by taxi</dd>
       </div>
     </dl>
   </section>
 
-  <!-- ROOMS -->
-  <section id="rooms" aria-labelledby="rooms-title" class="py-10 md:px-12 md:py-24">
+  <!-- HABITACIONES -->
+  <section id="rooms" aria-labelledby="rooms-title" class="ps-claro bg-ps-ground py-12 md:px-12 md:pb-24 md:pt-[104px]">
     <div class="mx-auto max-w-[1344px]">
-      <div class="flex flex-col items-center gap-3 px-5 text-center md:px-0">
-        <p class="ps-eyebrow">Rooms &amp; suites</p>
-        <h2 id="rooms-title" class="ps-h2">Our rooms</h2>
-        <p class="ps-lead">26 rooms and suites. All rates include buffet breakfast.</p>
+      <div class="flex flex-col gap-3 px-5 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6 md:px-0">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">Rooms &amp; suites</p>
+          <h2 id="rooms-title" class="ps-h2">Our rooms</h2>
+        </div>
+        <p class="ps-lead md:max-w-[24em]">26 rooms and suites. All rates include buffet breakfast.</p>
       </div>
 
-      <div class="mt-7 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:scroll-px-0 md:mt-14 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-14 md:overflow-visible md:px-0 md:pb-0">
-        <article class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+      <div class="mt-7 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mt-14 md:grid md:scroll-px-0 md:grid-cols-2 md:gap-x-8 md:gap-y-16 md:overflow-visible md:px-0 md:pb-0">
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 284px">
-            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 284px">
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
             <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="Bright Premium Room with a King bed" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
           </picture>
           <div class="flex flex-wrap items-baseline justify-between gap-x-3">
-            <h3 class="text-2xl font-semibold tracking-[-0.01em] md:text-[28px]">Premium</h3>
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Premium</h3>
             <a href="/en/premium-rooms" class="ps-link">View room<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
           </div>
           <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
@@ -335,14 +366,14 @@
           <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">Our most popular rooms: spacious, comfortable and filled with natural light, ideal for couples, friends or families. The two 8th-floor rooms connect; they have no balcony but open directly onto the rooftop.</p>
         </article>
 
-        <article class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 284px">
-            <source type="image/webp" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 284px">
+            <source type="image/avif" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
             <img src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg" alt="Eames lounge chair in a Deluxe Room" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
           </picture>
           <div class="flex flex-wrap items-baseline justify-between gap-x-3">
-            <h3 class="text-2xl font-semibold tracking-[-0.01em] md:text-[28px]">Deluxe</h3>
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Deluxe</h3>
             <a href="/en/deluxe-rooms" class="ps-link">View room<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
           </div>
           <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
@@ -354,14 +385,14 @@
           <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">For exceptional comfort and quiet elegance: on the upper floors, filled with natural light, with designer furniture and an oversized shower.</p>
         </article>
 
-        <article class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 284px">
-            <source type="image/webp" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 284px">
+            <source type="image/avif" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
             <img src="/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg" alt="Terrace Suite bed with the doors open onto the private terrace" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
           </picture>
           <div class="flex flex-wrap items-baseline justify-between gap-x-3">
-            <h3 class="text-2xl font-semibold tracking-[-0.01em] md:text-[28px]">Terrace Suite</h3>
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Terrace Suite</h3>
             <a href="/en/terrace-suite" class="ps-link">View suite<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
           </div>
           <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
@@ -373,14 +404,14 @@
           <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">An oasis above the Buenos Aires skyline: contemporary luxury and exceptional comfort, with beautiful natural woods, iconic design pieces and state-of-the-art amenities.</p>
         </article>
 
-        <article class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 284px">
-            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 284px">
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
             <img src="/images-source/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2.jpg" alt="Palo Santo Suite at night, with the balcony open to the Palermo skyline" width="1448" height="1086" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
           </picture>
           <div class="flex flex-wrap items-baseline justify-between gap-x-3">
-            <h3 class="text-2xl font-semibold tracking-[-0.01em] md:text-[28px]">Palo Santo Suite</h3>
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Palo Santo Suite</h3>
             <a href="/en/palo-santo-suite" class="ps-link">View suite<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
           </div>
           <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
@@ -393,246 +424,246 @@
         </article>
       </div>
 
-      <div class="mt-6 flex justify-center md:mt-12">
+      <div class="mt-6 flex px-5 md:mt-12 md:px-0">
         <a href="/en/rooms" class="ps-link">View all rooms<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- BOOK DIRECT -->
-  <section aria-labelledby="direct-title" class="mx-3 bg-ps-ink px-6 py-8 text-white md:mx-6 md:px-[72px] md:py-[88px]">
-    <div class="mx-auto flex max-w-[1240px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-[88px]">
-      <div class="flex flex-col items-start gap-5 md:gap-6 lg:flex-1">
-        <p class="ps-eyebrow text-ps-soft">Book direct</p>
-        <h2 id="direct-title" class="text-balance text-[30px] leading-[1.15] tracking-[-0.01em] md:text-5xl md:leading-[1.1]">Book on our website: always the best available rate.</h2>
-        <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-light">See rates &amp; availability</a>
-      </div>
-      <div class="flex flex-col gap-5 lg:flex-1">
-        <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-ps-soft">Our rates always include</h3>
-        <ul class="grid gap-x-8 gap-y-4 text-[15px] sm:grid-cols-2 md:gap-y-[22px] md:text-[17px]">
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Buffet breakfast</li>
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>High-speed WiFi</li>
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>Complimentary bikes</li>
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Printed Palo Santo city guide</li>
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10"/><path d="M18 7v10"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6 12h12"/></svg>Gym, 9 AM to 9 PM</li>
-          <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>Rooftop pool and hot tub, in summer</li>
-        </ul>
+  <!-- RESERVA DIRECTA: recuadro carbón sobre el fondo claro -->
+  <section aria-labelledby="direct-title" class="ps-claro bg-ps-ground px-3 pb-12 md:px-12 md:pb-[104px]">
+    <div class="ps-oscuro bg-ps-ground px-6 py-8 md:px-20 md:py-20">
+      <div class="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-24">
+        <div class="flex flex-col items-start gap-5 md:gap-[26px] lg:flex-1">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ps-muted">Book direct</p>
+          <h2 id="direct-title" class="text-balance text-[30px] leading-[1.12] tracking-[-0.02em] md:text-[50px] md:leading-[1.06] md:tracking-[-0.025em]">Book on our website: always the best available rate.</h2>
+          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid px-5 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">See rates &amp; availability</a>
+        </div>
+        <div class="flex flex-col gap-5 lg:flex-1">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-ps-muted">Our rates always include</h3>
+          <ul class="grid gap-x-8 gap-y-3.5 text-[15px] sm:grid-cols-2 md:gap-y-[22px] md:text-[17px]">
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Buffet breakfast</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>High-speed WiFi</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>Complimentary bikes</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Printed Palo Santo city guide</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10"/><path d="M18 7v10"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6 12h12"/></svg>Gym, 9 AM to 9 PM</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>Rooftop with hot tub, in summer</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- GREEN -->
-  <section id="green" aria-labelledby="green-title" class="px-5 py-11 md:px-12 md:py-24">
-    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 lg:flex-row lg:items-center lg:gap-20">
-      <div class="flex flex-col gap-4 md:gap-7 lg:flex-1">
-        <p class="ps-eyebrow">A unique green architecture</p>
-        <h2 id="green-title" class="ps-h2">Argentina's first urban green hotel</h2>
-        <p class="ps-lead max-w-[34em]">Built to LEED standards, Palo Santo is a responsible hotel: vertical gardens insulate the building and absorb CO₂, backed by an environmental program that covers the many aspects of sustainable building.</p>
-        <dl class="grid grid-cols-3 gap-2 md:gap-4">
-          <div class="flex flex-col-reverse justify-end gap-1 bg-ps-panel px-3 py-3.5 md:gap-2 md:p-6">
-            <dt class="text-xs leading-snug text-ps-muted md:text-sm">height of our two vertical gardens</dt>
-            <dd class="text-[28px] leading-none tracking-[-0.02em] md:text-5xl">28 m</dd>
-          </div>
-          <div class="flex flex-col-reverse justify-end gap-1 bg-ps-panel px-3 py-3.5 md:gap-2 md:p-6">
-            <dt class="text-xs leading-snug text-ps-muted md:text-sm">plants in our vertical gardens</dt>
-            <dd class="text-[28px] leading-none tracking-[-0.02em] md:text-5xl">900+</dd>
-          </div>
-          <div class="flex flex-col-reverse justify-end gap-1 bg-ps-panel px-3 py-3.5 md:gap-2 md:p-6">
-            <dt class="text-xs leading-snug text-ps-muted md:text-sm">sustainable building standards</dt>
-            <dd class="text-[28px] leading-none tracking-[-0.02em] md:text-5xl">LEED</dd>
-          </div>
-        </dl>
-        <a href="/en/green" class="ps-link self-start">Learn more about our sustainability commitment<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-      </div>
-      <picture class="lg:flex-1">
-        <source type="image/avif" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.avif 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.avif 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.avif 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
-        <source type="image/webp" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.webp 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.webp 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.webp 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
-        <img src="/images-source/thumbnails/FachadaP-IMG_2480-thumbnail.jpg" alt="The hotel façade covered by its vertical gardens" width="1200" height="800" loading="lazy" decoding="async" class="h-60 w-full object-cover md:h-[600px]">
-      </picture>
+  <!-- VERDE -->
+  <section id="green" aria-labelledby="green-title" class="ps-oscuro flex flex-col bg-ps-ground lg:flex-row lg:items-stretch">
+    <picture class="block lg:flex-1">
+      <source type="image/avif" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.avif 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.avif 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.avif 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+      <source type="image/webp" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.webp 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.webp 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+      <img src="/images-source/thumbnails/FachadaP-IMG_2480-thumbnail.jpg" alt="The hotel façade covered by its vertical gardens" width="1200" height="800" loading="lazy" decoding="async" class="h-[340px] w-full object-cover md:h-[560px] lg:h-full lg:min-h-[740px]">
+    </picture>
+    <div class="flex flex-col gap-4 px-5 pb-12 pt-7 md:gap-[26px] md:px-12 md:pb-[72px] md:pt-14 lg:flex-1 lg:justify-center lg:py-16 lg:pl-[88px] lg:pr-12">
+      <p class="ps-eyebrow">A unique green architecture</p>
+      <h2 id="green-title" class="ps-h2 max-w-[11em]">Argentina's first urban green hotel</h2>
+      <p class="ps-lead max-w-[32em]">Built to LEED standards, Palo Santo is a responsible hotel: vertical gardens insulate the building and absorb CO₂, backed by an environmental program that covers the many aspects of sustainable building.</p>
+      <dl class="mt-1 grid grid-cols-3 gap-3 border-t border-ps-line pt-[18px] md:mt-1.5 md:gap-6 md:pt-7">
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">height of our two vertical gardens</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">28 m</dd>
+        </div>
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">plants in our vertical gardens</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">900+</dd>
+        </div>
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">sustainable building standards</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">LEED</dd>
+        </div>
+      </dl>
+      <a href="/en/green" class="ps-link self-start">Learn more about our sustainability commitment<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" aria-labelledby="services-title" class="pb-11 md:px-12 md:pb-24">
+  <!-- SERVICIOS -->
+  <section id="services" aria-labelledby="services-title" class="ps-claro bg-ps-ground py-12 md:px-12 md:pb-24 md:pt-[104px]">
     <div class="mx-auto max-w-[1344px]">
-      <div class="flex flex-col gap-2.5 px-5 md:items-center md:gap-3.5 md:px-0 md:text-center">
+      <div class="flex flex-col gap-3 px-5 md:gap-[18px] md:px-0">
         <p class="ps-eyebrow">Services</p>
-        <h2 id="services-title" class="ps-h2">Boutique luxury, down to the last detail</h2>
+        <h2 id="services-title" class="ps-h2 max-w-[13em]">Boutique luxury, down to the last detail</h2>
       </div>
 
-      <div class="mt-6 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:scroll-px-0 md:mt-12 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
-        <figure class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-[18px]">
+      <div class="mt-6 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mt-12 md:grid md:scroll-px-0 md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.avif 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.avif 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 284px">
-            <source type="image/webp" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.webp 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.webp 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 284px">
-            <img src="/images-source/thumbnails/Desayuno-Salon-IMG_2233-1000.jpeg" alt="Breakfast room with wooden tables and the buffet" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-[4/3]">
+            <source type="image/avif" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.avif 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.avif 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.webp 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.webp 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/thumbnails/Desayuno-Salon-IMG_2233-1000.jpeg" alt="Breakfast room with wooden tables and the buffet" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
           </picture>
-          <figcaption class="flex flex-col gap-1.5">
-            <strong class="text-xl font-semibold md:text-[22px]">Buffet breakfast</strong>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Buffet breakfast</strong>
             <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">Artisan breads, pastries, fresh fruit and hot dishes, with vegetarian and vegan options. Monday to Friday 7:00–10:30 AM; weekends and holidays until 11:00 AM.</span>
           </figcaption>
         </figure>
-        <figure class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-[18px]">
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.avif 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.avif 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 284px">
-            <source type="image/webp" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.webp 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.webp 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 284px">
-            <img src="/images-source/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000.jpg" alt="Rooftop with pool, hot tub and a vertical garden" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-[4/3]">
+            <source type="image/avif" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.avif 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.avif 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.webp 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.webp 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000.jpg" alt="Rooftop with a shallow pool, hot tub and a vertical garden" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
           </picture>
-          <figcaption class="flex flex-col gap-1.5">
-            <strong class="text-xl font-semibold md:text-[22px]">Rooftop with hot tub</strong>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Rooftop with hot tub</strong>
             <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">A shallow pool, sun deck and hot tub on the 8th floor. Best enjoyed in warm weather, usually from December to March.</span>
           </figcaption>
         </figure>
-        <figure class="flex w-[284px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-[18px]">
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
           <picture>
-            <source type="image/avif" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.avif 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 284px">
-            <source type="image/webp" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.webp 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 284px">
-            <img src="/images-source/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000.jpg" alt="Complimentary bikes for hotel guests" width="2000" height="1333" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-[4/3]">
+            <source type="image/avif" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.avif 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.webp 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000.jpg" alt="Complimentary bikes for hotel guests" width="2000" height="1333" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
           </picture>
-          <figcaption class="flex flex-col gap-1.5">
-            <strong class="text-xl font-semibold md:text-[22px]">Complimentary bikes</strong>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Complimentary bikes</strong>
             <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">Palermo Hollywood and Soho, the Bosques de Palermo, or Recoleta along Avenida del Libertador: all within an easy ride.</span>
           </figcaption>
         </figure>
       </div>
 
-      <ul aria-label="Other services" class="mt-6 flex flex-wrap gap-2 px-5 md:mt-12 md:justify-center md:gap-2.5 md:px-0">
+      <ul aria-label="Other services" class="mt-6 flex flex-wrap gap-2 px-5 md:mt-12 md:gap-2.5 md:px-0">
         <li class="ps-tag-outline">Gym on the 7th floor, 9 AM–9 PM</li>
         <li class="ps-tag-outline">In-room massages</li>
         <li class="ps-tag-outline">Laundry service</li>
         <li class="ps-tag-outline">Luggage storage</li>
         <li class="ps-tag-outline">Airport transfers</li>
       </ul>
-      <div class="mt-4 flex px-5 md:mt-6 md:justify-center md:px-0">
+      <div class="mt-4 flex px-5 md:mt-6 md:px-0">
         <a href="/en/hotel" class="ps-link">See all services<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- LOCATION -->
-  <section id="location" aria-labelledby="location-title" class="mx-3 bg-ps-panel p-3 pb-7 md:mx-6 md:px-12 md:py-24">
-    <div class="mx-auto flex max-w-[1296px] flex-col gap-4 lg:flex-row-reverse lg:items-center lg:gap-20">
-      <picture class="lg:flex-1">
-        <source type="image/avif" srcset="/images/thumbnails/Cafe-Palermo-edit-400.avif 400w, /images/thumbnails/Cafe-Palermo-edit-800.avif 800w, /images/thumbnails/Cafe-Palermo-edit-1200.avif 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
-        <source type="image/webp" srcset="/images/thumbnails/Cafe-Palermo-edit-400.webp 400w, /images/thumbnails/Cafe-Palermo-edit-800.webp 800w, /images/thumbnails/Cafe-Palermo-edit-1200.webp 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
-        <img src="/images-source/thumbnails/Cafe-Palermo-edit.jpg" alt="A café on a Palermo street corner" width="1000" height="667" loading="lazy" decoding="async" class="h-[170px] w-full object-cover md:h-[520px]">
-      </picture>
-      <div class="flex flex-col gap-3.5 px-2.5 pt-2 md:gap-6 md:px-0 md:pt-0 lg:flex-1">
-        <p class="ps-eyebrow">Location</p>
-        <h2 id="location-title" class="ps-h2">In the heart of Palermo Hollywood</h2>
-        <address class="flex items-center gap-3 text-[15px] font-semibold not-italic md:text-lg">
-          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          Bonpland 2275, C1425FWC Buenos Aires
-        </address>
-        <ul class="grid grid-cols-2 gap-2 md:gap-3">
-          <li class="flex flex-col gap-0.5 bg-white px-3.5 py-3 md:px-5 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Subway Line D, Plaza Italia</span><strong class="text-[15px] font-semibold md:text-lg">5 blocks</strong></li>
-          <li class="flex flex-col gap-0.5 bg-white px-3.5 py-3 md:px-5 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Microcentro &amp; Obelisco</span><strong class="text-[15px] font-semibold md:text-lg">20 min by subway</strong></li>
-          <li class="flex flex-col gap-0.5 bg-white px-3.5 py-3 md:px-5 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Aeroparque (AEP)</span><strong class="text-[15px] font-semibold md:text-lg">15–20 min by taxi</strong></li>
-          <li class="flex flex-col gap-0.5 bg-white px-3.5 py-3 md:px-5 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Ezeiza Airport (EZE)</span><strong class="text-[15px] font-semibold md:text-lg">50 min by taxi</strong></li>
-        </ul>
-        <div class="flex flex-col gap-1 md:flex-row md:flex-wrap md:items-center md:gap-x-7">
-          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="ps-btn">Get directions</a>
-          <a href="/en/palermo" class="ps-link justify-center md:justify-start">More about Palermo</a>
-          <a href="/en/contact-us" class="ps-link justify-center md:justify-start">Arrange a transfer</a>
-        </div>
+  <!-- UBICACIÓN -->
+  <div class="ps-claro bg-ps-ground px-3 pb-12 md:px-12 md:pb-[104px]">
+  <section id="location" aria-labelledby="location-title" class="flex flex-col border border-ps-line bg-ps-alt p-3 pb-7 md:p-0 lg:flex-row lg:items-stretch">
+    <picture class="block lg:order-2 lg:flex-[1_1_460px]">
+      <source type="image/avif" srcset="/images/thumbnails/Cafe-Palermo-edit-400.avif 400w, /images/thumbnails/Cafe-Palermo-edit-800.avif 800w, /images/thumbnails/Cafe-Palermo-edit-1200.avif 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
+      <source type="image/webp" srcset="/images/thumbnails/Cafe-Palermo-edit-400.webp 400w, /images/thumbnails/Cafe-Palermo-edit-800.webp 800w, /images/thumbnails/Cafe-Palermo-edit-1200.webp 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
+      <img src="/images-source/thumbnails/Cafe-Palermo-edit.jpg" alt="A café on a Palermo street corner" width="1000" height="667" loading="lazy" decoding="async" class="h-[180px] w-full object-cover md:h-[420px] lg:h-full lg:min-h-[560px]">
+    </picture>
+    <div class="flex flex-col gap-3.5 px-2.5 pt-4 md:gap-6 md:px-16 md:py-[72px] lg:flex-[1_1_520px] lg:justify-center">
+      <p class="ps-eyebrow">Location</p>
+      <h2 id="location-title" class="ps-h2">In the heart of Palermo Hollywood</h2>
+      <address class="flex items-center gap-3 text-[15px] font-semibold not-italic md:text-lg">
+        <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        Bonpland 2275, C1425FWC Buenos Aires
+      </address>
+      <ul class="grid grid-cols-2 gap-x-4 md:gap-x-8">
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Subway Line D, Plaza Italia</span><strong class="text-[15px] font-semibold md:text-lg">5 blocks</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Microcentro &amp; Obelisco</span><strong class="text-[15px] font-semibold md:text-lg">20 min by subway</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Aeroparque (AEP)</span><strong class="text-[15px] font-semibold md:text-lg">15–20 min by taxi</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Ezeiza Airport (EZE)</span><strong class="text-[15px] font-semibold md:text-lg">50 min by taxi</strong></li>
+      </ul>
+      <div class="flex flex-col gap-1 md:flex-row md:flex-wrap md:items-center md:gap-x-7">
+        <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="ps-btn-solid">Get directions</a>
+        <a href="/en/palermo" class="ps-link justify-center md:justify-start">More about Palermo</a>
+        <a href="/en/contact-us" class="ps-link justify-center md:justify-start">Arrange a transfer</a>
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- REVIEWS -->
-  <section aria-labelledby="reviews-title" class="px-5 py-11 md:px-12 md:py-24">
+  <!-- OPINIONES -->
+  <section aria-labelledby="reviews-title" class="ps-oscuro bg-ps-ground px-5 py-12 md:px-12 md:pb-24 md:pt-[104px]">
     <h2 id="reviews-title" class="sr-only">What our guests say</h2>
-    <div class="mx-auto flex max-w-[1240px] flex-col items-center gap-7 md:gap-12">
-      <figure class="flex flex-col items-center gap-4 text-center md:gap-6">
+    <div class="mx-auto flex max-w-[1240px] flex-col items-center gap-7 md:gap-[52px]">
+      <figure class="flex flex-col items-center gap-4 text-center md:gap-[26px]">
         <svg class="h-4 w-24 md:h-[18px] md:w-[104px]" viewBox="0 0 110 20" fill="currentColor" role="img" aria-label="5 out of 5 stars"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
-        <blockquote class="max-w-[22em] text-balance text-[26px] leading-[1.25] tracking-[-0.01em] md:text-[40px] md:leading-[1.2]">“This was probably the best hotel experience I've ever had, and I have been to many places.”</blockquote>
-        <figcaption class="text-xs font-semibold uppercase tracking-[0.14em] text-ps-muted md:text-[13px]">Michael · USA · April 2026 · Tripadvisor</figcaption>
+        <blockquote class="max-w-[20em] text-balance text-[27px] leading-[1.22] tracking-[-0.015em] md:text-[46px] md:leading-[1.14] md:tracking-[-0.025em]">“This was probably the best hotel experience I've ever had, and I have been to many places.”</blockquote>
+        <figcaption class="text-xs font-semibold uppercase tracking-[0.14em] text-ps-muted md:text-[13px] md:tracking-[0.16em]">Michael · USA · April 2026 · Tripadvisor</figcaption>
       </figure>
 
       <div class="grid w-full gap-4 md:grid-cols-2 md:gap-6">
-        <figure class="flex flex-col gap-3 bg-white p-6 md:gap-3.5 md:p-8">
+        <figure class="flex flex-col gap-3 border border-ps-line bg-ps-panel p-6 md:gap-3.5 md:p-[34px]">
           <p class="text-xl font-semibold md:text-[22px]">“A Jewel in the Middle of Palermo”</p>
           <blockquote class="text-[15px] leading-relaxed text-ps-body md:text-base">All aspects of Palo Santo Hotel were exceptional, including location, comfort of room, food, and walkable things to do; however, what really made Palo Santo special was the staff! Everyone we met, from the Front Desk to the restaurant and those in between, was knowledgeable, helpful and fun to talk with.</blockquote>
           <figcaption class="text-[13px] text-ps-muted md:text-sm">Richard · Maryland USA · November 2025</figcaption>
         </figure>
-        <figure class="flex flex-col gap-3 bg-white p-6 md:gap-3.5 md:p-8">
+        <figure class="flex flex-col gap-3 border border-ps-line bg-ps-panel p-6 md:gap-3.5 md:p-[34px]">
           <p class="text-xl font-semibold md:text-[22px]">“Cool hotel in heart of Palermo”</p>
           <blockquote class="text-[15px] leading-relaxed text-ps-body md:text-base">Fantastic hotel in the heart of Palermo, perfectly placed to explore the cool local area and the rest of BA. Super friendly &amp; helpful staff and stylish comfortable rooms</blockquote>
           <figcaption class="text-[13px] text-ps-muted md:text-sm">Danny · USA · November 2025</figcaption>
         </figure>
       </div>
 
-      <ul aria-label="Tripadvisor Travelers' Choice awards" class="flex flex-wrap items-center justify-center gap-2.5 md:gap-4">
-        <li><img src="/images/badges/travelers-choice-2026.png" alt="Travelers' Choice 2026" width="130" height="152" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
-        <li><img src="/images-source/Certificado-Excelencia-2025.png" alt="Travelers' Choice 2025" width="134" height="190" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
-        <li><img src="/images-source/tchotel_bob_2024_L.png" alt="Travelers' Choice Best of the Best 2024" width="140" height="190" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
-        <li><img src="/images-source/Certificado-Excelencia-2023.png" alt="Travelers' Choice 2023" width="134" height="190" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
-        <li><img src="/images-source/Certificado-Excelencia-2021.png" alt="Travelers' Choice 2021" width="134" height="190" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
-        <li><img src="/images-source/Certificado-Excelencia-2020.png" alt="Travelers' Choice 2020" width="134" height="190" loading="lazy" class="h-[54px] w-auto mix-blend-multiply md:h-[76px]"></li>
+      <ul aria-label="Tripadvisor Travelers' Choice awards" class="flex flex-wrap items-center justify-center gap-3 md:gap-5">
+        <li><img src="/images/badges/travelers-choice-2026.png" alt="Travelers' Choice 2026" width="130" height="152" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2025.png" alt="Travelers' Choice 2025" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/tchotel_bob_2024_L.png" alt="Travelers' Choice Best of the Best 2024" width="140" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2023.png" alt="Travelers' Choice 2023" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2021.png" alt="Travelers' Choice 2021" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2020.png" alt="Travelers' Choice 2020" width="134" height="190" loading="lazy" class="ps-badge"></li>
       </ul>
       <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="ps-link">Read more reviews on Tripadvisor</a>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" aria-labelledby="faq-title" class="px-5 pb-11 md:px-12 md:pb-24">
-    <div class="mx-auto flex max-w-[1240px] flex-col gap-6 lg:flex-row lg:gap-20">
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq" aria-labelledby="faq-title" class="ps-claro bg-ps-ground px-5 py-12 md:px-12 md:pb-24 md:pt-[104px]">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-6 lg:flex-row lg:gap-24">
       <div class="flex flex-col items-start gap-3 md:gap-5 lg:w-[34%]">
         <p class="ps-eyebrow">Before you travel</p>
         <h2 id="faq-title" class="ps-h2">Frequently asked questions</h2>
         <p class="ps-lead">Answers to the most common questions, to help you plan every detail of your stay.</p>
         <a href="/en/hotel#faq" class="ps-link">See all FAQs<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       </div>
-      <div class="ps-faq flex flex-col gap-2 lg:flex-1">
-        <details class="bg-white px-[18px] md:px-7" open>
-          <summary class="flex min-h-[64px] items-center justify-between gap-4 py-3 text-base font-semibold md:py-[22px] md:text-lg">What time are check-in and check-out?<span aria-hidden="true" class="flex h-8 w-8 shrink-0 items-center justify-center bg-ps-ink text-white md:h-9 md:w-9"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
-          <p class="pb-[18px] text-[15px] leading-relaxed text-ps-body md:pb-6 md:text-base">Check-in is from 3:00 PM and check-out is until 12:00 PM (noon). Late check-out until 6:00 PM is available for an additional fee, subject to availability.</p>
+      <div class="ps-faq flex flex-col border-b border-ps-line lg:flex-1">
+        <details class="border-t border-ps-line" open>
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">What time are check-in and check-out?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Check-in is from 3:00 PM and check-out is until 12:00 PM (noon). Late check-out until 6:00 PM is available for an additional fee, subject to availability.</p>
         </details>
-        <details class="bg-white px-[18px] md:px-7">
-          <summary class="flex min-h-[64px] items-center justify-between gap-4 py-3 text-base font-semibold md:py-[22px] md:text-lg">My flight arrives early — can I check in before 3:00 PM?<span aria-hidden="true" class="flex h-8 w-8 shrink-0 items-center justify-center bg-ps-ink text-white md:h-9 md:w-9"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
-          <p class="pb-[18px] text-[15px] leading-relaxed text-ps-body md:pb-6 md:text-base">Early check-in depends on same-day availability. To guarantee early access to your room, we recommend booking the previous night. You can always leave your luggage at Reception.</p>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">My flight arrives early — can I check in before 3:00 PM?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Early check-in depends on same-day availability. To guarantee early access to your room, we recommend booking the previous night. You can always leave your luggage at Reception.</p>
         </details>
-        <details class="bg-white px-[18px] md:px-7">
-          <summary class="flex min-h-[64px] items-center justify-between gap-4 py-3 text-base font-semibold md:py-[22px] md:text-lg">Can you arrange airport transfers?<span aria-hidden="true" class="flex h-8 w-8 shrink-0 items-center justify-center bg-ps-ink text-white md:h-9 md:w-9"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
-          <p class="pb-[18px] text-[15px] leading-relaxed text-ps-body md:pb-6 md:text-base">Yes. We can coordinate private transfers to and from Buenos Aires airports. We only need your flight details.</p>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Can you arrange airport transfers?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Yes. We can coordinate private transfers to and from Buenos Aires airports. We only need your flight details.</p>
         </details>
-        <details class="bg-white px-[18px] md:px-7">
-          <summary class="flex min-h-[64px] items-center justify-between gap-4 py-3 text-base font-semibold md:py-[22px] md:text-lg">Do you have parking?<span aria-hidden="true" class="flex h-8 w-8 shrink-0 items-center justify-center bg-ps-ink text-white md:h-9 md:w-9"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
-          <p class="pb-[18px] text-[15px] leading-relaxed text-ps-body md:pb-6 md:text-base">We do not have on-site parking, but there are several private garages within 400 meters of the hotel.</p>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Do you have parking?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">We do not have on-site parking, but there are several private garages within 400 meters of the hotel.</p>
         </details>
-        <details class="bg-white px-[18px] md:px-7">
-          <summary class="flex min-h-[64px] items-center justify-between gap-4 py-3 text-base font-semibold md:py-[22px] md:text-lg">Do you accept pets?<span aria-hidden="true" class="flex h-8 w-8 shrink-0 items-center justify-center bg-ps-ink text-white md:h-9 md:w-9"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
-          <p class="pb-[18px] text-[15px] leading-relaxed text-ps-body md:pb-6 md:text-base">We do not accept pets.</p>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Do you accept pets?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">We do not accept pets.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- CLOSING -->
-  <section aria-label="Book now" class="mx-3 bg-ps-ink px-6 py-12 text-white md:mx-6 md:px-[72px] md:py-[88px]">
-    <div class="mx-auto flex max-w-[1240px] flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
-      <p class="max-w-[18em] text-balance text-[28px] leading-[1.15] tracking-[-0.01em] md:text-5xl md:leading-[1.1]">A true boutique experience in Palermo.</p>
-      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-light shrink-0">Book now</a>
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="ps-oscuro bg-ps-ground px-5 py-12 md:px-12 md:py-[104px]">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-6 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10">
+      <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
     </div>
   </section>
 </main>
 
 <!-- FOOTER -->
-<footer class="mx-3 bg-ps-panel px-[18px] pb-6 pt-10 md:mx-6 md:px-12 md:pb-8 md:pt-16">
-  <div class="mx-auto flex max-w-[1240px] flex-col gap-8 md:gap-14">
-    <div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:gap-x-10 md:gap-y-10">
+<footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
+  <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-14">
+    <div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:gap-x-16 md:gap-y-10">
       <div class="flex items-start gap-5 md:contents">
-        <img src="/images-source/logo.jpg" alt="Palo Santo" width="348" height="614" loading="lazy" class="w-[60px] shrink-0 mix-blend-multiply md:w-[88px]">
-        <div class="flex flex-col gap-1.5 text-sm leading-relaxed md:flex-[1_1_240px] md:gap-2.5 md:text-[15px]">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs">Palo Santo Hotel</p>
+        <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" loading="lazy" class="h-auto w-[50px] shrink-0 md:w-16">
+        <div class="flex flex-col gap-1.5 text-sm leading-relaxed text-white/80 md:flex-[1_1_240px] md:gap-2.5 md:text-[15px]">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Palo Santo Hotel</p>
           <address class="not-italic">Bonpland 2275, Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
           <a href="tel:+541152806100" class="hover:underline">+54 11 5280 6100</a>
           <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="hover:underline">WhatsApp +54 9 11 6357-2374</a>
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-x-4 gap-y-6 text-[15px] md:contents">
+      <div class="grid grid-cols-2 gap-x-4 gap-y-6 text-[15px] text-white/80 md:contents">
         <nav aria-label="Hotel" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs">Hotel</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Hotel</p>
           <a href="/en/hotel" class="hover:underline">Services</a>
           <a href="/en/about-us" class="hover:underline">About us</a>
           <a href="/en/green" class="hover:underline">Green</a>
@@ -640,21 +671,21 @@
           <a href="/en/photo-gallery" class="hover:underline">Photos</a>
         </nav>
         <nav aria-label="Rooms" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs">Rooms</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Rooms</p>
           <a href="/en/premium-rooms" class="hover:underline">Premium</a>
           <a href="/en/deluxe-rooms" class="hover:underline">Deluxe</a>
           <a href="/en/terrace-suite" class="hover:underline">Terrace Suite</a>
           <a href="/en/palo-santo-suite" class="hover:underline">Palo Santo Suite</a>
         </nav>
         <nav aria-label="Information" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs">Information</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Information</p>
           <a href="/en/palermo" class="hover:underline">Location</a>
           <a href="/en/hotel#faq" class="hover:underline">FAQ</a>
           <a href="https://blog.palosantohotel.com/en" class="hover:underline">Blog</a>
           <a href="/en/contact-us" class="hover:underline">Contact</a>
         </nav>
         <nav aria-label="Social" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs">Follow us</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Follow us</p>
           <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
           <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
           <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="hover:underline">Tripadvisor</a>
@@ -662,23 +693,23 @@
         </nav>
       </div>
     </div>
-    <div class="flex justify-between gap-4 border-t border-ps-rule pt-5 text-[13px] text-ps-muted md:pt-6 md:text-sm">
+    <div class="flex justify-between gap-4 border-t border-ps-line pt-5 text-[13px] text-ps-muted md:pt-6 md:text-sm">
       <span>© <span data-year>2026</span> Palo Santo Hotel</span>
-      <a href="/" lang="es" class="hover:text-ps-text">Español</a>
+      <a href="/" lang="es" class="hover:text-white">Español</a>
     </div>
   </div>
 </footer>
 
-<!-- STICKY BOOKING BAR (mobile and tablet) -->
-<div class="fixed inset-x-3 bottom-3 z-40 flex items-center gap-2 bg-ps-ink p-2 pl-4 text-white shadow-[0_14px_32px_rgba(20,20,20,0.25)] lg:hidden">
-  <button type="button" class="flex min-h-[52px] flex-1 items-center gap-3 text-left" data-booking-open aria-controls="booking-panel" aria-expanded="false">
-    <svg class="h-[22px] w-[22px] shrink-0 text-ps-soft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+<!-- BARRA DE RESERVA FIJA (mobile y tablet) -->
+<div class="fixed inset-x-0 bottom-0 z-40 flex items-center gap-2 border-t border-ps-line bg-ps-ground/80 pb-[max(12px,env(safe-area-inset-bottom))] pl-5 pr-3 pt-3 text-white backdrop-blur-lg lg:hidden">
+  <button type="button" class="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 text-left" data-booking-open aria-controls="booking-panel" aria-expanded="false">
+    <svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
     <span class="flex flex-col leading-tight">
       <span class="text-[15px] font-semibold">Choose your dates</span>
-      <span class="text-xs text-ps-soft">Best rate guaranteed</span>
+      <span class="text-xs text-ps-muted">Best rate guaranteed</span>
     </span>
   </button>
-  <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-light min-h-[52px] px-5 text-xs">Book now</a>
+  <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn min-h-[52px] px-5 text-xs">Book now</a>
 </div>
 
 <!-- Google Analytics 4 -->

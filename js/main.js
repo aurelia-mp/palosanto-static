@@ -113,72 +113,217 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Hero: la opción se elige al azar en el HTML. Si es un video, se carga cuando la página
-  // ya terminó, encima de su imagen inicial. No se carga con ahorro de datos ni con movimiento reducido.
+  // Hero: los tres videos se encadenan con un fundido y cada uno arranca sobre su imagen fija.
+  // El primero se elige al azar en el HTML. Con ahorro de datos o movimiento reducido no arranca
+  // solo: queda la imagen y se puede reproducir con los botones.
   const hero = document.querySelector('[data-hero]');
-  const heroPick = hero ? hero.querySelector('[data-hero-active]') : null;
-  if (hero && heroPick && heroPick.dataset.video) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const saveData = navigator.connection && navigator.connection.saveData;
+  const heroClips = hero ? Array.from(hero.querySelectorAll('[data-hero-clip]')) : [];
+  if (hero && heroClips.length) {
+    const chapters = Array.from(hero.querySelectorAll('[data-hero-chapter]'));
+    const controls = hero.querySelector('[data-hero-controls]');
     const toggle = hero.querySelector('[data-hero-toggle]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = Boolean(navigator.connection && navigator.connection.saveData);
+    let current = Math.max(0, heroClips.findIndex(clip => clip.hasAttribute('data-hero-active')));
+    let paused = reduceMotion || saveData;
+    let started = false;
+    let inView = true;
+    let frame = 0;
+    let skipTimer = 0;
+    let prepareTimer = 0;
 
-    const startHeroVideo = () => {
+    const wrap = index => (index + heroClips.length) % heroClips.length;
+    const fillOf = index => (chapters[index] ? chapters[index].querySelector('[data-hero-fill]') : null);
+
+    const tick = () => {
+      const video = heroClips[current].querySelector('video');
+      const fill = fillOf(current);
+      if (video && fill && video.duration) {
+        fill.style.transform = `scaleX(${Math.min(1, video.currentTime / video.duration)})`;
+      }
+      frame = requestAnimationFrame(tick);
+    };
+
+    const stopTick = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+    };
+
+    // Crea el video de un clip la primera vez que hace falta.
+    // En celulares prueba primero el corte vertical y, si no está, el horizontal.
+    const videoOf = index => {
+      const clip = heroClips[index];
+      if (clip.dataset.failed) return null;
+      const existing = clip.querySelector('video');
+      if (existing) return existing;
+
       const isMobile = window.matchMedia('(max-width: 767px)').matches;
-      const src = isMobile ? heroPick.dataset.videoMobile : heroPick.dataset.video;
-      if (!src) return;
+      const sources = [isMobile ? clip.dataset.videoMobile : '', clip.dataset.video].filter(Boolean);
+      if (!sources.length) return null;
 
       const video = document.createElement('video');
       video.muted = true;
-      video.loop = true;
       video.playsInline = true;
       video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
       video.setAttribute('aria-hidden', 'true');
       video.preload = 'auto';
       video.className = 'absolute inset-0 h-full w-full object-cover';
+      let attempt = 0;
+
       video.addEventListener('playing', () => {
         video.classList.add('is-playing');
-        if (toggle) {
-          toggle.classList.remove('hidden');
-          toggle.classList.add('flex');
+        // Con este clip ya en marcha, se empieza a cargar el siguiente
+        if (heroClips[current] === clip) {
+          clearTimeout(prepareTimer);
+          prepareTimer = setTimeout(() => prepare(wrap(current + 1)), 3000);
         }
-      }, { once: true });
-      // Si el video no existe o falla, queda la imagen inicial
-      video.addEventListener('error', () => video.remove(), { once: true });
-      video.src = src;
-      heroPick.after(video);
+      });
+      video.addEventListener('ended', () => {
+        if (heroClips[current] === clip) show(index + 1);
+      });
+      video.addEventListener('error', () => {
+        attempt += 1;
+        if (attempt < sources.length) {
+          video.src = sources[attempt];
+          if (heroClips[current] === clip) play();
+          return;
+        }
+        // Sin video queda la imagen fija y la secuencia sigue
+        clip.dataset.failed = 'true';
+        video.remove();
+        if (heroClips[current] === clip) play();
+      });
 
-      const playAttempt = video.play();
-      if (playAttempt && typeof playAttempt.catch === 'function') {
-        playAttempt.catch(() => {
-          /* Si el navegador bloquea la reproducción automática, queda la imagen inicial */
-        });
-      }
+      video.src = sources[0];
+      clip.append(video);
+      return video;
     };
 
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        const video = hero.querySelector('video');
-        if (!video) return;
-        const pausing = !video.paused;
-        if (pausing) {
-          video.pause();
-        } else {
-          video.play();
-        }
-        toggle.setAttribute('aria-pressed', String(pausing));
-        toggle.setAttribute('aria-label', pausing ? toggle.dataset.labelPlay : toggle.dataset.labelPause);
-        toggle.querySelector('[data-icon-pause]').classList.toggle('hidden', pausing);
-        toggle.querySelector('[data-icon-play]').classList.toggle('hidden', !pausing);
-      });
+    const prepare = index => {
+      heroClips[index].classList.remove('hidden');
+      videoOf(index);
+    };
+
+    function play() {
+      clearTimeout(skipTimer);
+      if (!started || paused || !inView) return;
+      const video = videoOf(current);
+      if (!video) {
+        // Clip sin video: se muestra su imagen unos segundos y sigue el próximo
+        skipTimer = setTimeout(() => show(current + 1), 6000);
+        return;
+      }
+      const attempt = video.play();
+      if (attempt && typeof attempt.catch === 'function') {
+        attempt.catch(error => {
+          // Si el navegador bloquea la reproducción automática, queda la imagen y el botón de play
+          if (error && error.name === 'NotAllowedError') setPaused(true);
+        });
+      }
+      if (!frame) frame = requestAnimationFrame(tick);
     }
 
-    if (!reduceMotion && !saveData) {
-      if (document.readyState === 'complete') {
-        startHeroVideo();
-      } else {
-        window.addEventListener('load', startHeroVideo, { once: true });
+    const updateChapters = () => {
+      chapters.forEach((button, index) => {
+        const active = index === current;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+        const fill = fillOf(index);
+        if (fill && !active) fill.style.transform = 'scaleX(0)';
+      });
+    };
+
+    function show(index) {
+      index = wrap(index);
+      clearTimeout(skipTimer);
+      const previous = heroClips[current];
+      const next = heroClips[index];
+      if (previous !== next) {
+        next.classList.remove('hidden');
+        void next.offsetWidth; // para que el fundido arranque desde transparente
+        next.classList.replace('opacity-0', 'opacity-100');
+        previous.classList.replace('opacity-100', 'opacity-0');
+        const previousVideo = previous.querySelector('video');
+        if (previousVideo) {
+          setTimeout(() => {
+            if (heroClips[current] !== previous) previousVideo.pause();
+          }, 1300);
+        }
+        current = index;
       }
+      const video = videoOf(index);
+      if (video) {
+        try {
+          video.currentTime = 0;
+        } catch (error) {
+          /* el video todavía no tiene datos */
+        }
+      }
+      const fill = fillOf(index);
+      if (fill) fill.style.transform = 'scaleX(0)';
+      updateChapters();
+      play();
+    }
+
+    const syncToggle = () => {
+      if (!toggle) return;
+      toggle.setAttribute('aria-label', paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause);
+      toggle.querySelector('[data-icon-pause]').classList.toggle('hidden', paused);
+      toggle.querySelector('[data-icon-play]').classList.toggle('hidden', !paused);
+    };
+
+    function setPaused(value) {
+      paused = value;
+      syncToggle();
+      if (paused) {
+        clearTimeout(skipTimer);
+        const video = heroClips[current].querySelector('video');
+        if (video) video.pause();
+        stopTick();
+      } else {
+        play();
+      }
+    }
+
+    if (toggle) toggle.addEventListener('click', () => setPaused(!paused));
+    chapters.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        paused = false;
+        syncToggle();
+        show(index);
+      });
+    });
+
+    // Fuera de pantalla el video se detiene y vuelve a arrancar al regresar
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        inView = entries[entries.length - 1].isIntersecting;
+        if (inView) {
+          play();
+        } else {
+          clearTimeout(skipTimer);
+          const video = heroClips[current].querySelector('video');
+          if (video) video.pause();
+          stopTick();
+        }
+      }).observe(hero);
+    }
+
+    const startHero = () => {
+      started = true;
+      if (controls) {
+        controls.classList.remove('hidden');
+        controls.classList.add('flex');
+      }
+      updateChapters();
+      setPaused(paused);
+    };
+
+    if (document.readyState === 'complete') {
+      startHero();
+    } else {
+      window.addEventListener('load', startHero, { once: true });
     }
   }
 
@@ -284,118 +429,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const experienceGallery = document.querySelector('[data-experience-gallery]');
-  if (experienceGallery) {
-    const viewport = experienceGallery.querySelector('[data-experience-viewport]');
-    const track = experienceGallery.querySelector('[data-experience-track]');
-    const slides = track ? Array.from(track.children) : [];
-    const prevButton = document.querySelector('[data-experience-gallery-prev]');
-    const nextButton = document.querySelector('[data-experience-gallery-next]');
-    const status = document.querySelector('[data-experience-gallery-status]');
-    let currentIndex = 0;
-
-    if (viewport && track && slides.length && prevButton && nextButton) {
-      const updateStatus = () => {
-        if (status) status.textContent = `${currentIndex + 1} / ${slides.length}`;
-      };
-
-      const updateTransform = () => {
-        const width = viewport.getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * width}px)`;
-      };
-
-      const goToSlide = nextIndex => {
-        currentIndex = (nextIndex + slides.length) % slides.length;
-        updateTransform();
-        updateStatus();
-      };
-
-      prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
-      nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
-      window.addEventListener('resize', () => {
-        window.requestAnimationFrame(updateTransform);
-      });
-
-      updateStatus();
-      updateTransform();
-    }
-  }
-
-  const featureGallery = document.querySelector('[data-feature-gallery]');
-  if (featureGallery) {
-    const viewport = featureGallery.querySelector('[data-feature-viewport]');
-    const track = featureGallery.querySelector('[data-feature-track]');
-    const slides = track ? Array.from(track.children) : [];
-    const prevButton = featureGallery.querySelector('[data-feature-gallery-prev]');
-    const nextButton = featureGallery.querySelector('[data-feature-gallery-next]');
-    let currentIndex = 0;
-
-    if (viewport && track && slides.length && prevButton && nextButton) {
-
-      const updateTransform = () => {
-        const width = viewport.getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * width}px)`;
-      };
-
-      const goToSlide = index => {
-        currentIndex = (index + slides.length) % slides.length;
-        updateTransform();
-      };
-
-      prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
-      nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
-      window.addEventListener('resize', () => {
-        window.requestAnimationFrame(updateTransform);
-      });
-
-      updateTransform();
-    }
-  }
-
-  const experienceAccordion = document.querySelector('[data-experience-accordion]');
-  if (experienceAccordion) {
-    const items = Array.from(experienceAccordion.querySelectorAll('[data-experience-accordion-item]'));
-
-    const setIconState = (trigger, expanded) => {
-      const icon = trigger.querySelector('svg');
-      if (icon) icon.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
-    };
-
-    const closeAll = () => {
-      items.forEach(item => {
-        const trigger = item.querySelector('[data-experience-accordion-trigger]');
-        const panel = item.querySelector('[data-experience-accordion-panel]');
-        if (trigger && panel) {
-          trigger.setAttribute('aria-expanded', 'false');
-          panel.style.maxHeight = '0px';
-          setIconState(trigger, false);
-        }
-      });
-    };
-
-    items.forEach((item, index) => {
-      const trigger = item.querySelector('[data-experience-accordion-trigger]');
-      const panel = item.querySelector('[data-experience-accordion-panel]');
-      if (!trigger || !panel) return;
-
-      trigger.addEventListener('click', () => {
-        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-        closeAll();
-        if (!isExpanded) {
-          trigger.setAttribute('aria-expanded', 'true');
-          panel.style.maxHeight = `${panel.scrollHeight}px`;
-          setIconState(trigger, true);
-        }
-      });
-
-      if (index === 0) {
-        trigger.setAttribute('aria-expanded', 'true');
-        panel.style.maxHeight = `${panel.scrollHeight}px`;
-        setIconState(trigger, true);
-      }
-    });
-  }
-
   const roomGallery = document.querySelector('[data-room-gallery]');
   if (roomGallery) {
     const heroImage = roomGallery.querySelector('[data-room-hero]');
@@ -446,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isActive = index === currentIndex;
           slide.button.setAttribute('aria-pressed', String(isActive));
           slide.button.classList.toggle('ring-2', isActive);
-          slide.button.classList.toggle('ring-black', isActive);
+          slide.button.classList.toggle('ring-white', isActive);
           slide.button.classList.toggle('ring-1', !isActive);
           slide.button.classList.toggle('ring-transparent', !isActive);
         });
@@ -644,7 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(btn => {
       const isActive = btn === activeButton;
       btn.classList.toggle('border', isActive);
-      btn.classList.toggle('border-gray-400', isActive);
+      btn.classList.toggle('border-white', isActive);
       btn.classList.toggle('border-none', !isActive);
     });
   };

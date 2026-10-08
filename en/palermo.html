@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1C1C1C" />
 
     <title>Our Neighborhood: Palermo – Palo Santo Hotel Buenos Aires</title>
     <meta name="description" content="Discover Palo Santo Hotel’s privileged location in Palermo, Buenos Aires’ most welcoming neighborhood, known for tree-lined streets, outdoor cafés, and a vibrant dining scene." />
@@ -21,631 +22,353 @@
 
     <!-- Main JS -->
     <script src="/js/main.js" defer></script>
+    <!-- Fondo: ?fondo=verde muestra el verde #0E1B14 para comparar (ver src/components.css) -->
+    <script>try{var f=new URLSearchParams(location.search).get('fondo');if(f)sessionStorage.setItem('ps-fondo',f);f=sessionStorage.getItem('ps-fondo');if(f&&f!=='carbon')document.documentElement.setAttribute('data-fondo',f)}catch(e){}</script>
     <link rel="stylesheet" href="/dist/output.css" />
-    <!-- Fonts -->
-    <link
-      rel="preload"
-      href="/fonts/lato-v25-latin-ext-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
 </head>
 
-<body class="text-gray-800">
+<body class="bg-ps-ground font-brand text-ps-text antialiased">
 
-<!-- MENÚ MOBILE - EN -->
-<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
-  <div class="relative flex items-center justify-center px-6 py-4">
-    <button
-      id="mobile-menu-toggle"
-      type="button"
-      class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-1.5 rounded border border-transparent p-2 transition focus:outline-none hover:border-gray-400"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="sr-only">Open menu</span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-    </button>
-    <a href="/en/" class="block">
-      <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
+<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
+
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
+    <div class="flex items-center">
+      <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
+      </button>
+      <nav aria-label="Main menu" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/rooms" class="underline-offset-8 hover:underline">Rooms</a>
+        <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
+        <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
+        <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
+        <a href="/en/palermo" class="underline underline-offset-8" aria-current="page">Location</a>
+      </nav>
+    </div>
+
+    <a href="/en/" class="block" aria-label="Palo Santo Hotel, home">
+      <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" class="h-auto w-[50px] xl:w-[60px]">
     </a>
+
+    <div class="flex items-center justify-end gap-x-[30px]">
+      <nav aria-label="More sections" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
+        <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
+        <a href="/en/contact-us" class="underline-offset-8 hover:underline">Contact</a>
+      </nav>
+      <a href="/es/palermo" lang="es" class="hidden text-sm font-semibold tracking-[0.12em] underline-offset-8 hover:underline xl:inline" aria-label="Versión en español">ES</a>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-ghost min-h-[44px] px-3.5 text-[11px] tracking-[0.14em] xl:min-h-[48px] xl:px-[26px] xl:text-[13px] xl:tracking-[0.16em]">Book now</a>
+    </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t bg-white">
-    <nav aria-label="Mobile mail menu" class="px-6 py-6 space-y-1 font-base">
-      <div class="space-y-1">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide py-1"
-          aria-controls="mobile-submenu-hotel"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>HOTEL</span>
-          <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/en/hotel" aria-current="page">Services</a></li>
-          <li><a class="block" href="/en/about-us">About us</a></li>
-        </ul>
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
+    <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
+      <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
+      <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
+        <a href="/en/premium-rooms" class="flex min-h-[44px] items-center">Premium</a>
+        <a href="/en/deluxe-rooms" class="flex min-h-[44px] items-center">Deluxe</a>
+        <a href="/en/terrace-suite" class="flex min-h-[44px] items-center">Terrace Suite</a>
+        <a href="/en/palo-santo-suite" class="flex min-h-[44px] items-center">Palo Santo Suite</a>
       </div>
-
-      <div class="space-y-2">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-base"
-          aria-controls="mobile-submenu-habitaciones"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>Rooms</span>
-          <svg class="block chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-habitaciones" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/en/rooms">Our rooms</a></li>
-          <li><a class="block" href="/en/premium-rooms">Premium</a></li>
-          <li><a class="block" href="/en/deluxe-rooms">Deluxe</a></li>
-          <li><a class="block" href="/en/terrace-suite">Terrace Suite</a></li>
-          <li><a class="block" href="/en/palo-santo-suite">Palo Santo Suite</a></li>
-        </ul>
-      </div>
-
-      <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="/en/green" class="block">Green</a></li>
-        <li><a href="/en/restaurant" class="block">Breakfast and Restaurant</a></li>
-        <li><a href="/en/palermo" class="block">Palermo</a></li>
-        <li><a href="/en/photo-gallery" class="block">Photos</a></li>
-        <li><a href="https://blog.palosantohotel.com/en" class="block">Blog</a></li>
-        <li><a href="/en/contact-us" class="block">Contact us</a></li>
-        <li class="flex">
-          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener"
-            class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
-            Book Now
-          </a>
-        </li>
-        <li class="pt-10">
-          <a href="/es/palermo" class="flex items-center gap-2">
-            <span>Español</span>
-          </a>
-        </li>
-      </ul>
+      <a href="/en/hotel" class="flex min-h-[48px] items-center">Hotel &amp; services</a>
+      <a href="/en/about-us" class="flex min-h-[48px] items-center">About us</a>
+      <a href="/en/green" class="flex min-h-[48px] items-center">Green</a>
+      <a href="/en/restaurant" class="flex min-h-[48px] items-center">Breakfast &amp; restaurant</a>
+      <a href="/en/palermo" class="flex min-h-[48px] items-center" aria-current="page">Location</a>
+      <a href="/en/photo-gallery" class="flex min-h-[48px] items-center">Photos</a>
+      <a href="https://blog.palosantohotel.com/en" class="flex min-h-[48px] items-center">Blog</a>
+      <a href="/en/contact-us" class="flex min-h-[48px] items-center">Contact</a>
+      <a href="/es/palermo" lang="es" class="mt-2 flex min-h-[48px] items-center border-t border-ps-line text-base text-ps-muted">Español</a>
     </nav>
   </div>
 </header>
 
-<!-- MENÚ DESKTOP EN -->
-<header class="bg-white border-b max-[850px]:hidden">
-  <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-6 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] text-black">
-    <div class="flex w-full justify-center">
-      <a href="/en/" class="shrink-0" aria-label="Back to home">
-        <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-28 w-auto max-[1068px]:h-24" loading="lazy">
-      </a>
+<main id="content" class="ps-claro bg-ps-ground">
+
+  <!-- PORTADA -->
+  <section aria-labelledby="title" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/Palermo-palermo-hollywood-1-1600-800.avif 800w, /images/hotel/Palermo-palermo-hollywood-1-1600-1200.avif 1200w, /images/hotel/Palermo-palermo-hollywood-1-1600-1600.avif 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/Palermo-palermo-hollywood-1-1600-800.webp 800w, /images/hotel/Palermo-palermo-hollywood-1-1600-1200.webp 1200w, /images/hotel/Palermo-palermo-hollywood-1-1600-1600.webp 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <img src="/images-source/hotel/Palermo-palermo-hollywood-1-1600.jpg" alt="A Palermo Hollywood corner with café tables on the sidewalk, under the trees" width="1600" height="1066" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[50%_50%] md:object-[50%_55%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <h1 id="title" class="flex flex-col gap-2.5 [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:gap-3.5">
+          <span class="text-[17px] leading-snug md:text-[22px]">Our location:</span>
+          <span class="text-[46px] leading-[0.98] tracking-[-0.035em] md:text-[clamp(56px,6.6vw,96px)] md:leading-[0.96] md:tracking-[-0.04em]">Palermo Hollywood</span>
+        </h1>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">On a quiet street, steps away from restaurants, parks and public transport.</p>
+      </div>
     </div>
+  </section>
 
-    <nav aria-label="Main menu" class="flex w-full flex-col items-center gap-6">
-      <ul class="flex flex-nowrap items-center justify-center gap-6 xl:gap-10">
-        <li class="relative group">
-          <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
-            ROOMS
-            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
-            </svg>
-          </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-            <ul class="space-y-2 text-black">
-              <li><a href="/en/rooms" class="block hover:text-gray-600">Our Rooms</a></li>
-              <li><a href="/en/premium-rooms" class="block hover:text-gray-600">Premium</a></li>
-              <li><a href="/en/deluxe-rooms" class="block hover:text-gray-600">Deluxe</a></li>
-              <li><a href="/en/terrace-suite" class="block hover:text-gray-600">Terrace Suite</a></li>
-              <li><a href="/en/palo-santo-suite" class="block hover:text-gray-600">Palo Santo Suite</a></li>
-            </ul>
+  <!-- DATOS PRÁCTICOS -->
+  <section aria-label="Practical information" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-2 md:gap-x-8 md:py-0 xl:grid-cols-4">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Address</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Bonpland 2275</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v13H6z"/><path d="M6 10h12"/><path d="M9 21l2-5"/><path d="M15 21l-2-5"/></svg>Subway Line D, Plaza Italia</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">5 blocks away</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Aeroparque (AEP)</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">15–20 min by taxi</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Ezeiza (EZE)</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">50 min by taxi</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- CÓMO LLEGAR -->
+  <section id="getting-here" aria-labelledby="getting-here-title" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 md:gap-16">
+      <div class="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-20">
+        <div class="flex flex-col items-start gap-5 md:gap-6 lg:flex-1">
+          <p class="ps-eyebrow">Getting here</p>
+          <div class="flex flex-col gap-2.5">
+            <h2 id="getting-here-title" class="ps-h2">Bonpland 2275</h2>
+            <address class="text-base not-italic leading-normal text-ps-body md:text-lg">Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
           </div>
-        </li>
-        <li class="relative group">
-            <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
-            HOTEL
-            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
-            </svg>
-          </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-            <ul class="space-y-2 text-black">
-              <li><a href="/en/hotel" class="block hover:text-gray-600">Hotel services</a></li>
-              <li><a href="/en/about-us" class="block hover:text-gray-600">About us</a></li>
-            </ul>
+          <div class="flex flex-col gap-2 border-t border-ps-line pt-5 md:pt-6">
+            <h3 class="text-base font-semibold md:text-[17px]">Getting around</h3>
+            <p class="max-w-[30em] text-[15px] leading-relaxed text-ps-body md:text-base">Palermo Hollywood is well connected. The D subway line (Plaza Italia station) and the Metrobús are a few blocks away, and there are bike lanes right outside. But the best advice is usually the simplest: much of the neighborhood is best on foot.</p>
           </div>
-        </li>
-        <li><a href="/en/green" class="hover:text-gray-600">GREEN</a></li>
-        <li><a href="/en/restaurant" class="hover:text-gray-600">Restaurant</a></li>
-        <li><a href="/en/photo-gallery" class="hover:text-gray-600">Photos</a></li>
-        <li>
-          <a 
-          href="/en/palermo" 
-          class="relative pb-1 hover:text-gray-600 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
-          aria-current="page">
-            Location
-          </a>
-        </li>
-        <li><a href="https://blog.palosantohotel.com/en" class="hover:text-gray-600">Blog</a></li>
-        <li><a href="/en/contact-us" class="hover:text-gray-600">Contact Us</a></li>
-        <li aria-hidden="true" class="text-gray-400">|</li>
-        <li><a href="/es/palermo" class="pl-2 text-gray-400 hover:text-gray-600" aria-label="Ver esta página en español">ES</a></li>
-      </ul>
-
-      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">
-        Book Now
-      </a>
-    </nav>
-  </div>
-</header>
-
-
-<!-- CONTENIDO PRINCIPAL -->
-<!-- PHOTO + INTRO -->
-<section class="bg-white px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-7xl space-y-10 lg:grid lg:grid-cols-3 lg:items-start lg:gap-10 lg:space-y-0">
-    <section class="space-y-4 lg:col-span-2" aria-label="Palermo gallery" data-feature-gallery>
-      <div class="relative overflow-hidden shadow-xl" data-feature-viewport>
-        <div class="absolute right-0 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg">
-          <button type="button" aria-label="Previous photo" data-feature-gallery-prev class="group relative flex h-12 w-12 items-center justify-center px-3 text-gray-900 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 transition-transform group-hover:-translate-x-0.5">
-              <path d="M15 6l-6 6 6 6"/>
-            </svg>
-          </button>
-          <button type="button" aria-label="Next photo" data-feature-gallery-next class="group relative flex h-12 w-12 items-center justify-center px-3 text-gray-900 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 transition-transform group-hover:translate-x-0.5">
-              <path d="M9 6l6 6-6 6"/>
-            </svg>
-          </button>
+          <div class="flex w-full flex-col gap-1 pt-1 md:w-auto md:flex-row md:flex-wrap md:items-center md:gap-x-7">
+            <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="ps-btn-solid">Open in Google Maps<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M10 14 20 4"/><path d="M19 14v6H4V5h6"/></svg></a>
+            <a href="/en/contact-us" class="ps-link justify-center md:justify-start">Arrange a transfer</a>
+          </div>
         </div>
-        <div class="flex transition-transform duration-500 ease-out" data-feature-track>
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.avif 800w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.avif 1200w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.webp 800w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.webp 1200w,
-                    /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Grupo-Jardin-IMG_3054-324-2000.jpg"
-                  alt="Group of friends enjoying the garden at Palo Santo Hotel in Palermo, Buenos Aires"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-tigre-morado-1600-800.avif 800w,
-                    /images/hotel/Palermo-tigre-morado-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-tigre-morado-1600-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-tigre-morado-1600-800.webp 800w,
-                    /images/hotel/Palermo-tigre-morado-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-tigre-morado-1600-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-tigre-morado-1600.jpg"
-                  alt="Facade of Tigre Morado restaurant in Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-800.avif 800w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-800.webp 800w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-palermo-hollywood-1-1600-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-palermo-hollywood-1-1600.jpg"
-                  alt="Streets of Palermo Hollywood with bars and sidewalk tables"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-StreetArt-2000-800.avif 800w,
-                    /images/hotel/Palermo-StreetArt-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-StreetArt-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-StreetArt-2000-800.webp 800w,
-                    /images/hotel/Palermo-StreetArt-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-StreetArt-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-StreetArt-2000.jpg"
-                  alt="Colorful street art on a wall in Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-800.avif 800w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1200.avif 1200w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-800.webp 800w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1200.webp 1200w,
-                    /images/hotel/Palermo-Eterna-Cadencia-1600-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-Eterna-Cadencia-1600.jpg"
-                  alt="Eterna Cadencia bookshop in Palermo Hollywood"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal1-2000-800.avif 800w,
-                    /images/hotel/Palermo-rosedal1-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-rosedal1-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal1-2000-800.webp 800w,
-                    /images/hotel/Palermo-rosedal1-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-rosedal1-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-rosedal1-2000.jpg"
-                  alt="Tree-lined path at the Rosedal rose garden in Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
-
-          <figure class="min-w-full shrink-0">
-            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
-              <picture class="absolute inset-0 block h-full w-full">
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal2-2000-800.avif 800w,
-                    /images/hotel/Palermo-rosedal2-2000-1200.avif 1200w,
-                    /images/hotel/Palermo-rosedal2-2000-1600.avif 1600w
-                  "
-                  type="image/avif" />
-                <source
-                  srcset="
-                    /images/hotel/Palermo-rosedal2-2000-800.webp 800w,
-                    /images/hotel/Palermo-rosedal2-2000-1200.webp 1200w,
-                    /images/hotel/Palermo-rosedal2-2000-1600.webp 1600w
-                  "
-                  type="image/webp" />
-                <img
-                  src="/images-source/hotel/Palermo-rosedal2-2000.jpg"
-                  alt="Blooming shrubs and people strolling at the Rosedal in Palermo"
-                  class="h-full w-full object-cover"
-                  width="1000"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 50vw" />
-              </picture>
-            </div>
-          </figure>
+        <div class="relative h-[340px] overflow-hidden bg-ps-alt md:h-[480px] lg:h-auto lg:min-h-[560px] lg:flex-[1.3_1_0%]">
+          <iframe title="Google map showing Palo Santo Hotel, Bonpland 2275" src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1sPalo+Santo+Hotel,+Bonpland+2275,+Palermo,+Buenos+Aires!6i15!3m1!1sen!5m1!1sen" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen class="absolute inset-0 h-full w-full border-0 grayscale"></iframe>
         </div>
       </div>
-    </section>
 
-    <div class="flex max-w-2xl flex-col gap-6 lg:col-span-1">
-      <h1 class="text-4xl font-bold uppercase leading-tight text-gray-900 sm:text-4xl">
-        Our location: Palermo Hollywood
-      </h1>
-      <p class="text-base leading-relaxed text-gray-600">
-        Palermo is the neighborhood we chose, for concrete reasons. Its sidewalks are wide and tree-shaded, the cafés open onto the street, and the dining scene is one of the most interesting in the region. For those looking for a <a href="/en/hotel-palermo-buenos-aires" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">boutique hotel in Palermo Hollywood</a>, this part of the city is something specific: a place where local life happens at street level, and where the rest of Buenos Aires stays within easy reach.
-      </p>
-      <p class="text-base leading-relaxed text-gray-600">
-        This is the practical page: where we are, how to get here, and what you'll find around you. If what you're after is things to do in the neighborhood, we gather it all in <a href="https://blog.palosantohotel.com/en/things-to-do-palermo-buenos-aires/" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our complete guide to Palermo</a>.
-      </p>
-      <p class="text-base leading-relaxed text-gray-600">Everything you need is a short walk away:</p>
-      <ul class="mt-2 space-y-3 text-base leading-relaxed text-gray-600">
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Acclaimed restaurants and specialty coffee roasters within a five-minute walk</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Independent design stores, art galleries, and weekend markets</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 inline-block h-2 w-2 rounded-full bg-black"></span>
-          <span>Direct access to the parks, running paths, and the BA EcoBici bike-share network</span>
-        </li>
-      </ul>
-      <p class="text-base leading-relaxed text-gray-600">The Bosques de Palermo are about a twenty-minute walk away; Plaza Serrano, the heart of Palermo Soho, is around 1,600 meters. To cover more ground you can borrow one of <a href="https://www.palosantohotel.com/en/hotel" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our complimentary bicycles</a>.</p>
-
-      <a
-        href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex w-full items-center justify-center rounded-full border border-black px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-center transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30 sm:w-auto">
-        Explore on Google Maps
-      </a>
+      <div class="ps-oscuro flex flex-col gap-8 bg-ps-ground px-6 py-9 md:gap-10 md:p-16">
+        <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-12 md:gap-y-4">
+          <div class="flex flex-col gap-3 md:gap-3.5">
+            <p class="ps-eyebrow">Distances from the hotel</p>
+            <h3 class="text-[28px] leading-[1.1] tracking-[-0.025em] md:text-[42px] md:leading-[1.08]">On foot, by subway or by taxi</h3>
+          </div>
+          <p class="text-[15px] leading-relaxed text-ps-body md:max-w-[30em] md:text-base">Approximate times from Palo Santo’s front door.</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-4">
+          <div class="flex flex-col gap-2">
+            <h4 class="ps-eyebrow">On foot</h4>
+            <dl class="flex flex-col">
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Sanatorio de Los Arcos</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">400 m · 5 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">La Rural Exhibition Center</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">1,300 m · 20 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Plaza Serrano, Palermo Soho</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">1,600 m</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Bosques de Palermo</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">20 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">U.S. Visa Applicant Service Center</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">1,900 m · 25 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Movistar Arena</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">2,400 m · 30 min</dd></div>
+            </dl>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h4 class="ps-eyebrow">By subway</h4>
+            <dl class="flex flex-col">
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Plaza Italia station, Line D</dt><dd class="shrink-0 text-right text-base font-semibold md:text-left md:text-[17px]">5 blocks away</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Microcentro, Plaza de Mayo and the Obelisco</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">20 min</dd></div>
+            </dl>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h4 class="ps-eyebrow">By taxi</h4>
+            <dl class="flex flex-col">
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">La Rural</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">5 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">U.S. Visa Center and Movistar Arena</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">5–10 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Recoleta and Plaza Francia</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">15 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">San Telmo, the historic district</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">30 min</dd></div>
+            </dl>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h4 class="ps-eyebrow">Airports, by taxi</h4>
+            <dl class="flex flex-col">
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Aeroparque Jorge Newbery (AEP)</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">15–20 min</dd></div>
+              <div class="flex items-baseline justify-between gap-4 border-t border-ps-line py-3 md:flex-col md:items-start md:justify-start md:gap-0.5 md:py-3.5"><dt class="text-[15px] leading-snug text-ps-body">Ezeiza International Airport (EZE)</dt><dd class="shrink-0 text-right text-base font-semibold tabular-nums md:text-left md:text-[17px]">50 min</dd></div>
+            </dl>
+            <a href="/en/contact-us" class="ps-link mt-1 self-start">Arrange a transfer<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- EL BARRIO -->
+  <section id="neighborhood" aria-labelledby="neighborhood-title" class="px-5 pb-16 md:px-12 md:pb-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 border-t border-ps-line pt-16 md:gap-16 md:pt-28">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-24">
+        <div class="flex flex-col gap-3 md:gap-[18px] lg:flex-1">
+          <p class="ps-eyebrow">The neighborhood</p>
+          <h2 id="neighborhood-title" class="ps-h2 max-w-[11em]">We chose Palermo for concrete reasons</h2>
+        </div>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg lg:flex-1 lg:pt-[34px]">
+          <p>Its sidewalks are wide and tree-shaded, the cafés open onto the street, and the dining scene is one of the most interesting in the region. For those looking for a <a href="/en/hotel-palermo-buenos-aires" class="text-ps-text underline underline-offset-4 hover:no-underline">boutique hotel in Palermo Hollywood</a>, this part of the city is something specific: a place where local life happens at street level, and where the rest of Buenos Aires stays within easy reach.</p>
+          <p>To cover more ground, you can borrow one of <a href="/en/hotel" class="text-ps-text underline underline-offset-4 hover:no-underline">our complimentary bicycles</a>.</p>
+        </div>
+      </div>
 
-<!-- QUICK GUIDE TO PALERMO -->
-<section class="bg-stone-50 px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-
-  <div class="mx-auto max-w-6xl space-y-10">
-    <div class="space-y-4 text-gray-700">
-      <p class="uppercase text-xs tracking-[0.3em] text-gray-500 md:text-sm">Quick guide</p>
-      <h2 class="text-3xl font-light text-gray-900 md:text-4xl">Frequently Asked Questions about Palermo</h2>
-      <p class="text-base leading-relaxed md:text-lg">
-        Palo Santo is located in Palermo, one of Buenos Aires' largest neighborhoods. It is divided into several
-        sub-districts, the most notable being Palermo Hollywood, Bosques de Palermo, Palermo Soho, and Palermo Chico.
-      </p>
+      <div class="flex flex-col gap-4 md:gap-6">
+        <h3 class="ps-eyebrow">Everything you need, a short walk away</h3>
+        <div class="grid gap-10 md:grid-cols-3 md:gap-8">
+          <article class="flex flex-col gap-4 md:gap-5">
+            <picture>
+              <source type="image/avif" srcset="/images/hotel/Palermo-tigre-morado-1600-800.avif 800w, /images/hotel/Palermo-tigre-morado-1600-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <source type="image/webp" srcset="/images/hotel/Palermo-tigre-morado-1600-800.webp 800w, /images/hotel/Palermo-tigre-morado-1600-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <img src="/images-source/hotel/Palermo-tigre-morado-1600.jpg" alt="Facade of Tigre Morado restaurant in Palermo" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+            </picture>
+            <div class="flex flex-col gap-1.5 md:gap-2">
+              <h4 class="text-2xl leading-tight tracking-[-0.015em] md:text-[26px]">Dining</h4>
+              <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Acclaimed restaurants and specialty coffee roasters within a five-minute walk.</p>
+            </div>
+          </article>
+          <article class="flex flex-col gap-4 md:gap-5">
+            <picture>
+              <source type="image/avif" srcset="/images/hotel/Palermo-StreetArt-2000-800.avif 800w, /images/hotel/Palermo-StreetArt-2000-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <source type="image/webp" srcset="/images/hotel/Palermo-StreetArt-2000-800.webp 800w, /images/hotel/Palermo-StreetArt-2000-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <img src="/images-source/hotel/Palermo-StreetArt-2000.jpg" alt="Colorful street art on a wall in Palermo" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+            </picture>
+            <div class="flex flex-col gap-1.5 md:gap-2">
+              <h4 class="text-2xl leading-tight tracking-[-0.015em] md:text-[26px]">Design and art</h4>
+              <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Independent design stores, art galleries, and weekend markets.</p>
+            </div>
+          </article>
+          <article class="flex flex-col gap-4 md:gap-5">
+            <picture>
+              <source type="image/avif" srcset="/images/hotel/Palermo-rosedal1-2000-800.avif 800w, /images/hotel/Palermo-rosedal1-2000-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <source type="image/webp" srcset="/images/hotel/Palermo-rosedal1-2000-800.webp 800w, /images/hotel/Palermo-rosedal1-2000-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 100vw">
+              <img src="/images-source/hotel/Palermo-rosedal1-2000.jpg" alt="The Rosedal rose garden in Palermo in bloom" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+            </picture>
+            <div class="flex flex-col gap-1.5 md:gap-2">
+              <h4 class="text-2xl leading-tight tracking-[-0.015em] md:text-[26px]">Parks</h4>
+              <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Direct access to the parks, running paths, and the BA EcoBici bike-share network.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
+  </section>
 
-  <!-- MOBILE VERSION -->
-    <div class="space-y-4 md:hidden">
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          How to get around?
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <p>Palermo Hollywood is well connected. The D subway line (Plaza Italia station) and the Metrobús are a few blocks away, and there are bike lanes right outside. But the best advice is usually the simplest: much of the neighborhood is best on foot.</p>
+  <!-- GUÍA DEL BARRIO -->
+  <section aria-labelledby="guide-title" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 lg:flex-row lg:items-center lg:gap-24">
+      <picture class="block lg:flex-1">
+        <source type="image/avif" srcset="/images/hotel/Palermo-Eterna-Cadencia-1600-800.avif 800w, /images/hotel/Palermo-Eterna-Cadencia-1600-1200.avif 1200w" sizes="(min-width: 1024px) 46vw, 100vw">
+        <source type="image/webp" srcset="/images/hotel/Palermo-Eterna-Cadencia-1600-800.webp 800w, /images/hotel/Palermo-Eterna-Cadencia-1600-1200.webp 1200w" sizes="(min-width: 1024px) 46vw, 100vw">
+        <img src="/images-source/hotel/Palermo-Eterna-Cadencia-1600.jpg" alt="Eterna Cadencia bookshop in Palermo Hollywood" width="1200" height="798" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+      </picture>
+      <div class="flex flex-col items-start gap-4 md:gap-[22px] lg:flex-1">
+        <p class="ps-eyebrow">Neighborhood guide</p>
+        <h2 id="guide-title" class="ps-h2 max-w-[11em]">Exploring the neighborhood</h2>
+        <p class="max-w-[32em] text-base leading-relaxed text-ps-body md:text-[17px]">Palermo is many neighborhoods in one: Hollywood, where we are; the design of Soho; the stately calm of Chico; the nights of Las Cañitas. Each has its own character, and our blog covers them one by one, with where to eat, where to drink and what to see.</p>
+        <div class="flex w-full flex-col gap-1 pt-1 md:w-auto md:flex-row md:flex-wrap md:items-center md:gap-x-7">
+          <a href="https://blog.palosantohotel.com/en/things-to-do-palermo-buenos-aires/" class="ps-btn-solid">Read our Palermo guide</a>
+          <a href="https://blog.palosantohotel.com/en/buenos-aires-airports/" class="ps-link justify-center md:justify-start">Airports guide</a>
         </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Distance to other neighborhoods
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5">
-            <li>Microcentro, Plaza de Mayo and the Obelisco: 20 minutes by subway (Line D); the station is 5 blocks away.</li>
-            <li>Recoleta and Plaza Francia: 15 minutes by taxi.</li>
-            <li>San Telmo, the historic district: 30 minutes by taxi.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          How to get here from the airports?
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5">
-            <li>From Aeroparque Jorge Newbery (AEP): 15 to 20 minutes by taxi.</li>
-            <li>From Ezeiza International Airport (EZE): 50 minutes by taxi.</li>
-          </ul>
-          <p class="mt-3">If you'd rather not think about logistics, we can arrange your transfer to and from the airports: <a href="https://www.palosantohotel.com/en/contact-us" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">contact us</a>. We cover both routes in more detail in <a href="https://blog.palosantohotel.com/en/buenos-aires-airports/" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our guide to the Buenos Aires airports</a>.</p>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Other nearby points of interest
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li><span class="font-semibold">Sanatorio de Los Arcos</span>: 400 meters (5-minute walk)</li>
-          <li><span class="font-semibold">La Rural Exhibition Center</span>: 1,300 meters (20-minute walk / 5-minute taxi ride)</li>
-          <li><span class="font-semibold">U.S. Visa Applicant Service Center</span>: 1,900 meters (25-minute walk / 5–10 minutes by taxi)</li>
-          <li><span class="font-semibold">Movistar Arena</span>: 2,400 meters (30-minute walk / 5–10 minutes by taxi)</li>
-        </ul>
-        </div>
-      </details>
-
-      <details class="rounded-2xl bg-white p-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-        <summary class="cursor-pointer text-lg font-semibold text-gray-900">
-          Exploring the neighborhood
-        </summary>
-        <div class="mt-3 text-base leading-relaxed text-gray-700">
-          <p>Palermo is many neighborhoods in one: Hollywood, where we are; the design of Soho; the stately calm of Chico; the nights of Las Cañitas. Each has its own character, and we cover them one by one — where to eat, where to drink, and what to see — in <a href="https://blog.palosantohotel.com/en/things-to-do-palermo-buenos-aires/" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our complete guide to the things to do in Palermo</a>.</p>
-        </div>
-      </details>
+      </div>
     </div>
+  </section>
 
-  <!-- DESKTOP VERSION -->
-    <div class="hidden gap-6 sm:gap-8 md:grid md:grid-cols-2 md:gap-10">
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">How to get around?</h3>
-        <p>
-          Palermo Hollywood is well connected. The D subway line (Plaza Italia station) and the Metrobús are a few blocks away, and there are bike lanes right outside. But the best advice is usually the simplest: much of the neighborhood is best on foot.
-        </p>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Distance to other neighborhoods</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li>Microcentro, Plaza de Mayo and the Obelisco: 20 minutes by subway (Line D); the station is 5 blocks away.</li>
-          <li>Recoleta and Plaza Francia: 15 minutes by taxi.</li>
-          <li>San Telmo, the historic district: 30 minutes by taxi.</li>
-        </ul>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">How to get here from the airports?</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li>From Aeroparque Jorge Newbery (AEP): 15 to 20 minutes by taxi.</li>
-          <li>From Ezeiza International Airport (EZE): 50 minutes by taxi.</li>
-        </ul>
-        <p>If you'd rather not think about logistics, we can arrange your transfer to and from the airports: <a href="https://www.palosantohotel.com/en/contact-us" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">contact us</a>. We cover both routes in more detail in <a href="https://blog.palosantohotel.com/en/buenos-aires-airports/" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our guide to the Buenos Aires airports</a>.</p>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Other nearby points of interest</h3>
-        <ul class="list-disc space-y-2 pl-5 text-gray-700">
-          <li><span class="font-semibold">Sanatorio de Los Arcos</span>: 400 meters (5-minute walk)</li>
-          <li><span class="font-semibold">La Rural Exhibition Center</span>: 1,300 meters (20-minute walk / 5-minute taxi ride)</li>
-          <li><span class="font-semibold">U.S. Visa Applicant Service Center</span>: 1,900 meters (25-minute walk / 5–10 minutes by taxi)</li>
-          <li><span class="font-semibold">Movistar Arena</span>: 2,400 meters (30-minute walk / 5–10 minutes by taxi)</li>
-        </ul>
-      </article>
-
-      <article class="space-y-4 rounded-3xl bg-white p-6 text-base leading-relaxed text-gray-700 shadow-sm md:p-8">
-        <h3 class="text-xl font-semibold text-gray-900">Exploring the neighborhood</h3>
-        <p>Palermo is many neighborhoods in one: Hollywood, where we are; the design of Soho; the stately calm of Chico; the nights of Las Cañitas. Each has its own character, and we cover them one by one — where to eat, where to drink, and what to see — in <a href="https://blog.palosantohotel.com/en/things-to-do-palermo-buenos-aires/" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:#1d4ed8;" class="text-blue underline hover:no-underline">our complete guide to the things to do in Palermo</a>.</p>
-      </article>
+  <!-- SIGUE RECORRIENDO -->
+  <section aria-labelledby="more-title" class="px-5 pb-12 pt-16 md:px-12 md:pb-24 md:pt-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <h2 id="more-title" class="ps-eyebrow">Keep exploring</h2>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/en/rooms" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Rooms</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/hotel" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Lobby-IMG_2509-213-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Hotel &amp; services</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/restaurant" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Desayuno-DIC23-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Desayuno-DIC23-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Desayuno-DIC23-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Breakfast &amp; restaurant</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Book now</a>
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
-<div class="w-full min-h-[18vh] flex items-center justify-center bg-black px-6 pt-10 md:pt-12">
-        <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div class="w-full text-3xl md:text-5xl font-bold">
-                <h4 class="footer-heading">A true boutique experience in Palermo</h4>
-            </div>
-            <!-- Nombre y dirección + redes -->
-            <div class="flex flex-col items-start mt-12 gap-6 w-full">
-                <div class="flex flex-col gap-1 w-full">
-                    <h3 class="font-semibold uppercase text-2xl text-left">Palo santo</h3>
-                    <div class="uppercase text-gray-400 text-left flex-1 leading-tight">
-                        <div class="lg:hidden">
-                            <p>Bonpland 2275 - Palermo</p>
-                            <p>Buenos Aires - ARGENTINA</p>
-                        </div>
-                        <p class="hidden lg:block whitespace-nowrap">Bonpland 2275 - Palermo - Buenos Aires - ARGENTINA</p>
-                    </div>
-                </div>
-                <div class="flex w-full flex-row space-x-8 items-center justify-start">
-                      <!-- WhatsApp -->
-                      <a href="https://api.whatsapp.com/send?phone=5491163572374"
-                        target="_blank" rel="noopener noreferrer"
-                        class="icon-social"
-                        aria-label="WhatsApp">
-                        <?xml version="1.0" encoding="UTF-8"?>
-                          <svg width="360" height="362" viewBox="0 0 360 362" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M307.546 52.5655C273.709 18.685 228.706 0.0171895 180.756 0C81.951 0 1.53846 80.404 1.50408 179.235C1.48689 210.829 9.74646 241.667 25.4319 268.844L0 361.736L95.0236 336.811C121.203 351.096 150.683 358.616 180.679 358.625H180.756C279.544 358.625 359.966 278.212 360 179.381C360.017 131.483 341.392 86.4547 307.546 52.5741V52.5655ZM180.756 328.354H180.696C153.966 328.346 127.744 321.16 104.865 307.589L99.4242 304.358L43.034 319.149L58.0834 264.168L54.5423 258.53C39.6304 234.809 31.749 207.391 31.7662 179.244C31.8006 97.1036 98.6334 30.2707 180.817 30.2707C220.61 30.2879 258.015 45.8015 286.145 73.9665C314.276 102.123 329.755 139.562 329.738 179.364C329.703 261.513 262.871 328.346 180.756 328.346V328.354ZM262.475 216.777C257.997 214.534 235.978 203.704 231.869 202.209C227.761 200.713 224.779 199.966 221.796 204.452C218.814 208.939 210.228 219.029 207.615 222.011C205.002 225.002 202.389 225.372 197.911 223.128C193.434 220.885 179.003 216.158 161.891 200.902C148.578 189.024 139.587 174.362 136.975 169.875C134.362 165.389 136.7 162.965 138.934 160.739C140.945 158.728 143.412 155.505 145.655 152.892C147.899 150.279 148.638 148.406 150.133 145.423C151.629 142.432 150.881 139.82 149.764 137.576C148.646 135.333 139.691 113.287 135.952 104.323C132.316 95.5909 128.621 96.777 125.879 96.6309C123.266 96.5019 120.284 96.4762 117.293 96.4762C114.302 96.4762 109.454 97.5935 105.346 102.08C101.238 106.566 89.6691 117.404 89.6691 139.441C89.6691 161.478 105.716 182.785 107.959 185.776C110.202 188.767 139.544 234.001 184.469 253.408C195.153 258.023 203.498 260.782 210.004 262.845C220.731 266.257 230.494 265.776 238.212 264.624C246.816 263.335 264.71 253.786 268.44 243.326C272.17 232.866 272.17 223.893 271.053 222.028C269.936 220.163 266.945 219.037 262.467 216.794L262.475 216.777Z" fill="white"/>
-                          </svg>
-                      </a>
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener noreferrer" class="icon-social">
-                            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z" fill="white"/>
-                            </svg>                            
-                        </a>
-                        
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener noreferrer" class="icon-social">
-                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white"/>
-                                <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white"/>
-                                <path d="M11.6821 2.06975C11.5279 1.67138 11.2921 1.30961 10.99 1.00759C10.6879 0.705576 10.326 0.469972 9.92759 0.31586C9.46135 0.140842 8.9688 0.0462069 8.4709 0.0359839C7.82919 0.00799638 7.62594 0 5.99867 0C4.37139 0 4.16282 -6.70254e-08 3.52643 0.0359839C3.02891 0.0456842 2.53671 0.140339 2.07108 0.31586C1.67255 0.469792 1.31059 0.705333 1.00844 1.00737C0.706289 1.30941 0.47061 1.67127 0.316526 2.06975C0.141474 2.53595 0.0470554 3.02855 0.0373167 3.52643C0.00866281 4.16748 0 4.37072 0 5.99867C0 7.62594 -4.96485e-09 7.83319 0.0373167 8.4709C0.0473123 8.96935 0.14127 9.46113 0.316526 9.92825C0.471042 10.3266 0.70695 10.6883 1.00918 10.9903C1.3114 11.2923 1.6733 11.5279 2.07175 11.6821C2.5365 11.8642 3.0289 11.9656 3.52777 11.982C4.16948 12.01 4.37272 12.0187 6 12.0187C7.62728 12.0187 7.83585 12.0187 8.47223 11.982C8.97008 11.9719 9.46262 11.8775 9.92892 11.7028C10.3272 11.5483 10.689 11.3125 10.9911 11.0104C11.2932 10.7083 11.529 10.3466 11.6835 9.94825C11.8587 9.48179 11.9527 8.99 11.9627 8.49156C11.9913 7.85051 12 7.64727 12 6.01932C12 4.39138 12 4.18481 11.9627 3.54709C11.9549 3.04216 11.86 2.54237 11.6821 2.06975ZM10.8705 8.42159C10.8662 8.80562 10.7961 9.18608 10.6633 9.54642C10.5632 9.80555 10.41 10.0409 10.2135 10.2372C10.017 10.4336 9.78162 10.5867 9.52243 10.6866C9.16608 10.8188 8.78967 10.8889 8.4096 10.8938C7.77654 10.9231 7.59796 10.9305 5.97468 10.9305C4.35007 10.9305 4.18414 10.9305 3.53909 10.8938C3.15921 10.8892 2.78298 10.8191 2.42692 10.6866C2.16683 10.5873 1.93048 10.4345 1.73316 10.2381C1.53584 10.0417 1.38194 9.80605 1.28143 9.54642C1.15045 9.18995 1.08039 8.81398 1.07419 8.43425C1.04554 7.8012 1.03887 7.62261 1.03887 5.99933C1.03887 4.37539 1.03887 4.20946 1.07419 3.56375C1.0785 3.17993 1.14859 2.7997 1.28143 2.43958C1.48467 1.91382 1.90116 1.5 2.42692 1.29876C2.78316 1.16691 3.15928 1.09682 3.53909 1.09151C4.17281 1.06286 4.35073 1.05486 5.97468 1.05486C7.59862 1.05486 7.76522 1.05486 8.4096 1.09151C8.7897 1.09609 9.16617 1.1662 9.52243 1.29876C9.7816 1.39889 10.017 1.55211 10.2134 1.74858C10.4099 1.94504 10.5631 2.18041 10.6633 2.43958C10.7942 2.79606 10.8643 3.17203 10.8705 3.55175C10.8992 4.18547 10.9065 4.36339 10.9065 5.98734C10.9065 7.61062 10.9065 7.78521 10.8778 8.42226H10.8705V8.42159Z" fill="white"/>
-                            </svg>    
-
-                        <!-- TripAdvisor -->
-                        <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
-                          target="_blank" rel="noopener noreferrer"
-                          class="cursor-pointer hover:opacity-80 transition"
-                          aria-label="TripAdvisor">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.2 320.2" width="20" height="20" fill="white">
-                            <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                            <circle cx="128.4" cy="191.9" r="31.9"/>
-                            <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                            <circle cx="384.4" cy="191.9" r="31.9"/>
-                            <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                          </svg>
-                        </a>
-
-                        
-
-                        <!-- Google Maps -->
-                        <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-gray-600 hover:text-white" aria-label="Google Maps">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
-                          </svg>
-                        </a>
-
-                    </div>
-                </div>
-                <p class="uppercase w-full text-center my-12 text-gray-600">Copyright © 2025 Palo Santo Hotel</p>
+<footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
+  <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-14">
+    <div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:gap-x-16 md:gap-y-10">
+      <div class="flex items-start gap-5 md:contents">
+        <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" loading="lazy" class="h-auto w-[50px] shrink-0 md:w-16">
+        <div class="flex flex-col gap-1.5 text-sm leading-relaxed text-white/80 md:flex-[1_1_240px] md:gap-2.5 md:text-[15px]">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Palo Santo Hotel</p>
+          <address class="not-italic">Bonpland 2275, Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
+          <a href="tel:+541152806100" class="hover:underline">+54 11 5280 6100</a>
+          <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="hover:underline">WhatsApp +54 9 11 6357-2374</a>
         </div>
-</div>
-
+      </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-6 text-[15px] text-white/80 md:contents">
+        <nav aria-label="Hotel" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Hotel</p>
+          <a href="/en/hotel" class="hover:underline">Services</a>
+          <a href="/en/about-us" class="hover:underline">About us</a>
+          <a href="/en/green" class="hover:underline">Green</a>
+          <a href="/en/restaurant" class="hover:underline">Breakfast &amp; restaurant</a>
+          <a href="/en/photo-gallery" class="hover:underline">Photos</a>
+        </nav>
+        <nav aria-label="Rooms" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Rooms</p>
+          <a href="/en/premium-rooms" class="hover:underline">Premium</a>
+          <a href="/en/deluxe-rooms" class="hover:underline">Deluxe</a>
+          <a href="/en/terrace-suite" class="hover:underline">Terrace Suite</a>
+          <a href="/en/palo-santo-suite" class="hover:underline">Palo Santo Suite</a>
+        </nav>
+        <nav aria-label="Information" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Information</p>
+          <a href="/en/palermo" class="hover:underline">Location</a>
+          <a href="/en/hotel#faq" class="hover:underline">FAQ</a>
+          <a href="https://blog.palosantohotel.com/en" class="hover:underline">Blog</a>
+          <a href="/en/contact-us" class="hover:underline">Contact</a>
+        </nav>
+        <nav aria-label="Social" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Follow us</p>
+          <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
+          <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="hover:underline">Tripadvisor</a>
+          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="hover:underline">Google Maps</a>
+        </nav>
+      </div>
+    </div>
+    <div class="flex justify-between gap-4 border-t border-ps-line pt-5 text-[13px] text-ps-muted md:pt-6 md:text-sm">
+      <span>© <span data-year>2026</span> Palo Santo Hotel</span>
+      <a href="/es/palermo" lang="es" class="hover:text-white">Español</a>
+    </div>
+  </div>
+</footer>
 
 <!-- Google Analytics 4 -->
 <script>
