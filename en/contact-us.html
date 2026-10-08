@@ -31,12 +31,11 @@
 
 <body class="bg-ps-ground font-brand text-ps-text antialiased">
 
-<!-- MENÚ MOBILE - EN -->
 <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Open menu</span>
@@ -59,14 +58,14 @@
       <nav aria-label="More sections" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
         <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
         <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
-        <a href="/en/contact-us" class="underline-offset-8 hover:underline underline" aria-current="page">Contact</a>
+        <a href="/en/contact-us" class="underline underline-offset-8" aria-current="page">Contact</a>
       </nav>
       <a href="/es/contacto" lang="es" class="hidden text-sm font-semibold tracking-[0.12em] underline-offset-8 hover:underline xl:inline" aria-label="Versión en español">ES</a>
       <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-ghost min-h-[44px] px-3.5 text-[11px] tracking-[0.14em] xl:min-h-[48px] xl:px-[26px] xl:text-[13px] xl:tracking-[0.16em]">Book now</a>
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
       <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -88,102 +87,185 @@
   </div>
 </header>
 
+<main id="content" class="ps-claro bg-ps-ground">
 
-
-<main id="content" class="bg-ps-ground px-4 py-12 sm:px-6 lg:px-10">
-  <section class="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-stretch">
-    <div class="w-full lg:w-1/2">
-      <div class="h-full overflow-hidden shadow-lg">
-        <picture class="block h-full w-full">
-          <source
-            srcset="
-              /images/hero/palosanto-contacto-1920.avif 1920w,
-              /images/hero/palosanto-contacto-2000.avif 2000w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/hero/palosanto-contacto-1920.webp 1920w,
-              /images/hero/palosanto-contacto-2000.webp 2000w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/hero/palosanto-contacto.jpg"
-            alt="Palo Santo Guide on a King Bed"
-            class="h-full w-full object-cover"
-            style="aspect-ratio: 3 / 2;"
-            width="2000"
-            height="1333"
-            loading="eager"
-            fetchpriority="high"
-            sizes="(max-width: 1024px) 100vw, 50vw" />
-        </picture>
+  <!-- PORTADA -->
+  <section aria-labelledby="title" class="ps-oscuro relative h-[480px] overflow-hidden bg-ps-deep text-white md:h-[560px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/Fachada-Psanto05-2000-800.avif 800w, /images/hotel/Fachada-Psanto05-2000-1200.avif 1200w, /images/hotel/Fachada-Psanto05-2000-1600.avif 1600w" sizes="(max-width: 767px) 200vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/Fachada-Psanto05-2000-800.webp 800w, /images/hotel/Fachada-Psanto05-2000-1200.webp 1200w, /images/hotel/Fachada-Psanto05-2000-1600.webp 1600w" sizes="(max-width: 767px) 200vw, 100vw">
+      <img src="/images-source/hotel/Fachada-Psanto05-2000.jpg" alt="A lit balcony at dusk on the Palo Santo facade, among plants and the iron frame" width="2000" height="1333" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[56%_50%] md:object-[50%_45%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <h1 id="title" class="flex flex-col gap-2.5 [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:gap-3.5">
+          <span class="text-[17px] leading-snug md:text-[22px]">Contact us</span>
+          <span class="text-[46px] leading-[0.98] tracking-[-0.035em] md:text-[clamp(56px,6.6vw,96px)] md:leading-[0.96] md:tracking-[-0.04em]">We’re here to help</span>
+        </h1>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">Write to us using the form or on WhatsApp, or give us a call. Our Reception is open 24 hours a day.</p>
       </div>
     </div>
+  </section>
 
-    <div class="w-full lg:w-1/2">
-      <div class="mb-6 text-center lg:text-left">
-        <h1 class="text-3xl font-bold uppercase tracking-[0.2em] text-white">Contact us</h1>
-        <p class="mt-2 text-base text-ps-muted">Please send us your request, we will get back to you as soon as possible.</p>
-        <p class="mt-1 text-sm text-ps-muted">We are also available through WhatsApp: <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener noreferrer" class="underline">+54 9 11 6357-2374</a></p>
+  <!-- CANALES DE CONTACTO -->
+  <section aria-label="Contact details" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-2 md:gap-x-8 md:py-0 xl:grid-cols-4">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 9V7"/><path d="M10 7h4"/></svg>Reception</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Open 24 hours</dd>
       </div>
-      <!--- FORMULARIO DE CONTACTO -->
-      <form
-        id="contact-form"
-        action="https://formspree.io/f/xldaeega"
-        method="POST"
-        class="w-full border border-ps-line bg-ps-panel p-6 shadow-sm space-y-4"
-      >
-        <label class="block">
-          <span class="block text-sm">Name</span>
-          <input name="name" type="text" required class="mt-1 w-full border border-ps-rule bg-transparent p-3 text-white focus:border-white focus:outline-none" autocomplete="name">
-        </label>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg"><a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="underline-offset-4 hover:underline">+54 9 11 6357-2374</a></dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Phone</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg"><a href="tel:+541152806100" class="underline-offset-4 hover:underline">+54 11 5280 6100</a></dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Address</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg"><a href="#find-us" class="underline-offset-4 hover:underline">Bonpland 2275</a></dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="form" aria-labelledby="form-title" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-24 lg:gap-y-12">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:col-start-1 lg:row-start-1">
+        <p class="ps-eyebrow">Write to us</p>
+        <h2 id="form-title" class="ps-h2">How can we help?</h2>
+        <p class="ps-lead">Tell us what you need and we’ll get back to you as soon as possible.</p>
+        <ul class="mt-2 flex w-full flex-col border-b border-ps-line text-[15px] md:mt-1 md:text-base">
+          <li class="flex items-center gap-3.5 border-t border-ps-line py-3.5"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Group quotes</li>
+          <li class="flex items-center gap-3.5 border-t border-ps-line py-3.5"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Transfers to and from the airports</li>
+          <li class="flex items-center gap-3.5 border-t border-ps-line py-3.5"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>Press inquiries</li>
+          <li class="flex items-center gap-3.5 border-t border-ps-line py-3.5"><svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Any question about your stay</li>
+        </ul>
+      </div>
+
+      <form id="contact-form" action="https://formspree.io/f/xldaeega" method="POST" class="flex flex-col gap-5 bg-white px-5 py-7 md:gap-6 md:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start xl:p-14">
+        <div class="grid gap-5 md:grid-cols-2 md:gap-6">
+          <label class="block">
+            <span class="ps-label">Name</span>
+            <input name="name" type="text" required autocomplete="name" class="ps-input">
+          </label>
+          <label class="block">
+            <span class="ps-label">Email</span>
+            <input name="email" type="email" required autocomplete="email" class="ps-input">
+          </label>
+          <label class="block">
+            <span class="ps-label">Phone <span class="text-[13px] font-normal text-ps-muted">Optional</span></span>
+            <input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]*" class="ps-input">
+          </label>
+          <label class="block">
+            <span class="ps-label">Topic <span class="text-[13px] font-normal text-ps-muted">Optional</span></span>
+            <span class="relative mt-2 block">
+              <select name="topic" class="ps-input mt-0 cursor-pointer pr-11">
+                <option value="">Choose an option</option>
+                <option>Booking or availability</option>
+                <option>Groups</option>
+                <option>Transfer</option>
+                <option>Press</option>
+                <option>Other</option>
+              </select>
+              <svg class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </label>
+        </div>
 
         <label class="block">
-          <span class="block text-sm">Email</span>
-          <input name="email" type="email" required class="mt-1 w-full border border-ps-rule bg-transparent p-3 text-white focus:border-white focus:outline-none" autocomplete="email">
-        </label>
-
-        <label class="block">
-          <span class="block text-sm">Phone number</span>
-          <input
-            name="phone"
-            type="tel"
-            autocomplete="tel"
-            class="mt-1 w-full border border-ps-rule bg-transparent p-3 text-white focus:border-white focus:outline-none"
-            pattern="[0-9+\-\s()]*"
-            inputmode="tel"
-          >
-        </label>
-
-        <label class="block">
-          <span class="block text-sm">Message</span>
-          <textarea name="message" rows="5" required class="mt-1 w-full border border-ps-rule bg-transparent p-3 text-white focus:border-white focus:outline-none"></textarea>
+          <span class="ps-label">Message</span>
+          <textarea name="message" rows="6" required class="ps-input min-h-[160px] resize-y"></textarea>
         </label>
 
         <!-- Honeypot anti-spam -->
-        <input type="text" name="_gotcha" style="display:none">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
-        <!-- Cloudflare Turnstile -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAACiIfOaHLoDobYjd" data-theme="dark"></div>
+        <div class="flex flex-wrap items-center justify-between gap-5 border-t border-ps-line pt-6">
+          <!-- Cloudflare Turnstile -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAACiIfOaHLoDobYjd" data-theme="light"></div>
+          <button type="submit" class="ps-btn-solid w-full sm:w-auto">Send message</button>
+        </div>
 
-        <div id="form-status" class="text-sm"></div>
-
-        <button type="submit" class="inline-flex items-center px-5 py-3 bg-white text-ps-ground hover:opacity-90">
-          Send
-        </button>
+        <div id="form-status" class="text-sm" aria-live="polite"></div>
       </form>
+
+      <div class="ps-oscuro flex flex-col gap-3 bg-ps-ground p-6 md:gap-3.5 md:p-8 lg:col-start-1 lg:row-start-2 lg:self-start">
+        <p class="ps-eyebrow">Looking for availability?</p>
+        <p class="text-xl leading-snug tracking-[-0.01em] md:text-[22px]">Check rates and availability instantly on our website, always at the best available rate.</p>
+        <div class="border-t border-ps-line pt-1.5">
+          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-link">See rates &amp; availability<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÓNDE ESTAMOS -->
+  <section id="find-us" aria-labelledby="find-us-title" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-20">
+      <div class="flex flex-col items-start gap-5 md:gap-6 lg:flex-1">
+        <p class="ps-eyebrow">Find us</p>
+        <div class="flex flex-col gap-2.5">
+          <h2 id="find-us-title" class="ps-h2">Bonpland 2275</h2>
+          <address class="text-base not-italic leading-normal text-ps-body md:text-lg">Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
+        </div>
+        <div class="flex flex-col gap-2 border-t border-ps-line pt-5 md:pt-6">
+          <h3 class="text-base font-semibold md:text-[17px]">Whenever you arrive</h3>
+          <p class="max-w-[30em] text-[15px] leading-relaxed text-ps-body md:text-base">Our Reception is open 24 hours a day, every day. If you arrive before check-in, you can leave your luggage with us and go explore the neighborhood while we get your room ready.</p>
+        </div>
+        <div class="flex w-full flex-col gap-1 pt-1 md:w-auto md:flex-row md:flex-wrap md:items-center md:gap-x-7">
+          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="ps-btn-solid">Open in Google Maps<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M10 14 20 4"/><path d="M19 14v6H4V5h6"/></svg></a>
+          <a href="/en/palermo" class="ps-link justify-center md:justify-start">Directions and distances</a>
+        </div>
+      </div>
+      <div class="relative h-[340px] overflow-hidden bg-ps-ground md:h-[440px] lg:h-auto lg:min-h-[480px] lg:flex-[1.3_1_0%]">
+        <iframe title="Google map showing Palo Santo Hotel, Bonpland 2275" src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1sPalo+Santo+Hotel,+Bonpland+2275,+Palermo,+Buenos+Aires!6i15!3m1!1sen!5m1!1sen" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen class="absolute inset-0 h-full w-full border-0 grayscale"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- SIGUE RECORRIENDO -->
+  <section aria-labelledby="more-title" class="px-5 pb-12 pt-16 md:px-12 md:pb-24 md:pt-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <h2 id="more-title" class="ps-eyebrow">Keep exploring</h2>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/en/rooms" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Rooms</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/hotel" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Lobby-IMG_2509-213-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Hotel &amp; services</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/restaurant" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Desayuno-DIC23-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Desayuno-DIC23-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Desayuno-DIC23-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Breakfast &amp; restaurant</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Book now</a>
     </div>
   </section>
 </main>
-
-<!-- CIERRE -->
-<section aria-label="Book now" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">

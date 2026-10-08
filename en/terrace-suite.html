@@ -32,16 +32,16 @@
 <!-- MENÚ MOBILE - EN -->
 <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Open menu</span>
         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
       </button>
       <nav aria-label="Main menu" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
-        <a href="/en/rooms" class="underline-offset-8 hover:underline">Rooms</a>
+        <a href="/en/rooms" class="underline underline-offset-8">Rooms</a>
         <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
         <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
         <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
       <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -86,690 +86,290 @@
   </div>
 </header>
 
-<main id="content">
+<main id="content" class="ps-claro bg-ps-ground">
 
-<!-- CONTENIDO PRINCIPAL -->
-
-<section class="bg-ps-ground px-0 pb-16 pt-0 sm:px-0 md:pb-20" aria-labelledby="terrace-suite-title">
-  <div class="relative isolate bg-ps-deep px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
-    <div class="mx-auto max-w-6xl text-center">
-      <h1 id="terrace-suite-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
-        Terrace Suite
-      </h1>
-      <h3 class="mt-3 text-lg font-normal uppercase tracking-[0.3em] text-white/90 md:text-xl">Rooftop Paradise</h3>
-    </div>
-  </div>
-
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6" data-room-gallery>
-    <div class="relative -mt-10 space-y-6 sm:-mt-12 md:-mt-16 lg:-mt-20">
-      <div class="relative">
-        <figure class="aspect-[4/3] overflow-hidden bg-ps-panel shadow-lg">
-          <picture class="block h-full w-full" data-room-picture>
-            <source
-              data-room-source-avif
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.avif 1200w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1448.avif 1448w
-              "
-              type="image/avif"
-            />
-            <source
-              data-room-source-webp
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.webp 1200w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1448.webp 1448w
-              "
-              type="image/webp"
-            />
-            <img
-              data-room-hero
-              src="/images-source/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera.jpg"
-              alt="Terrace Suite bed with the sliding doors open onto the private terrace"
-              width="1448"
-              height="1086"
-              class="h-full w-full object-cover transition duration-500 ease-out"
-              loading="eager"
-              fetchpriority="high"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 60vw"
-            />
-          </picture>
-        </figure>
-
-        <button
-          type="button"
-          aria-label="View previous photo of the Terrace Suite"
-          class="room-gallery__control absolute left-4 top-1/2 -translate-y-1/2 border border-white/60 bg-ps-ground/90 p-3 text-white shadow-lg transition hover:bg-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30"
-          data-room-prev
-        >
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-            <path d="M12.78 4.22a.75.75 0 0 0-1.06 0L6.94 8.94a1.5 1.5 0 0 0 0 2.12l4.78 4.72a.75.75 0 1 0 1.06-1.06L8.5 10l4.28-4.22a.75.75 0 0 0 0-1.06z"/>
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          aria-label="View next photo of the Terrace Suite"
-          class="room-gallery__control absolute right-4 top-1/2 -translate-y-1/2 border border-white/60 bg-ps-ground/90 p-3 text-white shadow-lg transition hover:bg-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30"
-          data-room-next
-        >
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-            <path d="M7.22 4.22a.75.75 0 0 1 1.06 0L13.06 8.94a1.5 1.5 0 0 1 0 2.12l-4.78 4.72a.75.75 0 1 1-1.06-1.06L11.5 10 7.22 5.78a.75.75 0 0 1 0-1.06z"/>
-          </svg>
-        </button>
-
-        <div class="room-gallery__status hidden absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white" aria-live="polite" data-room-status>1 / 11</div>
-      </div>
-
-      <div class="hidden gap-3 overflow-x-auto pb-3 md:flex" data-room-thumbs aria-label="Miniaturas de la Suite Terrace">
-        <button
-          type="button"
-          class="room-gallery__thumb room-gallery__thumb--active relative overflow-hidden border border-transparent ring-2 ring-white transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="0"
-          data-room-slug="Terrace-Suite-NEW/IMG_4382-Cama-y-afuera"
-          data-room-alt="Terrace Suite bed with the sliding doors open onto the private terrace"
-          data-room-widths="800,1200,1448"
-          aria-pressed="true"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera.jpg" alt="Terrace Suite bed with the sliding doors open onto the private terrace" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="1"
-          data-room-slug="Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2"
-          data-room-alt="King-size bed in the Terrace Suite bedroom with the terrace and city view"
-          data-room-widths="800,1200,1448"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2.jpg" alt="King-size bed in the Terrace Suite bedroom with the terrace and city view" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="2"
-          data-room-slug="Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal"
-          data-room-alt="Breakfast tray served on the bed of the Terrace Suite"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal.jpg" alt="Breakfast tray served on the bed of the Terrace Suite" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="3"
-          data-room-slug="Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza"
-          data-room-alt="Terrace Suite bedroom seen from the shaded private terrace"
-          data-room-widths="800,1200,1448"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza.jpg" alt="Terrace Suite bedroom seen from the shaded private terrace" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="4"
-          data-room-slug="Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente"
-          data-room-alt="Outdoor sofa and low table on the Terrace Suite terrace, surrounded by plants"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente.jpg" alt="Outdoor sofa and low table on the Terrace Suite terrace, surrounded by plants" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="5"
-          data-room-slug="Terrace-Suite-NEW/IMG_4477"
-          data-room-alt="Plants and lounge seating along the pergola-shaded terrace of the Terrace Suite"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4477-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4477-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4477-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4477-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4477.jpg" alt="Plants and lounge seating along the pergola-shaded terrace of the Terrace Suite" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="6"
-          data-room-slug="Terrace-Suite-NEW/IMG_9078-Terraza-picada"
-          data-room-alt="Wine and a charcuterie board on the Terrace Suite terrace overlooking the Palermo rooftops"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada.jpg" alt="Wine and a charcuterie board on the Terrace Suite terrace overlooking the Palermo rooftops" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="7"
-          data-room-slug="Terrace-Suite-NEW/IMG_4458"
-          data-room-alt="Dining table and kitchenette with Nespresso machine in the Terrace Suite living room"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4458-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4458-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4458-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4458-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4458.jpg" alt="Dining table and kitchenette with Nespresso machine in the Terrace Suite living room" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="8"
-          data-room-slug="Terrace-Suite-NEW/IMG_4516"
-          data-room-alt="Terrace Suite living room with sofa, dining table and access to the terrace"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4516-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4516-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_4516-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_4516-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4516.jpg" alt="Terrace Suite living room with sofa, dining table and access to the terrace" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="9"
-          data-room-slug="Terrace-Suite-NEW/IMG_9165-Bano-FER"
-          data-room-alt="Marble vanity with bowl sink and amenities in the Terrace Suite bathroom"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-800.avif 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-800.webp 800w,
-                /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER.jpg" alt="Marble vanity with bowl sink and amenities in the Terrace Suite bathroom" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-white/40"
-          data-room-thumb="10"
-          data-room-slug="Suites-Bathroom-8250-2000"
-          data-room-alt="Whirlpool bathtub in the Terrace Suite bathroom"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Suites-Bathroom-8250-2000-800.avif 800w,
-                /images/hotel/Suites-Bathroom-8250-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Suites-Bathroom-8250-2000-800.webp 800w,
-                /images/hotel/Suites-Bathroom-8250-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Suites-Bathroom-8250-2000.jpg" alt="Whirlpool bathtub in the Terrace Suite bathroom" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="mx-auto mt-14 max-w-5xl space-y-12 px-4 text-ps-body sm:px-6 lg:px-0">
-    <!-- AMENITIES -->
-    <div class="border border-ps-line p-4 md:p-8">
-      <details class="group md:hidden" open>
-        <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-white">
-          Features
-          <svg class="h-5 w-5 transition duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </summary>
-        <div class="mt-4 border-t border-ps-line pt-4">
-          <ul class="grid gap-3 text-sm tracking-[0.1em] font-normal text-ps-muted">
-            <li>/ 1 King-size bed</li>
-            <li>/ Location: Floor 6</li>
-            <li>/ 55m2 / 590 sq. ft</li>
-            <li>/ Private terrace</li>
-            <li>/ Two separate areas: living room and bedroom</li>
-            <li>/ Bathroom with whirlpool bathtub</li>
-            <li>/ Separate guests toilet</li>
-            <li>/ Bathrobes</li>
-            <li>/ Hair dryer</li>
-            <li>/ Walk in closet</li>
-            <li>/ Laptop-size safety box</li>
-            <li>/ Extra bed (additional cost)</li>
-            <li>/ Work desk</li>
-            <li>/ Minibar</li>
-            <li>/ Electric kettle and Nespresso coffee machine</li>
-            <li>/ Ironing board (upon request)</li>
-            <li>/ Two 55-inch 4K Smart TV</li>
-            <li>/ Individual air conditioning</li>
-            <li>/ Non-smoking</li>
-          </ul>
+  <!-- PORTADA -->
+  <section aria-labelledby="titulo" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.avif 1200w, /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1448.avif 1448w" sizes="(max-width: 767px) 216vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1200.webp 1200w, /images/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera-1448.webp 1448w" sizes="(max-width: 767px) 216vw, 100vw">
+      <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4382-Cama-y-afuera.jpg" alt="Terrace Suite bedroom with the doors open to the terrace and the city" width="1448" height="1086" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[62%_50%] md:object-[50%_55%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <nav aria-label="Breadcrumb" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">
+            <ol class="flex items-center gap-2.5"><li><a href="/en/rooms" class="underline-offset-4 hover:underline">Rooms</a></li><li aria-hidden="true">/</li><li aria-current="page">Terrace Suite</li></ol>
+          </nav>
+          <h1 id="titulo" class="flex flex-col gap-2.5 [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:gap-4">
+            <span class="max-w-[12em] text-balance text-[42px] leading-none tracking-[-0.03em] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">Terrace Suite</span>
+            <span class="text-[17px] leading-snug md:text-[22px]">Rooftop paradise</span>
+          </h1>
         </div>
-      </details>
-
-      <div class="hidden space-y-3 md:block">
-        <h2 class="text-xl font-semibold uppercase tracking-[0.2em] text-white">Features</h2>
-        <ul class="grid gap-4 text-sm tracking-[0.1em] font-normal text-ps-muted sm:grid-cols-2 md:grid-cols-3">
-            <li>/ 1 King-size bed</li>
-            <li>/ Location: Floor 6</li>
-            <li>/ 55m2 / 590 sq. ft</li>
-            <li>/ Private terrace</li>
-            <li>/ Two separate areas: living room and bedroom</li>
-            <li>/ Bathroom with whirlpool bathtub</li>
-            <li>/ Separate guests toilet</li>
-            <li>/ Bathrobes</li>
-            <li>/ Hair dryer</li>
-            <li>/ Walk in closet</li>
-            <li>/ Laptop-size safety box</li>
-            <li>/ Extra bed (additional cost)</li>
-            <li>/ Work desk</li>
-            <li>/ Minibar</li>
-            <li>/ Electric kettle and Nespresso coffee machine</li>
-            <li>/ Ironing board (upon request)</li>
-            <li>/ Two 55-inch 4K Smart TV</li>
-            <li>/ Individual air conditioning</li>
-            <li>/ Non-smoking</li>
-        </ul>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">A one-bedroom suite on the sixth floor with a 20 m² private terrace.</p>
       </div>
     </div>
+  </section>
 
-    <div class="space-y-4 text-base leading-relaxed text-ps-body md:text-lg md:leading-loose">
-      <p class="text-ps-body">
-        Enjoy your own rooftop paradise: our one-bedroom Terrace Suite includes a large private terrace. 
-        With a separate bedroom and living room, this spacious suite features contemporary design, beautiful natural wood, and state-of-the art equipment.
-      </p>
-      <p class="text-ps-body">
-        A must-stay for honeymooners or a romantic getaway.
-      </p>
-    </div>
-
-    <details class="border border-ps-line p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-white">
-        Detailed Room Information
-        <svg class="h-5 w-5 text-ps-muted transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="space-y-4 pt-4 text-base leading-relaxed text-ps-body md:text-lg md:leading-loose">
-        <p class="text-ps-body">
-          Located on the sixth floor, the 55m2 / 590 sq. ft Terrace Suite features a private 215 square-foot/ 20m2 terrace.
-        </p>
-        <p class="text-ps-body">
-          The suite comprises one bedroom with an en-suite bathroom with a whirlpool tub, and a walk-in closet. 
-          The bedroom features a King-size double bed.
-        </p>
-        <p class="text-ps-body">
-          The living room is well appointed, with a dining area, and a sitting area. 
-          Two 55-inch Smart 4K TV will allow you to enjoy your streaming accounts or local cable channels both from the living room or the bedroom. 
-          Work comfortably from your desk or the dining table, with of course complimentary internet access. 
-          Next to the minibar, you will find an electric kettle, Nespresso coffee machine, cups, and glasses. 
-        </p>
-        <p class="text-ps-body">
-          The beautiful 20 square meters (215 square feet) terrace is furnished with lounge chairs, a table and chairs, so that guests can relax and enjoy Palermo from a new perspective.        </p>
-        <p class="text-ps-body">
-          All of our rooms are smoke-free, including the balconies. 
-          For an additional cost, you can request an extra bed for a third adult or a child over three years old. 
-          We offer cribs free of charge (please confirm availability in advance) for babies and small children.
-        </p>
+  <!-- DATOS DE LA HABITACIÓN -->
+  <section aria-label="Room facts" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-3 md:gap-x-8 md:py-0 xl:grid-cols-5">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5"/><path d="M21 8V3h-5"/><path d="M3 16v5h5"/><path d="M16 21h5v-5"/></svg>Size</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">55 m² / 590 sq ft</dd>
       </div>
-    </details>
-
-    <details class="border border-ps-line p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-white">
-        Boutique Experience
-        <svg class="h-5 w-5 text-ps-muted transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="space-y-4 pt-4 text-base leading-relaxed text-ps-body md:text-lg md:leading-loose">
-        <p class="text-ps-body">At Palo Santo, we are fully committed to help you make the most out of your stay in Buenos Aires. </p>
-        <p class="text-ps-body">
-            We handpicked a list of local restaurants that we are sure you will enjoy.
-            We personally redacted our Palo Santo city guide with our must-sees, architectural highlights and itineraries.         </p>
-        <p class="text-ps-body">
-            Our Front Desk staff is available 24hs a day, 7 days a week, to help you with all your requests: recommendations, reservations, transfers, etc.
-        </p>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Terrace</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Private, 20 m²</dd>
       </div>
-    </details>
-
-    <details class="border border-ps-line p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-white">
-        Our rates always include:
-        <svg class="h-5 w-5 text-ps-muted transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="pt-4">
-        <ul class="list-disc space-y-2 pl-5 text-base leading-relaxed text-ps-body md:text-lg md:leading-loose">
-          <li>Buffet Breakfast</li>
-          <li>WiFi</li>
-          <li>Complimentary bike (subject to availability)</li>
-          <li>Printed Palo Santo City Guide, available in Spanish and English</li>
-          <li>Access to our gym on the 7th floor, open from 9AM to 9PM</li>
-          <li>In the summer: access to our rooftop with a shallow pool and hot tub (outdoor area, not heated)</li>
-        </ul>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V3h14v18"/><path d="M2 21h20"/><path d="M15 12h.01"/></svg>Layout</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Living room + bedroom</dd>
       </div>
-    </details>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 8 7"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M17 19v2"/></svg>Bathroom</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Whirlpool bath</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Location</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Floor 6</dd>
+      </div>
+    </dl>
+  </section>
 
-    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-ps-body md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-white">Detailed room information</h2>
-      <p class="text-ps-body">
-          Located on the sixth floor, the 55m2 / 590 sq. ft Terrace Suite features a private 215 square-foot/ 20m2 terrace.
-        </p>
-        <p class="text-ps-body">
-          The suite comprises one bedroom with an en-suite bathroom with a whirlpool tub, and a walk-in closet. 
-          The bedroom features a King-size double bed.
-        </p>
-        <p class="text-ps-body">
-          The living room is well appointed, with a dining area, and a sitting area. 
-          Two 55-inch Smart 4K TV will allow you to enjoy your streaming accounts or local cable channels both from the living room or the bedroom. 
-          Work comfortably from your desk or the dining table, with of course complimentary internet access. 
-          Next to the minibar, you will find an electric kettle, Nespresso coffee machine, cups, and glasses. 
-        </p>
-        <p class="text-ps-body">
-          The beautiful 20 square meters (215 square feet) terrace is furnished with lounge chairs, a table and chairs, so that guests can relax and enjoy Palermo from a new perspective.        </p>
-        <p class="text-ps-body">
-          All of our rooms are smoke-free, including the balconies. 
-          For an additional cost, you can request an extra bed for a third adult or a child over three years old. 
-          We offer cribs free of charge (please confirm availability in advance) for babies and small children.
-        </p>
+  <!-- LA HABITACIÓN -->
+  <section aria-labelledby="intro-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-12 md:gap-[72px]">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-24">
+        <div class="flex flex-col gap-3 md:gap-[18px] lg:flex-1">
+          <p class="ps-eyebrow">The suite</p>
+          <h2 id="intro-titulo" class="ps-h2 max-w-[11em]">Your own terrace in Palermo</h2>
+        </div>
+        <div class="flex flex-col items-start gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg lg:flex-1 lg:pt-[34px]">
+          <p>With its large private terrace, our Terrace Suite is an oasis above Buenos Aires. Contemporary luxury and exceptional comfort: modern design, beautiful natural wood and state-of-the-art equipment.</p>
+          <p>A perfect choice for a honeymoon or a romantic getaway.</p>
+          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid mt-2 px-6 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">See rates &amp; availability</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4 md:gap-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h2 id="fotos-titulo" class="ps-eyebrow">The suite in photos</h2>
+          <p class="shrink-0 text-[13px] text-ps-muted md:hidden" aria-hidden="true">Swipe →</p>
+        </div>
+        <div class="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-2 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:grid md:grid-flow-dense md:auto-rows-[170px] md:grid-cols-4 md:gap-3 md:overflow-visible md:px-0 lg:auto-rows-[230px] lg:gap-4" role="region" aria-labelledby="fotos-titulo" tabindex="0">
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2 md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.avif 800w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.avif 1200w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1448.avif 1448w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.webp 800w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.webp 1200w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1448.webp 1448w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2.jpg" alt="King bed in the bedroom, with the terrace and the city view" width="1448" height="1086" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[52vw] max-w-[240px] md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.avif 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.webp 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza.jpg" alt="The bedroom seen from the private terrace" width="1448" height="1086" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9159-Terraza-desde-fuente.jpg" alt="Sofa and coffee table on the terrace, surrounded by plants" width="5712" height="3213" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4477-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4477-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4477.jpg" alt="Plants and armchairs under the terrace pergola" width="5712" height="4284" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[52vw] max-w-[240px] md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-1200.avif 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER-1200.webp 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9165-Bano-FER.jpg" alt="Vessel sink on a marble counter with bath amenities" width="5712" height="3213" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2 md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4516-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_4516-1200.avif 1200w, /images/hotel/Terrace-Suite-NEW/IMG_4516-1600.avif 1600w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4516-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_4516-1200.webp 1200w, /images/hotel/Terrace-Suite-NEW/IMG_4516-1600.webp 1600w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4516.jpg" alt="Living room with a sofa, a round table and access to the terrace" width="5712" height="4284" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4458-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4458-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4458.jpg" alt="Round table and a cabinet with a Nespresso machine in the living room" width="5712" height="4284" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Suites-Bathroom-8250-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Suites-Bathroom-8250-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Suites-Bathroom-8250-2000.jpg" alt="Bathroom with a whirlpool bathtub and a bathrobe" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9078-Terraza-picada.jpg" alt="Wine and a cheese board on the terrace, overlooking the Palermo rooftops" width="5712" height="3213" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2">
+          <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_9028-Desayuno.Cama-Horizontal.jpg" alt="Breakfast tray served on the bed" width="5712" height="3213" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-ps-body md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-white">Experiencia Boutique</h2>
-      <p class="text-ps-body">At Palo Santo, we are fully committed to help you make the most out of your stay in Buenos Aires. </p>
-      <p class="text-ps-body">
-        We handpicked a list of local restaurants that we are sure you will enjoy.
-        We personally redacted our Palo Santo city guide with our must-sees, architectural highlights and itineraries.         </p>
-      <p class="text-ps-body">
-        Our Front Desk staff is available 24hs a day, 7 days a week, to help you with all your requests: recommendations, reservations, transfers, etc.
-      </p>
+  <!-- DETALLES -->
+  <section id="details" aria-labelledby="detalles-titulo" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:sticky lg:top-10 lg:self-start">
+        <p class="ps-eyebrow">Suite details</p>
+        <h2 id="detalles-titulo" class="ps-h2 max-w-[10em]">What you will find</h2>
+      </div>
+      <div class="flex flex-col gap-8 border-b border-ps-line pb-8 md:gap-10 md:pb-10">
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Bedroom</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>A King bed, an en-suite bathroom with a whirlpool tub, and a walk-in closet.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg>Living room</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>A well-appointed living room with a comfortable round table and a sitting area. To work, you have a desk, the table and free high-speed WiFi.</p>
+            <p>Next to the minibar you will find an electric kettle, a Nespresso machine, cups and glasses. The 55-inch 4K Smart TV lets you use your streaming accounts or watch cable channels.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Terrace</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>A beautiful 20 m² terrace furnished with lounge chairs, chairs and a table: the perfect place to relax and enjoy Palermo from a new perspective.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 8 7"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M17 19v2"/></svg>Bathroom</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>A large whirlpool bathtub, hair dryer, bathrobes and full bath amenities. The suite also has a separate guest toilet.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Families</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>You can add an extra bed, for an additional charge, for a third adult or a child over 3, and ask us for a crib free of charge.</p>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="hidden p-0 text-base leading-relaxed text-ps-body md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-white">Our rates always include:</h2>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-ps-body md:text-lg md:leading-loose">
-        <li>Buffet Breakfast</li>
-        <li>WiFi</li>
-        <li>Complimentary bike (subject to availability)</li>
-        <li>Printed Palo Santo City Guide, available in Spanish and English</li>
-        <li>Access to our gym on the 7th floor, open from 9AM to 9PM</li>
-        <li>In the summer: access to our rooftop with a shallow pool and hot tub (outdoor area, not heated)</li>
+  <!-- EQUIPAMIENTO -->
+  <section aria-labelledby="equipamiento-titulo" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5">
+        <p class="ps-eyebrow">Features</p>
+        <h2 id="equipamiento-titulo" class="ps-h2 max-w-[10em]">In the room</h2>
+        <p class="ps-lead">All our rooms are smoke-free, terraces included.</p>
+      </div>
+      <ul class="grid border-b border-ps-line sm:grid-cols-2 sm:gap-x-8 lg:pt-2">
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 8 7"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M17 19v2"/></svg>Whirlpool bathtub</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V3h14v18"/><path d="M2 21h20"/><path d="M15 12h.01"/></svg>Separate guest toilet</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16v18H4z"/><path d="M12 3v18"/><path d="M9 11v2"/><path d="M15 11v2"/></svg>Walk-in closet</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>Bathrobes and hair dryer</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="m17 2-5 5-5-5"/></svg>55-inch 4K Smart TV</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>Free high-speed WiFi</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4z"/><path d="M2 20h20"/></svg>Work desk</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Minibar, Nespresso machine and kettle</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16v11H4z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Laptop-size safe</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>Individual air conditioning</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18v-2a7 7 0 0 0-7-7H9"/><path d="M9 9V6h9"/><path d="M7 21h10"/></svg>Ironing board, on request</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Extra bed, for an additional charge</li>
       </ul>
     </div>
-      <div class="space-y-5 pt-8">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-ps-muted">Explore our other rooms</p>
-        <div class="grid gap-6 sm:grid-cols-3">
-          <a href="/en/premium-rooms" class="group block focus:outline-none focus:ring-2 focus:ring-white/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
-                alt="Premium Room with king bed and natural light"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white">Premium</p>
-          </a>
+  </section>
 
-          <a href="/en/deluxe-rooms" class="group block focus:outline-none focus:ring-2 focus:ring-white/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w,
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w,
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w,
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w,
-                  /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg"
-                alt="View of Deluxe Room with contemporary design"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white">Deluxe</p>
-          </a>
-
-          <a href="/en/palo-santo-suite" class="group block focus:outline-none focus:ring-2 focus:ring-white/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-400.avif 400w,
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-800.avif 800w,
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-400.webp 400w,
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-800.webp 800w,
-                  /images/thumbnails/PaloSantoSuite-Living-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/PaloSantoSuite-Living-thumbnail.jpg"
-                alt="Palo Santo Suite living room seen from the bedroom through the sliding wooden door"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white">Palo Santo Suite</p>
-          </a>
+  <!-- EXPERIENCIA BOUTIQUE -->
+  <section aria-labelledby="boutique-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-12">
+      <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">Boutique experience</p>
+          <h2 id="boutique-titulo" class="ps-h2 max-w-[12em]">A team at your service</h2>
         </div>
+        <p class="ps-lead md:max-w-[26em]">We want you to make the most of your stay and of Buenos Aires.</p>
       </div>
-      <div class="pt-8 text-center">
-        <a
-          href="https://reservas.palosantohotel.com/en"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center justify-center border border-white px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30"
-        >
-          Book Now
+      <ul class="grid border-b border-ps-line md:grid-cols-3 md:gap-x-8 md:border-b-0">
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">Nearby restaurants</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">We handpicked local restaurants we are sure you will enjoy.</span>
+        </li>
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">Palo Santo guide</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">Our city guide, with architectural and cultural itineraries and personal recommendations from the team.</span>
+        </li>
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">24-hour reception</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">We help you with reservations, transfers and concierge services, around the clock.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OTRAS HABITACIONES -->
+  <section aria-labelledby="otras-titulo" class="border-t border-ps-line px-5 pb-12 pt-16 md:px-12 md:pb-24 md:pt-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <div class="flex items-center justify-between gap-4">
+        <h2 id="otras-titulo" class="ps-eyebrow">Other rooms</h2>
+        <a href="/en/rooms" class="ps-link hidden md:inline-flex">View all rooms<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/en/premium-rooms" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Premium-223a-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Premium-223a-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Premium-223a-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Premium</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/deluxe-rooms" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Deluxe-036a-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Deluxe-036a-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Deluxe-036a-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Deluxe</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/palo-santo-suite" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Palo Santo Suite</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
         </a>
       </div>
+      <a href="/en/rooms" class="ps-link self-start md:hidden">View all rooms<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
     </div>
-  </div>
-</section>
-</main>
+  </section>
 
-<!-- CIERRE -->
-<section aria-label="Book now" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
-  </div>
-</section>
+  <!-- RESERVA DIRECTA: recuadro carbón de cierre -->
+  <section aria-labelledby="directo-titulo" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto max-w-[1344px] bg-ps-ground px-6 py-9 md:p-20">
+      <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-24">
+        <div class="flex flex-col items-start gap-5 md:gap-[26px] lg:flex-1">
+          <p class="ps-eyebrow">Book direct</p>
+          <h2 id="directo-titulo" class="text-balance text-[30px] leading-[1.12] tracking-[-0.02em] md:text-[50px] md:leading-[1.06] md:tracking-[-0.025em]">Book on our website: always the best available rate.</h2>
+          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid px-5 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">See rates &amp; availability</a>
+        </div>
+        <div class="flex flex-col gap-5 lg:flex-1">
+          <h3 class="ps-eyebrow">Our rates always include</h3>
+          <ul class="grid gap-x-8 gap-y-3.5 text-[15px] sm:grid-cols-2 md:gap-y-[22px] md:text-[17px]">
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Buffet breakfast</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>High-speed WiFi</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>Complimentary bikes</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Printed Palo Santo city guide</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10"/><path d="M18 7v10"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6 12h12"/></svg>Gym, 9 AM to 9 PM</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>Rooftop with hot tub, in summer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">

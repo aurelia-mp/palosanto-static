@@ -32,16 +32,16 @@
 <!-- MENÚ MOBILE - EN -->
 <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Open menu</span>
         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
       </button>
       <nav aria-label="Main menu" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
-        <a href="/en/rooms" class="underline-offset-8 hover:underline underline" aria-current="page">Rooms</a>
+        <a href="/en/rooms" class="underline underline-offset-8" aria-current="page">Rooms</a>
         <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
         <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
         <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
       <a href="/en/rooms" class="flex min-h-[48px] items-center" aria-current="page">Rooms</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -86,475 +86,411 @@
   </div>
 </header>
 
-<main id="content">
+<main id="content" class="ps-claro bg-ps-ground">
 
-
-<!-- CONTENIDO PRINCIPAL -->
-<section class="bg-ps-ground px-0 pb-8 pt-0 sm:px-0 sm:pb-0 lg:pb-16" aria-labelledby="rooms-title">
-  <div class="relative isolate bg-ps-deep px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
-    <div class="mx-auto max-w-6xl text-center">
-      <h1 id="rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
-        Our rooms
-      </h1>
-    </div>
-  </div>
-</section>
-
-<!-- Section habitaciones -->
-  <section class="pt-2 pb-16" aria-labelledby="habitaciones-intro">
-    <div class="mt-4 2xl:mt-10 px-2 sm:px-4 lg:px-12 xl:px-20">
-      <div class="grid gap-6 sm:grid-cols-2">
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
-          alt="Premium Room with private balcony"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-white">Premium</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2 / 377 sq.ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>1st to 3rd Floors + 8th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              Our most popular rooms: spacious, comfortable, and filled with natural light, our Premium Rooms (one King bed or two Single beds) are ideal for couples, friends, or families. All feature a private balcony, except for the two interconnecting Premium Rooms located on the 8th floor, perfect for guests traveling with children.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/premium-rooms" class="room-card__button">> Explore</a>
-          </div>
+  <!-- PORTADA -->
+  <section aria-labelledby="titulo" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Cama-1200.avif 1200w, /images/hotel/PaloSantoSuite-NEW/Cama-1600.avif 1600w" sizes="(max-width: 767px) 256vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Cama-1200.webp 1200w, /images/hotel/PaloSantoSuite-NEW/Cama-1600.webp 1600w" sizes="(max-width: 767px) 256vw, 100vw">
+      <img src="/images-source/hotel/PaloSantoSuite-NEW/Cama.jpg" alt="Palo Santo Suite king bed with earth-toned cushions" width="1672" height="941" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[50%_50%] md:object-[50%_45%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">Rooms &amp; suites</p>
+          <h1 id="titulo" class="flex flex-col gap-2.5 [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:gap-4">
+            <span class="max-w-[12em] text-balance text-[42px] leading-none tracking-[-0.03em] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">Design rooms and suites</span>
+            <span class="text-[17px] leading-snug md:text-[22px]">in Palermo, Buenos Aires</span>
+          </h1>
         </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg"
-          alt="Detail of Deluxe Room with a comfortable armchair at Palo Santo Hotel"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="room-card__title">Deluxe</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2 / 377 sq.ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>4h to 6th Floors</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              For exceptional comfort and quiet elegance. Located on the upper floors, our Deluxe Rooms are elegant, filled with natural light, and exceptionally comfortable. Designer furniture, a private balcony, an oversized shower, and a perfect King bed for true relaxation.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/deluxe-rooms" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg"
-          alt="Terrace Suite bed with the sliding doors open onto the private terrace"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="room-card__title">Terrace Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>55m2 / 590 sq. ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>6th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            Our Terrace Suite, with its private terrace, is an oasis above the Buenos Aires skyline. A two-room suite offering contemporary luxury and exceptional comfort: beautiful natural woods, iconic design pieces, and state-of-the-art amenities.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/terrace-suite" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSantoSuite-Living-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSantoSuite-Living-thumbnail.jpg"
-          alt="Palo Santo Suite living room seen from the bedroom through the sliding wooden door"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-white">Palo Santo Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>65m2 / 700 sq. ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>7th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              The Palo Santo Suite is the hotel’s most generous space — a retreat designed for indulgence. Spread across 65 m², it features a King bed, separate living area, whirlpool bath, private balconies, and sweeping views of the Palermo skyline — an invitation to unwind and savor the city from above.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/palo-santo-suite" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">Spacious, full of natural light and furnished with design pieces. Almost every room has a private balcony overlooking the city or our vertical gardens.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION FAQ -->
-<section class="bg-ps-ground px-4 py-16 sm:px-6 lg:px-8">
-  <div class="mx-auto w-full max-w-6xl border-t-4 border-white bg-ps-ground px-6 py-10 space-y-10">
-    <div class="text-center space-y-3">
-      <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">FAQ</p>
-      <h2 class="text-3xl font-semibold text-white">Frequently Asked Questions</h2>
-      <p class="text-base text-ps-muted">We answer the most common questions to help you plan every detail of your stay.</p>
+  <!-- DATOS DE LAS HABITACIONES -->
+  <section aria-label="Room facts" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-3 md:gap-x-8 md:py-0 xl:grid-cols-5">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Rooms</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">26 across 8 floors</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5"/><path d="M21 8V3h-5"/><path d="M3 16v5h5"/><path d="M16 21h5v-5"/></svg>Size</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">35 to 65 m²</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Balcony or terrace</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Almost every room</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Check-in</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">From 3:00 PM</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Breakfast</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Buffet included</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- HABITACIONES -->
+  <section id="categories" aria-labelledby="intro-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-14 md:gap-24">
+      <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">Four categories</p>
+          <h2 id="intro-titulo" class="ps-h2 max-w-[12em]">Choose your room</h2>
+        </div>
+        <div class="flex flex-col gap-5 md:max-w-[34em] md:gap-6">
+          <p class="ps-lead">Two room categories and two suites, all with design furniture and plenty of natural light.</p>
+          <nav aria-label="Categories">
+            <ul class="flex flex-wrap gap-2">
+              <li><a href="#premium" class="flex min-h-[44px] items-center border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline md:px-[18px] md:text-[15px]">Premium</a></li>
+              <li><a href="#deluxe" class="flex min-h-[44px] items-center border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline md:px-[18px] md:text-[15px]">Deluxe</a></li>
+              <li><a href="#terrace-suite" class="flex min-h-[44px] items-center border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline md:px-[18px] md:text-[15px]">Terrace Suite</a></li>
+              <li><a href="#palo-santo-suite" class="flex min-h-[44px] items-center border border-ps-rule px-3.5 text-sm underline-offset-4 hover:underline md:px-[18px] md:text-[15px]">Palo Santo Suite</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <article id="premium" aria-labelledby="premium-titulo" class="grid scroll-mt-6 gap-5 md:gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-16">
+        <div class="grid grid-cols-3 gap-3 md:gap-4 lg:col-span-7">
+          <picture class="col-span-3 block sm:col-span-2">
+            <source type="image/avif" srcset="/images/hotel/Premium-223a-2000-800.avif 800w, /images/hotel/Premium-223a-2000-1200.avif 1200w, /images/hotel/Premium-223a-2000-1600.avif 1600w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <source type="image/webp" srcset="/images/hotel/Premium-223a-2000-800.webp 800w, /images/hotel/Premium-223a-2000-1200.webp 1200w, /images/hotel/Premium-223a-2000-1600.webp 1600w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <img src="/images-source/hotel/Premium-223a-2000.jpg" alt="Premium Room with a King bed and a balcony full of plants" width="2000" height="1333" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+          </picture>
+          <picture class="relative hidden sm:block">
+            <source type="image/avif" srcset="/images/hotel/Premium-235a-2000-800.avif 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <source type="image/webp" srcset="/images/hotel/Premium-235a-2000-800.webp 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <img src="/images-source/hotel/Premium-235a-2000.jpg" alt="Premium Room balcony with flowers and two chairs" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+          </picture>
+        </div>
+        <div class="flex flex-col items-start gap-4 md:gap-5 lg:col-span-5">
+          <p class="ps-eyebrow flex items-center gap-3"><span class="tabular-nums text-ps-text">01</span>Our most popular</p>
+          <h3 id="premium-titulo" class="text-[34px] leading-[1.06] tracking-[-0.025em] md:text-[48px] md:leading-[1.04] md:tracking-[-0.03em]">Premium</h3>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">35 m² / 377 sq ft</li>
+            <li class="ps-tag">King or 2 Single</li>
+            <li class="ps-tag">Floors 1–3 &amp; 8</li>
+            <li class="ps-tag">Private balcony</li>
+          </ul>
+          <p class="max-w-[32em] text-[15px] leading-relaxed text-ps-body md:text-[17px]">Our most popular rooms: spacious, comfortable and full of light, ideal for couples, friends or families. All have a private balcony except the two on the 8th floor, which connect to each other and open directly onto the rooftop: perfect if you are traveling with children.</p>
+          <a href="/en/premium-rooms" class="ps-btn-line mt-1 min-h-[48px] px-6 text-xs md:min-h-[52px] md:px-7 md:text-[13px]">View room<span class="sr-only"> Premium</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article id="deluxe" aria-labelledby="deluxe-titulo" class="grid scroll-mt-6 gap-5 md:gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-16">
+        <div class="grid grid-cols-3 gap-3 md:gap-4 lg:col-span-7 lg:order-last">
+          <picture class="col-span-3 block sm:col-span-2">
+            <source type="image/avif" srcset="/images/hotel/Deluxe-036a-2000-800.avif 800w, /images/hotel/Deluxe-036a-2000-1200.avif 1200w, /images/hotel/Deluxe-036a-2000-1600.avif 1600w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <source type="image/webp" srcset="/images/hotel/Deluxe-036a-2000-800.webp 800w, /images/hotel/Deluxe-036a-2000-1200.webp 1200w, /images/hotel/Deluxe-036a-2000-1600.webp 1600w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <img src="/images-source/hotel/Deluxe-036a-2000.jpg" alt="Deluxe Room with a King bed, an Eames lounge chair and a colorful painting" width="2000" height="1333" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+          </picture>
+          <picture class="relative hidden sm:block">
+            <source type="image/avif" srcset="/images/hotel/Deluxe-8266-2000-800.avif 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <source type="image/webp" srcset="/images/hotel/Deluxe-8266-2000-800.webp 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <img src="/images-source/hotel/Deluxe-8266-2000.jpg" alt="Desk with a Jacobsen chair and an orchid in a Deluxe Room" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+          </picture>
+        </div>
+        <div class="flex flex-col items-start gap-4 md:gap-5 lg:col-span-5">
+          <p class="ps-eyebrow flex items-center gap-3"><span class="tabular-nums text-ps-text">02</span>On the upper floors</p>
+          <h3 id="deluxe-titulo" class="text-[34px] leading-[1.06] tracking-[-0.025em] md:text-[48px] md:leading-[1.04] md:tracking-[-0.03em]">Deluxe</h3>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">35 m² / 377 sq ft</li>
+            <li class="ps-tag">King bed</li>
+            <li class="ps-tag">Floors 4–6</li>
+            <li class="ps-tag">Private balcony</li>
+          </ul>
+          <p class="max-w-[32em] text-[15px] leading-relaxed text-ps-body md:text-[17px]">For exceptional comfort and quiet. Elegant and full of natural light, with design furniture, a sitting area, a private balcony surrounded by plants and an oversized walk-in shower.</p>
+          <a href="/en/deluxe-rooms" class="ps-btn-line mt-1 min-h-[48px] px-6 text-xs md:min-h-[52px] md:px-7 md:text-[13px]">View room<span class="sr-only"> Deluxe</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article id="terrace-suite" aria-labelledby="terrace-suite-titulo" class="grid scroll-mt-6 gap-5 md:gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-16">
+        <div class="grid grid-cols-3 gap-3 md:gap-4 lg:col-span-7">
+          <picture class="col-span-3 block sm:col-span-2">
+            <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.avif 800w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.avif 1200w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1448.avif 1448w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.webp 800w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1200.webp 1200w, /images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-1448.webp 1448w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <img src="/images-source/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2.jpg" alt="Terrace Suite bedroom opening onto the terrace" width="1448" height="1086" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+          </picture>
+          <picture class="relative hidden sm:block">
+            <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.avif 800w, /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.avif 1200w" sizes="(min-width: 1024px) 38vw, 64vw">
+            <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-800.webp 800w, /images/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza-1200.webp 1200w" sizes="(min-width: 1024px) 38vw, 64vw">
+            <img src="/images-source/hotel/Terrace-Suite-NEW/IMG_4409-Cuarto-Terraza.jpg" alt="The Terrace Suite's private terrace seen from the bedroom, with plants and a pergola" width="1448" height="1086" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[90%_50%]">
+          </picture>
+        </div>
+        <div class="flex flex-col items-start gap-4 md:gap-5 lg:col-span-5">
+          <p class="ps-eyebrow flex items-center gap-3"><span class="tabular-nums text-ps-text">03</span>With a private terrace</p>
+          <h3 id="terrace-suite-titulo" class="text-[34px] leading-[1.06] tracking-[-0.025em] md:text-[48px] md:leading-[1.04] md:tracking-[-0.03em]">Terrace Suite</h3>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">55 m² / 590 sq ft</li>
+            <li class="ps-tag">Living room + bedroom</li>
+            <li class="ps-tag">Floor 6</li>
+            <li class="ps-tag">Private terrace</li>
+          </ul>
+          <p class="max-w-[32em] text-[15px] leading-relaxed text-ps-body md:text-[17px]">An oasis above Buenos Aires. A one-bedroom suite with a 20 m² private terrace, natural wood, iconic design pieces and a whirlpool bath. Ideal for a honeymoon or a romantic getaway.</p>
+          <a href="/en/terrace-suite" class="ps-btn-line mt-1 min-h-[48px] px-6 text-xs md:min-h-[52px] md:px-7 md:text-[13px]">View suite<span class="sr-only"> Terrace Suite</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article id="palo-santo-suite" aria-labelledby="palo-santo-suite-titulo" class="grid scroll-mt-6 gap-5 md:gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-16">
+        <div class="grid grid-cols-3 gap-3 md:gap-4 lg:col-span-7 lg:order-last">
+          <picture class="col-span-3 block sm:col-span-2">
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.avif 1200w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1448.avif 1448w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.webp 1200w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1448.webp 1448w" sizes="(min-width: 1024px) 38vw, (min-width: 640px) 64vw, 100vw">
+            <img src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg" alt="Palo Santo Suite living room seen from the bedroom, through the sliding wooden door" width="1448" height="1086" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+          </picture>
+          <picture class="relative hidden sm:block">
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.avif 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.webp 800w" sizes="(min-width: 1024px) 19vw, 32vw">
+            <img src="/images-source/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2.jpg" alt="Palo Santo Suite bedroom at night, overlooking the Palermo skyline" width="1448" height="1086" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+          </picture>
+        </div>
+        <div class="flex flex-col items-start gap-4 md:gap-5 lg:col-span-5">
+          <p class="ps-eyebrow flex items-center gap-3"><span class="tabular-nums text-ps-text">04</span>Our largest suite</p>
+          <h3 id="palo-santo-suite-titulo" class="text-[34px] leading-[1.06] tracking-[-0.025em] md:text-[48px] md:leading-[1.04] md:tracking-[-0.03em]">Palo Santo Suite</h3>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">65 m² / 700 sq ft</li>
+            <li class="ps-tag">Separate living room</li>
+            <li class="ps-tag">Floor 7</li>
+            <li class="ps-tag">Two balconies</li>
+          </ul>
+          <p class="max-w-[32em] text-[15px] leading-relaxed text-ps-body md:text-[17px]">The hotel’s most spacious suite: separate living room and bedroom, King bed, two 4K Smart TVs, whirlpool bath, two private balconies and sweeping views of the Palermo skyline.</p>
+          <a href="/en/palo-santo-suite" class="ps-btn-line mt-1 min-h-[48px] px-6 text-xs md:min-h-[52px] md:px-7 md:text-[13px]">View suite<span class="sr-only"> Palo Santo Suite</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="space-y-10">
-      <div class="space-y-6">
-        <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Accessibility</p>
-        <div class="space-y-8">
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Do you have accessible rooms for guests with reduced mobility?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <div class="space-y-2 text-base text-ps-body">
-                <p>Yes. We offer a Premium room specially designed for guests with reduced mobility. It is spacious, comfortable, and fully accessible.</p>
-                <p>To ensure availability, we recommend requesting it at the time of booking.</p>
-              </div>
-            </div>
+  <!-- COMPARAR -->
+  <section id="compare" aria-labelledby="comparar-titulo" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-14">
+      <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">At a glance</p>
+          <h2 id="comparar-titulo" class="ps-h2 max-w-[12em]">Compare our rooms</h2>
+        </div>
+        <p class="ps-lead md:max-w-[26em]">Every room can take an extra bed (additional charge), and breakfast is always included.</p>
+      </div>
+      <div class="-mx-5 overflow-x-auto px-5 [scrollbar-width:thin] md:mx-0 md:px-0" role="region" aria-labelledby="comparar-titulo" tabindex="0">
+        <table class="w-full min-w-[640px] table-fixed border-collapse text-left text-[15px] leading-snug md:text-base">
+          <thead>
+          <tr class="border-b border-ps-text">
+            <td class="sticky left-0 z-10 w-[18%] bg-ps-alt py-4 pr-4"></td>
+            <th scope="col" class="px-4 py-4 align-bottom text-lg font-semibold leading-tight md:text-xl"><a href="#premium" class="underline-offset-4 hover:underline">Premium</a></th>
+            <th scope="col" class="px-4 py-4 align-bottom text-lg font-semibold leading-tight md:text-xl"><a href="#deluxe" class="underline-offset-4 hover:underline">Deluxe</a></th>
+            <th scope="col" class="px-4 py-4 align-bottom text-lg font-semibold leading-tight md:text-xl"><a href="#terrace-suite" class="underline-offset-4 hover:underline">Terrace Suite</a></th>
+            <th scope="col" class="px-4 py-4 align-bottom text-lg font-semibold leading-tight md:text-xl"><a href="#palo-santo-suite" class="underline-offset-4 hover:underline">Palo Santo Suite</a></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Size</th>
+            <td class="px-4 py-4 align-top">35 m² / 377 sq ft</td>
+            <td class="px-4 py-4 align-top">35 m² / 377 sq ft</td>
+            <td class="px-4 py-4 align-top">55 m² / 590 sq ft</td>
+            <td class="px-4 py-4 align-top">65 m² / 700 sq ft</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Layout</th>
+            <td class="px-4 py-4 align-top">One room with a sitting area</td>
+            <td class="px-4 py-4 align-top">One room with a sitting area</td>
+            <td class="px-4 py-4 align-top">Living room and bedroom</td>
+            <td class="px-4 py-4 align-top">Living room and bedroom</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Bed</th>
+            <td class="px-4 py-4 align-top">King or 2 Single</td>
+            <td class="px-4 py-4 align-top">King</td>
+            <td class="px-4 py-4 align-top">King</td>
+            <td class="px-4 py-4 align-top">King</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Floor</th>
+            <td class="px-4 py-4 align-top">1–3 and 8</td>
+            <td class="px-4 py-4 align-top">4–6</td>
+            <td class="px-4 py-4 align-top">6</td>
+            <td class="px-4 py-4 align-top">7</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Outdoor space</th>
+            <td class="px-4 py-4 align-top">Private balcony (8th floor: rooftop access)</td>
+            <td class="px-4 py-4 align-top">Private balcony</td>
+            <td class="px-4 py-4 align-top">20 m² private terrace</td>
+            <td class="px-4 py-4 align-top">Two private balconies</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Bathroom</th>
+            <td class="px-4 py-4 align-top">Oversized walk-in shower</td>
+            <td class="px-4 py-4 align-top">Oversized walk-in shower</td>
+            <td class="px-4 py-4 align-top">Whirlpool bath and guest toilet</td>
+            <td class="px-4 py-4 align-top">Whirlpool bath and guest toilet</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">4K Smart TV</th>
+            <td class="px-4 py-4 align-top">One 50″</td>
+            <td class="px-4 py-4 align-top">One 55″</td>
+            <td class="px-4 py-4 align-top">One 55″</td>
+            <td class="px-4 py-4 align-top">Two 55″</td>
+          </tr>
+          <tr class="border-b border-ps-line">
+            <th scope="row" class="sticky left-0 z-10 bg-ps-alt py-4 pr-4 align-top text-[13px] font-normal text-ps-muted md:text-sm">Walk-in closet</th>
+            <td class="px-4 py-4 align-top text-ps-soft"><span aria-hidden="true">—</span><span class="sr-only">No</span></td>
+            <td class="px-4 py-4 align-top text-ps-soft"><span aria-hidden="true">—</span><span class="sr-only">No</span></td>
+            <td class="px-4 py-4 align-top">Yes</td>
+            <td class="px-4 py-4 align-top">Yes</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPAMIENTO -->
+  <section id="amenities" aria-labelledby="equipamiento-titulo" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5">
+        <p class="ps-eyebrow">In every room</p>
+        <h2 id="equipamiento-titulo" class="ps-h2 max-w-[10em]">Designed for rest</h2>
+        <p class="ps-lead">High-quality mattresses, blackout curtains and double glazing for a good night’s sleep, plus a desk and high-speed WiFi to work comfortably.</p>
+      </div>
+      <ul class="grid border-b border-ps-line sm:grid-cols-2 sm:gap-x-8 lg:pt-2">
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>Free high-speed WiFi</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>Individual air conditioning</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="m17 2-5 5-5-5"/></svg>4K Smart TV</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Minibar, Nespresso machine and kettle</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4z"/><path d="M2 20h20"/></svg>Work desk</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16v11H4z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Laptop-size safe</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg>Bathrobes, hair dryer and bath amenities</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>Blackout curtains and double glazing</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Extra bed, for an additional charge</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12H3v4h13"/><path d="M18 8c0-2.5-2-2.5-2-5"/><path d="m2 2 20 20"/><path d="M21 12h1v4h-.5"/><path d="M22 8c0-2.5-2-2.5-2-5"/><path d="M7 12v4"/></svg>Smoke-free, balconies included</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq" aria-labelledby="faq-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-24 lg:gap-y-10">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:col-start-1 lg:row-start-1">
+        <p class="ps-eyebrow">Before you book</p>
+        <h2 id="faq-titulo" class="ps-h2">Frequently asked questions</h2>
+        <p class="ps-lead">Answers to the most common questions about our rooms.</p>
+      </div>
+
+      <div class="flex flex-col gap-10 md:gap-12 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <div class="flex flex-col gap-2 md:gap-3">
+          <h3 class="ps-eyebrow">Accessibility</h3>
+          <div class="ps-faq flex flex-col border-b border-ps-line">
+            <details class="border-t border-ps-line" open>
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Do you have accessible rooms for guests with reduced mobility?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">Yes. We have a Premium room specially designed for guests with reduced mobility: it is spacious, comfortable and fully accessible. To make sure it is available, we recommend requesting it when you book.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 md:gap-3">
+          <h3 class="ps-eyebrow">Families</h3>
+          <div class="ps-faq flex flex-col border-b border-ps-line">
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Do you offer connecting rooms for families or groups?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <div class="mb-5 flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base"><p>Yes. On the eighth floor, two Premium rooms are connected through a private foyer, creating an exclusive and very comfortable space for families or groups of up to six people. You can choose King or Twin bedding and add an extra bed in each room.</p><p>These rooms do not have a balcony, but they make up for it with open city views and direct access to the rooftop, one of Palo Santo’s most charming spots.</p></div>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Can extra beds be added?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">Yes. Every room can take an extra bed, for an additional charge. When booking, select three guests to see the corresponding rate.</p>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">I’m traveling with a baby. Do you provide cribs?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">Of course. We can set up a foldaway crib free of charge, suitable for babies up to two years old. Please let us know in advance so we can have it ready when you arrive.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 md:gap-3">
+          <h3 class="ps-eyebrow">Amenities</h3>
+          <div class="ps-faq flex flex-col border-b border-ps-line">
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">How many rooms does the hotel have?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">The hotel has 26 rooms in total, across 8 floors.</p>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">What is the difference between Premium and Deluxe rooms?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">Deluxe rooms are on the upper floors and have a more defined living area. All Deluxe rooms have a King bed, while Premium rooms can also be set up with two single beds.</p>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Do the bathrooms have showers or bathtubs?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">All bathrooms have an extra-large walk-in shower, except in the suites, which have a whirlpool bathtub.</p>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Do the rooms have a kitchen?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">No. Our rooms do not have a kitchen, but they do have an area with a minibar, a Nespresso coffee machine (consumption not included) and an electric kettle.</p>
+            </details>
+            <details class="border-t border-ps-line">
+              <summary class="flex min-h-[64px] items-center justify-between gap-3.5 py-3 text-base font-semibold leading-snug md:gap-6 md:py-[18px] md:text-lg">Do all rooms have a private balcony?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-9 md:w-9"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+              <p class="mb-5 max-w-[40em] text-[15px] leading-relaxed text-ps-body md:mb-6 md:text-base">Almost all of them. The only exceptions are the two Premium rooms on the eighth floor, which have no balcony but offer beautiful panoramic views and immediate access to the rooftop.</p>
+            </details>
           </div>
         </div>
       </div>
 
-      <div class="flex justify-center">
-        <div class="h-px w-40 bg-ps-rule"></div>
-      </div>
-
-      <div class="space-y-6">
-        <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Families</p>
-        <div class="space-y-8">
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Do you offer connecting rooms for families or groups?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <div class="space-y-2 text-base text-ps-body">
-                <p>Yes. On the eighth floor, we have two Premium rooms connected through a private foyer, creating an exclusive and very comfortable space for families or groups of up to six people.</p>
-                <p>You may choose between King or Twin bedding, and add an extra bed in each room.</p>
-                <p>These rooms do not feature a balcony, but they compensate with open city views and direct access to the rooftop — one of Palo Santo’s most charming areas.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Can extra beds be added?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <div class="space-y-2 text-base text-ps-body">
-                <p>Yes. All of our rooms can accommodate an extra bed for an additional charge.</p>
-                <p>When booking, simply select three guests to display the corresponding rate.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">I’m traveling with a baby — do you provide cribs?/p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <div class="space-y-2 text-base text-ps-body">
-                <p>Of course. We can set up a foldaway crib suitable for babies up to two years old.</p>
-                <p>Please let us know in advance so we can have it ready upon arrival.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-center">
-        <div class="h-px w-40 bg-ps-rule"></div>
-      </div>
-
-      <div class="space-y-6">
-        <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Amenities</p>
-        <div class="space-y-8">
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">How many rooms does the hotel have?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <p class="text-base text-ps-body">The hotel has a total of 26 rooms.</p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">What is the difference between Premium and Deluxe rooms?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <p class="text-base text-ps-body">Deluxe rooms are located on higher floors and feature a more defined living area.</p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Do the bathrooms have showers or bathtubs?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <p class="text-base text-ps-body">All bathrooms feature extra-large showers, except the Suites, which offer whirlpool bathtubs.</p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Do the rooms include a kitchen?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <p class="text-base text-ps-body">No. Our rooms do not have kitchen facilities, but they do include an area with a minibar, Nespresso coffee machine (consumption not included), and electric kettle.</p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#b6c9ad]">Q</span>
-              <p class="text-base font-semibold uppercase tracking-[0.2em] text-white">Do all rooms have a private balcony?</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-3xl font-bold text-white pr-4 border-r-8 border-[#d6d9d4]">A</span>
-              <div class="space-y-2 text-base text-ps-body">
-                <p>Almost all of them.</p>
-                <p>The only exceptions are the two Premium rooms on the eighth floor, which do not have a balcony but offer beautiful panoramic views and immediate access to the rooftop.</p>
-              </div>
-            </div>
-          </div>
+      <div class="ps-oscuro flex flex-col gap-3 bg-ps-ground p-6 md:gap-3.5 md:p-8 lg:col-start-1 lg:row-start-2 lg:self-start">
+        <p class="ps-eyebrow">Not sure which to choose?</p>
+        <p class="text-xl leading-snug tracking-[-0.01em] md:text-[22px]">Write to us and we’ll help you find the right room for your trip.</p>
+        <div class="flex flex-col gap-1 border-t border-ps-line pt-3.5 text-[15px] text-ps-body md:text-base">
+          <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="hover:underline">WhatsApp +54 9 11 6357-2374</a>
+          <a href="tel:+541152806100" class="hover:underline">Phone +54 11 5280 6100</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- SIGUE RECORRIENDO -->
+  <section aria-labelledby="more-title" class="border-t border-ps-line px-5 pb-12 pt-16 md:px-12 md:pb-24 md:pt-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <h2 id="more-title" class="ps-eyebrow">Keep exploring</h2>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/en/hotel" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Lobby-IMG_2509-213-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Hotel &amp; services</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/restaurant" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Desayuno-DIC23-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Desayuno-DIC23-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Desayuno-DIC23-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Breakfast &amp; restaurant</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/palermo" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/thumbnails/Cafe-Palermo-edit-400.avif 400w, /images/thumbnails/Cafe-Palermo-edit-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/thumbnails/Cafe-Palermo-edit-400.webp 400w, /images/thumbnails/Cafe-Palermo-edit-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/thumbnails/Cafe-Palermo-edit.jpg" alt="" width="1000" height="667" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Location</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Book now</a>
+    </div>
+  </section>
 </main>
-
-<!-- CIERRE -->
-<section aria-label="Book now" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">

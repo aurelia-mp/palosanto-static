@@ -100,6 +100,15 @@
     @apply border border-ps-rule px-3 py-2 text-[13px] md:px-[18px] md:py-2.5 md:text-sm;
   }
 
+  /* Formulario de contacto: campos rectos con borde fino. Texto de 16 px para que iOS no haga zoom */
+  .ps-label {
+    @apply flex items-baseline justify-between gap-3 text-sm font-semibold;
+  }
+
+  .ps-input {
+    @apply mt-2 block w-full appearance-none border border-ps-rule bg-transparent px-4 py-3.5 text-base text-ps-text transition-colors placeholder:text-ps-soft hover:border-ps-muted focus:border-ps-text focus:outline-none focus:ring-1 focus:ring-ps-text;
+  }
+
   /* Hero: el video ocupa toda la primera pantalla */
   .ps-hero {
     height: 100vh;
@@ -227,75 +236,5 @@
   /* Premios de Tripadvisor: los originales son negros; sobre el verde se muestran en blanco */
   .ps-badge {
     @apply h-[54px] w-auto opacity-90 mix-blend-screen grayscale invert md:h-[76px];
-  }
-}
-
-/* === Componentes de las páginas internas (diseño anterior, con los colores nuevos) === */
-@layer components {
-  .room-card {
-    @apply flex h-full flex-col overflow-hidden border border-ps-line bg-ps-panel transition-colors hover:border-ps-rule;
-  }
-
-  .room-card__content {
-    @apply flex h-full flex-col p-6;
-  }
-
-  .room-card__header {
-    @apply flex flex-wrap items-center gap-3;
-  }
-
-  .room-card__title {
-    @apply text-lg font-semibold uppercase tracking-wide text-white;
-  }
-
-  .room-card__icons {
-    @apply ml-auto flex items-center gap-3 pr-2 text-sm text-ps-muted;
-  }
-
-  .room-card__icon-item {
-    @apply flex items-center gap-1;
-  }
-
-  .room-card__description {
-    @apply mt-3 flex-1 text-sm leading-8 text-ps-muted;
-  }
-
-  .room-card__cta {
-    @apply mt-6;
-  }
-
-  .room-card__button {
-    @apply inline-flex items-center justify-center gap-2 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ps-ground transition hover:bg-ps-paper focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
-  }
-
-  .green-preview__image {
-    @apply block w-full object-cover;
-    aspect-ratio: 3 / 2;
-  }
-
-  /* Room gallery: keep the hero image contained on small screens */
-  [data-room-gallery] figure {
-    @apply relative flex items-center justify-center;
-  }
-
-  [data-room-gallery] [data-room-picture] {
-    @apply absolute inset-0 flex h-full w-full items-center justify-center;
-  }
-
-  [data-room-gallery] [data-room-hero] {
-    @apply h-full w-full max-h-full max-w-full object-cover;
-  }
-
-  @media (max-width: 768px) {
-    [data-room-gallery] [data-room-hero] {
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-  .green-preview__image {
-    aspect-ratio: 1 / 1;
   }
 }
