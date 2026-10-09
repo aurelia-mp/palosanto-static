@@ -1,194 +1,247 @@
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-v25-latin-ext-100.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+/* === Rediseño 2026 =========================================================
+   Fondo del sitio: gris carbón #1C1C1C. Los colores se guardan como canales RGB
+   para poder usarlos con transparencias (bg-ps-ground/75, degradés del hero, etc.).
+
+   El verde bosque #0E1B14 queda como alternativa para comparar:
+   agregar ?fondo=verde a cualquier URL del sitio (queda activo mientras dure la visita;
+   ?fondo=carbon vuelve al gris). Lo activa el script corto del <head> de cada página. */
+:root {
+  --ps-ground: 28 28 28;   /* #1C1C1C fondo */
+  --ps-deep: 17 17 17;     /* #111111 footer */
+  --ps-paper: 236 236 234; /* #ECECEA bloque claro */
+  --ps-carbon: 28 28 28;   /* #1C1C1C recuadros oscuros dentro de las páginas claras */
+  --ps-fg: 255 255 255;    /* texto sobre el fondo */
+  --ps-alt: 35 35 35;      /* #232323 franja alternada */
+  color-scheme: dark;
 }
 
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-v25-latin-ext-300.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+:root[data-fondo="verde"] {
+  --ps-ground: 14 27 20;   /* #0E1B14 */
+  --ps-deep: 8 16 12;      /* #08100C */
+  --ps-paper: 232 236 231; /* #E8ECE7 */
+  --ps-carbon: 14 27 20;
 }
 
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-v25-latin-ext-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* Páginas con más texto (Hotel, Desayuno, Ubicación): fondo claro y texto carbón.
+   El carbón queda para el encabezado, la portada, la franja de datos, los recuadros y el pie,
+   que llevan la clase .ps-oscuro. Los colores bg-ps-ground, text-ps-text, text-ps-muted,
+   border-ps-line, etc. toman los valores del bloque en el que están. */
+.ps-claro {
+  --ps-ground: 244 244 242; /* #F4F4F2 */
+  --ps-fg: 28 28 28;        /* #1C1C1C */
+  --ps-alt: 234 234 231;    /* #EAEAE7 */
+  color: rgb(var(--ps-fg));
+  color-scheme: light;
 }
 
-@font-face {
-  font-family: "Lato";
-  src: url("../fonts/lato-v25-latin-ext-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+.ps-oscuro {
+  --ps-ground: var(--ps-carbon);
+  --ps-fg: 255 255 255;
+  --ps-alt: 38 38 38;       /* #262626 */
+  color: rgb(var(--ps-fg));
+  color-scheme: dark;
 }
 
-@layer theme {
-  :root {
-    --font-sans: "Lato", sans-serif;
-  }
+/* Tipografía: Avenir Next (institucional) se usa directo donde está instalada
+   (Mac, iPhone, iPad). En el resto se descarga Nunito Sans (licencia OFL),
+   la alternativa libre más parecida. Se usan los pesos 400, 600 y 700, y el 200
+   para los números grandes de la galería (el archivo variable cubre de 200 a 1000). */
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin-wght.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer components {
-  .room-card {
-    @apply flex h-full flex-col overflow-hidden bg-white shadow-sm transition hover:shadow-md;
+  .ps-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-ps-muted;
   }
 
-  .room-card__content {
-    @apply flex h-full flex-col p-6;
+  .ps-h2 {
+    @apply text-balance text-[34px] font-normal leading-[1.06] tracking-[-0.03em] md:text-[58px] md:leading-[1.04];
   }
 
-  .room-card__header {
-    @apply flex flex-wrap items-center gap-3;
+  .ps-lead {
+    @apply text-base leading-relaxed text-ps-muted md:text-lg;
   }
 
-  .room-card__title {
-    @apply text-lg font-semibold uppercase tracking-wide text-gray-900;
+  /* Botones: blanco sobre el verde, verde sobre el bloque claro, y con borde para lo secundario */
+  .ps-btn {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-3 bg-white px-8 text-[13px] font-bold uppercase tracking-[0.16em] text-ps-ground transition-colors hover:bg-ps-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
 
-  .room-card__icons {
-    @apply ml-auto flex items-center gap-3 pr-2 text-sm text-gray-600;
+  .ps-btn-dark {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-3 bg-ps-ground px-8 text-[13px] font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-ps-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ps-ground;
   }
 
-  .room-card__icon-item {
-    @apply flex items-center gap-1;
+  .ps-btn-ghost {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-3 border border-white px-[26px] text-[13px] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-ps-ground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
 
-  .room-card__description {
-    @apply mt-3 flex-1 text-sm font-light leading-8 text-gray-600;
+  /* Botones que se adaptan al bloque: blanco sobre carbón, carbón sobre claro */
+  .ps-btn-solid {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-3 bg-ps-text px-8 text-[13px] font-bold uppercase tracking-[0.16em] text-ps-ground transition-colors hover:bg-ps-text/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ps-text;
   }
 
-  .room-card__cta {
-    @apply mt-6;
+  .ps-btn-line {
+    @apply inline-flex min-h-[52px] items-center justify-center gap-3 border border-ps-text px-7 text-[13px] font-semibold uppercase tracking-[0.16em] text-ps-text transition-colors hover:bg-ps-text hover:text-ps-ground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ps-text;
   }
 
-  .room-card__button {
-    @apply inline-flex items-center justify-center gap-2 rounded bg-black px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/30 focus:ring-offset-2;
+  .ps-link {
+    @apply inline-flex min-h-[44px] items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.16em] underline-offset-4 hover:underline;
   }
 
-  .green-preview__image {
-    @apply block w-full object-cover;
-    aspect-ratio: 3 / 2;
+  .ps-tag {
+    @apply border border-ps-rule px-2.5 py-1 text-[13px] font-semibold md:px-3 md:py-[5px];
   }
 
-  .hero-palermo {
-    @apply w-full pt-12 md:pt-16;
+  .ps-tag-outline {
+    @apply border border-ps-rule px-3 py-2 text-[13px] md:px-[18px] md:py-2.5 md:text-sm;
   }
 
-  .hero-palermo__media {
-    @apply relative isolate flex min-h-[32rem] w-full overflow-hidden bg-black sm:min-h-[40rem] md:min-h-[48rem];
-    content-visibility: auto;
-    contain-intrinsic-size: 1000px 512px; /* 32rem */
+  /* Formulario de contacto: campos rectos con borde fino. Texto de 16 px para que iOS no haga zoom */
+  .ps-label {
+    @apply flex items-baseline justify-between gap-3 text-sm font-semibold;
+  }
+
+  .ps-input {
+    @apply mt-2 block w-full appearance-none border border-ps-rule bg-transparent px-4 py-3.5 text-base text-ps-text transition-colors placeholder:text-ps-soft hover:border-ps-muted focus:border-ps-text focus:outline-none focus:ring-1 focus:ring-ps-text;
+  }
+
+  /* Hero: el video ocupa toda la primera pantalla */
+  .ps-hero {
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    max-height: 1000px;
+  }
+
+  @media (min-width: 1024px) {
+    .ps-hero {
+      min-height: 680px;
+      max-height: 1080px;
+    }
+  }
+
+  /* Cada clip arranca sobre su imagen fija y aparece cuando empieza a reproducirse */
+  .ps-hero video {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .ps-hero video.is-playing {
+    opacity: 1;
+  }
+
+  /* Degradé del color de fondo: arriba para el menú, abajo para el título y la reserva */
+  .ps-hero__scrim {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--ps-ground) / 0.6) 0%,
+      rgb(var(--ps-ground) / 0) 18%,
+      rgb(var(--ps-ground) / 0) 32%,
+      rgb(var(--ps-ground) / 0.45) 54%,
+      rgb(var(--ps-ground) / 0.84) 80%,
+      rgb(var(--ps-ground) / 0.9) 100%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .ps-hero__scrim {
+      background: linear-gradient(
+        180deg,
+        rgb(var(--ps-ground) / 0.62) 0%,
+        rgb(var(--ps-ground) / 0) 22%,
+        rgb(var(--ps-ground) / 0) 36%,
+        rgb(var(--ps-ground) / 0.4) 58%,
+        rgb(var(--ps-ground) / 0.8) 82%,
+        rgb(var(--ps-ground) / 0.88) 100%
+      );
+    }
+  }
+
+  /* Portada de las páginas interiores: foto fija con el mismo degradé que la home.
+     La sección lleva .ps-oscuro, así que el degradé siempre es carbón. */
+  .ps-page-hero__scrim {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--ps-ground) / 0.6) 0%,
+      rgb(var(--ps-ground) / 0) 22%,
+      rgb(var(--ps-ground) / 0) 34%,
+      rgb(var(--ps-ground) / 0.58) 60%,
+      rgb(var(--ps-ground) / 0.9) 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .ps-page-hero__scrim {
+      background: linear-gradient(
+        180deg,
+        rgb(var(--ps-ground) / 0.62) 0%,
+        rgb(var(--ps-ground) / 0) 24%,
+        rgb(var(--ps-ground) / 0) 40%,
+        rgb(var(--ps-ground) / 0.5) 66%,
+        rgb(var(--ps-ground) / 0.88) 100%
+      );
+    }
+  }
+
+  /* Capítulos del video: una barra de progreso por clip */
+  .ps-chapter {
+    @apply flex min-h-[44px] min-w-0 flex-1 flex-col items-stretch justify-end gap-2.5 text-left text-white opacity-60 transition-opacity duration-300 hover:opacity-100 lg:min-h-[48px] lg:w-32 lg:flex-none lg:gap-3;
+  }
+
+  .ps-chapter.is-active {
+    @apply opacity-100;
+  }
+
+  .ps-chapter__bar {
+    @apply relative block h-0.5 overflow-hidden bg-white/30;
+  }
+
+  .ps-chapter__fill {
+    @apply absolute inset-0 block origin-left bg-white;
+    transform: scaleX(0);
+  }
+
+  .ps-chapter__label {
+    @apply flex min-w-0 gap-2.5 overflow-hidden whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.12em] lg:text-xs lg:tracking-[0.16em];
+  }
+
+  /* Reservas: franja sobre el pie del video en desktop, panel inferior en mobile y tablet */
+  @media (max-width: 1023px) {
+    .ps-booking {
+      display: none;
     }
 
-    @media (min-width: 640px) { /* sm */
-      .hero-palermo__media {
-        contain-intrinsic-size: 1200px 640px; /* 40rem */
-      }
+    .ps-booking.is-open {
+      @apply fixed inset-x-0 bottom-0 z-[60] block border-t border-ps-line bg-ps-ground px-4 pb-6 pt-4 shadow-[0_-12px_32px_rgba(0,0,0,0.45)];
     }
-
-    @media (min-width: 768px) { /* md */
-      .hero-palermo__media {
-        contain-intrinsic-size: 1400px 768px; /* 48rem */
-  }
-}
-
-  .hero-palermo__picture {
-    @apply absolute inset-0 block h-full w-full;
   }
 
-  .hero-palermo__image {
-    @apply h-full w-full object-cover transition-transform duration-700 ease-out;
-  }
-
-  .hero-palermo__overlay {
-    @apply absolute inset-0 z-10 bg-black/35 transition-colors duration-500 ease-out;
-  }
-
-  .hero-palermo__content {
-    @apply relative z-20 flex h-full w-full max-w-xl flex-col items-start justify-center gap-4 px-6 py-8 text-left text-white uppercase translate-y-6 sm:px-12 sm:py-10 sm:translate-y-10 md:px-16 md:py-12 md:translate-y-14;
-  }
-
-  .hero-palermo__subtitle {
-    @apply text-xs font-semibold tracking-[0.35em] text-white sm:text-sm md:text-base;
-  }
-
-  .hero-palermo__title {
-    @apply text-3xl font-bold leading-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl;
-  }
-
-  .hero-palermo__title-link {
-    @apply text-white transition-colors duration-300 hover:text-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
-  }
-
-  .reviews-carousel__control {
-    @apply absolute top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-black bg-white text-black shadow-md transition hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-40;
-  }
-
-  .reviews-carousel__control--prev {
-    @apply left-0 -translate-x-1/2;
-  }
-
-  .reviews-carousel__control--next {
-    @apply right-0 translate-x-1/2;
-  }
-
-  .reviews-carousel__slide {
-    @apply flex h-full min-h-[24rem] flex-shrink-0 flex-col justify-between border border-black bg-white p-6 shadow-sm basis-full md:basis-1/2 md:min-h-[26rem] xl:basis-1/3;
-  }
-
-  .icon-social svg,
-  .icon-social img {
-    width: 20px;
-    height: 20px;
-    fill: #ffffff;
-    filter: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .icon-social:hover {
-    opacity: 0.8;
+  .ps-faq summary {
+    list-style: none;
     cursor: pointer;
-    color: #ffffff;
   }
 
-  .footer-heading {
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    margin: 0;
+  .ps-faq summary::-webkit-details-marker {
+    display: none;
   }
 
-  /* Room gallery: keep the hero image contained on small screens */
-  [data-room-gallery] figure {
-    @apply relative flex items-center justify-center;
+  .ps-faq details[open] .ps-faq__v {
+    display: none;
   }
 
-  [data-room-gallery] [data-room-picture] {
-    @apply absolute inset-0 flex h-full w-full items-center justify-center;
+  /* Visor de la galería de fotos: foco visible en blanco, como el resto de los botones sobre carbón */
+  [data-visor] :focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
   }
 
-  [data-room-gallery] [data-room-hero] {
-    @apply h-full w-full max-h-full max-w-full object-cover;
-  }
-
-  @media (max-width: 768px) {
-    [data-room-gallery] [data-room-hero] {
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-  .green-preview__image {
-    aspect-ratio: 1 / 1;
+  /* Premios de Tripadvisor: los originales son negros; sobre el verde se muestran en blanco */
+  .ps-badge {
+    @apply h-[54px] w-auto opacity-90 mix-blend-screen grayscale invert md:h-[76px];
   }
 }

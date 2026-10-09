@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1C1C1C" />
 
     <title>Habitaciones Deluxe – Pisos Superiores | Palo Santo Hotel</title>
     <meta name="description" content="Elegantes Habitaciones Deluxe ubicadas en pisos superiores, con luz natural, diseño contemporáneo y vistas abiertas en Palermo, Buenos Aires." />
@@ -20,841 +21,397 @@
     <meta name="robots" content="index, follow">
 
     <!-- Main JS -->
-    <script src="/js/main.js" defer></script>
-    <link rel="stylesheet" href="/dist/output.css" />
-    <!-- Fonts -->
-    <link
-      rel="preload"
-      href="/fonts/lato-v25-latin-ext-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <script src="/js/main.js?v=20261009" defer></script>
+    <!-- Fondo: ?fondo=verde muestra el verde #0E1B14 para comparar (ver src/components.css) -->
+    <script>try{var f=new URLSearchParams(location.search).get('fondo');if(f)sessionStorage.setItem('ps-fondo',f);f=sessionStorage.getItem('ps-fondo');if(f&&f!=='carbon')document.documentElement.setAttribute('data-fondo',f)}catch(e){}</script>
+    <link rel="stylesheet" href="/dist/output.css?v=20261009" />
 </head>
 
-<body class="text-gray-800">
+<body class="bg-ps-ground font-brand text-ps-text antialiased">
 
-<!-- MENÚ MOBILE -->
-<header class="hidden max-[850px]:block sticky top-0 z-50 bg-white border-b">
-  <div class="relative flex items-center justify-center px-6 py-4">
-    <button
-      id="mobile-menu-toggle"
-      type="button"
-      class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-1.5 rounded border border-transparent p-2 transition focus:outline-none hover:border-gray-400"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="sr-only">Abrir menú</span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-    </button>
-    <a href="/" class="block">
-      <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
+<a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Saltar al contenido</a>
+
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
+    <div class="flex items-center">
+      <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Abrir menú</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
+      </button>
+      <nav aria-label="Menú principal" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/es/habitaciones" class="underline underline-offset-8">Habitaciones</a>
+        <a href="/es/hotel" class="underline-offset-8 hover:underline">Hotel</a>
+        <a href="/es/verde" class="underline-offset-8 hover:underline">Verde</a>
+        <a href="/es/restaurante" class="underline-offset-8 hover:underline">Desayuno</a>
+        <a href="/es/palermo" class="underline-offset-8 hover:underline">Ubicación</a>
+      </nav>
+    </div>
+
+    <a href="/" class="block" aria-label="Palo Santo Hotel, inicio">
+      <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" class="h-auto w-[50px] xl:w-[60px]">
     </a>
+
+    <div class="flex items-center justify-end gap-x-[30px]">
+      <nav aria-label="Más secciones" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/es/quienes-somos" class="underline-offset-8 hover:underline">Nosotros</a>
+        <a href="/es/galeria-de-fotos" class="underline-offset-8 hover:underline">Fotos</a>
+        <a href="https://blog.palosantohotel.com/es" class="underline-offset-8 hover:underline">Blog</a>
+        <a href="/es/contacto" class="underline-offset-8 hover:underline">Contacto</a>
+      </nav>
+      <a href="/en/deluxe-rooms" lang="en" class="hidden text-sm font-semibold tracking-[0.12em] underline-offset-8 hover:underline xl:inline" aria-label="English version">EN</a>
+      <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn-ghost min-h-[44px] px-3.5 text-[11px] tracking-[0.14em] xl:min-h-[48px] xl:px-[26px] xl:text-[13px] xl:tracking-[0.16em]">Reservar</a>
+    </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t bg-white">
-    <nav aria-label="Menú principal móvil" class="px-6 py-6 space-y-1 font-base">
-      <div class="space-y-1">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide py-1"
-          aria-controls="mobile-submenu-hotel"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>Hotel</span>
-          <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/es/hotel">Servicios</a></li>
-          <li><a class="block" href="/es/quienes-somos">Quienes somos</a></li>
-        </ul>
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
+    <nav aria-label="Menú principal móvil" class="flex flex-col px-5 py-4 text-lg">
+      <a href="/es/habitaciones" class="flex min-h-[48px] items-center">Habitaciones</a>
+      <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
+        <a href="/es/habitaciones-premium" class="flex min-h-[44px] items-center">Premium</a>
+        <a href="/es/habitaciones-deluxe" class="flex min-h-[44px] items-center" aria-current="page">Deluxe</a>
+        <a href="/es/suite-terrace" class="flex min-h-[44px] items-center">Terrace Suite</a>
+        <a href="/es/suite-palo-santo" class="flex min-h-[44px] items-center">Palo Santo Suite</a>
       </div>
-
-      <div class="space-y-2">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-base"
-          aria-controls="mobile-submenu-habitaciones"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>Habitaciones</span>
-          <svg class="block chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-habitaciones" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/es/habitaciones">Habitaciones</a></li>
-          <li><a class="block" href="/es/habitaciones-premium">Premium</a></li>
-          <li><a class="block" href="/es/habitaciones-deluxe">Deluxe</a></li>
-          <li><a class="block" href="/es/suite-terrace">Terrace Suite</a></li>
-          <li><a class="block" href="/es/suite-palo-santo">Palo Santo Suite</a></li>
-        </ul>
-      </div>
-
-      <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="/es/verde" class="block">Verde</a></li>
-        <li><a href="/es/restaurante" class="block">Desayuno y restaurante</a></li>
-        <li><a href="/es/palermo" class="block">Palermo</a></li>
-        <li><a href="/es/galeria-de-fotos" class="block">Fotos</a></li>
-        <li><a href="https://blog.palosantohotel.com/es" class="block">Blog</a></li>
-        <li><a href="/es/contacto" class="block">Contacto</a></li>
-        <li class="flex">
-          <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener"
-            class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
-            Reservar
-          </a>
-        </li>
-        <li class="pt-10">
-          <a href="/en/deluxe-rooms" class="flex items-center gap-2">
-            <span>English</span>
-          </a>
-        </li>
-      </ul>
+      <a href="/es/hotel" class="flex min-h-[48px] items-center">Hotel y servicios</a>
+      <a href="/es/quienes-somos" class="flex min-h-[48px] items-center">Quiénes somos</a>
+      <a href="/es/verde" class="flex min-h-[48px] items-center">Verde</a>
+      <a href="/es/restaurante" class="flex min-h-[48px] items-center">Desayuno y restaurante</a>
+      <a href="/es/palermo" class="flex min-h-[48px] items-center">Ubicación</a>
+      <a href="/es/galeria-de-fotos" class="flex min-h-[48px] items-center">Fotos</a>
+      <a href="https://blog.palosantohotel.com/es" class="flex min-h-[48px] items-center">Blog</a>
+      <a href="/es/contacto" class="flex min-h-[48px] items-center">Contacto</a>
+      <a href="/en/deluxe-rooms" lang="en" class="mt-2 flex min-h-[48px] items-center border-t border-ps-line text-base text-ps-muted">English</a>
     </nav>
   </div>
 </header>
 
-<!-- MENÚ DESKTOP -->
-<header class="bg-white border-b max-[850px]:hidden">
-  <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-6 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] text-black">
-    <div class="flex w-full justify-center">
-      <a href="/" class="shrink-0" aria-label="Ir al inicio">
-        <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-28 w-auto max-[1068px]:h-24" loading="lazy">
-      </a>
-    </div>
+<main id="contenido" class="ps-claro bg-ps-ground">
 
-    <nav aria-label="Menú principal" class="flex w-full flex-col items-center gap-6">
-      <ul class="flex flex-nowrap items-center justify-center gap-6 xl:gap-10">
-        <li class="relative group">
-          <button
-            type="button"
-            class="relative flex items-center gap-2 pb-1 hover:text-gray-600 focus:outline-none after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-6 after:bg-black after:content-['']"
-            aria-haspopup="true"
-          >            HABITACIONES
-            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
-            </svg>
-          </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-            <ul class="space-y-2 text-black">
-              <li><a href="/es/habitaciones" class="block hover:text-gray-600">Todas</a></li>
-              <li><a href="/es/habitaciones-premium" class="block hover:text-gray-600">Premium</a></li>
-              <li><a href="/es/habitaciones-deluxe" class="block text-gray-600">Deluxe</a></li>
-              <li><a href="/es/suite-terrace" class="block hover:text-gray-600">Terrace Suite</a></li>
-              <li><a href="/es/suite-palo-santo" class="block hover:text-gray-600">Palo Santo Suite</a></li>
-            </ul>
-          </div>
-        </li>
-       <li class="relative group">
-          <button type="button" class="flex items-center gap-2 hover:text-gray-600 focus:outline-none" aria-haspopup="true">
-            HOTEL
-            <svg class="h-3 w-3 transition group-hover:-rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11l3.71-3.77a.75.75 0 1 1 1.08 1.04l-4.25 4.33a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"/>
-            </svg>
-          </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-3 w-48 translate-y-2 rounded border border-gray-200 bg-white p-4 text-[0.7rem] tracking-[0.1em] opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-            <ul class="space-y-2 text-black">
-              <li><a href="/es/hotel" class="block hover:text-gray-600">Servicios</a></li>
-              <li><a href="/es/quienes-somos" class="block hover:text-gray-600">Quiénes somos</a></li>
-            </ul>
-          </div>
-        </li>
-        <li><a href="/es/verde" class="hover:text-gray-600">Verde</a></li>
-        <li><a href="/es/restaurante" class="hover:text-gray-600">Restaurante</a></li>
-        <li><a href="/es/galeria-de-fotos" class="hover:text-gray-600">Fotos</a></li>
-        <li><a href="/es/palermo" class="hover:text-gray-600"> Ubicación</a></li>
-        <li><a href="https://blog.palosantohotel.com/es" class="hover:text-gray-600">Blog</a></li>
-        <li><a href="/es/contacto" class="hover:text-gray-600">Contacto</a></li>
-        <li aria-hidden="true" class="text-gray-400">|</li>
-        <li><a href="/en/deluxe-rooms" class="pl-2 text-gray-400 hover:text-gray-600" aria-label="Ver esta página en inglés">EN</a></li>
-      </ul>
-
-      <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="self-center rounded border border-black px-6 py-3 text-xs tracking-[0.3em] transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30">
-        Reservar
-      </a>
-    </nav>
-  </div>
-</header>
-
-<!-- CONTENIDO PRINCIPAL -->
-
-<section class="bg-white px-0 pb-16 pt-0 sm:px-0 md:pb-20" aria-labelledby="deluxe-rooms-title">
-  <div class="relative isolate bg-black px-4 py-20 text-white sm:px-6 md:py-28 lg:py-32">
-    <div class="mx-auto max-w-6xl text-center">
-      <h1 id="deluxe-rooms-title" class="text-3xl font-semibold uppercase tracking-[0.35em] text-white md:text-4xl">
-        Habitaciones Deluxe
-      </h1>
-      <h3 class="mt-3 text-lg font-light uppercase tracking-[0.3em] text-white/90 md:text-xl">Lujo Moderno</h3>
-    </div>
-  </div>
-
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-6" data-room-gallery>
-    <div class="relative -mt-10 space-y-6 sm:-mt-12 md:-mt-16 lg:-mt-20">
-      <div class="relative">
-        <figure class="aspect-[4/3] overflow-hidden bg-gray-200 shadow-lg">
-          <picture class="block h-full w-full" data-room-picture>
-            <source
-              data-room-source-avif
-              srcset="
-                /images/hotel/Deluxe-121a-2000-800.avif 800w,
-                /images/hotel/Deluxe-121a-2000-1200.avif 1200w,
-                /images/hotel/Deluxe-121a-2000-1600.avif 1600w
-              "
-              type="image/avif"
-            />
-            <source
-              data-room-source-webp
-              srcset="
-                /images/hotel/Deluxe-121a-2000-800.webp 800w,
-                /images/hotel/Deluxe-121a-2000-1200.webp 1200w,
-                /images/hotel/Deluxe-121a-2000-1600.webp 1600w
-              "
-              type="image/webp"
-            />
-            <img
-              data-room-hero
-              src="/images-source/hotel/Deluxe-121a-2000.jpg"
-              alt="Habitación Deluxe con cama king y gran ventanal"
-              width="2000"
-              height="1333"
-              class="h-full w-full object-cover transition duration-500 ease-out"
-              loading="eager"
-              fetchpriority="high"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 60vw"
-            />
-          </picture>
-        </figure>
-
-        <button
-          type="button"
-          aria-label="Ver foto anterior de la Habitación Deluxe"
-          class="room-gallery__control absolute left-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
-          data-room-prev
-        >
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-            <path d="M12.78 4.22a.75.75 0 0 0-1.06 0L6.94 8.94a1.5 1.5 0 0 0 0 2.12l4.78 4.72a.75.75 0 1 0 1.06-1.06L8.5 10l4.28-4.22a.75.75 0 0 0 0-1.06z"/>
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          aria-label="Ver próxima foto de la Habitación Deluxe"
-          class="room-gallery__control absolute right-4 top-1/2 -translate-y-1/2 border border-white/60 bg-white/90 p-3 text-gray-900 shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/30"
-          data-room-next
-        >
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-            <path d="M7.22 4.22a.75.75 0 0 1 1.06 0L13.06 8.94a1.5 1.5 0 0 1 0 2.12l-4.78 4.72a.75.75 0 1 1-1.06-1.06L11.5 10 7.22 5.78a.75.75 0 0 1 0-1.06z"/>
-          </svg>
-        </button>
-
-        <div class="room-gallery__status hidden absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white" aria-live="polite" data-room-status>1 / 9</div>
-      </div>
-
-      <div class="hidden gap-3 overflow-x-auto pb-3 md:flex" data-room-thumbs aria-label="Miniaturas de Habitaciones Deluxe">
-        <button
-          type="button"
-          class="room-gallery__thumb room-gallery__thumb--active relative overflow-hidden border border-transparent ring-2 ring-black transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="0"
-          data-room-slug="Deluxe-121a-2000"
-          data-room-alt="Cama king y escritorio en una habitación Deluxe"
-          aria-pressed="true"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-121a-2000-800.avif 800w,
-                /images/hotel/Deluxe-121a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-121a-2000-800.webp 800w,
-                /images/hotel/Deluxe-121a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-121a-2000.jpg" alt="Cama king y escritorio en una habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="1"
-          data-room-slug="Deluxe-073a-2000"
-          data-room-alt="Cómoda área de estar con sofa y mesa redonda en una habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-073a-2000-800.avif 800w,
-                /images/hotel/Deluxe-073a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-073a-2000-800.webp 800w,
-                /images/hotel/Deluxe-073a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-073a-2000.jpg" alt="Cómoda área de estar con sofa y mesa redonda en una habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="2"
-          data-room-slug="Deluxe-036a-2000"
-          data-room-alt="Cama King y área de estar en una habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-036a-2000-800.avif 800w,
-                /images/hotel/Deluxe-036a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-036a-2000-800.webp 800w,
-                /images/hotel/Deluxe-036a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-036a-2000.jpg" alt="Cama King y área de estar en una habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="3"
-          data-room-slug="Deluxe-011a-2000"
-          data-room-alt="Primer plano de la butaca Eames en una Habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-011a-2000-800.avif 800w,
-                /images/hotel/Deluxe-011a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-011a-2000-800.webp 800w,
-                /images/hotel/Deluxe-011a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-011a-2000.jpg" alt="Primer plano de la butaca Eames en una Habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="4"
-          data-room-slug="Deluxe-127a-2000"
-          data-room-alt="Amplia habitación Deluxe con televisor grande y minibar"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-127a-2000-800.avif 800w,
-                /images/hotel/Deluxe-127a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-127a-2000-800.webp 800w,
-                /images/hotel/Deluxe-127a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-127a-2000.jpg" alt="Amplia habitación Deluxe con televisor grande y minibar" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="5"
-          data-room-slug="Deluxe-049a-2000"
-          data-room-alt="Escritorio en una habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-049a-2000-800.avif 800w,
-                /images/hotel/Deluxe-049a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-049a-2000-800.webp 800w,
-                /images/hotel/Deluxe-049a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-049a-2000.jpg" alt="Escritorio en una habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="6"
-          data-room-slug="Deluxe-081a-2000"
-          data-room-alt="Balcón privado de una habitación Deluxe con dos sillas y vistas verdes"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Deluxe-081a-2000-800.avif 800w,
-                /images/hotel/Deluxe-081a-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Deluxe-081a-2000-800.webp 800w,
-                /images/hotel/Deluxe-081a-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Deluxe-081a-2000.jpg" alt="Balcón privado de una habitación Deluxe con dos sillas y vistas verdes" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="7"
-          data-room-slug="Bata_MG_0792-2000"
-          data-room-alt="Batas y amenities en el baño de una Habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/Bata_MG_0792-2000-800.avif 800w,
-                /images/hotel/Bata_MG_0792-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/Bata_MG_0792-2000-800.webp 800w,
-                /images/hotel/Bata_MG_0792-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/Bata_MG_0792-2000.jpg" alt="Batas y amenities en el baño de una Habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-
-        <button
-          type="button"
-          class="room-gallery__thumb relative overflow-hidden border border-transparent ring-1 ring-transparent transition focus:outline-none focus:ring-2 focus:ring-black/40"
-          data-room-thumb="8"
-          data-room-slug="PaloSanto-Bathrooms-IMG_8147-2000"
-          data-room-alt="Baño de mármol con bañera en la Habitación Deluxe"
-          aria-pressed="false"
-        >
-          <picture class="block h-20 w-32">
-            <source
-              srcset="
-                /images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-800.avif 800w,
-                /images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-1200.avif 1200w
-              "
-              type="image/avif"
-            />
-            <source
-              srcset="
-                /images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-800.webp 800w,
-                /images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-1200.webp 1200w
-              "
-              type="image/webp"
-            />
-            <img src="/images-source/hotel/PaloSanto-Bathrooms-IMG_8147-2000.jpg" alt="Baño con ducha walk-in extra grande en la Habitación Deluxe" loading="lazy" width="300" height="200" class="h-full w-full object-cover" sizes="128px" />
-          </picture>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="mx-auto mt-14 max-w-5xl space-y-12 px-4 text-gray-700 sm:px-6 lg:px-0">
-    <!-- AMENITIES -->
-    <div class="rounded-xl border border-gray-200 p-4 md:p-8">
-      <details class="group md:hidden" open>
-        <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
-          Características
-          <svg class="h-5 w-5 transition duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </summary>
-        <div class="mt-4 border-t border-gray-200 pt-4">
-          <ul class="grid gap-3 text-sm tracking-[0.1em] font-normal text-gray-600">
-            <li>/ 1 cama King Size</li>
-            <li>/ Ubicación: Pisos 4 a 6</li>
-            <li>/ 35 m²</li>
-            <li>/ Balcón privado</li>
-            <li>/ Baño con ducha extra-grande</li>
-            <li>/ Batas</li>
-            <li>/ Secador de pelo</li>
-            <li>/ Caja de seguridad con capacidad para laptop</li>
-            <li>/ Cama adicional (con costo)</li>
-            <li>/ Escritorio</li>
-            <li>/ Minibar</li>
-            <li>/ Pava eléctrica y cafetera Nespresso</li>
-            <li>/ Tabla de planchar (a pedido)</li>
-            <li>/ Televisor Smart 4K de 55 pulgadas</li>
-            <li>/ Aire acondicionado individual</li>
-            <li>/ No fumadores</li>
-          </ul>
+  <!-- PORTADA -->
+  <section aria-labelledby="titulo" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/Deluxe-073a-2000-800.avif 800w, /images/hotel/Deluxe-073a-2000-1200.avif 1200w, /images/hotel/Deluxe-073a-2000-1600.avif 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/Deluxe-073a-2000-800.webp 800w, /images/hotel/Deluxe-073a-2000-1200.webp 1200w, /images/hotel/Deluxe-073a-2000-1600.webp 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <img src="/images-source/hotel/Deluxe-073a-2000.jpg" alt="Habitación Deluxe con cama King, sofá y ventanal" width="2000" height="1333" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[45%_60%] md:object-[50%_60%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <nav aria-label="Ruta de navegación" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">
+            <ol class="flex items-center gap-2.5"><li><a href="/es/habitaciones" class="underline-offset-4 hover:underline">Habitaciones</a></li><li aria-hidden="true">/</li><li aria-current="page">Deluxe</li></ol>
+          </nav>
+          <h1 id="titulo" class="flex flex-col gap-2.5 [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:gap-4">
+            <span class="max-w-[12em] text-balance text-[42px] leading-none tracking-[-0.03em] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">Habitaciones Deluxe</span>
+            <span class="text-[17px] leading-snug md:text-[22px]">Lujo moderno</span>
+          </h1>
         </div>
-      </details>
-
-      <div class="hidden space-y-3 md:block">
-        <h2 class="text-xl font-semibold uppercase tracking-[0.2em] text-gray-900">Características</h2>
-        <ul class="grid gap-4 text-sm tracking-[0.1em] font-normal text-gray-600 sm:grid-cols-2 md:grid-cols-3">
-          <li>/ 1 cama King Size</li>
-          <li>/ Ubicación: Pisos 4 a 6</li>
-          <li>/ 35 m²</li>
-          <li>/ Balcón privado</li>
-          <li>/ Baño con ducha extra-grande</li>
-          <li>/ Batas</li>
-          <li>/ Secador de pelo</li>
-          <li>/ Caja de seguridad con capacidad para laptop</li>
-          <li>/ Cama adicional (con costo)</li>
-          <li>/ Escritorio</li>
-          <li>/ Minibar</li>
-          <li>/ Pava eléctrica y cafetera Nespresso</li>
-          <li>/ Tabla de planchar (a pedido)</li>
-          <li>/ Televisor Smart 4K de 55 pulgadas</li>
-          <li>/ Aire acondicionado individual</li>
-          <li>/ No fumadores</li>
-        </ul>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">En los pisos superiores: elegantes, luminosas y muy confortables, con balcón privado rodeado de plantas.</p>
       </div>
     </div>
+  </section>
 
-    <div class="space-y-4 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
-      <p class="text-gray-700">
-        Ubicadas en los pisos superiores, las habitaciones Deluxe son elegantes, luminosas y muy confortables. Grandes ventanales y balcones privados permiten disfrutar de vistas despejadas y de los jardines verticales.
-      </p>
-      <p class="text-gray-700">
-        El ambiente interior es formal, lujoso. Muebles de diseño contemporáneo en los que predomina la madera y las líneas puras de estilo.
-        La habitación tiene una zona de estar y un área de trabajo. El equipamiento es de última generación en un espacio donde todo es confort y belleza.
-      </p>
-    </div>
-
-    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
-        Detalles de la habitación
-        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="space-y-4 pt-4 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
-        <p class="text-gray-700">
-          Las habitaciones Deluxe tienen una superficie de 35 m² y disponen de una amplia cama matrimonial. Están ubicadas en los pisos superiores del hotel (del 4to al 6to), garantizándole una total tranquilidad.
-        </p>
-        <p class="text-gray-700">
-          Relájense en la cómodísima zona de estar. El televisor Smart 4K de 50 pulgadas les permitirá acceder a sus cuentas de streaming o a canales locales de cable. Dispondrán también de un escritorio para poder trabajar o preparar su día de turismo. Además del minibar, encontrarán una pava eléctrica, una cafetera Nespresso (consumos no incluidos), tazas y copas.
-        </p>
-        <p class="text-gray-700">
-          Nuestras habitaciones Deluxe cuentan con balcón privado rodeado de plantas y con vistas a la ciudad.
-        </p>
-        <p class="text-gray-700">
-          El baño es amplio y cómodo, con ducha extra-grande, secador de pelo, batas y amenities de baño completos.
-        </p>
-        <p class="text-gray-700">
-          Todas nuestras habitaciones son libres de humo, incluyendo el balcón. Por un costo adicional, se puede agregar una cama extra para un tercer adulto o niño mayor de 3 años. Tenemos cunas sin cargo (confirmar disponibilidad con el hotel) para bebés y niños pequeños.
-        </p>
+  <!-- DATOS DE LA HABITACIÓN -->
+  <section aria-label="Datos de la habitación" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-3 md:gap-x-8 md:py-0 xl:grid-cols-5">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5"/><path d="M21 8V3h-5"/><path d="M3 16v5h5"/><path d="M16 21h5v-5"/></svg>Superficie</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">35 m²</dd>
       </div>
-    </details>
-
-    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
-        Experiencia Boutique
-        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="space-y-4 pt-4 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
-        <p class="text-gray-700">Todo nuestro staff está a su disposición para ayudarlos en su estadía y para que disfruten de Buenos Aires.</p>
-        <p class="text-gray-700">
-          Seleccionamos restaurantes cercanos que creemos que les van a gustar. Redactamos también una guía de la ciudad con
-          recorridos arquitectónicos y culturales, y recomendaciones personales del equipo.
-        </p>
-        <p class="text-gray-700">
-          Nuestro equipo de Recepción estará a su disposición las 24 horas para ayudarlos con sus reservas, transfers,
-          conserjería, etc.
-        </p>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Cama</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">King</dd>
       </div>
-    </details>
-
-    <details class="rounded-xl border border-gray-200 p-4 md:p-6 md:hidden" data-room-accordion>
-      <summary class="flex cursor-pointer items-center justify-between text-base font-semibold uppercase tracking-[0.2em] text-gray-900">
-        Nuestras tarifas siempre incluyen
-        <svg class="h-5 w-5 text-gray-600 transition duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </summary>
-      <div class="pt-4">
-        <ul class="list-disc space-y-2 pl-5 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
-          <li>Desayuno Buffet</li>
-          <li>WiFi</li>
-          <li>Bicicletas de cortesía a disposición (sujeto a disponibilidad)</li>
-          <li>Copia impresa de nuestra guía Palo Santo, disponible en español e inglés</li>
-          <li>Acceso a nuestro gimnasio en el 7mo piso, abierto de 9 a 21&nbsp;hs</li>
-          <li>En meses de calor: acceso a nuestro rooftop con piscina de poca profundidad e hidromasaje (zona al aire libre, no climatizada)</li>
-        </ul>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Ubicación</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Pisos 4 a 6</dd>
       </div>
-    </details>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Balcón</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Privado, con plantas</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9a5 5 0 0 1 10 0"/><path d="M10 9h8"/><path d="M12 13v.01"/><path d="M15 13v.01"/><path d="M18 13v.01"/><path d="M13 16v.01"/><path d="M16 16v.01"/><path d="M14 19v.01"/><path d="M17 19v.01"/></svg>Baño</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Ducha extra grande</dd>
+      </div>
+    </dl>
+  </section>
 
-    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Detalles de la habitación</h2>
-      <p class="text-gray-700">
-        Las habitaciones Deluxe tienen una superficie de 35 m² y disponen de una amplia cama matrimonial. Están ubicadas en los pisos superiores del hotel (del 4to al 6to), garantizándole una total tranquilidad.
-      </p>
-      <p class="text-gray-700">
-        Relájense en la cómodísima zona de estar. El televisor Smart 4K de 50 pulgadas les permitirá acceder a sus cuentas de streaming o a canales locales de cable. Dispondrán también de un escritorio para poder trabajar o preparar su día de turismo. Además del minibar, encontrarán una pava eléctrica, una cafetera Nespresso (consumos no incluidos), tazas y copas.
-      </p>
-      <p class="text-gray-700">
-        Nuestras habitaciones Deluxe cuentan con balcón privado rodeado de plantas y con vistas a la ciudad.
-      </p>
-      <p class="text-gray-700">
-        El baño es amplio y cómodo, con ducha extra-grande, secador de pelo, batas y amenities de baño completos.
-      </p>
-      <p class="text-gray-700">
-        Todas nuestras habitaciones son libres de humo, incluyendo el balcón. Por un costo adicional, se puede agregar una cama extra para un tercer adulto o niño mayor de 3 años. Tenemos cunas sin cargo (confirmar disponibilidad con el hotel) para bebés y niños pequeños.
-      </p>
-    </div>
-
-    <div class="hidden space-y-4 p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Experiencia Boutique</h2>
-      <p class="text-gray-700">Todo nuestro staff está a su disposición para ayudarlos en su estadía y para que disfruten de Buenos Aires.</p>
-      <p class="text-gray-700">
-        Seleccionamos restaurantes cercanos que creemos que les van a gustar. Redactamos también una guía de la ciudad con
-        recorridos arquitectónicos y culturales, y recomendaciones personales del equipo.
-      </p>
-      <p class="text-gray-700">
-        Nuestro equipo de Recepción estará a su disposición las 24 horas para ayudarlos con sus reservas, transfers,
-        conserjería, etc.
-      </p>
-    </div>
-
-    <div class="hidden p-0 text-base leading-relaxed text-gray-700 md:block md:text-lg md:leading-loose">
-      <h2 class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900">Nuestras tarifas siempre incluyen</h2>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-gray-700 md:text-lg md:leading-loose">
-        <li>Desayuno Buffet</li>
-        <li>WiFi</li>
-        <li>Bicicletas de cortesía a disposición (sujeto a disponibilidad)</li>
-        <li>Copia impresa de nuestra guía Palo Santo, disponible en español e inglés</li>
-        <li>Acceso a nuestro gimnasio en el 7mo piso, abierto de 9 a 21&nbsp;hs</li>
-        <li>En meses de calor: acceso a nuestro rooftop con piscina de poca profundidad e hidromasaje (zona al aire libre, no climatizada)</li>
-      </ul>
-    </div>
-      <div class="space-y-5 pt-8">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Explorar las otras categorías</p>
-        <div class="grid gap-6 sm:grid-cols-3">
-          <a href="/es/habitaciones-premium" class="group block focus:outline-none focus:ring-2 focus:ring-black/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
-                  /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
-                alt="Vista de una Habitación Premium luminosa con cama king"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-gray-900">Premium</p>
-          </a>
-
-          <a href="/es/suite-terrace" class="group block focus:outline-none focus:ring-2 focus:ring-black/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w,
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w,
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w,
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w,
-                  /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg"
-                alt="Cama de la Suite Terrace con las puertas corredizas abiertas a la terraza privada"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-gray-900">Suite Terrace</p>
-          </a>
-
-          <a href="/es/suite-palo-santo" class="group block focus:outline-none focus:ring-2 focus:ring-black/30">
-            <picture class="block overflow-hidden">
-              <source
-                srcset="
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.avif 400w,
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.avif 800w,
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.avif 1200w
-                "
-                type="image/avif"
-              />
-              <source
-                srcset="
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.webp 400w,
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.webp 800w,
-                  /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.webp 1200w
-                "
-                type="image/webp"
-              />
-              <img
-                src="/images-source/thumbnails/PaloSantoSuite-8343-thumbnail.jpg"
-                alt="Vista nocturna del living de la Suite Palo Santo"
-                class="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                loading="lazy"
-                width="1200"
-                height="800"
-                sizes="(max-width: 640px) 100vw, 33vw"
-              />
-            </picture>
-            <p class="mt-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-gray-900">Suite Palo Santo</p>
-          </a>
+  <!-- LA HABITACIÓN -->
+  <section aria-labelledby="intro-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-12 md:gap-[72px]">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-24">
+        <div class="flex flex-col gap-3 md:gap-[18px] lg:flex-1">
+          <p class="ps-eyebrow">La habitación</p>
+          <h2 id="intro-titulo" class="ps-h2 max-w-[11em]">Un ambiente formal y luminoso</h2>
+        </div>
+        <div class="flex flex-col items-start gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg lg:flex-1 lg:pt-[34px]">
+          <p>Ubicadas en los pisos superiores, las habitaciones Deluxe son elegantes, luminosas y muy confortables. Grandes ventanales y balcones privados ofrecen vistas despejadas a la ciudad y a los jardines verticales.</p>
+          <p>En el mobiliario de diseño contemporáneo predominan la madera y las líneas puras. La habitación tiene una zona de estar y un área de trabajo, con equipamiento de última generación.</p>
+          <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn-solid mt-2 px-6 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">Ver tarifas y disponibilidad</a>
         </div>
       </div>
-      <div class="pt-8 text-center">
-        <a
-          href="https://reservas.palosantohotel.com/es"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center justify-center border border-black px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-black/30"
-        >
-          Reservar
+
+      <div class="flex flex-col gap-4 md:gap-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h2 id="fotos-titulo" class="ps-eyebrow">La habitación en fotos</h2>
+          <p class="shrink-0 text-[13px] text-ps-muted md:hidden" aria-hidden="true">Desliza →</p>
+        </div>
+        <div class="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-2 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:grid md:grid-flow-dense md:auto-rows-[170px] md:grid-cols-4 md:gap-3 md:overflow-visible md:px-0 lg:auto-rows-[230px] lg:gap-4" role="region" aria-labelledby="fotos-titulo" tabindex="0">
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2 md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-036a-2000-800.avif 800w, /images/hotel/Deluxe-036a-2000-1200.avif 1200w, /images/hotel/Deluxe-036a-2000-1600.avif 1600w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-036a-2000-800.webp 800w, /images/hotel/Deluxe-036a-2000-1200.webp 1200w, /images/hotel/Deluxe-036a-2000-1600.webp 1600w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Deluxe-036a-2000.jpg" alt="Cama King con almohadones amarillos y un cuadro de colores" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[52vw] max-w-[240px] md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-081a-2000-800.avif 800w, /images/hotel/Deluxe-081a-2000-1200.avif 1200w, /images/hotel/Deluxe-081a-2000-1600.avif 1600w" sizes="(min-width: 768px) 23vw, 52vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-081a-2000-800.webp 800w, /images/hotel/Deluxe-081a-2000-1200.webp 1200w, /images/hotel/Deluxe-081a-2000-1600.webp 1600w" sizes="(min-width: 768px) 23vw, 52vw">
+          <img src="/images-source/hotel/Deluxe-081a-2000.jpg" alt="Balcón privado con dos sillas, plantas y vista a los árboles de la calle" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-011a-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-011a-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Deluxe-011a-2000.jpg" alt="Poltrona Eames junto a la cama" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-127a-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-127a-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Deluxe-127a-2000.jpg" alt="Zona de estar con sofá y televisor" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[52vw] max-w-[240px] md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-8266-2000-800.avif 800w, /images/hotel/Deluxe-8266-2000-1200.avif 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-8266-2000-800.webp 800w, /images/hotel/Deluxe-8266-2000-1200.webp 1200w" sizes="(min-width: 768px) 23vw, 52vw">
+          <img src="/images-source/hotel/Deluxe-8266-2000.jpg" alt="Escritorio con silla Jacobsen, una orquídea y una laptop" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px] md:col-span-2 md:row-span-2">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-121a-2000-800.avif 800w" sizes="(min-width: 768px) 46vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-121a-2000-800.webp 800w" sizes="(min-width: 768px) 46vw, 80vw">
+          <img src="/images-source/hotel/Deluxe-121a-2000.jpg" alt="Cama King, placard de madera y escritorio al fondo" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/Deluxe-049a-2000-800.avif 800w, /images/hotel/Deluxe-049a-2000-1200.avif 1200w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/Deluxe-049a-2000-800.webp 800w, /images/hotel/Deluxe-049a-2000-1200.webp 1200w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/Deluxe-049a-2000.jpg" alt="Escritorio con silla de diseño junto al placard" width="2000" height="1333" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        <picture class="relative block h-[260px] shrink-0 snap-start md:h-auto md:w-auto md:max-w-none w-[80vw] max-w-[360px]">
+          <source type="image/avif" srcset="/images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <source type="image/webp" srcset="/images/hotel/PaloSanto-Bathrooms-IMG_8147-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 80vw">
+          <img src="/images-source/hotel/PaloSanto-Bathrooms-IMG_8147-2000.jpg" alt="Baño revestido en piedra" width="2000" height="1262" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALLES -->
+  <section id="detalles" aria-labelledby="detalles-titulo" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:sticky lg:top-10 lg:self-start">
+        <p class="ps-eyebrow">Detalles de la habitación</p>
+        <h2 id="detalles-titulo" class="ps-h2 max-w-[10em]">Todo lo que vas a encontrar</h2>
+      </div>
+      <div class="flex flex-col gap-8 border-b border-ps-line pb-8 md:gap-10 md:pb-10">
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Descanso</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>Una amplia cama King en los pisos superiores del hotel, del 4.º al 6.º, donde la tranquilidad es total.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg>Living y trabajo</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>Una zona de estar muy cómoda, con sofá y poltrona, y un escritorio para trabajar o preparar tu día de paseo.</p>
+            <p>Junto al minibar hay pava eléctrica, cafetera Nespresso (consumos no incluidos), tazas y copas. En el Smart TV 4K de 55 pulgadas puedes usar tus cuentas de streaming o ver canales de cable.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9a5 5 0 0 1 10 0"/><path d="M10 9h8"/><path d="M12 13v.01"/><path d="M15 13v.01"/><path d="M18 13v.01"/><path d="M13 16v.01"/><path d="M16 16v.01"/><path d="M14 19v.01"/><path d="M17 19v.01"/></svg>Baño</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>Amplio y cómodo, con ducha extra grande, secador de pelo, batas y amenities completos.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Balcón y vistas</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>Todas las habitaciones Deluxe tienen balcón privado rodeado de plantas, con vistas a la ciudad.</p>
+          </div>
+        </article>
+        <article class="grid items-start gap-3 border-t border-ps-line pt-5 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8 md:pt-7">
+          <h3 class="flex items-center gap-3 text-lg font-semibold leading-snug md:text-xl"><svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Familias</h3>
+          <div class="flex max-w-[40em] flex-col gap-3 text-[15px] leading-relaxed text-ps-body md:text-[17px]">
+            <p>Puedes sumar una cama extra, con costo, para un tercer adulto o un niño mayor de 3 años, y pedirnos sin cargo una cuna para bebés.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPAMIENTO -->
+  <section aria-labelledby="equipamiento-titulo" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:gap-x-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5">
+        <p class="ps-eyebrow">Características</p>
+        <h2 id="equipamiento-titulo" class="ps-h2 max-w-[10em]">Equipamiento</h2>
+        <p class="ps-lead">Todas las habitaciones son libres de humo, incluido el balcón.</p>
+      </div>
+      <ul class="grid border-b border-ps-line sm:grid-cols-2 sm:gap-x-8 lg:pt-2">
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9a5 5 0 0 1 10 0"/><path d="M10 9h8"/><path d="M12 13v.01"/><path d="M15 13v.01"/><path d="M18 13v.01"/><path d="M13 16v.01"/><path d="M16 16v.01"/><path d="M14 19v.01"/><path d="M17 19v.01"/></svg>Baño con ducha extra grande</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>Batas y secador de pelo</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="m17 2-5 5-5-5"/></svg>Smart TV 4K de 55 pulgadas</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>WiFi de alta velocidad, sin cargo</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4z"/><path d="M2 20h20"/></svg>Escritorio</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Minibar, cafetera Nespresso y pava eléctrica</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16v11H4z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Caja de seguridad para laptop</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>Aire acondicionado individual</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg>Zona de estar con sofá</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18v-2a7 7 0 0 0-7-7H9"/><path d="M9 9V6h9"/><path d="M7 21h10"/></svg>Tabla de planchar, a pedido</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Cama extra, con costo</li>
+        <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:py-5 md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12H3v4h13"/><path d="M18 8c0-2.5-2-2.5-2-5"/><path d="m2 2 20 20"/><path d="M21 12h1v4h-.5"/><path d="M22 8c0-2.5-2-2.5-2-5"/><path d="M7 12v4"/></svg>Libre de humo</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA BOUTIQUE -->
+  <section aria-labelledby="boutique-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-12">
+      <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">Experiencia boutique</p>
+          <h2 id="boutique-titulo" class="ps-h2 max-w-[12em]">Un equipo a tu disposición</h2>
+        </div>
+        <p class="ps-lead md:max-w-[26em]">Queremos que disfrutes de tu estadía y de Buenos Aires.</p>
+      </div>
+      <ul class="grid border-b border-ps-line md:grid-cols-3 md:gap-x-8 md:border-b-0">
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">Restaurantes cercanos</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">Seleccionamos restaurantes del barrio que creemos que te van a gustar.</span>
+        </li>
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">Guía Palo Santo</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">Nuestra guía de la ciudad, con recorridos arquitectónicos y culturales y recomendaciones personales del equipo.</span>
+        </li>
+        <li class="flex flex-col gap-1 border-t border-ps-line py-4 md:gap-1.5 md:pb-0 md:pt-6">
+          <strong class="text-base font-semibold md:text-[17px]">Recepción 24 horas</strong>
+          <span class="text-[15px] leading-relaxed text-ps-body">Te ayudamos con reservas, transfers y conserjería, a toda hora.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OTRAS HABITACIONES -->
+  <section aria-labelledby="otras-titulo" class="border-t border-ps-line px-5 pb-12 pt-16 md:px-12 md:pb-24 md:pt-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <div class="flex items-center justify-between gap-4">
+        <h2 id="otras-titulo" class="ps-eyebrow">Otras habitaciones</h2>
+        <a href="/es/habitaciones" class="ps-link hidden md:inline-flex">Ver todas las habitaciones<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/es/habitaciones-premium" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Premium-223a-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Premium-223a-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Premium-223a-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Premium</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/es/suite-terrace" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Terrace Suite</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/es/suite-palo-santo" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Palo Santo Suite</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
         </a>
       </div>
+      <a href="/es/habitaciones" class="ps-link self-start md:hidden">Ver todas las habitaciones<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- RESERVA DIRECTA: recuadro carbón de cierre -->
+  <section aria-labelledby="directo-titulo" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto max-w-[1344px] bg-ps-ground px-6 py-9 md:p-20">
+      <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-24">
+        <div class="flex flex-col items-start gap-5 md:gap-[26px] lg:flex-1">
+          <p class="ps-eyebrow">Reserva directa</p>
+          <h2 id="directo-titulo" class="text-balance text-[30px] leading-[1.12] tracking-[-0.02em] md:text-[50px] md:leading-[1.06] md:tracking-[-0.025em]">Reserva en nuestra web: siempre el mejor precio disponible.</h2>
+          <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn-solid px-5 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">Ver tarifas y disponibilidad</a>
+        </div>
+        <div class="flex flex-col gap-5 lg:flex-1">
+          <h3 class="ps-eyebrow">Nuestras tarifas siempre incluyen</h3>
+          <ul class="grid gap-x-8 gap-y-3.5 text-[15px] sm:grid-cols-2 md:gap-y-[22px] md:text-[17px]">
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Desayuno buffet</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>WiFi de alta velocidad</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>Bicicletas de cortesía</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Guía Palo Santo impresa</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10"/><path d="M18 7v10"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6 12h12"/></svg>Gimnasio, de 9 a 21 h</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>Rooftop con hidromasaje, en verano</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
-<div class="w-full min-h-[18vh] flex items-center justify-center bg-black px-6 pt-10 md:pt-12">
-        <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-            <div class="w-full text-3xl md:text-5xl font-bold">
-                <h4 class="footer-heading">Los esperamos para vivir una verdadera experiencia boutique en Palermo</h4>
-            </div>
-            <!-- Nombre y dirección + redes -->
-            <div class="flex flex-col items-start mt-12 gap-6 w-full">
-                <div class="flex flex-col gap-1 w-full">
-                    <h3 class="font-semibold uppercase text-2xl text-left">Palo santo</h3>
-                    <div class="uppercase text-gray-400 text-left flex-1 leading-tight">
-                        <div class="lg:hidden">
-                            <p>Bonpland 2275 - Palermo</p>
-                            <p>Buenos Aires - ARGENTINA</p>
-                        </div>
-                        <p class="hidden lg:block whitespace-nowrap">Bonpland 2275 - Palermo - Buenos Aires - ARGENTINA</p>
-                    </div>
-                </div>
-                <div class="flex w-full flex-row space-x-8 items-center justify-start">
-                      <!-- WhatsApp -->
-                      <a href="https://api.whatsapp.com/send?phone=5491163572374"
-                        target="_blank" rel="noopener noreferrer"
-                        class="icon-social"
-                        aria-label="WhatsApp">
-                        <?xml version="1.0" encoding="UTF-8"?>
-                          <svg width="360" height="362" viewBox="0 0 360 362" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M307.546 52.5655C273.709 18.685 228.706 0.0171895 180.756 0C81.951 0 1.53846 80.404 1.50408 179.235C1.48689 210.829 9.74646 241.667 25.4319 268.844L0 361.736L95.0236 336.811C121.203 351.096 150.683 358.616 180.679 358.625H180.756C279.544 358.625 359.966 278.212 360 179.381C360.017 131.483 341.392 86.4547 307.546 52.5741V52.5655ZM180.756 328.354H180.696C153.966 328.346 127.744 321.16 104.865 307.589L99.4242 304.358L43.034 319.149L58.0834 264.168L54.5423 258.53C39.6304 234.809 31.749 207.391 31.7662 179.244C31.8006 97.1036 98.6334 30.2707 180.817 30.2707C220.61 30.2879 258.015 45.8015 286.145 73.9665C314.276 102.123 329.755 139.562 329.738 179.364C329.703 261.513 262.871 328.346 180.756 328.346V328.354ZM262.475 216.777C257.997 214.534 235.978 203.704 231.869 202.209C227.761 200.713 224.779 199.966 221.796 204.452C218.814 208.939 210.228 219.029 207.615 222.011C205.002 225.002 202.389 225.372 197.911 223.128C193.434 220.885 179.003 216.158 161.891 200.902C148.578 189.024 139.587 174.362 136.975 169.875C134.362 165.389 136.7 162.965 138.934 160.739C140.945 158.728 143.412 155.505 145.655 152.892C147.899 150.279 148.638 148.406 150.133 145.423C151.629 142.432 150.881 139.82 149.764 137.576C148.646 135.333 139.691 113.287 135.952 104.323C132.316 95.5909 128.621 96.777 125.879 96.6309C123.266 96.5019 120.284 96.4762 117.293 96.4762C114.302 96.4762 109.454 97.5935 105.346 102.08C101.238 106.566 89.6691 117.404 89.6691 139.441C89.6691 161.478 105.716 182.785 107.959 185.776C110.202 188.767 139.544 234.001 184.469 253.408C195.153 258.023 203.498 260.782 210.004 262.845C220.731 266.257 230.494 265.776 238.212 264.624C246.816 263.335 264.71 253.786 268.44 243.326C272.17 232.866 272.17 223.893 271.053 222.028C269.936 220.163 266.945 219.037 262.467 216.794L262.475 216.777Z" fill="white"/>
-                          </svg>
-                      </a>
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener noreferrer" class="icon-social">
-                            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z" fill="white"/>
-                            </svg>                            
-                        </a>
-                        
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener noreferrer" class="icon-social">
-                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white"/>
-                                <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white"/>
-                                <path d="M11.6821 2.06975C11.5279 1.67138 11.2921 1.30961 10.99 1.00759C10.6879 0.705576 10.326 0.469972 9.92759 0.31586C9.46135 0.140842 8.9688 0.0462069 8.4709 0.0359839C7.82919 0.00799638 7.62594 0 5.99867 0C4.37139 0 4.16282 -6.70254e-08 3.52643 0.0359839C3.02891 0.0456842 2.53671 0.140339 2.07108 0.31586C1.67255 0.469792 1.31059 0.705333 1.00844 1.00737C0.706289 1.30941 0.47061 1.67127 0.316526 2.06975C0.141474 2.53595 0.0470554 3.02855 0.0373167 3.52643C0.00866281 4.16748 0 4.37072 0 5.99867C0 7.62594 -4.96485e-09 7.83319 0.0373167 8.4709C0.0473123 8.96935 0.14127 9.46113 0.316526 9.92825C0.471042 10.3266 0.70695 10.6883 1.00918 10.9903C1.3114 11.2923 1.6733 11.5279 2.07175 11.6821C2.5365 11.8642 3.0289 11.9656 3.52777 11.982C4.16948 12.01 4.37272 12.0187 6 12.0187C7.62728 12.0187 7.83585 12.0187 8.47223 11.982C8.97008 11.9719 9.46262 11.8775 9.92892 11.7028C10.3272 11.5483 10.689 11.3125 10.9911 11.0104C11.2932 10.7083 11.529 10.3466 11.6835 9.94825C11.8587 9.48179 11.9527 8.99 11.9627 8.49156C11.9913 7.85051 12 7.64727 12 6.01932C12 4.39138 12 4.18481 11.9627 3.54709C11.9549 3.04216 11.86 2.54237 11.6821 2.06975ZM10.8705 8.42159C10.8662 8.80562 10.7961 9.18608 10.6633 9.54642C10.5632 9.80555 10.41 10.0409 10.2135 10.2372C10.017 10.4336 9.78162 10.5867 9.52243 10.6866C9.16608 10.8188 8.78967 10.8889 8.4096 10.8938C7.77654 10.9231 7.59796 10.9305 5.97468 10.9305C4.35007 10.9305 4.18414 10.9305 3.53909 10.8938C3.15921 10.8892 2.78298 10.8191 2.42692 10.6866C2.16683 10.5873 1.93048 10.4345 1.73316 10.2381C1.53584 10.0417 1.38194 9.80605 1.28143 9.54642C1.15045 9.18995 1.08039 8.81398 1.07419 8.43425C1.04554 7.8012 1.03887 7.62261 1.03887 5.99933C1.03887 4.37539 1.03887 4.20946 1.07419 3.56375C1.0785 3.17993 1.14859 2.7997 1.28143 2.43958C1.48467 1.91382 1.90116 1.5 2.42692 1.29876C2.78316 1.16691 3.15928 1.09682 3.53909 1.09151C4.17281 1.06286 4.35073 1.05486 5.97468 1.05486C7.59862 1.05486 7.76522 1.05486 8.4096 1.09151C8.7897 1.09609 9.16617 1.1662 9.52243 1.29876C9.7816 1.39889 10.017 1.55211 10.2134 1.74858C10.4099 1.94504 10.5631 2.18041 10.6633 2.43958C10.7942 2.79606 10.8643 3.17203 10.8705 3.55175C10.8992 4.18547 10.9065 4.36339 10.9065 5.98734C10.9065 7.61062 10.9065 7.78521 10.8778 8.42226H10.8705V8.42159Z" fill="white"/>
-                            </svg>    
-
-                        <!-- TripAdvisor -->
-                        <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
-                          target="_blank" rel="noopener noreferrer"
-                          class="cursor-pointer hover:opacity-80 transition"
-                          aria-label="TripAdvisor">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.2 320.2" width="20" height="20" fill="white">
-                            <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                            <circle cx="128.4" cy="191.9" r="31.9"/>
-                            <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                            <circle cx="384.4" cy="191.9" r="31.9"/>
-                            <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                          </svg>
-                        </a>
-
-                        
-
-                        <!-- Google Maps -->
-                        <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-gray-600 hover:text-white" aria-label="Google Maps">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
-                          </svg>
-                        </a>
-
-                    </div>
-                </div>
-                <p class="uppercase w-full text-center my-12 text-gray-600">Copyright © 2025 Palo Santo Hotel</p>
-            </div>
-</div>
+<footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
+  <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-14">
+    <div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:gap-x-16 md:gap-y-10">
+      <div class="flex items-start gap-5 md:contents">
+        <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" loading="lazy" class="h-auto w-[50px] shrink-0 md:w-16">
+        <div class="flex flex-col gap-1.5 text-sm leading-relaxed text-white/80 md:flex-[1_1_240px] md:gap-2.5 md:text-[15px]">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Palo Santo Hotel</p>
+          <address class="not-italic">Bonpland 2275, Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
+          <a href="tel:+541152806100" class="hover:underline">+54 11 5280 6100</a>
+          <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="hover:underline">WhatsApp +54 9 11 6357-2374</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-6 text-[15px] text-white/80 md:contents">
+        <nav aria-label="Hotel" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Hotel</p>
+          <a href="/es/hotel" class="hover:underline">Servicios</a>
+          <a href="/es/quienes-somos" class="hover:underline">Quiénes somos</a>
+          <a href="/es/verde" class="hover:underline">Verde</a>
+          <a href="/es/restaurante" class="hover:underline">Desayuno y restaurante</a>
+          <a href="/es/galeria-de-fotos" class="hover:underline">Fotos</a>
+        </nav>
+        <nav aria-label="Habitaciones" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Habitaciones</p>
+          <a href="/es/habitaciones-premium" class="hover:underline">Premium</a>
+          <a href="/es/habitaciones-deluxe" class="hover:underline">Deluxe</a>
+          <a href="/es/suite-terrace" class="hover:underline">Terrace Suite</a>
+          <a href="/es/suite-palo-santo" class="hover:underline">Palo Santo Suite</a>
+        </nav>
+        <nav aria-label="Información" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Información</p>
+          <a href="/es/palermo" class="hover:underline">Ubicación</a>
+          <a href="/es/hotel#preguntas-frecuentes" class="hover:underline">Preguntas frecuentes</a>
+          <a href="https://blog.palosantohotel.com/es" class="hover:underline">Blog</a>
+          <a href="/es/contacto" class="hover:underline">Contacto</a>
+        </nav>
+        <nav aria-label="Redes" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Seguinos</p>
+          <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
+          <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="hover:underline">Tripadvisor</a>
+          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="hover:underline">Google Maps</a>
+        </nav>
+      </div>
+    </div>
+    <div class="flex justify-between gap-4 border-t border-ps-line pt-5 text-[13px] text-ps-muted md:pt-6 md:text-sm">
+      <span>© <span data-year>2026</span> Palo Santo Hotel</span>
+      <a href="/en/deluxe-rooms" lang="en" class="hover:text-white">English</a>
+    </div>
+  </div>
+</footer>
 
 <!-- Google Analytics 4 -->
 <script>

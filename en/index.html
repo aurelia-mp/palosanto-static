@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+    <meta name="theme-color" content="#1C1C1C" />
+
     <title>Palo Santo Hotel — Green Boutique Hotel in Palermo, Buenos Aires</title>
     <meta name="description" content="Discover Palo Santo Hotel, Buenos Aires’ green boutique hotel in Palermo, blending elegant design, vertical gardens, and exceptional service in one of the city’s most vibrant neighborhoods." />
-    
+
     <!-- Canonical -->
     <link rel="canonical" href="https://www.palosantohotel.com/en/">
 
@@ -19,41 +20,13 @@
     <!-- Robots -->
     <meta name="robots" content="index, follow">
 
-    <script src="/js/main.js" defer></script>
-    
-    <!--  PRELOAD HERO MOBILE -->
-    <link
-    rel="preload"
-    as="image"
-    type="image/avif"
-    imagesrcset="
-      /images/heroMobile/hero-image-mobile-480.avif 480w,
-      /images/heroMobile/hero-image-mobile-600.avif 600w,
-      /images/heroMobile/hero-image-mobile-800.avif 800w"
-    imagesizes="100vw"
-    media="(max-width: 850px)"
-    fetchpriority="high"
-  />
-
+    <!-- Fondo: ?fondo=verde muestra el verde #0E1B14 para comparar (ver src/components.css) -->
+    <script>try{var f=new URLSearchParams(location.search).get('fondo');if(f)sessionStorage.setItem('ps-fondo',f);f=sessionStorage.getItem('ps-fondo');if(f&&f!=='carbon')document.documentElement.setAttribute('data-fondo',f)}catch(e){}</script>
     <!-- CSS -->
-    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/dist/output.css?v=20261009" />
 
-    <!-- Fonts -->
-    <link
-      rel="preload"
-      href="/fonts/lato-v25-latin-ext-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <style>
-      /* Show video hero from 851px upward; keep image on mobile */
-      .hero-desktop { display: none; }
-      @media (min-width: 851px) {
-        .hero-mobile { display: none; }
-        .hero-desktop { display: block; }
-      }
-    </style>
+    <!-- Main JS -->
+    <script src="/js/main.js?v=20261009" defer></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -63,8 +36,12 @@
         "name": "Palo Santo Hotel",
         "url": "https://www.palosantohotel.com/en/",
         "logo": "https://www.palosantohotel.com/images-source/logo.jpg",
-        "image": "https://www.palosantohotel.com/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg",
-        "description": "Sustainable design boutique hotel in Palermo, Buenos Aires — Argentina's first urban green hotel, with vertical gardens and LEED-based construction.",
+        "image": [
+          "https://www.palosantohotel.com/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg",
+          "https://www.palosantohotel.com/images-source/thumbnails/FachadaP-IMG_2480-thumbnail.jpg",
+          "https://www.palosantohotel.com/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg"
+        ],
+        "description": "Sustainable design boutique hotel in Palermo Hollywood, Buenos Aires — Argentina's first urban green hotel, with vertical gardens and LEED-based construction.",
         "telephone": "+54 11 5280 6100",
         "starRating": { "@type": "Rating", "ratingValue": "4" },
         "address": {
@@ -75,1030 +52,665 @@
           "postalCode": "C1425FWC",
           "addressCountry": "AR"
         },
+        "hasMap": "https://maps.app.goo.gl/KGQymRt7L3hWRikA6",
+        "checkinTime": "15:00",
+        "checkoutTime": "12:00",
+        "numberOfRooms": 26,
+        "petsAllowed": false,
+        "smokingAllowed": false,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Buffet breakfast included", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "24-hour reception", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Rooftop shallow pool and hot tub", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Gym", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Complimentary bikes", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Laundry service", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Luggage storage", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Private airport transfers", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "On-site parking", "value": false }
+        ],
         "sameAs": [
           "https://www.instagram.com/palosantohotel/",
           "https://www.facebook.com/palosantohotel",
           "https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
         ]
       }
-      </script>
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What time are check-in and check-out?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Check-in is from 3:00 PM and check-out is until 12:00 PM (noon). Late check-out until 6:00 PM is available for an additional fee, subject to availability." }
+          },
+          {
+            "@type": "Question",
+            "name": "My flight arrives early — can I check in before 3:00 PM?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Early check-in depends on same-day availability. To guarantee early access to your room, we recommend booking the previous night. You can always leave your luggage at Reception." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you arrange airport transfers?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can coordinate private transfers to and from Buenos Aires airports. We only need your flight details." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you have parking?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We do not have on-site parking, but there are several private garages within 400 meters of the hotel." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you accept pets?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We do not accept pets." }
+          }
+        ]
+      }
+    </script>
 </head>
 
-<body class="text-gray-800">
+<body class="bg-ps-ground pb-24 font-brand text-ps-text antialiased lg:pb-0">
 
-<!-- MENÚ MOBILE -->
-<header class="block lg:hidden sticky top-0 z-50 bg-white border-b">
-  <div class="relative flex items-center justify-center px-6 py-4">
-    <button
-      id="mobile-menu-toggle"
-      type="button"
-      class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-1.5 rounded border border-transparent p-2 transition focus:outline-none hover:border-gray-400"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="sr-only">Open menu</span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-      <span class="block h-0.5 w-6 bg-gray-900"></span>
-    </button>
-    <a href="/en/" class="block">
-      <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="h-32 w-auto">
+<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
+
+<!-- HEADER: transparente sobre el video -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
+    <div class="flex items-center">
+      <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
+      </button>
+      <nav aria-label="Main menu" class="hidden min-h-[48px] flex-wrap items-center gap-x-[30px] gap-y-2 text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/rooms" class="underline-offset-8 hover:underline">Rooms</a>
+        <a href="/en/hotel" class="underline-offset-8 hover:underline">Hotel</a>
+        <a href="/en/green" class="underline-offset-8 hover:underline">Green</a>
+        <a href="/en/restaurant" class="underline-offset-8 hover:underline">Breakfast</a>
+        <a href="/en/palermo" class="underline-offset-8 hover:underline">Location</a>
+      </nav>
+    </div>
+
+    <a href="/en/" class="block" aria-label="Palo Santo Hotel, home">
+      <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" class="h-auto w-[50px] xl:w-[72px]">
     </a>
+
+    <div class="flex items-center justify-end gap-x-[30px]">
+      <nav aria-label="More sections" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/about-us" class="underline-offset-8 hover:underline">About us</a>
+        <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
+        <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
+        <a href="/en/contact-us" class="underline-offset-8 hover:underline">Contact</a>
+      </nav>
+      <a href="/" lang="es" class="hidden text-sm font-semibold tracking-[0.12em] underline-offset-8 hover:underline xl:inline" aria-label="Versión en español">ES</a>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-ghost min-h-[44px] px-3.5 text-[11px] tracking-[0.14em] xl:min-h-[48px] xl:px-[26px] xl:text-[13px] xl:tracking-[0.16em]">Book now</a>
+    </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t bg-white">
-    <nav aria-label="Mobile mail menu" class="px-6 py-6 space-y-1 font-base">
-      <div class="space-y-1">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide py-1"
-          aria-controls="mobile-submenu-hotel"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>HOTEL</span>
-          <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-hotel" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/en/hotel" aria-current="page">Services</a></li>
-          <li><a class="block" href="/en/about-us">About us</a></li>
-        </ul>
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
+    <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
+      <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
+      <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
+        <a href="/en/premium-rooms" class="flex min-h-[44px] items-center">Premium</a>
+        <a href="/en/deluxe-rooms" class="flex min-h-[44px] items-center">Deluxe</a>
+        <a href="/en/terrace-suite" class="flex min-h-[44px] items-center">Terrace Suite</a>
+        <a href="/en/palo-santo-suite" class="flex min-h-[44px] items-center">Palo Santo Suite</a>
       </div>
-
-      <div class="space-y-2">
-        <button
-          type="button"
-          class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-base"
-          aria-controls="mobile-submenu-habitaciones"
-          aria-expanded="false"
-          data-disclosure
-        >
-          <span>Rooms</span>
-          <svg class="block chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-        </button>
-        <ul id="mobile-submenu-habitaciones" class="mt-1 pl-2 space-y-2 font-light hidden">
-          <li><a class="block" href="/en/rooms">Our rooms</a></li>
-          <li><a class="block" href="/en/premium-rooms">Premium</a></li>
-          <li><a class="block" href="/en/deluxe-rooms">Deluxe</a></li>
-          <li><a class="block" href="/en/terrace-suite">Terrace Suite</a></li>
-          <li><a class="block" href="/en/palo-santo-suite">Palo Santo Suite</a></li>
-        </ul>
-      </div>
-
-      <ul class="space-y-2 uppercase tracking-wide">
-        <li><a href="/en/green" class="block">Green</a></li>
-        <li><a href="/en/restaurant" class="block">Breakfast and Restaurant</a></li>
-        <li><a href="/en/palermo" class="block">Palermo</a></li>
-        <li><a href="/en/photo-gallery" class="block">Photos</a></li>
-        <li><a href="https://blog.palosantohotel.com/en" class="block">Blog</a></li>
-        <li><a href="/en/contact-us" class="block">Contact us</a></li>
-        <li class="flex">
-          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener"
-            class="-ml-1 inline-flex w-1/2 min-w-[8rem] items-center justify-start rounded bg-black py-2 pl-3 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
-            Book Now
-          </a>
-        </li>
-        <li class="pt-10">
-          <a href="/" class="flex items-center gap-2">
-            <span>Español</span>
-          </a>
-        </li>
-      </ul>
+      <a href="/en/hotel" class="flex min-h-[48px] items-center">Hotel &amp; services</a>
+      <a href="/en/about-us" class="flex min-h-[48px] items-center">About us</a>
+      <a href="/en/green" class="flex min-h-[48px] items-center">Green</a>
+      <a href="/en/restaurant" class="flex min-h-[48px] items-center">Breakfast &amp; restaurant</a>
+      <a href="/en/palermo" class="flex min-h-[48px] items-center">Location</a>
+      <a href="/en/photo-gallery" class="flex min-h-[48px] items-center">Photos</a>
+      <a href="https://blog.palosantohotel.com/en" class="flex min-h-[48px] items-center">Blog</a>
+      <a href="/en/contact-us" class="flex min-h-[48px] items-center">Contact</a>
+      <a href="/" lang="es" class="mt-2 flex min-h-[48px] items-center border-t border-ps-line text-base text-ps-muted">Español</a>
     </nav>
   </div>
 </header>
 
-<!-- MENÚ VERTICAL / SIDEBAR -->
-<aside class="hidden lg:block lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 bg-white pl-12 pr-8 py-10 overflow-y-auto border-r text-base">
-  <!-- Logo -->
-  <a href="/en/" class="block mb-16">
-    <img src="/images-source/logo.jpg" alt="Palo Santo Hotel" class="block w-28 h-auto mb-2">
-  </a>
+<main id="content">
 
-  <!-- Navegación -->
-  <nav aria-label="Menú principal" class="space-y-2 text-lg text-left">
-    <!-- 1) HOTEL (desplegable) -->
-    <div>
-      <button
-        type="button"
-        class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-semibold"
-        aria-controls="submenu-hotel"
-        aria-expanded="false"
-        data-disclosure
-      >
-        <span>Hotel</span>
-        <svg class="chev h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-      </button>
-
-      <ul id="submenu-hotel" class="mt-4 pl-1 space-y-3 text-base font-thin uppercase hidden">
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/hotel">Hotel Services</a></li>
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/about-us">About Us</a></li>
-      </ul>
-    </div>
-
-    <!-- 2) HABITACIONES -->
-    <div>
-      <button
-        type="button"
-        class="group flex w-full items-center justify-between text-left uppercase tracking-wide font-semibold"
-        aria-controls="submenu-habitaciones"
-        aria-expanded="false"
-        data-disclosure
-      >
-        <span>Rooms</span>
-        <svg class="chev h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 7l3 3 3-3 1 1-4 4-4-4 1-1z"/></svg>
-      </button>
-
-      <ul id="submenu-habitaciones" class="mt-4 pl-1 space-y-3 text-base font-thin uppercase hidden">
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/rooms">Rooms</a></li>
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/premium-rooms">Premium</a></li>
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/deluxe-rooms">Deluxe</a></li>
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/terrace-suite">Terrace Suite</a></li>
-        <li><a class="relative block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full" href="/en/palo-santo-suite">Palo Santo Suite</a></li>
-      </ul>
-    </div>
-
-    <!-- 3) Resto de ítems (no desplegables) -->
-    <ul class="space-y-2">
-      <li><a href="/en/green" class="relative block uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Green</a></li>
-      <li><a href="/en/restaurant" class="relative block uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Breakfast and Restaurant</a></li>
-      <li><a href="/en/palermo" class="relative block uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Palermo</a></li>
-      <li><a href="/en/photo-gallery" class="relative block  uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Photos</a></li>
-      <li><a href="https://blog.palosantohotel.com/en" class="relative block uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">Blog</a></li>
-      <li><a href="/en/contact-us" class="relative block uppercase tracking-wide text-lg font-semibold after:absolute.after:left-0.after:bottom-0.after:h-0.5.after:w-0.after:bg-current.after:transition-all.after:duration-300.after:ease-out.after:content-[''] hover:after:w-full">Contact Us</a></li>
-      <li class="pb-12">
-        <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener"
-          class="-ml-2 inline-flex w-[calc(100%+0.5rem)] items-center justify-start rounded bg-black py-2 pl-2 pr-5 text-base font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/40 focus:ring-offset-2">
-          Book Now
-        </a>
-      </li>
-      <li>
-        <a href="/" class="relative flex items-center gap-2 py-1.5 uppercase tracking-wide text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full">
-          <!-- <img src="/images-source/us.png" alt="Bandera de Estados Unidos" class="h-4 w-6 object-cover">-->
-          <span>Español</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</aside>
-
-<!-- contenedor para contenido principal -->
-<div class="lg:ml-72">
-  <!-- Hero video -->
-  <section class="relative w-full">
-    <div class="relative w-full bg-gray-200 hero-mobile" style="aspect-ratio: 2 / 3;">
-      <picture>
-  <!-- AVIF -->
-  <source
-    type="image/avif"
-    srcset="
-      /images/heroMobile/hero-image-mobile-480.avif 480w,
-      /images/heroMobile/hero-image-mobile-600.avif 600w,
-      /images/heroMobile/hero-image-mobile-800.avif 800w
-    "
-    sizes="100vw"
-  />
-
-    <!-- WebP -->
-  <source
-    type="image/webp"
-    srcset="
-      /images/heroMobile/hero-image-mobile-480.webp 480w,
-      /images/heroMobile/hero-image-mobile-600.webp 600w,
-      /images/heroMobile/hero-image-mobile-800.webp 800w
-    "
-    sizes="100vw"
-  />
-
-    <!-- JPG fallback (solo si no soporta nada) -->
-    <img
-    src="/images-source/heroMobile/hero-image-mobile.jpg"
-    alt="Vista de los pasillos del hotel boutique Palo Santo en Palermo Buenos Aires"
-    width="600"
-    height="900"
-    loading="eager"
-    fetchpriority="high"
-    class="absolute inset-0 h-full w-full object-cover"
-    />
-  </picture>
-    </div>
-    <!-- VIDEO PARA DESKTOP -->
-    <div class="relative w-full bg-gray-200 hero-desktop" style="aspect-ratio: 3 / 2;">
-      <video
-        id="hero-video"
-        class="absolute inset-0 h-full w-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-hidden="true"
-      ></video>
-    </div>
-  </section>
-
- <!-- Header -->
-    <header class="px-6 py-6 lg:px-12">
-      <div class="py-6">
-        <div class="flex flex-col items-center gap-6 text-center">
-          <h1 class="text-2xl font-bold text-gray-900 md:text-5xl md:uppercase md:tracking-[0.2em]">
-            Palo Santo: a green, design-led <br>boutique hotel <br>in Palermo, Buenos Aires
-          </h1>
-          <p class="text-xl font-thin leading-8 text-gray-700 max-w-4xl">
-            Discover why travelers looking for a <span style="text-decoration-thickness:0.5px; text-underline-offset:6px; color:#1d4ed8;" class="underline decoration-current"><a href="/en/hotel-palermo-buenos-aires" class="transition-colors hover:underline" style="color:#1d4ed8;">boutique stay in Palermo Hollywood</a></span> choose Palo Santo as their base to explore the city.
-          </p>
-        </div>
-      </div>
-    </header>
-    
-  <!-- Booking form -->
-  <section class="px-6 py-6 lg:px-12 bg-white/90 backdrop-blur border-y border-black">
-    <div class="mx-auto max-w-5xl">
-      <form id="booking-form" class="flex flex-col justify-center gap-4 md:flex-row md:flex-wrap md:items-center 2xl:flex-nowrap">
-        <div class="flex w-full flex-wrap gap-3 md:w-auto md:flex-1 md:flex-nowrap md:items-center md:gap-4 2xl:flex-[1 1 auto]">
-          <div class="flex flex-1 items-center gap-2">
-            <label for="booking-checkin" class="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-gray-700">Check in</label>
-            <input
-              id="booking-checkin"
-              name="checkin"
-              type="date"
-              min=""
-              class="h-10 flex-1 rounded border border-black/30 px-3 text-sm text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30"
-              required
-            />
-          </div>
-
-          <div class="flex flex-1 items-center gap-2">
-            <label for="booking-checkout" class="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-gray-700">Check out</label>
-            <input
-              id="booking-checkout"
-              name="checkout"
-              type="date"
-              min=""
-              class="h-10 flex-1 rounded border border-black/30 px-3 text-sm text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30"
-              required
-            />
-          </div>
-        </div>
-
-        <!-- Huespedes y Reservar viajan juntos: si la fila no entra, bajan los dos al
-             renglon siguiente en vez de dejar el boton solo. -->
-        <div class="flex w-full flex-col gap-4 md:w-auto md:flex-row md:items-center md:mr-6 2xl:mr-10">
-          <div class="flex w-full items-center gap-2 md:w-auto">
-            <label for="booking-guests" class="whitespace-nowrap text-xs font-semibold uppercase tracking-wide text-gray-700">Guests</label>
-            <select
-              id="booking-guests"
-              name="guests"
-              class="h-10 flex-1 rounded border border-black/30 bg-white px-3 text-sm text-gray-800 focus:border-black focus:outline-none focus:ring-2 focus:ring-black/30 md:flex-none"
-            >
-              <option value="1">1</option>
-              <option value="2" selected>2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-
-          <div class="w-full sm:w-auto md:w-auto">
-            <button type="submit" class="h-10 w-full md:w-auto rounded bg-black px-5 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black/30 focus:ring-offset-1">
-              Book now
-            </button>
-          </div>
-        </div>
-
-        <div class="basis-full text-center 2xl:basis-1/4 2xl:max-w-[25%] 2xl:text-left">
-          <div class="h-full rounded bg-white px-4 py-2 text-sm font-semibold uppercase leading-snug 2xl:border-l-8 2xl:border-l-black">
-            Book direct. Best rate guaranteed.
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Section habitaciones -->
-  <section class="pt-10 pb-16" aria-labelledby="rooms-title">
-    <div class="text-center">
-      <h2 id="habitaciones-title" class="text-2xl font-bold uppercase tracking-[0.2em] text-gray-900 md:text-3xl">
-        Our rooms
-      </h2>
-    </div> 
-
-    <div class="mt-10 grid gap-6 sm:grid-cols-2">
-      <article class="room-card">
+  <!-- HERO: los tres videos se encadenan con un fundido; el primero se elige al azar -->
+  <section class="ps-hero relative overflow-hidden bg-ps-deep text-white" aria-label="Palo Santo on video" data-hero>
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 opacity-100 transition-opacity duration-[1200ms]" data-hero-clip data-hero-active
+        data-video="https://media.palosantohotel.com/video-colibri-edit-2.mp4"
+        data-video-mobile="https://media.palosantohotel.com/video-colibri-edit-2-mobile.mp4">
         <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg"
-          alt="Premium Rooms with private balcony at Palo Santo Hotel"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Premium</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2 / 377 sq.ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>1st to 3rd Floors + 8th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              Our most popular rooms: spacious, comfortable, and filled with natural light, our Premium Rooms (one King bed or two Single beds) are ideal for couples, friends, or families. All feature a private balcony, except for the two interconnecting Premium Rooms located on the 8th floor, perfect for guests traveling with children.
-            </p>
-          <div class="room-card__cta">
-            <a href="/en/premium-rooms" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w,
-          /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg"
-          alt="Detail of Deluxe Room with a comfortable armchair at Palo Santo Hotel"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="room-card__title">Deluxe</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>35m2 / 377 sq.ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>4h to 6th Floors</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              For exceptional comfort and quiet elegance. Located on the upper floors, our Deluxe Rooms are elegant, filled with natural light, and exceptionally comfortable. Designer furniture, a private balcony, an oversized shower, and a perfect King bed for true relaxation.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/deluxe-rooms" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w,
-          /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg"
-          alt="Terrace Suite bed with the sliding doors open onto the private terrace"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Terrace Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>55m2 / 590 sq. ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>6th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-            Our Terrace Suite, with its private terrace, is an oasis above the Buenos Aires skyline. A two-room suite offering contemporary luxury and exceptional comfort: beautiful natural woods, iconic design pieces, and state-of-the-art amenities.
-          </p>
-          <div class="room-card__cta">
-            <a href="/en/terrace-suite" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <picture>
-      <!-- AVIF -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.avif 400w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.avif 800w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.avif 1200w
-        "
-        type="image/avif" />
-
-      <!-- WebP -->
-      <source
-        srcset="
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-400.webp 400w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-800.webp 800w,
-          /images/thumbnails/PaloSantoSuite-8343-thumbnail-1200.webp 1200w
-        "
-        type="image/webp" />
-
-      <!-- Fallback JPG -->
-        <img
-          src="/images-source/thumbnails/PaloSantoSuite-8343-thumbnail.jpg"
-          alt="Night View of Palo Santo Suite with spacious living area"
-          class="w-full object-cover"
-          style="aspect-ratio: 3 / 2;"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-      </picture>
-        <div class="room-card__content">
-          <div class="room-card__header">
-            <h3 class="text-lg font-semibold uppercase tracking-wide text-gray-900">Palo Santo Suite</h3>
-            <div class="room-card__icons">
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
-                  <path d="m14.5 12.5 2-2"/>
-                  <path d="m11.5 9.5 2-2"/>
-                  <path d="m8.5 6.5 2-2"/>
-                  <path d="m17.5 15.5 2-2"/>
-                </svg>
-                <span>65m2 / 700 sq. ft</span>
-              </div>
-              <div class="room-card__icon-item">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 10h.01"/>
-                  <path d="M12 14h.01"/>
-                  <path d="M12 6h.01"/>
-                  <path d="M16 10h.01"/>
-                  <path d="M16 14h.01"/>
-                  <path d="M16 6h.01"/>
-                  <path d="M8 10h.01"/>
-                  <path d="M8 14h.01"/>
-                  <path d="M8 6h.01"/>
-                  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
-                  <rect x="4" y="2" width="16" height="20" rx="2"/>
-                </svg>
-                <span>7th Floor</span>
-              </div>
-            </div>
-          </div>
-          <p class="room-card__description">
-              The Palo Santo Suite is the hotel’s most generous space — a retreat designed for indulgence. Spread across 65 m², it features a King bed, separate living area, whirlpool bath, private balconies, and sweeping views of the Palermo skyline — an invitation to unwind and savor the city from above.
-            </p>
-          <div class="room-card__cta">
-            <a href="/en/palo-santo-suite" class="room-card__button">> Explore</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Section green preview -->
-  <section class="px-6 py-0 lg:px-12" style="background-color: #f0f7f1;">
-    <div class="flex flex-col gap-6 md:flex-row md:items-center">
-      <div class="md:flex-1 -mx-6 md:-ml-6 lg:-ml-12">
-        <picture>
-          <source
-            srcset="
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-400.avif 400w,
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.avif 800w,
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.avif 1200w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-400.webp 400w,
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.webp 800w,
-              /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.webp 1200w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/thumbnails/FachadaP-IMG_2480-thumbnail.jpg"
-            alt="Palo Santo Hotel green facade with vertical gardens"
-            class="green-preview__image block w-full object-cover"
-            width="1200"
-            height="800"
-            loading="lazy"
-            sizes="(max-width: 1024px) 100vw, 640px"
-          />
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-colibri-mobile-480.avif 480w, /images/heroMobile/hero-colibri-mobile-600.avif 600w, /images/heroMobile/hero-colibri-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-colibri-mobile-480.webp 480w, /images/heroMobile/hero-colibri-mobile-600.webp 600w, /images/heroMobile/hero-colibri-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-colibri-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-colibri-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-colibri.jpg" alt="Agapanthus in bloom in the hotel garden" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
         </picture>
       </div>
-      <div class="md:flex-1 md:pl-6 lg:pl-12 py-6 2xl:py-0">
-        <h2 class="text-3xl font-bold uppercase tracking-[0.2em] text-gray-900">A unique green architecture</h2>
-        <p class="mt-4 py-6 yext-base text-gray-700 leading-8">
-          Palo Santo is the first urban green hotel in Argentina.
-          <br>Built according to LEED (Leadership in Energy and Environmental Design) standards, Palo Santo is a green hotel designed with sustainability in mind. Vertical gardens are a defining feature, supported by a comprehensive environmental program that addresses the many aspects of sustainable building.
-        </p>
-        <a href="/en/green" class="mt-4 inline-flex items-center uppercase tracking-wide font-semibold text-blue-600 hover:text-blue-700 ">
-          > Learn more about our sustainability commitment
-        </a>
-          </div>
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
+        data-video="https://media.palosantohotel.com/terraza-flores.mp4"
+        data-video-mobile="https://media.palosantohotel.com/terraza-flores-mobile.mp4">
+        <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.avif 480w, /images/heroMobile/hero-terraza-flores-mobile-600.avif 600w, /images/heroMobile/hero-terraza-flores-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.webp 480w, /images/heroMobile/hero-terraza-flores-mobile-600.webp 600w, /images/heroMobile/hero-terraza-flores-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-terraza-flores-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-terraza-flores-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-terraza-flores.jpg" alt="Wisteria in bloom on one of the hotel's terraces" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
+        data-video="https://media.palosantohotel.com/video-suite-sushi.mp4"
+        data-video-mobile="https://media.palosantohotel.com/video-suite-sushi-mobile.mp4">
+        <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.avif 480w, /images/heroMobile/hero-suite-sushi-mobile-600.avif 600w, /images/heroMobile/hero-suite-sushi-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.webp 480w, /images/heroMobile/hero-suite-sushi-mobile-600.webp 600w, /images/heroMobile/hero-suite-sushi-mobile-708.webp 708w" sizes="100vw">
+          <source type="image/avif" srcset="/images/hero/hero-suite-sushi-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-suite-sushi-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-suite-sushi.jpg" alt="Sushi and champagne in one of the hotel suites" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
     </div>
-  </section>
+    <script>
+      (function () {
+        var clips = document.querySelectorAll('[data-hero-clip]');
+        var pick = clips[Math.floor(Math.random() * clips.length)];
+        for (var i = 0; i < clips.length; i++) {
+          var on = clips[i] === pick;
+          clips[i].classList.toggle('hidden', !on);
+          clips[i].classList.toggle('opacity-0', !on);
+          clips[i].classList.toggle('opacity-100', on);
+          if (on) clips[i].setAttribute('data-hero-active', '');
+          else clips[i].removeAttribute('data-hero-active');
+        }
+        var img = pick.querySelector('img');
+        img.loading = 'eager';
+        img.setAttribute('fetchpriority', 'high');
+      })();
+    </script>
 
-  <!-- HERO PALERMO -->
-  <section id="hero-palermo" class="hero-palermo">
-    <div class="hero-palermo__media group">
-      <picture class="hero-palermo__picture">
-        <source
-          srcset="
-            /images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.avif 1920w,
-            /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.avif 2560w
-          "
-          type="image/avif"
-        />
-        <source
-          srcset="
-            /images/hero/Grupo-Jardin-IMG_3054-324-3000px-1920.webp 1920w,
-            /images/hero/Grupo-Jardin-IMG_3054-324-3000px-2560.webp 2560w
-          "
-          type="image/webp"
-        />
-        <img
-          src="/images-source/hero/Grupo-Jardin-IMG_3054-324-3000px.jpg"
-          alt="Group of people enjoying in the garden of Palo Santo Hotel in Palermo, Buenos Aires"
-          class="hero-palermo__image group-hover:scale-105"
-          width="3000"
-          height="2000"
-          loading="lazy"
-          decoding="async"
-          sizes="100vw"
-        />
-      </picture>
-      <div class="hero-palermo__overlay group-hover:bg-black/60"></div>
-      <div class="hero-palermo__content">
-        <p class="hero-palermo__subtitle">Your home in Buenos Aires' more coveted neighborhood</p>
-        <h2 class="hero-palermo__title">
-          <a href="/en/palermo" class="hero-palermo__title-link">> Inside Palermo</a>
-        </h2>
+    <div aria-hidden="true" class="ps-hero__scrim pointer-events-none absolute inset-0"></div>
+
+    <div class="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-5 px-5 pb-[104px] md:px-12 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-x-16 lg:gap-y-10 lg:pb-[156px]">
+      <div class="flex flex-col gap-5 lg:gap-[26px]">
+        <h1 class="flex flex-col gap-3 [text-shadow:0_2px_30px_rgba(0,0,0,0.18)] lg:gap-[22px]">
+          <span class="flex flex-col text-[46px] leading-[0.98] tracking-[-0.03em] md:text-[clamp(56px,7.2vw,104px)] md:leading-[0.95] md:tracking-[-0.035em]"><span>Boutique, green</span><span>&amp; design-led</span></span>
+          <span class="text-[17px] leading-snug md:text-[22px]">hotel in Palermo, Buenos Aires</span>
+        </h1>
+        <p class="max-w-[31em] text-[15px] leading-relaxed text-white/85 md:text-[17px]">Discover why travelers looking for a <a href="/en/hotel-palermo-buenos-aires" class="text-white underline underline-offset-4">boutique stay in Palermo Hollywood</a> choose Palo Santo as their base to explore the city.</p>
+      </div>
+
+      <div class="hidden items-end gap-4 lg:gap-7" data-hero-controls>
+        <div role="group" aria-label="Hotel videos" class="flex min-w-0 flex-1 gap-2.5 lg:flex-none lg:gap-5">
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">01</span><span>Hummingbird</span></span>
+          </button>
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">02</span><span>Terrace</span></span>
+          </button>
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">03</span><span>Suite</span></span>
+          </button>
+        </div>
+        <button type="button" class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/60 text-white transition-colors hover:bg-white/10 lg:h-12 lg:w-12" data-hero-toggle aria-label="Pause video" data-label-pause="Pause video" data-label-play="Play video">
+          <svg data-icon-pause class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+          <svg data-icon-play class="hidden h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- API INSTRAGRAM - AGREGAR MÁS TARDE -->
+  <!-- RESERVAS: franja sobre el pie del video en desktop, panel inferior en mobile -->
+  <div class="fixed inset-0 z-[55] bg-black/60 lg:hidden" data-booking-backdrop data-booking-close hidden></div>
+  <div id="booking-panel" class="ps-booking relative z-20 lg:-mt-[104px]" aria-label="Check availability">
+    <div class="mb-3 flex items-center justify-between lg:hidden">
+      <p class="text-lg font-semibold">Choose your dates</p>
+      <button type="button" class="flex h-11 w-11 items-center justify-center" data-booking-close aria-label="Close">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <form id="booking-form" class="flex flex-col lg:min-h-[104px] lg:flex-row lg:items-stretch lg:border-t lg:border-ps-line lg:bg-ps-ground/75 lg:px-12 lg:backdrop-blur-lg">
+      <div class="hidden lg:flex lg:flex-[1_1_260px] lg:flex-col lg:justify-center lg:gap-1 lg:py-[18px] lg:pr-8">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Book direct</span>
+        <span class="flex items-center gap-2 text-base font-semibold">
+          <svg class="h-[18px] w-[18px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Best rate guaranteed
+        </span>
+      </div>
+      <label for="booking-checkin" class="flex flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_170px] lg:border-b-0 lg:border-l lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Check-in</span>
+        <input id="booking-checkin" name="checkin" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none">
+      </label>
+      <label for="booking-checkout" class="flex flex-col justify-center gap-1 border-b border-ps-line px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_170px] lg:border-b-0 lg:border-l lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Check-out</span>
+        <input id="booking-checkout" name="checkout" type="date" min="" required class="h-8 min-w-0 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none">
+      </label>
+      <label for="booking-guests" class="flex flex-col justify-center gap-1 px-3 py-3 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-white lg:flex-[1_1_150px] lg:border-l lg:border-ps-line lg:px-7 lg:py-[18px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-ps-muted">Guests</span>
+        <select id="booking-guests" name="guests" class="h-8 border-0 bg-transparent p-0 text-base font-semibold text-white focus:outline-none [&_option]:bg-ps-ground [&_option]:text-white">
+          <option value="1">1 adult</option>
+          <option value="2" selected>2 adults</option>
+          <option value="3">3 adults</option>
+          <option value="4">4 adults</option>
+        </select>
+      </label>
+      <div class="mt-4 lg:mt-0 lg:flex lg:items-center lg:py-[18px] lg:pl-7">
+        <button type="submit" class="ps-btn min-h-[56px] w-full lg:min-h-[64px] lg:w-auto lg:px-10">Check availability</button>
+      </div>
+    </form>
+    <p class="mt-3 flex items-center justify-center gap-2 text-sm text-ps-muted lg:hidden">
+      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      Best rate guaranteed when you book on our official website
+    </p>
+  </div>
 
-  <!-- TRIP ADVISOR // REVIEWS SECTION -->
+  <!-- DATOS PRÁCTICOS -->
+  <section aria-label="Practical information" class="px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] grid-cols-2 gap-x-4 gap-y-[22px] border-b border-ps-line py-7 md:grid-cols-3 md:gap-6 md:py-9 xl:grid-cols-6">
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Check-in</dt>
+        <dd class="text-base font-semibold md:text-lg">From 3:00 PM</dd>
+      </div>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>Check-out</dt>
+        <dd class="text-base font-semibold md:text-lg">Until 12:00 PM</dd>
+      </div>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 9V7"/><path d="M10 7h4"/></svg>Reception</dt>
+        <dd class="text-base font-semibold md:text-lg">Open 24 hours</dd>
+      </div>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Breakfast</dt>
+        <dd class="text-base font-semibold md:text-lg">Buffet included</dd>
+      </div>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Rooms</dt>
+        <dd class="text-base font-semibold md:text-lg">26 across 8 floors</dd>
+      </div>
+      <div class="flex flex-col gap-1 md:gap-1.5">
+        <dt class="flex items-center gap-2 text-[13px] text-ps-muted md:gap-2.5"><svg class="h-[18px] w-[18px] shrink-0 text-white md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Aeroparque airport</dt>
+        <dd class="text-base font-semibold md:text-lg">15–20 min by taxi</dd>
+      </div>
+    </dl>
+  </section>
 
-  <section aria-labelledby="reviews-title" class="bg-white px-6 py-16 lg:px-12">
-    <div class="mx-auto max-w-6xl">
-      <div class="text-center">
-        <h2 id="reviews-title" class="text-2xl font-semibold uppercase tracking-[0.2em] text-gray-900 md:text-3xl">
-          What Our Guests Say
-        </h2>
-        <p class="mt-4 text-base text-gray-600">
-          Real experiences from travelers who stayed with us
-        </p>
+  <!-- HABITACIONES -->
+  <section id="rooms" aria-labelledby="rooms-title" class="ps-claro bg-ps-ground py-12 md:px-12 md:pb-24 md:pt-[104px]">
+    <div class="mx-auto max-w-[1344px]">
+      <div class="flex flex-col gap-3 px-5 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6 md:px-0">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">Rooms &amp; suites</p>
+          <h2 id="rooms-title" class="ps-h2">Our rooms</h2>
+        </div>
+        <p class="ps-lead md:max-w-[24em]">26 rooms and suites. All rates include buffet breakfast.</p>
       </div>
 
-      <div class="mt-10 relative">
-        <button type="button" class="reviews-carousel__control reviews-carousel__control--prev" aria-label="Opinión anterior" data-reviews-prev>
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"><path d="M12.78 4.22a.75.75 0 0 0-1.06 0L6.94 8.94a1.5 1.5 0 0 0 0 2.12l4.78 4.72a.75.75 0 1 0 1.06-1.06L8.5 10l4.28-4.22a.75.75 0 0 0 0-1.06z"/></svg>
-        </button>
-        <button type="button" class="reviews-carousel__control reviews-carousel__control--next" aria-label="Opinión siguiente" data-reviews-next>
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"><path d="M7.22 4.22a.75.75 0 0 1 1.06 0L13.06 8.94a1.5 1.5 0 0 1 0 2.12l-4.78 4.72a.75.75 0 1 1-1.06-1.06L11.5 10 7.22 5.78a.75.75 0 0 1 0-1.06z"/></svg>
-        </button>
-        <div class="overflow-hidden" data-reviews-carousel>
-          <div class="flex items-stretch gap-6 transition-transform duration-500 ease-out" data-reviews-track>
-            <!-- REVIEW 1 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“Excelente”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  This was probably the best hotel experience I've ever had, and I have been to many places. The hotel was clean, quiet, and convenient. The staff was beyond accomdating to the point that we were shaking hands and calling each other by our first names on a daily basis. The location was perfect. I will recommend you and be returning in the future. Love you guys! All the best from the USA.
-                </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Michael · USA · April 2026</span>
-                <span class="text-black" aria-label="Hotels.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586 100" class="h-6 w-auto" fill="currentColor" aria-hidden="true">
-                      <path d="M29.1302 45.5748C29.1302 44.915 28.6664 44.4512 28.0066 44.4512H20.2095C19.5498 44.4512 19.0859 44.915 19.0859 45.5748V53.3718C19.0859 54.0316 19.5498 54.4954 20.2095 54.4954H28.0066C28.6664 54.4954 29.1302 54.0316 29.1302 53.3718V45.5748Z"/>
-                      <path d="M37.4712 61.7129H45.2683C45.8881 61.7129 46.3919 62.2167 46.3919 62.8365V70.6336C46.3919 71.2533 45.8881 71.7571 45.2683 71.7571H37.4712C36.8515 71.7571 36.3477 71.2533 36.3477 70.6336V62.8365C36.3477 62.2167 36.8515 61.7129 37.4712 61.7129Z"/>
-                      <path d="M37.4712 44.4473H45.2683C45.8881 44.4473 46.3919 44.9511 46.3919 45.5708V53.3679C46.3919 53.9877 45.8881 54.4915 45.2683 54.4915H37.4712C36.8515 54.4915 36.3477 53.9877 36.3477 53.3679V45.5708C36.3477 44.9511 36.8515 44.4473 37.4712 44.4473Z"/>
-                      <path d="M66.3716 29.5889C66.3716 26.7579 64.0844 24.4668 61.2495 24.4668H22.8438C22.0681 24.4668 21.6043 24.7387 21.1365 25.2425L13.4153 32.9636C12.8316 33.5474 13.2194 34.3991 14.0751 34.3991H56.4753V76.7993C56.4753 77.6509 57.327 78.0388 57.9107 77.459L65.6319 69.7379C66.0957 69.2741 66.4076 68.8062 66.4076 68.0305V29.5889H66.3676H66.3716Z"/>
-                      <path d="M271.341 54.4037C272.477 46.4547 276.635 41.2526 284.928 41.2526C293.221 41.2526 297.887 46.1108 298.559 54.4037H271.345H271.341ZM285.116 33.4355C271.869 33.4355 261.293 42.968 261.293 58.7861C261.293 74.6042 270.633 84.8963 286.356 84.8963C295.408 84.8963 302.937 80.8938 307.608 75.3639C307.896 75.076 307.992 74.7921 307.992 74.5082C307.992 74.2243 307.896 73.9364 307.608 73.6525L303.221 69.3621C302.933 69.0742 302.65 68.9783 302.366 68.9783C302.082 68.9783 301.794 69.1702 301.51 69.4581C297.891 73.3646 293.217 76.7034 286.452 76.7034C276.587 76.7034 271.837 70.6257 271.113 61.8369H307.708C308.375 61.8369 308.851 61.3571 308.851 60.6934V58.7901C308.843 44.3075 300.078 33.4395 285.116 33.4395"/>
-                      <path d="M158.654 16.7578H150.745C150.077 16.7578 149.601 17.2376 149.601 17.9014V44.5874H117.485V17.9014C117.485 17.2336 117.009 16.7578 116.342 16.7578H108.433C107.765 16.7578 107.289 17.2376 107.289 17.9014V82.3293C107.289 82.9971 107.765 83.4729 108.433 83.4729H116.342C117.009 83.4729 117.485 82.9931 117.485 82.3293V53.5481H149.601V82.3293C149.601 82.9971 150.077 83.4729 150.745 83.4729H158.654C159.322 83.4729 159.797 82.9931 159.797 82.3293V17.8974C159.797 17.2296 159.318 16.7578 158.654 16.7578Z"/>
-                      <path d="M326.195 16.7578H318.569C317.902 16.7578 317.426 17.2376 317.426 17.9014V82.3293C317.426 82.9971 317.902 83.4729 318.569 83.4729H326.195C326.862 83.4729 327.338 82.9931 327.338 82.3293V17.8974C327.338 17.2296 326.858 16.7578 326.195 16.7578Z"/>
-                      <path d="M194.677 76.5155C184.101 76.5155 178.475 68.6064 178.475 59.1699C178.475 49.7335 184.097 41.8244 194.677 41.8244C205.257 41.8244 210.879 49.7335 210.879 59.1699C210.879 68.6064 205.253 76.5155 194.677 76.5155ZM194.677 33.4355C180.478 33.4355 168.566 43.9196 168.566 59.1659C168.566 74.4123 180.478 84.9003 194.677 84.9003C208.875 84.9003 220.787 74.4162 220.787 59.1659C220.787 43.9156 208.875 33.4355 194.677 33.4355Z"/>
-                      <path d="M486.458 76.5155C475.882 76.5155 470.256 68.6064 470.256 59.1699C470.256 49.7335 475.878 41.8244 486.458 41.8244C497.038 41.8244 502.66 49.7335 502.66 59.1699C502.66 68.6064 497.034 76.5155 486.458 76.5155ZM486.458 33.4355C472.259 33.4355 460.348 43.9196 460.348 59.1659C460.348 74.4123 472.259 84.9003 486.458 84.9003C500.657 84.9003 512.568 74.4162 512.568 59.1659C512.568 43.9156 500.657 33.4355 486.458 33.4355Z"/>
-                      <path d="M255.475 34.9584H243.087V18.8404C243.087 17.9847 242.232 17.6009 241.656 18.1727L233.931 25.8938C233.451 26.3736 233.171 26.8454 233.171 27.6091V34.9584H224.694C224.027 34.9584 223.551 35.4382 223.551 36.102V41.44C223.551 42.1077 224.027 42.5835 224.694 42.5835H233.179V68.6018C233.179 77.6544 237.47 83.4683 246.522 83.4683H255.479C256.143 83.4683 256.622 82.9925 256.622 82.3247V76.227C256.622 75.5592 256.147 75.0834 255.479 75.0834H249.189C244.707 75.0834 243.091 73.368 243.091 68.8897V42.5875H255.483C256.147 42.5875 256.626 42.1117 256.626 41.444V36.106C256.626 35.4382 256.147 34.9664 255.479 34.9664"/>
-                      <path d="M395.819 73.7881H388.174C387.414 73.7881 386.898 74.2919 386.898 75.0636V82.1969C386.898 82.9567 387.414 83.4725 388.174 83.4725H395.819C396.579 83.4725 397.095 82.9687 397.095 82.1969V75.0636C397.095 74.2919 396.591 73.7881 395.819 73.7881Z"/>
-                      <path d="M357.739 54.3998C349.926 52.6845 346.111 51.349 346.111 47.3464C346.111 43.3439 349.542 41.2487 355.643 41.2487C361.077 41.2487 365.364 43.7278 368.131 47.6343C368.515 48.2061 369.178 48.3021 369.754 47.9222L374.9 44.5835C375.472 44.1996 375.66 43.6318 375.28 42.9641C371.086 36.5785 364.416 33.4316 355.743 33.4316C346.019 33.4316 337.35 38.1939 337.35 47.9182C337.35 57.6426 345.451 60.7814 356.123 63.0726C363.648 64.692 366.987 65.9315 366.987 70.4138C366.987 74.8962 363.081 77.0873 356.503 77.0873C349.926 77.0873 345.255 74.4203 342.208 69.938C341.825 69.2703 341.161 69.0823 340.489 69.5542L335.343 73.1768C334.771 73.5607 334.675 74.1284 334.959 74.7002C338.866 81.2778 346.111 84.9924 356.403 84.9924C369.266 84.9924 376.704 78.6068 376.704 70.03C376.704 60.0177 368.415 56.7749 357.743 54.3958"/>
-                      <path d="M451.115 68.4587L446.724 66.4035L446.688 66.3875L446.653 66.3755C446.373 66.2715 446.097 66.2195 445.829 66.2195C445.365 66.2195 444.501 66.3875 443.942 67.507C441.051 73.4968 436.664 76.2798 430.139 76.2798C421.358 76.2798 415.684 69.6103 415.684 59.2901C415.684 48.97 421.222 42.0166 430.139 42.0166C436.612 42.0166 440.627 44.4676 443.558 50.2055C443.946 51.0812 444.669 51.605 445.501 51.605C445.773 51.605 446.049 51.545 446.317 51.433L446.337 51.425L446.357 51.4171L450.855 49.2619C451.791 48.85 452.554 47.8424 451.915 46.239C450.571 42.8482 447.96 39.7654 444.565 37.5502C440.599 34.9632 435.613 33.5957 430.147 33.5957C423.345 33.5957 417.136 36.1827 412.653 40.877C408.155 45.5912 405.676 52.1648 405.676 59.3861C405.676 74.0566 415.968 84.7046 430.147 84.7046C445.801 84.7046 451.055 74.4485 452.294 71.3056C452.75 70.0941 452.274 68.9585 451.119 68.4667L451.115 68.4587Z"/>
-                      <path d="M581.266 38.4176C578.295 35.3827 573.925 33.7793 568.623 33.7793C561.926 33.7793 557.127 37.298 554.516 41.0326C552.341 37.282 547.991 33.7793 541.357 33.7793C536.587 33.7793 532.848 35.3547 530.005 38.5735V37.286C530.005 36.0904 529.106 35.1908 527.91 35.1908H522.552C521.357 35.1908 520.457 36.0904 520.457 37.286V81.3815C520.457 82.5771 521.357 83.4767 522.552 83.4767H528.098C529.294 83.4767 530.193 82.5771 530.193 81.3815V53.4599C530.193 50.0172 531.081 42.0162 539.286 42.0162C545.344 42.0162 548.287 45.207 548.287 51.7686V81.3855C548.287 82.5811 549.186 83.4807 550.382 83.4807H555.836C557.031 83.4807 557.931 82.5811 557.931 81.3855V53.4639C557.931 49.1895 559.151 42.0202 567.308 42.0202C573.253 42.0202 576.024 45.1191 576.024 51.7726V81.3895C576.024 82.5851 576.924 83.4847 578.119 83.4847H583.573C584.769 83.4847 585.669 82.5851 585.669 81.3895V50.645C585.669 45.5949 584.145 41.3685 581.266 38.4296V38.4176Z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
-
-            <!-- REVIEW 2 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“A Jewel in the Middle of Palermo”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  All aspects of Palo Santo Hotel were exceptional, including location, comfort of room, food, and walkable things to do; however, what really made Palo Santo special was the staff! Everyone we met, 
-                  from the Front Desk to the restaurant and those in between, was knowledgeable, helpful and fun to talk with. 
-                  <strong>We would definitely stay here when we travel to Buenos Aires again.</strong>
-                </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Richard · Maryland USA · November 2025</span>
-                <span class="text-black" aria-label="TripAdvisor">
-                  <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512.2 320.2" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                      <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="128.4" cy="191.9" r="31.9"/>
-                      <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="384.4" cy="191.9" r="31.9"/>
-                      <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
-
-            <!-- REVIEW 2 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“Cool hotel in heart of Palermo”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  Fantastic hotel in the heart of Palermo, perfectly placed to explore the cool local area and the rest of BA. Super friendly & helpful staff and stylish comfortable rooms
-                  </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Danny · USA · November 2025</span>
-                <span class="text-black" aria-label="TripAdvisor">
-                  <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512.2 320.2" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                      <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="128.4" cy="191.9" r="31.9"/>
-                      <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="384.4" cy="191.9" r="31.9"/>
-                      <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
-
-            <!-- REVIEW 3 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <!-- media estrella <svg class="h-5 w-5" viewBox="0 0 20 20" fill="url(#reviews-star-half)"><defs><linearGradient id="reviews-star-half" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="50%" stop-color="#facc15"/><stop offset="50%" stop-color="#facc15"/><stop offset="50.1%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffffff"/></linearGradient></defs><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>--> 
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“Best service”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  Great views. Nicest service. So safe and helpful. Even loaned us cash when we messed up on how we ordered our uber initially.
-                  Don’t worry, we immediately paid them back when once they gave us directions to a western union and tips on how to get the best exchange rate. 
-                  Would definitely stay here again and recommend to my friends. They also have great recommendations for places to eat, to walk around and entertainment.
-                </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Jessica · New York USA · November 2025</span>
-                <span class="text-black" aria-label="TripAdvisor">
-                  <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512.2 320.2" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                      <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="128.4" cy="191.9" r="31.9"/>
-                      <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="384.4" cy="191.9" r="31.9"/>
-                      <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
-
-            <!-- REVIEW 4 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“A huge step up from other hotels at the same price point”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  Chic and modern hotel with all the amenities you want. 
-                  Large and well appointed rooms with modern conveniences. Extended my reservation from 2 nights to 5 nights. Helpful and attentive staff. 
-                  If I come back to BA I will definitely stay here again.
-                </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Lawrence · Massachussets USA · September 2025</span>
-                <span class="text-black" aria-label="TripAdvisor">
-                  <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512.2 320.2" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                      <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="128.4" cy="191.9" r="31.9"/>
-                      <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="384.4" cy="191.9" r="31.9"/>
-                      <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
-
-            <!-- REVIEW 5 -->
-            <article class="reviews-carousel__slide">
-              <div>
-                <div class="flex items-center gap-1 text-yellow-400" aria-hidden="true">
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5 7.63 7.05l-5.68.41 4.33 3.74-1.3 5.51L10 13.82l5.02 2.89-1.3-5.51 4.33-3.74-5.68-.41L10 1.5z"/></svg>
-                  <span class="sr-only">5 de 5 estrellas</span>
-                </div>
-                <h3 class="mt-4 text-lg font-semibold text-gray-900">“A fantastic hotel in the city!”</h3>
-                <p class="mt-3 text-base font-normal leading-relaxed text-gray-700">
-                  This hotel far exceeded our expectations! The hotel staff was incredibly welcoming and made us feel right at home. 
-                  The room was very spacious and we loved the balcony overlooking the courtyard. 
-                  The location is perfect with several restaurants within a quick walking distance. 
-                  I highly recommend Palo Santo Hotel for your trip to Buenos Aires!
-                </p>
-              </div>
-              <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-                <span class="font-thin text-gray-700">Jessica · July 2025</span>
-                <span class="text-black" aria-label="TripAdvisor">
-                  <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 512.2 320.2" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                      <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="128.4" cy="191.9" r="31.9"/>
-                      <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                      <circle cx="384.4" cy="191.9" r="31.9"/>
-                      <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                    </svg>
-                  </a>
-                </span>
-              </div>
-            </article>
+      <div class="mt-7 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mt-14 md:grid md:scroll-px-0 md:grid-cols-2 md:gap-x-8 md:gap-y-16 md:overflow-visible md:px-0 md:pb-0">
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="Bright Premium Room with a King bed" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
+          </picture>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Premium</h3>
+            <a href="/en/premium-rooms" class="ps-link">View room<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
           </div>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">35 m² · 377 sq ft</li>
+            <li class="ps-tag">King or 2 Singles</li>
+            <li class="ps-tag">Floors 1–3 &amp; 8</li>
+            <li class="ps-tag">Private balcony</li>
+          </ul>
+          <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">Our most popular rooms: spacious, comfortable and filled with natural light, ideal for couples, friends or families. The two 8th-floor rooms connect; they have no balcony but open directly onto the rooftop.</p>
+        </article>
+
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.avif 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.avif 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Deluxe-Sillon-011a-thumbnail-400.webp 400w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-800.webp 800w, /images/thumbnails/Deluxe-Sillon-011a-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <img src="/images-source/thumbnails/Deluxe-Sillon-011a-thumbnail.jpg" alt="Eames lounge chair in a Deluxe Room" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
+          </picture>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Deluxe</h3>
+            <a href="/en/deluxe-rooms" class="ps-link">View room<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">35 m² · 377 sq ft</li>
+            <li class="ps-tag">King bed</li>
+            <li class="ps-tag">Floors 4–6</li>
+            <li class="ps-tag">Private balcony</li>
+          </ul>
+          <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">For exceptional comfort and quiet elegance: on the upper floors, filled with natural light, with designer furniture and an oversized shower.</p>
+        </article>
+
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.avif 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.avif 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/TerraceSuite-IMG_4382-thumbnail-400.webp 400w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-800.webp 800w, /images/thumbnails/TerraceSuite-IMG_4382-thumbnail-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <img src="/images-source/thumbnails/TerraceSuite-IMG_4382-thumbnail.jpg" alt="Terrace Suite bed with the doors open onto the private terrace" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
+          </picture>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Terrace Suite</h3>
+            <a href="/en/terrace-suite" class="ps-link">View suite<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">55 m² · 590 sq ft</li>
+            <li class="ps-tag">Two rooms</li>
+            <li class="ps-tag">6th floor</li>
+            <li class="ps-tag">Private terrace</li>
+          </ul>
+          <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">An oasis above the Buenos Aires skyline: contemporary luxury and exceptional comfort, with beautiful natural woods, iconic design pieces and state-of-the-art amenities.</p>
+        </article>
+
+        <article class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.avif 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.webp 1200w" sizes="(min-width: 768px) 46vw, 290px">
+            <img src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg" alt="Palo Santo Suite living room seen from the bedroom, through the sliding wooden door" width="1448" height="1086" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover md:aspect-video">
+          </picture>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <h3 class="text-[26px] leading-[1.12] tracking-[-0.02em] md:text-[32px] md:leading-[1.1]">Palo Santo Suite</h3>
+            <a href="/en/palo-santo-suite" class="ps-link">View suite<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+          <ul aria-label="Features" class="flex flex-wrap gap-1.5 md:gap-2">
+            <li class="ps-tag">65 m² · 700 sq ft</li>
+            <li class="ps-tag">Separate living area</li>
+            <li class="ps-tag">7th floor</li>
+            <li class="ps-tag">Whirlpool bath</li>
+          </ul>
+          <p class="text-[15px] leading-relaxed text-ps-muted md:text-base">The hotel's most generous space: a King bed, separate living area, two 4K Smart TVs, private balconies and sweeping views of the Palermo skyline.</p>
+        </article>
+      </div>
+
+      <div class="mt-6 flex px-5 md:mt-12 md:px-0">
+        <a href="/en/rooms" class="ps-link">View all rooms<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVA DIRECTA: recuadro carbón sobre el fondo claro -->
+  <section aria-labelledby="direct-title" class="ps-claro bg-ps-ground px-3 pb-12 md:px-12 md:pb-[104px]">
+    <div class="ps-oscuro bg-ps-ground px-6 py-8 md:px-20 md:py-20">
+      <div class="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-24">
+        <div class="flex flex-col items-start gap-5 md:gap-[26px] lg:flex-1">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ps-muted">Book direct</p>
+          <h2 id="direct-title" class="text-balance text-[30px] leading-[1.12] tracking-[-0.02em] md:text-[50px] md:leading-[1.06] md:tracking-[-0.025em]">Book on our website: always the best available rate.</h2>
+          <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid px-5 text-xs tracking-[0.12em] md:px-8 md:text-[13px] md:tracking-[0.16em]">See rates &amp; availability</a>
+        </div>
+        <div class="flex flex-col gap-5 lg:flex-1">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-ps-muted">Our rates always include</h3>
+          <ul class="grid gap-x-8 gap-y-3.5 text-[15px] sm:grid-cols-2 md:gap-y-[22px] md:text-[17px]">
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Buffet breakfast</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg>High-speed WiFi</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>Complimentary bikes</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Printed Palo Santo city guide</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10"/><path d="M18 7v10"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6 12h12"/></svg>Gym, 9 AM to 9 PM</li>
+            <li class="flex items-start gap-3.5"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>Rooftop with hot tub, in summer</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- VERDE -->
+  <section id="green" aria-labelledby="green-title" class="ps-oscuro flex flex-col bg-ps-ground lg:flex-row lg:items-stretch">
+    <picture class="block lg:flex-1">
+      <source type="image/avif" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.avif 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.avif 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.avif 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+      <source type="image/webp" srcset="/images/thumbnails/FachadaP-IMG_2480-thumbnail-400.webp 400w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-800.webp 800w, /images/thumbnails/FachadaP-IMG_2480-thumbnail-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+      <img src="/images-source/thumbnails/FachadaP-IMG_2480-thumbnail.jpg" alt="The hotel façade covered by its vertical gardens" width="1200" height="800" loading="lazy" decoding="async" class="h-[340px] w-full object-cover md:h-[560px] lg:h-full lg:min-h-[740px]">
+    </picture>
+    <div class="flex flex-col gap-4 px-5 pb-12 pt-7 md:gap-[26px] md:px-12 md:pb-[72px] md:pt-14 lg:flex-1 lg:justify-center lg:py-16 lg:pl-[88px] lg:pr-12">
+      <p class="ps-eyebrow">A unique green architecture</p>
+      <h2 id="green-title" class="ps-h2 max-w-[11em]">Argentina's first urban green hotel</h2>
+      <p class="ps-lead max-w-[32em]">Built to LEED standards, Palo Santo is a responsible hotel: vertical gardens insulate the building and absorb CO₂, backed by an environmental program that covers the many aspects of sustainable building.</p>
+      <dl class="mt-1 grid grid-cols-3 gap-3 border-t border-ps-line pt-[18px] md:mt-1.5 md:gap-6 md:pt-7">
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">height of our two vertical gardens</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">28 m</dd>
+        </div>
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">plants in our vertical gardens</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">900+</dd>
+        </div>
+        <div class="flex flex-col-reverse justify-end gap-1.5 md:gap-2.5">
+          <dt class="text-xs leading-snug text-ps-muted md:text-sm">sustainable building standards</dt>
+          <dd class="text-[32px] leading-none tracking-[-0.03em] md:text-[56px]">LEED</dd>
+        </div>
+      </dl>
+      <a href="/en/green" class="ps-link self-start">Learn more about our sustainability commitment<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    </div>
+  </section>
 
- 
+  <!-- SERVICIOS -->
+  <section id="services" aria-labelledby="services-title" class="ps-claro bg-ps-ground py-12 md:px-12 md:pb-24 md:pt-[104px]">
+    <div class="mx-auto max-w-[1344px]">
+      <div class="flex flex-col gap-3 px-5 md:gap-[18px] md:px-0">
+        <p class="ps-eyebrow">Services</p>
+        <h2 id="services-title" class="ps-h2 max-w-[13em]">Boutique luxury, down to the last detail</h2>
+      </div>
 
-<!-- REWARDS -->
+      <div class="mt-6 flex snap-x snap-mandatory scroll-px-5 gap-3.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mt-12 md:grid md:scroll-px-0 md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.avif 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.avif 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Desayuno-Salon-IMG_2233-1000-400.webp 400w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-800.webp 800w, /images/thumbnails/Desayuno-Salon-IMG_2233-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/thumbnails/Desayuno-Salon-IMG_2233-1000.jpeg" alt="Breakfast room with wooden tables and the buffet" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
+          </picture>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Buffet breakfast</strong>
+            <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">Artisan breads, pastries, fresh fruit and hot dishes, with vegetarian and vegan options. Monday to Friday 7:00–10:30 AM; weekends and holidays until 11:00 AM.</span>
+          </figcaption>
+        </figure>
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.avif 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.avif 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-400.webp 400w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-800.webp 800w, /images/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/thumbnails/Rooftop-Piscina-Hidromasaje-IMG_6151-1000.jpg" alt="Rooftop with a shallow pool, hot tub and a vertical garden" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
+          </picture>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Rooftop with hot tub</strong>
+            <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">A shallow pool, sun deck and hot tub on the 8th floor. Best enjoyed in warm weather, usually from December to March.</span>
+          </figcaption>
+        </figure>
+        <figure class="flex w-[290px] shrink-0 snap-start flex-col gap-3 md:w-auto md:gap-5">
+          <picture>
+            <source type="image/avif" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.avif 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.avif 1200w" sizes="(min-width: 768px) 31vw, 290px">
+            <source type="image/webp" srcset="/images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-800.webp 800w, /images/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000-1200.webp 1200w" sizes="(min-width: 768px) 31vw, 290px">
+            <img src="/images-source/hotel/PaloSanto-Bicicletas-Guest-Bikes-DSC_0299-2000.jpg" alt="Complimentary bikes for hotel guests" width="2000" height="1333" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover">
+          </picture>
+          <figcaption class="flex flex-col gap-1 md:gap-2">
+            <strong class="text-[21px] font-normal leading-tight tracking-[-0.01em] md:text-2xl">Complimentary bikes</strong>
+            <span class="text-[15px] leading-relaxed text-ps-muted md:text-base">Palermo Hollywood and Soho, the Bosques de Palermo, or Recoleta along Avenida del Libertador: all within an easy ride.</span>
+          </figcaption>
+        </figure>
+      </div>
 
-  <section class="px-6 pb-20 lg:px-10">
-    <div class="mx-auto max-w-6xl">
-        <div class="mt-10 grid gap-2 md:gap-3 lg:gap-4 grid-cols-3 md:grid-cols-6 justify-items-center">
-          <div>
-            <img src="/images-source/Certificado-Excelencia-2026.png" alt="TripAdvisor 2026" width="105" height="100">
-          </div>
-          <div>
-            <img src="/images-source/Certificado-Excelencia-2025.png" alt="TripAdvisor 2025" width="105" height="100">
-          </div>
-          <div class="flex items-center justify-center">
-            <img src="/images-source/tchotel_bob_2024_L.png" alt="TripAdvisor 2024" width="105" height="100">
-          </div>
-          <div class="hidden md:flex items-center justify-center">
-            <img src="/images-source/Certificado-Excelencia-2023.png" alt="TripAdvisor 2023" width="105" height="100">
-          </div>
-          <div class="hidden md:flex items-center justify-center">
-            <img src="/images-source/Certificado-Excelencia-2021.png" alt="TripAdvisor 2021" width="105" height="100">
-          </div>
-          <div class="hidden md:flex items-center justify-center">
-            <img src="/images-source/Certificado-Excelencia-2020.png" alt="TripAdvisor 2020" width="105" height="100">
-          </div>
+      <ul aria-label="Other services" class="mt-6 flex flex-wrap gap-2 px-5 md:mt-12 md:gap-2.5 md:px-0">
+        <li class="ps-tag-outline">Gym on the 7th floor, 9 AM–9 PM</li>
+        <li class="ps-tag-outline">In-room massages</li>
+        <li class="ps-tag-outline">Laundry service</li>
+        <li class="ps-tag-outline">Luggage storage</li>
+        <li class="ps-tag-outline">Airport transfers</li>
+      </ul>
+      <div class="mt-4 flex px-5 md:mt-6 md:px-0">
+        <a href="/en/hotel" class="ps-link">See all services<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
       </div>
     </div>
   </section>
-</div>
 
-<div class="lg:ml-72">
-<!-- FOOTER -->
-  <div class="w-full min-h-[18vh] flex items-center justify-center bg-black px-6 pt-10 md:pt-12">
-          <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
-              <div class="w-full text-3xl md:text-5xl font-bold">
-                  <h4 class="footer-heading">A true boutique experience in Palermo</h4>
-              </div>
-              <!-- Nombre y dirección + redes -->
-              <div class="flex flex-col items-start mt-12 gap-6 w-full">
-                  <div class="flex flex-col gap-1 w-full">
-                      <h3 class="font-semibold uppercase text-2xl text-left">Palo santo</h3>
-                      <div class="uppercase text-gray-400 text-left flex-1 leading-tight">
-                          <div class="lg:hidden">
-                              <p>Bonpland 2275 - Palermo</p>
-                              <p>Buenos Aires - ARGENTINA</p>
-                          </div>
-                          <p class="hidden lg:block whitespace-nowrap">Bonpland 2275 - Palermo - Buenos Aires - ARGENTINA</p>
-                      </div>
-                  </div>
-                  <div class="flex w-full flex-row space-x-8 items-center justify-start">
-                        <!-- WhatsApp -->
-                        <a href="https://api.whatsapp.com/send?phone=5491163572374"
-                          target="_blank" rel="noopener noreferrer"
-                          class="icon-social"
-                          aria-label="WhatsApp">
-                          <?xml version="1.0" encoding="UTF-8"?>
-                            <svg width="360" height="362" viewBox="0 0 360 362" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M307.546 52.5655C273.709 18.685 228.706 0.0171895 180.756 0C81.951 0 1.53846 80.404 1.50408 179.235C1.48689 210.829 9.74646 241.667 25.4319 268.844L0 361.736L95.0236 336.811C121.203 351.096 150.683 358.616 180.679 358.625H180.756C279.544 358.625 359.966 278.212 360 179.381C360.017 131.483 341.392 86.4547 307.546 52.5741V52.5655ZM180.756 328.354H180.696C153.966 328.346 127.744 321.16 104.865 307.589L99.4242 304.358L43.034 319.149L58.0834 264.168L54.5423 258.53C39.6304 234.809 31.749 207.391 31.7662 179.244C31.8006 97.1036 98.6334 30.2707 180.817 30.2707C220.61 30.2879 258.015 45.8015 286.145 73.9665C314.276 102.123 329.755 139.562 329.738 179.364C329.703 261.513 262.871 328.346 180.756 328.346V328.354ZM262.475 216.777C257.997 214.534 235.978 203.704 231.869 202.209C227.761 200.713 224.779 199.966 221.796 204.452C218.814 208.939 210.228 219.029 207.615 222.011C205.002 225.002 202.389 225.372 197.911 223.128C193.434 220.885 179.003 216.158 161.891 200.902C148.578 189.024 139.587 174.362 136.975 169.875C134.362 165.389 136.7 162.965 138.934 160.739C140.945 158.728 143.412 155.505 145.655 152.892C147.899 150.279 148.638 148.406 150.133 145.423C151.629 142.432 150.881 139.82 149.764 137.576C148.646 135.333 139.691 113.287 135.952 104.323C132.316 95.5909 128.621 96.777 125.879 96.6309C123.266 96.5019 120.284 96.4762 117.293 96.4762C114.302 96.4762 109.454 97.5935 105.346 102.08C101.238 106.566 89.6691 117.404 89.6691 139.441C89.6691 161.478 105.716 182.785 107.959 185.776C110.202 188.767 139.544 234.001 184.469 253.408C195.153 258.023 203.498 260.782 210.004 262.845C220.731 266.257 230.494 265.776 238.212 264.624C246.816 263.335 264.71 253.786 268.44 243.326C272.17 232.866 272.17 223.893 271.053 222.028C269.936 220.163 266.945 219.037 262.467 216.794L262.475 216.777Z" fill="white"/>
-                            </svg>
-                        </a>
-                          <!-- Facebook -->
-                          <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener noreferrer" class="icon-social">
-                              <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z" fill="white"/>
-                              </svg>                            
-                          </a>
-                          
-                          <!-- Instagram -->
-                          <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener noreferrer" class="icon-social">
-                              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white"/>
-                                  <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white"/>
-                                  <path d="M11.6821 2.06975C11.5279 1.67138 11.2921 1.30961 10.99 1.00759C10.6879 0.705576 10.326 0.469972 9.92759 0.31586C9.46135 0.140842 8.9688 0.0462069 8.4709 0.0359839C7.82919 0.00799638 7.62594 0 5.99867 0C4.37139 0 4.16282 -6.70254e-08 3.52643 0.0359839C3.02891 0.0456842 2.53671 0.140339 2.07108 0.31586C1.67255 0.469792 1.31059 0.705333 1.00844 1.00737C0.706289 1.30941 0.47061 1.67127 0.316526 2.06975C0.141474 2.53595 0.0470554 3.02855 0.0373167 3.52643C0.00866281 4.16748 0 4.37072 0 5.99867C0 7.62594 -4.96485e-09 7.83319 0.0373167 8.4709C0.0473123 8.96935 0.14127 9.46113 0.316526 9.92825C0.471042 10.3266 0.70695 10.6883 1.00918 10.9903C1.3114 11.2923 1.6733 11.5279 2.07175 11.6821C2.5365 11.8642 3.0289 11.9656 3.52777 11.982C4.16948 12.01 4.37272 12.0187 6 12.0187C7.62728 12.0187 7.83585 12.0187 8.47223 11.982C8.97008 11.9719 9.46262 11.8775 9.92892 11.7028C10.3272 11.5483 10.689 11.3125 10.9911 11.0104C11.2932 10.7083 11.529 10.3466 11.6835 9.94825C11.8587 9.48179 11.9527 8.99 11.9627 8.49156C11.9913 7.85051 12 7.64727 12 6.01932C12 4.39138 12 4.18481 11.9627 3.54709C11.9549 3.04216 11.86 2.54237 11.6821 2.06975ZM10.8705 8.42159C10.8662 8.80562 10.7961 9.18608 10.6633 9.54642C10.5632 9.80555 10.41 10.0409 10.2135 10.2372C10.017 10.4336 9.78162 10.5867 9.52243 10.6866C9.16608 10.8188 8.78967 10.8889 8.4096 10.8938C7.77654 10.9231 7.59796 10.9305 5.97468 10.9305C4.35007 10.9305 4.18414 10.9305 3.53909 10.8938C3.15921 10.8892 2.78298 10.8191 2.42692 10.6866C2.16683 10.5873 1.93048 10.4345 1.73316 10.2381C1.53584 10.0417 1.38194 9.80605 1.28143 9.54642C1.15045 9.18995 1.08039 8.81398 1.07419 8.43425C1.04554 7.8012 1.03887 7.62261 1.03887 5.99933C1.03887 4.37539 1.03887 4.20946 1.07419 3.56375C1.0785 3.17993 1.14859 2.7997 1.28143 2.43958C1.48467 1.91382 1.90116 1.5 2.42692 1.29876C2.78316 1.16691 3.15928 1.09682 3.53909 1.09151C4.17281 1.06286 4.35073 1.05486 5.97468 1.05486C7.59862 1.05486 7.76522 1.05486 8.4096 1.09151C8.7897 1.09609 9.16617 1.1662 9.52243 1.29876C9.7816 1.39889 10.017 1.55211 10.2134 1.74858C10.4099 1.94504 10.5631 2.18041 10.6633 2.43958C10.7942 2.79606 10.8643 3.17203 10.8705 3.55175C10.8992 4.18547 10.9065 4.36339 10.9065 5.98734C10.9065 7.61062 10.9065 7.78521 10.8778 8.42226H10.8705V8.42159Z" fill="white"/>
-                              </svg>    
-
-                          <!-- TripAdvisor -->
-                          <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html"
-                            target="_blank" rel="noopener noreferrer"
-                            class="cursor-pointer hover:opacity-80 transition"
-                            aria-label="TripAdvisor">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.2 320.2" width="20" height="20" fill="white">
-                              <path d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z"/>
-                              <circle cx="128.4" cy="191.9" r="31.9"/>
-                              <path d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z"/>
-                              <circle cx="384.4" cy="191.9" r="31.9"/>
-                              <path d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z"/>
-                            </svg>
-                          </a>
-
-                          
-
-                          <!-- Google Maps -->
-                          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener noreferrer" class="cursor-pointer text-gray-600 hover:text-white" aria-label="Google Maps">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
-                            </svg>
-                          </a>
-
-                      </div>
-                  </div>
-                  <p class="uppercase w-full text-center my-12 text-gray-600">Copyright © 2025 Palo Santo Hotel</p>
-          </div>
+  <!-- UBICACIÓN -->
+  <div class="ps-claro bg-ps-ground px-3 pb-12 md:px-12 md:pb-[104px]">
+  <section id="location" aria-labelledby="location-title" class="flex flex-col border border-ps-line bg-ps-alt p-3 pb-7 md:p-0 lg:flex-row lg:items-stretch">
+    <picture class="block lg:order-2 lg:flex-[1_1_460px]">
+      <source type="image/avif" srcset="/images/thumbnails/Cafe-Palermo-edit-400.avif 400w, /images/thumbnails/Cafe-Palermo-edit-800.avif 800w, /images/thumbnails/Cafe-Palermo-edit-1200.avif 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
+      <source type="image/webp" srcset="/images/thumbnails/Cafe-Palermo-edit-400.webp 400w, /images/thumbnails/Cafe-Palermo-edit-800.webp 800w, /images/thumbnails/Cafe-Palermo-edit-1200.webp 1200w" sizes="(min-width: 1024px) 45vw, 100vw">
+      <img src="/images-source/thumbnails/Cafe-Palermo-edit.jpg" alt="A café on a Palermo street corner" width="1000" height="667" loading="lazy" decoding="async" class="h-[180px] w-full object-cover md:h-[420px] lg:h-full lg:min-h-[560px]">
+    </picture>
+    <div class="flex flex-col gap-3.5 px-2.5 pt-4 md:gap-6 md:px-16 md:py-[72px] lg:flex-[1_1_520px] lg:justify-center">
+      <p class="ps-eyebrow">Location</p>
+      <h2 id="location-title" class="ps-h2">In the heart of Palermo Hollywood</h2>
+      <address class="flex items-center gap-3 text-[15px] font-semibold not-italic md:text-lg">
+        <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        Bonpland 2275, C1425FWC Buenos Aires
+      </address>
+      <ul class="grid grid-cols-2 gap-x-4 md:gap-x-8">
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Subway Line D, Plaza Italia</span><strong class="text-[15px] font-semibold md:text-lg">5 blocks</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Microcentro &amp; Obelisco</span><strong class="text-[15px] font-semibold md:text-lg">20 min by subway</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Aeroparque (AEP)</span><strong class="text-[15px] font-semibold md:text-lg">15–20 min by taxi</strong></li>
+        <li class="flex flex-col gap-0.5 border-t border-ps-line py-3 md:py-4"><span class="text-xs text-ps-muted md:text-sm">Ezeiza Airport (EZE)</span><strong class="text-[15px] font-semibold md:text-lg">50 min by taxi</strong></li>
+      </ul>
+      <div class="flex flex-col gap-1 md:flex-row md:flex-wrap md:items-center md:gap-x-7">
+        <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="ps-btn-solid">Get directions</a>
+        <a href="/en/palermo" class="ps-link justify-center md:justify-start">More about Palermo</a>
+        <a href="/en/contact-us" class="ps-link justify-center md:justify-start">Arrange a transfer</a>
+      </div>
+    </div>
+  </section>
   </div>
+
+  <!-- OPINIONES -->
+  <section aria-labelledby="reviews-title" class="ps-oscuro bg-ps-ground px-5 py-12 md:px-12 md:pb-24 md:pt-[104px]">
+    <h2 id="reviews-title" class="sr-only">What our guests say</h2>
+    <div class="mx-auto flex max-w-[1240px] flex-col items-center gap-7 md:gap-[52px]">
+      <figure class="flex flex-col items-center gap-4 text-center md:gap-[26px]">
+        <svg class="h-4 w-24 md:h-[18px] md:w-[104px]" viewBox="0 0 110 20" fill="currentColor" role="img" aria-label="5 out of 5 stars"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        <blockquote class="max-w-[20em] text-balance text-[27px] leading-[1.22] tracking-[-0.015em] md:text-[46px] md:leading-[1.14] md:tracking-[-0.025em]">“This was probably the best hotel experience I've ever had, and I have been to many places.”</blockquote>
+        <figcaption class="text-xs font-semibold uppercase tracking-[0.14em] text-ps-muted md:text-[13px] md:tracking-[0.16em]">Michael · USA · April 2026 · Tripadvisor</figcaption>
+      </figure>
+
+      <div class="grid w-full gap-4 md:grid-cols-2 md:gap-6">
+        <figure class="flex flex-col gap-3 border border-ps-line bg-ps-panel p-6 md:gap-3.5 md:p-[34px]">
+          <p class="text-xl font-semibold md:text-[22px]">“A Jewel in the Middle of Palermo”</p>
+          <blockquote class="text-[15px] leading-relaxed text-ps-body md:text-base">All aspects of Palo Santo Hotel were exceptional, including location, comfort of room, food, and walkable things to do; however, what really made Palo Santo special was the staff! Everyone we met, from the Front Desk to the restaurant and those in between, was knowledgeable, helpful and fun to talk with.</blockquote>
+          <figcaption class="text-[13px] text-ps-muted md:text-sm">Richard · Maryland USA · November 2025</figcaption>
+        </figure>
+        <figure class="flex flex-col gap-3 border border-ps-line bg-ps-panel p-6 md:gap-3.5 md:p-[34px]">
+          <p class="text-xl font-semibold md:text-[22px]">“Cool hotel in heart of Palermo”</p>
+          <blockquote class="text-[15px] leading-relaxed text-ps-body md:text-base">Fantastic hotel in the heart of Palermo, perfectly placed to explore the cool local area and the rest of BA. Super friendly &amp; helpful staff and stylish comfortable rooms</blockquote>
+          <figcaption class="text-[13px] text-ps-muted md:text-sm">Danny · USA · November 2025</figcaption>
+        </figure>
+      </div>
+
+      <ul aria-label="Tripadvisor Travelers' Choice awards" class="flex flex-wrap items-center justify-center gap-3 md:gap-5">
+        <li><img src="/images/badges/travelers-choice-2026.png" alt="Travelers' Choice 2026" width="130" height="152" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2025.png" alt="Travelers' Choice 2025" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/tchotel_bob_2024_L.png" alt="Travelers' Choice Best of the Best 2024" width="140" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2023.png" alt="Travelers' Choice 2023" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2021.png" alt="Travelers' Choice 2021" width="134" height="190" loading="lazy" class="ps-badge"></li>
+        <li><img src="/images-source/Certificado-Excelencia-2020.png" alt="Travelers' Choice 2020" width="134" height="190" loading="lazy" class="ps-badge"></li>
+      </ul>
+      <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="ps-link">Read more reviews on Tripadvisor</a>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq" aria-labelledby="faq-title" class="ps-claro bg-ps-ground px-5 py-12 md:px-12 md:pb-24 md:pt-[104px]">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-6 lg:flex-row lg:gap-24">
+      <div class="flex flex-col items-start gap-3 md:gap-5 lg:w-[34%]">
+        <p class="ps-eyebrow">Before you travel</p>
+        <h2 id="faq-title" class="ps-h2">Frequently asked questions</h2>
+        <p class="ps-lead">Answers to the most common questions, to help you plan every detail of your stay.</p>
+        <a href="/en/hotel#faq" class="ps-link">See all FAQs<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="ps-faq flex flex-col border-b border-ps-line lg:flex-1">
+        <details class="border-t border-ps-line" open>
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">What time are check-in and check-out?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Check-in is from 3:00 PM and check-out is until 12:00 PM (noon). Late check-out until 6:00 PM is available for an additional fee, subject to availability.</p>
+        </details>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">My flight arrives early — can I check in before 3:00 PM?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Early check-in depends on same-day availability. To guarantee early access to your room, we recommend booking the previous night. You can always leave your luggage at Reception.</p>
+        </details>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Can you arrange airport transfers?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">Yes. We can coordinate private transfers to and from Buenos Aires airports. We only need your flight details.</p>
+        </details>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Do you have parking?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">We do not have on-site parking, but there are several private garages within 400 meters of the hotel.</p>
+        </details>
+        <details class="border-t border-ps-line">
+          <summary class="flex min-h-[68px] items-center justify-between gap-4 py-3 text-base font-semibold md:gap-6 md:py-6 md:text-[19px]">Do you accept pets?<span aria-hidden="true" class="flex h-[34px] w-[34px] shrink-0 items-center justify-center border border-ps-rule md:h-10 md:w-10"><svg class="h-3.5 w-3.5 md:h-4 md:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path class="ps-faq__v" d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary>
+          <p class="max-w-[40em] pb-5 text-[15px] leading-relaxed text-ps-muted md:pb-[26px] md:text-base">We do not accept pets.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="ps-oscuro bg-ps-ground px-5 py-12 md:px-12 md:py-[104px]">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-6 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10">
+      <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
+  <div class="mx-auto flex max-w-[1344px] flex-col gap-8 md:gap-14">
+    <div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:gap-x-16 md:gap-y-10">
+      <div class="flex items-start gap-5 md:contents">
+        <img src="/images-source/logo-blanco.png" alt="Palo Santo" width="213" height="324" loading="lazy" class="h-auto w-[50px] shrink-0 md:w-16">
+        <div class="flex flex-col gap-1.5 text-sm leading-relaxed text-white/80 md:flex-[1_1_240px] md:gap-2.5 md:text-[15px]">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Palo Santo Hotel</p>
+          <address class="not-italic">Bonpland 2275, Palermo Hollywood<br>C1425FWC Buenos Aires, Argentina</address>
+          <a href="tel:+541152806100" class="hover:underline">+54 11 5280 6100</a>
+          <a href="https://api.whatsapp.com/send?phone=5491163572374" target="_blank" rel="noopener" class="hover:underline">WhatsApp +54 9 11 6357-2374</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-6 text-[15px] text-white/80 md:contents">
+        <nav aria-label="Hotel" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Hotel</p>
+          <a href="/en/hotel" class="hover:underline">Services</a>
+          <a href="/en/about-us" class="hover:underline">About us</a>
+          <a href="/en/green" class="hover:underline">Green</a>
+          <a href="/en/restaurant" class="hover:underline">Breakfast &amp; restaurant</a>
+          <a href="/en/photo-gallery" class="hover:underline">Photos</a>
+        </nav>
+        <nav aria-label="Rooms" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Rooms</p>
+          <a href="/en/premium-rooms" class="hover:underline">Premium</a>
+          <a href="/en/deluxe-rooms" class="hover:underline">Deluxe</a>
+          <a href="/en/terrace-suite" class="hover:underline">Terrace Suite</a>
+          <a href="/en/palo-santo-suite" class="hover:underline">Palo Santo Suite</a>
+        </nav>
+        <nav aria-label="Information" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Information</p>
+          <a href="/en/palermo" class="hover:underline">Location</a>
+          <a href="/en/hotel#faq" class="hover:underline">FAQ</a>
+          <a href="https://blog.palosantohotel.com/en" class="hover:underline">Blog</a>
+          <a href="/en/contact-us" class="hover:underline">Contact</a>
+        </nav>
+        <nav aria-label="Social" class="flex flex-col gap-1.5 md:flex-[1_1_150px] md:gap-2.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white md:text-xs">Follow us</p>
+          <a href="https://www.instagram.com/palosantohotel/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
+          <a href="https://www.facebook.com/palosantohotel" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g312741-d6609346-Reviews-Palo_Santo_Hotel-Buenos_Aires_Capital_Federal_District.html" target="_blank" rel="noopener" class="hover:underline">Tripadvisor</a>
+          <a href="https://maps.app.goo.gl/KGQymRt7L3hWRikA6" target="_blank" rel="noopener" class="hover:underline">Google Maps</a>
+        </nav>
+      </div>
+    </div>
+    <div class="flex justify-between gap-4 border-t border-ps-line pt-5 text-[13px] text-ps-muted md:pt-6 md:text-sm">
+      <span>© <span data-year>2026</span> Palo Santo Hotel</span>
+      <a href="/" lang="es" class="hover:text-white">Español</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BARRA DE RESERVA FIJA (mobile y tablet) -->
+<div class="fixed inset-x-0 bottom-0 z-40 flex items-center gap-2 border-t border-ps-line bg-ps-ground/80 pb-[max(12px,env(safe-area-inset-bottom))] pl-5 pr-3 pt-3 text-white backdrop-blur-lg lg:hidden">
+  <button type="button" class="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 text-left" data-booking-open aria-controls="booking-panel" aria-expanded="false">
+    <svg class="h-[22px] w-[22px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+    <span class="flex flex-col leading-tight">
+      <span class="text-[15px] font-semibold">Choose your dates</span>
+      <span class="text-xs text-ps-muted">Best rate guaranteed</span>
+    </span>
+  </button>
+  <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn min-h-[52px] px-5 text-xs">Book now</a>
 </div>
 
 <!-- Google Analytics 4 -->
@@ -1115,7 +727,7 @@
 
       gtag('js', new Date());
       // GA4
-      gtag('config', 'G-4NYRERNK0M', { 
+      gtag('config', 'G-4NYRERNK0M', {
         cookie_domain: 'palosantohotel.com'
       });
 
