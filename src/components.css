@@ -44,11 +44,12 @@
 
 /* Tipografía: Avenir Next (institucional) se usa directo donde está instalada
    (Mac, iPhone, iPad). En el resto se descarga Nunito Sans (licencia OFL),
-   la alternativa libre más parecida. Solo se usan los pesos 400, 600 y 700. */
+   la alternativa libre más parecida. Se usan los pesos 400, 600 y 700, y el 200
+   para los números grandes de la galería (el archivo variable cubre de 200 a 1000). */
 @font-face {
   font-family: "Nunito Sans";
   src: url("../fonts/nunito-sans-latin-wght.woff2") format("woff2");
-  font-weight: 400 700;
+  font-weight: 200 700;
   font-style: normal;
   font-display: swap;
 }
@@ -231,6 +232,12 @@
 
   .ps-faq details[open] .ps-faq__v {
     display: none;
+  }
+
+  /* Visor de la galería de fotos: foco visible en blanco, como el resto de los botones sobre carbón */
+  [data-visor] :focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
   }
 
   /* Premios de Tripadvisor: los originales son negros; sobre el verde se muestran en blanco */

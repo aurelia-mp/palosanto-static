@@ -422,123 +422,298 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Galería de fotos
+// Galería de fotos: visor a pantalla completa, por secciones (rooftop, suites, gimnasio,
+// habitaciones y planta baja). La foto se ve entera, sin bajadas ni velos encima.
+// Los datos salen del JSON #galeria-datos de la página. Los botones con data-visor-abrir
+// lo abren en una sección, y con data-visor-foto, en una foto puntual. El hash
+// (#fotos-terrace-suite) permite enlazar una sección, y el botón "atrás" del celular lo cierra.
 document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('[data-filter]');
-  const items = document.querySelectorAll('.photo-item');
-  const removablePositionClasses = [
-    'md:col-start-1',
-    'md:col-start-2',
-    'md:col-start-3',
-    'md:col-start-4',
-    'md:row-start-1',
-    'md:row-start-2',
-    'md:row-start-3',
-    'md:row-start-4',
-    'md:row-start-5',
-    'md:row-start-6',
-    'md:row-start-7',
-    'md:row-start-8',
-    'md:row-start-9',
-    'md:row-start-10',
-    'md:row-start-11',
-    'md:row-start-12',
-    'md:row-start-13',
-    'md:row-start-14',
-    'md:row-start-15',
-    'md:row-start-16',
-    'md:row-start-17',
-    'md:row-start-18',
-    'md:row-start-19',
-    'md:row-start-20',
-  ];
-  const layoutPositions = {
-    pileta: ['md:col-start-1', 'md:row-start-1'],
-    deluxe: ['md:col-start-3', 'md:row-start-1'],
-    jardin: ['md:col-start-3', 'md:row-start-2'],
-    pasillos: ['md:col-start-4', 'md:row-start-1'],
-    'suite-8032': ['md:col-start-1', 'md:row-start-3'],
-    'bath-8147': ['md:col-start-1', 'md:row-start-4'],
-    'cama-8119': ['md:col-start-2', 'md:row-start-3'],
-    'bath-8250': ['md:col-start-2', 'md:row-start-4'],
-    'jardin-3054': ['md:col-start-3', 'md:row-start-3'],
-    'fachada-verde': ['md:col-start-1', 'md:row-start-5'],
-    'lobby-16': ['md:col-start-3', 'md:row-start-5'],
-    'jardin-0825': ['md:col-start-4', 'md:row-start-5'],
-    'terrace-5255': ['md:col-start-1', 'md:row-start-7'],
-    'suite-cama-5323': ['md:col-start-1', 'md:row-start-8'],
-    'lobby-2509': ['md:col-start-2', 'md:row-start-7'],
-    'lobby-escultura': ['md:col-start-4', 'md:row-start-7'],
-    'premium-8336': ['md:col-start-1', 'md:row-start-9'],
-    'premium-7987': ['md:col-start-3', 'md:row-start-9'],
-    'suite-8343': ['md:col-start-1', 'md:row-start-11'],
-    'fachada-psanto05': ['md:col-start-2', 'md:row-start-11'],
-    'deluxe-8266': ['md:col-start-1', 'md:row-start-12'],
-    'desayuno-2345': ['md:col-start-2', 'md:row-start-12'],
-    'desayuno-2250': ['md:col-start-3', 'md:row-start-11'],
-    'palier-5190': ['md:col-start-1', 'md:row-start-13'],
-    'resto-byn-2139': ['md:col-start-3', 'md:row-start-13'],
-    'bikes-0299': ['md:col-start-1', 'md:row-start-15'],
-    'resto-8187': ['md:col-start-1', 'md:row-start-16'],
-    'desayuno-dic23': ['md:col-start-2', 'md:row-start-15'],
-    'resto-byn-2113': ['md:col-start-4', 'md:row-start-15'],
-    'bath-vertical-8318': ['md:col-start-1', 'md:row-start-19'],
-    'fachada-205': ['md:col-start-2', 'md:row-start-19'],
-    'rooftop-3142': ['md:col-start-2', 'md:row-start-20'],
-    'gimnasio-1744': ['md:col-start-3', 'md:row-start-19'],
-  };
+  const visor = document.querySelector('[data-visor]');
+  const fuente = document.getElementById('galeria-datos');
+  if (!visor || !fuente) return;
 
-  const setActiveButton = activeButton => {
-    buttons.forEach(btn => {
-      const isActive = btn === activeButton;
-      btn.classList.toggle('border', isActive);
-      btn.classList.toggle('border-white', isActive);
-      btn.classList.toggle('border-none', !isActive);
+  let datos;
+  try {
+    datos = JSON.parse(fuente.textContent);
+  } catch (error) {
+    return;
+  }
+  const secciones = datos.secciones || [];
+  if (!secciones.length) return;
+
+  const textos = datos.textos || {};
+  const prefijo = `#${datos.hash || 'fotos'}-`;
+  const uno = selector => visor.querySelector(selector);
+  const ui = {
+    piso: uno('[data-visor-piso]'),
+    titulo: uno('[data-visor-titulo]'),
+    seccion: Array.from(visor.querySelectorAll('[data-visor-seccion]')),
+    escena: uno('[data-visor-escena]'),
+    img: uno('[data-visor-img]'),
+    avif: uno('[data-visor-avif]'),
+    webp: uno('[data-visor-webp]'),
+    contador: uno('[data-visor-contador]'),
+    link: uno('[data-visor-link]'),
+    linkTexto: uno('[data-visor-link-texto]'),
+    linkCorto: uno('[data-visor-link-corto]'),
+    tira: uno('[data-visor-tira]'),
+    segmentos: uno('[data-visor-segmentos]'),
+    secAnterior: uno('[data-visor-seccion-anterior]'),
+    secSiguiente: uno('[data-visor-seccion-siguiente]'),
+    anteriorCorto: uno('[data-visor-anterior-corto]'),
+    anteriorNombre: uno('[data-visor-anterior-nombre]'),
+    siguienteCorto: uno('[data-visor-siguiente-corto]'),
+    siguienteNombre: uno('[data-visor-siguiente-nombre]'),
+    cerrar: uno('[data-visor-cerrar]'),
+  };
+  const formato = (plantilla, valores) => (plantilla || '').replace(/\{(\w+)\}/g, (_, clave) => valores[clave] ?? '');
+  const dos = n => String(n).padStart(2, '0');
+  const srcset = (foto, ext) => foto.ws.map(w => `${foto.b}-${w}.${ext} ${w}w`).join(', ');
+  const nombre = seccion => `${seccion.piso} · ${seccion.titulo}`;
+  const hashDe = k => prefijo + secciones[k].id;
+
+  let s = 0;
+  let i = 0;
+  let abierto = false;
+  let conHistorial = false;
+  let foco = null;
+  let tiraDe = -1;
+
+  // Un segmento por sección: muestra en qué parte del recorrido está y permite saltar
+  const segmentos = secciones.map((seccion, k) => {
+    const boton = document.createElement('button');
+    boton.type = 'button';
+    boton.className = 'flex h-7 min-w-0 flex-1 items-center';
+    boton.title = nombre(seccion);
+    boton.setAttribute('aria-label', nombre(seccion));
+    boton.innerHTML = '<span class="block h-0.5 w-full bg-white/30"></span>';
+    boton.addEventListener('click', () => mostrar(k, 0));
+    ui.segmentos.appendChild(boton);
+    return boton;
+  });
+
+  // Miniaturas de la sección actual
+  const armarTira = () => {
+    const seccion = secciones[s];
+    ui.tira.textContent = '';
+    ui.tira.setAttribute('aria-label', formato(textos.tira, { titulo: seccion.titulo }));
+    seccion.fotos.forEach((foto, k) => {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'shrink-0 outline outline-2 outline-offset-2 outline-transparent opacity-50 transition-opacity hover:opacity-100';
+      boton.setAttribute('aria-label', foto.alt);
+      const miniatura = document.createElement('img');
+      miniatura.src = `${foto.b}-${foto.ws[0]}.webp`;
+      miniatura.alt = '';
+      miniatura.width = foto.w;
+      miniatura.height = foto.h;
+      miniatura.loading = 'lazy';
+      miniatura.decoding = 'async';
+      miniatura.className = 'h-11 w-auto max-w-none md:h-[60px]';
+      boton.appendChild(miniatura);
+      boton.addEventListener('click', () => mostrar(s, k));
+      ui.tira.appendChild(boton);
     });
+    tiraDe = s;
   };
 
-  const applyFilter = filter => {
-    items.forEach(item => {
-      const tags = item.dataset.tags
-        .split(',')
-        .map(t => t.trim().toLowerCase());
+  // Deja descargada la foto que sigue, en el mismo formato que eligió el navegador
+  const precargar = (ns, ni) => {
+    const foto = secciones[ns] && secciones[ns].fotos[ni];
+    if (!foto) return;
+    const img = new Image();
+    img.sizes = '100vw';
+    img.srcset = srcset(foto, /\.avif(\?|$)/.test(ui.img.currentSrc) ? 'avif' : 'webp');
+  };
 
-      if (filter === 'all' || tags.includes(filter)) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
+  const pintar = () => {
+    const seccion = secciones[s];
+    const foto = seccion.fotos[i];
+    const anterior = secciones[s - 1];
+    const siguiente = secciones[s + 1];
+
+    ui.piso.textContent = seccion.piso;
+    ui.titulo.textContent = seccion.titulo;
+    const numero = formato(textos.seccion, { n: s + 1, total: secciones.length });
+    ui.seccion.forEach(el => {
+      el.textContent = numero;
+    });
+
+    // La foto completa (object-contain); aparece con un fundido cuando termina de cargar
+    const grande = `${foto.b}-${foto.ws[foto.ws.length - 1]}.webp`;
+    if (ui.img.getAttribute('src') !== grande) {
+      ui.img.classList.add('opacity-0');
+      ui.avif.srcset = srcset(foto, 'avif');
+      ui.webp.srcset = srcset(foto, 'webp');
+      ui.img.src = grande;
+    }
+    ui.img.alt = foto.alt;
+    ui.contador.textContent = `${dos(i + 1)} / ${dos(seccion.fotos.length)}`;
+
+    ui.link.classList.toggle('hidden', !seccion.link);
+    if (seccion.link) {
+      ui.link.href = seccion.link.href;
+      ui.linkTexto.textContent = seccion.link.texto;
+      ui.linkCorto.textContent = seccion.link.corto;
+    }
+
+    ui.secAnterior.disabled = !anterior;
+    ui.secSiguiente.disabled = !siguiente;
+    ui.anteriorCorto.textContent = anterior ? anterior.corto : textos.primera;
+    ui.anteriorNombre.textContent = anterior ? nombre(anterior) : textos.primera;
+    ui.siguienteCorto.textContent = siguiente ? siguiente.corto : textos.ultima;
+    ui.siguienteNombre.textContent = siguiente ? nombre(siguiente) : textos.ultima;
+
+    segmentos.forEach((boton, k) => {
+      const actual = k === s;
+      boton.setAttribute('aria-current', actual ? 'true' : 'false');
+      boton.firstChild.className = actual ? 'block h-[3px] w-full bg-white' : 'block h-0.5 w-full bg-white/30';
+    });
+
+    if (tiraDe !== s) armarTira();
+    Array.from(ui.tira.children).forEach((boton, k) => {
+      const actual = k === i;
+      boton.setAttribute('aria-current', actual ? 'true' : 'false');
+      boton.classList.toggle('opacity-50', !actual);
+      boton.classList.toggle('outline-white', actual);
+      boton.classList.toggle('outline-transparent', !actual);
+      if (actual) {
+        ui.tira.scrollTo({ left: boton.offsetLeft - (ui.tira.clientWidth - boton.offsetWidth) / 2, behavior: 'smooth' });
       }
     });
+
+    if (i < seccion.fotos.length - 1) precargar(s, i + 1);
+    else precargar((s + 1) % secciones.length, 0);
   };
 
-  const applyLayout = isAll => {
-    items.forEach(item => {
-      removablePositionClasses.forEach(cls => item.classList.remove(cls));
-
-      if (!isAll) return;
-
-      const key = (item.dataset.layout || '').trim().toLowerCase();
-      const classes = layoutPositions[key];
-      if (!classes) return;
-      classes.forEach(cls => item.classList.add(cls));
-    });
+  const ir = (ns, ni) => {
+    s = (ns + secciones.length) % secciones.length;
+    i = Math.max(0, Math.min(ni, secciones[s].fotos.length - 1));
+    pintar();
   };
 
-  buttons.forEach(button => {
-    button.classList.add('border-none');
+  const mostrar = (ns, ni) => {
+    const antes = s;
+    ir(ns, ni);
+    if (abierto && s !== antes) history.replaceState(history.state, '', hashDe(s));
+  };
 
-    button.addEventListener('click', () => {
-      const filter = (button.dataset.filter || '').toLowerCase();
-      applyFilter(filter);
-      applyLayout(filter === 'all');
-      setActiveButton(button);
+  // Las flechas recorren todas las fotos: al terminar una sección pasan a la siguiente
+  const paso = delta => {
+    const fotos = secciones[s].fotos;
+    if (delta > 0) {
+      if (i < fotos.length - 1) mostrar(s, i + 1);
+      else mostrar(s + 1, 0);
+    } else if (i > 0) {
+      mostrar(s, i - 1);
+    } else {
+      const previa = (s - 1 + secciones.length) % secciones.length;
+      mostrar(previa, secciones[previa].fotos.length - 1);
+    }
+  };
+
+  const abrir = (ns, ni, desdeHash = false) => {
+    if (!abierto) foco = document.activeElement;
+    ir(ns, ni);
+    if (!abierto) {
+      abierto = true;
+      visor.classList.remove('hidden');
+      visor.classList.add('flex');
+      document.documentElement.classList.add('overflow-hidden');
+      ui.cerrar.focus();
+    }
+    if (!desdeHash) {
+      history.pushState({ visor: true }, '', hashDe(s));
+      conHistorial = true;
+    }
+  };
+
+  const cerrar = (desdeHistorial = false) => {
+    if (!abierto) return;
+    abierto = false;
+    visor.classList.add('hidden');
+    visor.classList.remove('flex');
+    document.documentElement.classList.remove('overflow-hidden');
+    if (!desdeHistorial) {
+      if (conHistorial) history.back();
+      else history.replaceState(null, '', location.pathname + location.search);
+    }
+    conHistorial = false;
+    if (foco && document.contains(foco)) foco.focus({ preventScroll: true });
+    foco = null;
+  };
+
+  const seccionDelHash = () => {
+    if (!location.hash.startsWith(prefijo)) return -1;
+    const id = decodeURIComponent(location.hash.slice(prefijo.length));
+    return secciones.findIndex(seccion => seccion.id === id);
+  };
+
+  document.querySelectorAll('[data-visor-abrir]').forEach(boton => {
+    boton.addEventListener('click', event => {
+      const k = secciones.findIndex(seccion => seccion.id === boton.dataset.visorAbrir);
+      if (k < 0) return;
+      event.preventDefault();
+      const n = secciones[k].fotos.findIndex(foto => foto.id === boton.dataset.visorFoto);
+      abrir(k, Math.max(0, n));
     });
   });
 
-  if (buttons.length) {
-    const first = buttons[0];
-    applyLayout(true);
-    applyFilter((first.dataset.filter || 'all').toLowerCase());
-    setActiveButton(first);
-  }
+  ui.cerrar.addEventListener('click', () => cerrar());
+  visor.querySelectorAll('[data-visor-anterior]').forEach(boton => boton.addEventListener('click', () => paso(-1)));
+  visor.querySelectorAll('[data-visor-siguiente]').forEach(boton => boton.addEventListener('click', () => paso(1)));
+  ui.secAnterior.addEventListener('click', () => {
+    if (s > 0) mostrar(s - 1, 0);
+  });
+  ui.secSiguiente.addEventListener('click', () => {
+    if (s < secciones.length - 1) mostrar(s + 1, 0);
+  });
+  ui.img.addEventListener('load', () => ui.img.classList.remove('opacity-0'));
+  ui.img.addEventListener('error', () => ui.img.classList.remove('opacity-0'));
+
+  document.addEventListener('keydown', event => {
+    if (!abierto) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      cerrar();
+    } else if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      paso(event.key === 'ArrowRight' ? 1 : -1);
+    } else if (event.key === 'Tab') {
+      // Mientras el visor está abierto, el foco no sale de él
+      const enfocables = Array.from(visor.querySelectorAll('a[href], button:not([disabled])')).filter(el => el.offsetParent !== null);
+      if (!enfocables.length) return;
+      const primero = enfocables[0];
+      const ultimo = enfocables[enfocables.length - 1];
+      if (event.shiftKey && document.activeElement === primero) {
+        event.preventDefault();
+        ultimo.focus();
+      } else if (!event.shiftKey && document.activeElement === ultimo) {
+        event.preventDefault();
+        primero.focus();
+      }
+    }
+  });
+
+  // En el celular se cambia de foto deslizando el dedo
+  let toque = null;
+  ui.escena.addEventListener('touchstart', event => {
+    toque = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+  }, { passive: true });
+  ui.escena.addEventListener('touchend', event => {
+    if (!toque) return;
+    const dx = event.changedTouches[0].clientX - toque.x;
+    const dy = event.changedTouches[0].clientY - toque.y;
+    toque = null;
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.2) paso(dx < 0 ? 1 : -1);
+  });
+
+  window.addEventListener('popstate', () => {
+    const k = seccionDelHash();
+    if (abierto && k < 0) cerrar(true);
+    else if (!abierto && k >= 0) abrir(k, 0, true);
+  });
+
+  const inicial = seccionDelHash();
+  if (inicial >= 0) abrir(inicial, 0, true);
 });
