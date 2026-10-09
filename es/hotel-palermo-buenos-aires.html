@@ -34,9 +34,9 @@
 <!-- MENÚ MÓVIL -->
 <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Saltar al contenido</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Abrir menú</span>
@@ -57,6 +57,7 @@
 
     <div class="flex items-center justify-end gap-x-[30px]">
       <nav aria-label="Más secciones" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/es/quienes-somos" class="underline-offset-8 hover:underline">Nosotros</a>
         <a href="/es/galeria-de-fotos" class="underline-offset-8 hover:underline">Fotos</a>
         <a href="https://blog.palosantohotel.com/es" class="underline-offset-8 hover:underline">Blog</a>
         <a href="/es/contacto" class="underline-offset-8 hover:underline">Contacto</a>
@@ -66,7 +67,7 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Menú principal móvil" class="flex flex-col px-5 py-4 text-lg">
       <a href="/es/habitaciones" class="flex min-h-[48px] items-center">Habitaciones</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -88,488 +89,234 @@
   </div>
 </header>
 
-<main id="contenido">
+<main id="contenido" class="ps-claro bg-ps-ground">
 
-
-<!-- CONTENIDO PRINCIPAL -->
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-3xl text-center space-y-4">
-    <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Vive Palermo</p>
-    <h1 class="text-4xl font-bold uppercase leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-      Hotel boutique en Palermo, Buenos Aires
-    </h1>
-    <p class="text-base leading-relaxed text-ps-muted md:text-lg">
-      Una estadía boutique sustentable en el corazón de Palermo Hollywood
-    </p>
-  </div>
-
-    <hr class="mx-auto mt-12 max-w-6xl border-0 border-t border-ps-line" />
-
-  <div class="mx-auto mt-10 max-w-6xl md:flex md:items-start md:gap-8 lg:gap-10">
-    <div class="md:w-1/3 md:max-w-xs lg:max-w-sm md:flex-none">
-      <div class="relative" style="padding-right: 2rem; padding-bottom: 2rem;">
-        <div
-          class="absolute left-0 top-0"
-          style="right: 2rem; bottom: 2rem; background-color: #b6c9ad;"
-          aria-hidden="true">
+  <!-- PORTADA -->
+  <section aria-labelledby="titulo" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture><source type="image/avif" srcset="/images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.avif 800w, /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.avif 1200w, /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.avif 1600w" sizes="(max-width: 767px) 216vw, 100vw"><source type="image/webp" srcset="/images/hotel/Grupo-Jardin-IMG_3054-324-2000-800.webp 800w, /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1200.webp 1200w, /images/hotel/Grupo-Jardin-IMG_3054-324-2000-1600.webp 1600w" sizes="(max-width: 767px) 216vw, 100vw"><img src="/images-source/hotel/Grupo-Jardin-IMG_3054-324-2000.jpg" alt="Huéspedes desayunando en el patio del hotel, rodeados de muros verdes" width="2000" height="1333" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[58%_40%] md:object-[50%_35%]"></picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">Vive Palermo</p>
+          <h1 id="titulo" class="max-w-[13em] text-balance text-[40px] leading-none tracking-[-0.03em] [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">Hotel boutique en Palermo, Buenos Aires</h1>
         </div>
-        <picture class="relative z-10 block overflow-hidden shadow-lg" style="transform: translate(2rem, 2rem);">
-          <source
-            srcset="
-              /images/thumbnails/Psanto18-1000px-400.avif 400w,
-              /images/thumbnails/Psanto18-1000px-662.avif 662w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/thumbnails/Psanto18-1000px-400.webp 400w,
-              /images/thumbnails/Psanto18-1000px-662.webp 662w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/thumbnails/Psanto18-1000px.jpg"
-            alt="Interior corridors at Palo Santo Hotel"
-            class="block h-auto w-full"
-            width="1000"
-            height="1333"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 1024px) 22rem, (min-width: 768px) 33vw, 100vw" />
-        </picture>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">Una estadía boutique sustentable en el corazón de Palermo Hollywood.</p>
       </div>
     </div>
+  </section>
 
-    <div class="mt-8 max-w-4xl text-base leading-relaxed text-ps-body md:mt-0 md:min-w-0 md:flex-1 md:text-lg">
-      <p class="pt-4 md:pt-0">
-        Palo Santo es un hotel boutique en <strong><a class="text-white underline decoration-1" href="/es/palermo" target="_blank" rel="noopener noreferrer">Palermo, Buenos Aires</a></strong>, pensado para viajeros que buscan algo más que un lugar donde dormir. Ubicado en las tranquilas calles de Palermo Hollywood, combinamos diseño contemporáneo, espacios generosos y la atención cálida y personalizada que solo un hotel boutique puede ofrecer.</p>
-      <p class="pt-4">
-        Nuestros huéspedes llegan a Buenos Aires por la energía de la ciudad — y vuelven a Palo Santo por la calma. Rodeados de verde, pero a pasos de los mejores restaurantes, cafés y espacios culturales de Palermo, el hotel ofrece el equilibrio perfecto entre refugio y exploración.</p>
-      <p class="pt-4">
-        Lo que realmente nos distingue es nuestra gente. En Palo Santo, el servicio nunca es de manual. Nuestro equipo se toma el tiempo para entender lo que necesitas — ya sea un restaurante que vale la pena reservar, el barrio ideal para un paseo a la tarde, o el mejor momento para visitar una feria cercana. Esta es la experiencia de un hotel boutique en Palermo en su máxima expresión: atenta, sin apuros, y completamente personal.</p>
-      <p class="pt-4">
-        Si buscás un hotel boutique en Buenos Aires con carácter propio, bienvenido a Palo Santo.</p>
-    </div>
-  </div>
+  <!-- DATOS -->
+  <section aria-label="Palo Santo en datos" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] py-1.5 md:grid-cols-3 md:gap-x-8 md:py-0 xl:grid-cols-5">
+      <div class="flex items-center justify-between gap-4 py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Barrio</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Palermo Hollywood</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>Habitaciones</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">26 en 8 pisos</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>Jardines verticales</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">28 m de altura</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>Desayuno</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Buffet incluido</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-t border-ps-line py-3.5 md:flex-col md:items-start md:justify-start md:gap-1.5 md:border-t-0 md:py-8">
+        <dt class="flex items-center gap-2.5 text-sm text-ps-muted md:text-[13px]"><svg class="h-[18px] w-[18px] shrink-0 text-ps-text md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18a6 6 0 0 1 12 0"/><path d="M12 9V7"/><path d="M10 7h4"/></svg>Recepción</dt>
+        <dd class="whitespace-nowrap text-right text-base font-semibold md:text-left md:text-lg">Abierta 24 horas</dd>
+      </div>
+    </dl>
+  </section>
 
-  <hr class="mx-auto mt-12 max-w-6xl border-0 border-t border-ps-line" />
-</section>
-
-<section class="bg-ps-panel px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl">
-    <div class="mx-auto max-w-3xl text-center space-y-4">
-      <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-        Por qué alojarse en Palermo Hollywood
-      </h2>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Para muchos viajeros que buscan un hotel en Palermo Buenos Aires, la elección del barrio es tan determinante como la del alojamiento.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <article class="overflow-hidden border border-ps-line bg-ps-panel shadow-md">
-        <picture class="block">
-          <source
-            srcset="
-              /images/thumbnails/Cafe-Palermo-edit-400.avif 400w,
-              /images/thumbnails/Cafe-Palermo-edit-800.avif 800w,
-              /images/thumbnails/Cafe-Palermo-edit-1000.avif 1000w,
-              /images/thumbnails/Cafe-Palermo-edit-1200.avif 1200w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/thumbnails/Cafe-Palermo-edit-400.webp 400w,
-              /images/thumbnails/Cafe-Palermo-edit-800.webp 800w,
-              /images/thumbnails/Cafe-Palermo-edit-1000.webp 1000w,
-              /images/thumbnails/Cafe-Palermo-edit-1200.webp 1200w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/thumbnails/Cafe-Palermo-edit.jpg"
-            alt="Bohemian lifestyle in Palermo Hollywood"
-            class="h-44 w-full object-cover"
-            width="1000"
-            height="1238"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 768px) 33vw, 100vw" />
-        </picture>
-        <div class="space-y-3 p-6">
-          <h3 class="text-lg font-semibold text-white">Cafés, restaurantes y galerías de arte</h3>
-          <p class="text-sm leading-relaxed text-ps-body">
-            Palermo Hollywood se convirtió en una de las zonas más codiciadas para alojarse. Originalmente conocido por sus estudios de televisión y cine, el barrio evolucionó hacia un distrito vibrante lleno de restaurantes, bares de cócteles, tiendas de diseño y espacios de arte.
-          </p>
+  <!-- INTRODUCCIÓN -->
+  <section class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-12 lg:items-center lg:gap-x-24">
+      <div class="flex flex-col gap-5 md:gap-6 lg:order-last lg:col-span-7">
+        <p class="text-[21px] leading-[1.4] tracking-[-0.01em] md:text-[24px] md:leading-[1.4]">Palo Santo es un hotel boutique en <strong><a href="/es/palermo" class="underline underline-offset-4 decoration-1 hover:decoration-2">Palermo, Buenos Aires</a></strong>, pensado para viajeros que buscan algo más que un lugar donde dormir. Ubicado en las tranquilas calles de Palermo Hollywood, combinamos diseño contemporáneo, espacios generosos y la atención cálida y personalizada que solo un hotel boutique puede ofrecer.</p>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg">
+          <p>Nuestros huéspedes llegan a Buenos Aires por la energía de la ciudad — y vuelven a Palo Santo por la calma. Rodeados de verde, pero a pasos de los mejores restaurantes, cafés y espacios culturales de Palermo, el hotel ofrece el equilibrio perfecto entre refugio y exploración.</p>
+          <p><strong>Lo que realmente nos distingue es nuestra gente</strong>. En Palo Santo, el servicio nunca es de manual. Nuestro equipo se toma el tiempo para entender lo que necesitas — ya sea un restaurante que vale la pena reservar, el barrio ideal para un paseo a la tarde, o el mejor momento para visitar una feria cercana. Esta es la experiencia de un hotel boutique en Palermo en su máxima expresión: atenta, sin apuros, y completamente personal.</p>
+          <p>Si buscas un hotel boutique en Buenos Aires con carácter propio, bienvenido a Palo Santo.</p>
         </div>
-      </article>
+      </div>
+      <div class="lg:col-span-5">
+        <picture class="block sm:max-w-[420px] lg:max-w-none"><source type="image/avif" srcset="/images/thumbnails/Psanto18-1000px-400.avif 400w, /images/thumbnails/Psanto18-1000px-662.avif 662w" sizes="(min-width: 1024px) 34vw, (min-width: 640px) 60vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/Psanto18-1000px-400.webp 400w, /images/thumbnails/Psanto18-1000px-662.webp 662w" sizes="(min-width: 1024px) 34vw, (min-width: 640px) 60vw, 100vw"><img src="/images-source/thumbnails/Psanto18-1000px.jpg" alt="Patio interior con plantas y los pasillos del hotel" width="662" height="1000" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover sm:aspect-[2/3]"></picture>
+      </div>
+    </div>
+  </section>
 
-      <article class="overflow-hidden border border-ps-line bg-ps-panel shadow-md">
-        <picture class="block">
-          <source
-            srcset="
-              /images/thumbnails/paul-french-gallery-1000-400.avif 400w,
-              /images/thumbnails/paul-french-gallery-1000-800.avif 800w,
-              /images/thumbnails/paul-french-gallery-1000-1000.avif 1000w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/thumbnails/paul-french-gallery-1000-400.webp 400w,
-              /images/thumbnails/paul-french-gallery-1000-800.webp 800w,
-              /images/thumbnails/paul-french-gallery-1000-1000.webp 1000w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/thumbnails/paul-french-gallery-1000.jpg"
-            alt="Experience Buenos Aires like a local"
-            class="h-44 w-full object-cover"
-            width="1000"
-            height="667"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 768px) 33vw, 100vw" />
-        </picture>
-        <div class="space-y-3 p-6">
-          <h3 class="text-lg font-semibold text-white">Vive Buenos Aires como un local</h3>
-          <p class="text-sm leading-relaxed text-ps-body">
-            Alojarte en Palermo Hollywood te permite disfrutar la ciudad como un residente. Las calles están llenas de cafés, panaderías y pequeñas boutiques, y muchos de los restaurantes más celebrados de Buenos Aires están a pocos pasos. El barrio ofrece una atmósfera más local que las zonas turísticas tradicionales, sin perder conveniencia para el visitante.
-          </p>
+  <!-- POR QUÉ PALERMO HOLLYWOOD -->
+  <section aria-labelledby="barrio-titulo" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 md:gap-16">
+      <div class="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-20 md:gap-y-6">
+        <div class="flex flex-col gap-3 md:gap-[18px]">
+          <p class="ps-eyebrow">El barrio</p>
+          <h2 id="barrio-titulo" class="ps-h2 max-w-[12em]">Por qué alojarse en Palermo Hollywood</h2>
         </div>
-      </article>
+        <p class="ps-lead md:max-w-[28em]">Para muchos viajeros que buscan un hotel en Palermo Buenos Aires, la elección del barrio es tan determinante como la del alojamiento.</p>
+      </div>
+      <div class="grid gap-12 md:grid-cols-3 md:gap-8">
+        <article class="flex flex-col gap-[18px] md:gap-[22px]">
+          <picture class="block"><source type="image/avif" srcset="/images/thumbnails/Cafe-Palermo-edit-400.avif 400w, /images/thumbnails/Cafe-Palermo-edit-800.avif 800w, /images/thumbnails/Cafe-Palermo-edit-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/Cafe-Palermo-edit-400.webp 400w, /images/thumbnails/Cafe-Palermo-edit-800.webp 800w, /images/thumbnails/Cafe-Palermo-edit-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 100vw"><img src="/images-source/thumbnails/Cafe-Palermo-edit.jpg" alt="Café en una esquina arbolada de Palermo Hollywood" width="1000" height="667" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+          <div class="flex flex-col gap-2 md:gap-2.5">
+            <h3 class="text-[24px] leading-[1.15] tracking-[-0.02em] md:text-[28px]">Cafés, restaurantes y galerías de arte</h3>
+            <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Palermo Hollywood se convirtió en una de las zonas más codiciadas para alojarse. Originalmente conocido por sus estudios de televisión y cine, el barrio evolucionó hacia un distrito vibrante lleno de restaurantes, bares de cócteles, tiendas de diseño y espacios de arte.</p>
+          </div>
+        </article>
+        <article class="flex flex-col gap-[18px] md:gap-[22px]">
+          <picture class="block"><source type="image/avif" srcset="/images/thumbnails/paul-french-gallery-1000-400.avif 400w, /images/thumbnails/paul-french-gallery-1000-800.avif 800w, /images/thumbnails/paul-french-gallery-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/paul-french-gallery-1000-400.webp 400w, /images/thumbnails/paul-french-gallery-1000-800.webp 800w, /images/thumbnails/paul-french-gallery-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 100vw"><img src="/images-source/thumbnails/paul-french-gallery-1000.jpg" alt="Gente en las mesas de un café con un patio lleno de plantas" width="1000" height="666" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+          <div class="flex flex-col gap-2 md:gap-2.5">
+            <h3 class="text-[24px] leading-[1.15] tracking-[-0.02em] md:text-[28px]">Vive Buenos Aires como un local</h3>
+            <p class="text-[15px] leading-relaxed text-ps-body md:text-base">Alojarte en Palermo Hollywood te permite disfrutar la ciudad como un residente. Las calles están llenas de cafés, panaderías y pequeñas boutiques, y muchos de los restaurantes más celebrados de Buenos Aires están a pocos pasos. El barrio ofrece una atmósfera más local que las zonas turísticas tradicionales, sin perder conveniencia para el visitante.</p>
+          </div>
+        </article>
+        <article class="flex flex-col gap-[18px] md:gap-[22px]">
+          <picture class="block"><source type="image/avif" srcset="/images/thumbnails/microcentro-1000-400.avif 400w, /images/thumbnails/microcentro-1000-800.avif 800w, /images/thumbnails/microcentro-1000-1000.avif 1000w" sizes="(min-width: 768px) 31vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/microcentro-1000-400.webp 400w, /images/thumbnails/microcentro-1000-800.webp 800w, /images/thumbnails/microcentro-1000-1000.webp 1000w" sizes="(min-width: 768px) 31vw, 100vw"><img src="/images-source/thumbnails/microcentro-1000.jpg" alt="Calle del centro porteño con el Obelisco al fondo" width="1000" height="666" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+          <div class="flex flex-col gap-2 md:gap-2.5">
+            <h3 class="text-[24px] leading-[1.15] tracking-[-0.02em] md:text-[28px]">Un barrio bien conectado</h3>
+            <p class="text-[15px] leading-relaxed text-ps-body md:text-base">El barrio también conecta fácilmente con el resto de la ciudad. Desde Palermo puedes acceder sin dificultad a:</p>
+            <ul class="mt-1 flex flex-col border-b border-ps-line text-[15px] leading-snug text-ps-body md:text-base">
+              <li class="border-t border-ps-line py-2.5">Recoleta, conocida por sus museos y su arquitectura histórica</li>
+              <li class="border-t border-ps-line py-2.5">San Telmo, famoso por sus ferias callejeras y tiendas de antigüedades</li>
+              <li class="border-t border-ps-line py-2.5">El centro porteño, con la Avenida de Mayo, el Teatro Colón y la Plaza de Mayo</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="flex flex-col items-start gap-6 border-t border-ps-line pt-8 md:flex-row md:items-center md:justify-between md:gap-16 md:pt-10">
+        <p class="max-w-[38em] text-lg leading-relaxed md:text-xl">Para quienes buscan un equilibrio entre cultura, gastronomía y vida nocturna, Palermo Hollywood suele considerarse la mejor zona para hospedarse en Buenos Aires.</p>
+        <a href="/es/palermo" class="ps-btn-line shrink-0 min-h-[48px] px-6 text-xs md:min-h-[52px] md:text-[13px]">Descubre más sobre nuestra ubicación en Palermo<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
 
-      <article class="overflow-hidden border border-ps-line bg-ps-panel shadow-md">
-        <picture class="block">
-          <source
-            srcset="
-              /images/thumbnails/microcentro-1000-400.avif 400w,
-              /images/thumbnails/microcentro-1000-800.avif 800w,
-              /images/thumbnails/microcentro-1000-1000.avif 1000w
-            "
-            type="image/avif" />
-          <source
-            srcset="
-              /images/thumbnails/microcentro-1000-400.webp 400w,
-              /images/thumbnails/microcentro-1000-800.webp 800w,
-              /images/thumbnails/microcentro-1000-1000.webp 1000w
-            "
-            type="image/webp" />
-          <img
-            src="/images-source/thumbnails/microcentro-1000.jpg"
-            alt="Well connected neighborhood in Buenos Aires"
-            class="h-44 w-full object-cover"
-            width="1200"
-            height="800"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 768px) 33vw, 100vw" />
-        </picture>
-        <div class="space-y-3 p-6">
-          <h3 class="text-lg font-semibold text-white">Un barrio bien conectado</h3>
-          <p class="text-sm leading-relaxed text-ps-body">
-            El barrio también conecta fácilmente con el resto de la ciudad. Desde Palermo puedes acceder sin dificultad a:
-          </p>
-          <ul class="space-y-2 pl-5 text-sm leading-relaxed text-ps-body marker:text-ps-muted list-disc">
-            <li>Recoleta, conocida por sus museos y su arquitectura histórica</li>
-            <li>San Telmo, famoso por sus ferias callejeras y tiendas de antigüedades</li>
-            <li>El centro porteño, con la Avenida de Mayo, el Teatro Colón y la Plaza de Mayo</li>
-          </ul>
+  <!-- SUSTENTABILIDAD -->
+  <section aria-labelledby="verde-titulo" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-12 lg:items-center lg:gap-x-24">
+      <div class="lg:col-span-5">
+        <picture class="block sm:max-w-[460px] lg:max-w-none"><source type="image/avif" srcset="/images/hotel/FachadaP-IMG_2285-155-3000px-800.avif 800w, /images/hotel/FachadaP-IMG_2285-155-3000px-1200.avif 1200w" sizes="(min-width: 1024px) 34vw, (min-width: 640px) 60vw, 100vw"><source type="image/webp" srcset="/images/hotel/FachadaP-IMG_2285-155-3000px-800.webp 800w, /images/hotel/FachadaP-IMG_2285-155-3000px-1200.webp 1200w" sizes="(min-width: 1024px) 34vw, (min-width: 640px) 60vw, 100vw"><img src="/images-source/hotel/FachadaP-IMG_2285-155-3000px.jpg" alt="Huésped en un balcón entre las plantas de los jardines verticales" width="2000" height="3000" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover object-[50%_40%] sm:aspect-[3/4]"></picture>
+      </div>
+      <div class="flex flex-col items-start gap-4 md:gap-6 lg:col-span-7">
+        <p class="ps-eyebrow">Sustentabilidad</p>
+        <h2 id="verde-titulo" class="ps-h2 max-w-[13em]">Un hotel boutique sustentable en el corazón de Palermo</h2>
+        <div class="flex max-w-[36em] flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-[17px]">
+          <p>Palo Santo Hotel es más que un hotel boutique en Palermo. Fue concebido como un <strong>oasis urbano sustentable</strong> que integra arquitectura, naturaleza y <a href="/es/verde" class="underline underline-offset-4 decoration-1 hover:decoration-2">hospitalidad responsable</a>.</p>
+          <p>El edificio incorpora jardines verticales que cubren la fachada y los patios interiores, ayudando a regular la temperatura mientras aportan vegetación al entorno urbano. Estos jardines también crean una atmósfera tranquila que los huéspedes perciben desde su llegada.</p>
+          <p>La sustentabilidad forma parte de la filosofía del hotel. La propiedad fue construida siguiendo estándares ambientales internacionales e incluye sistemas eficientes, estrategias de conservación de agua y materiales responsables con el ambiente.</p>
+          <p>En el interior, la luz natural y la vegetación son elementos centrales del diseño, generando un espacio sereno donde los huéspedes pueden relajarse después de recorrer Buenos Aires.</p>
+          <p>Esta combinación de <strong>diseño, sustentabilidad y ubicación</strong> hace de Palo Santo uno de los hoteles boutique más distintivos de Palermo Hollywood.</p>
         </div>
-      </article>
+        <a href="/es/verde" class="ps-btn-line mt-2 min-h-[48px] px-6 text-xs md:min-h-[52px] md:text-[13px]">Conoce más sobre nuestro compromiso sustentable<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
     </div>
+  </section>
 
-    <p class="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-ps-body md:text-lg">
-      Para quienes buscan un equilibrio entre cultura, gastronomía y vida nocturna, Palermo Hollywood suele considerarse la mejor zona para hospedarse en Buenos Aires.
-    </p>
-    <div class="mt-16 flex justify-center">
-      <a
-        href="/es/palermo"
-        class="border border-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30">
-        Descubrí más sobre nuestra ubicación en Palermo
-      </a>
+  <!-- HABITACIONES -->
+  <section aria-labelledby="habitaciones-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-10 md:gap-16">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:gap-24">
+        <div class="flex flex-col gap-3 md:gap-[18px] lg:flex-1">
+          <p class="ps-eyebrow">Habitaciones y suites</p>
+          <h2 id="habitaciones-titulo" class="ps-h2 max-w-[11em]">Nuestras habitaciones</h2>
+        </div>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-lg lg:flex-1 lg:pt-[34px]">
+          <p>Las habitaciones de Palo Santo Hotel están pensadas para brindar tanto confort como amplitud, una combinación que los viajeros valoran al elegir un hotel en Buenos Aires.</p>
+          <p>Cuentan con grandes ventanales y balcones privados que dan hacia el jardín del hotel o hacia el barrio. Los interiores combinan materiales cálidos con un diseño contemporáneo, creando una atmósfera moderna y acogedora. Los planos espaciosos, la ropa de cama de calidad y las amenities seleccionadas aseguran un descanso reparador después de recorrer la ciudad.</p>
+          <p>Ya sea que viajes por placer o por negocios, las habitaciones ofrecen un refugio cómodo en pleno Palermo Hollywood.</p>
+        </div>
+      </div>
+      <nav aria-label="Categorías de habitaciones">
+        <ul class="grid grid-cols-2 gap-x-3 gap-y-8 md:grid-cols-4 md:gap-x-8">
+          <li><a href="/es/habitaciones-premium" class="group flex flex-col gap-3 md:gap-[18px]">
+            <picture class="block"><source type="image/avif" srcset="/images/hotel/PremiumTwin-083b-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 46vw"><source type="image/webp" srcset="/images/hotel/PremiumTwin-083b-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 46vw"><img src="/images-source/hotel/PremiumTwin-083b-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+            <span class="flex items-center justify-between gap-3 border-b border-ps-line pb-3 text-[17px] leading-tight tracking-[-0.01em] md:pb-4 md:text-[22px]"><span class="underline-offset-4 group-hover:underline">Premium</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          </a></li>
+          <li><a href="/es/habitaciones-deluxe" class="group flex flex-col gap-3 md:gap-[18px]">
+            <picture class="block"><source type="image/avif" srcset="/images/hotel/Deluxe-036a-2000-800.avif 800w" sizes="(min-width: 768px) 23vw, 46vw"><source type="image/webp" srcset="/images/hotel/Deluxe-036a-2000-800.webp 800w" sizes="(min-width: 768px) 23vw, 46vw"><img src="/images-source/hotel/Deluxe-036a-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+            <span class="flex items-center justify-between gap-3 border-b border-ps-line pb-3 text-[17px] leading-tight tracking-[-0.01em] md:pb-4 md:text-[22px]"><span class="underline-offset-4 group-hover:underline">Deluxe</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          </a></li>
+          <li><a href="/es/suite-terrace" class="group flex flex-col gap-3 md:gap-[18px]">
+            <picture class="block"><source type="image/avif" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.avif 800w" sizes="(min-width: 768px) 23vw, 46vw"><source type="image/webp" srcset="/images/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2-800.webp 800w" sizes="(min-width: 768px) 23vw, 46vw"><img src="/images-source/hotel/Terrace-Suite-NEW/Cama-con-terraza-y-vista-Toma-2.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+            <span class="flex items-center justify-between gap-3 border-b border-ps-line pb-3 text-[17px] leading-tight tracking-[-0.01em] md:pb-4 md:text-[22px]"><span class="underline-offset-4 group-hover:underline">Terrace Suite</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          </a></li>
+          <li><a href="/es/suite-palo-santo" class="group flex flex-col gap-3 md:gap-[18px]">
+            <picture class="block"><source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w" sizes="(min-width: 768px) 23vw, 46vw"><source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w" sizes="(min-width: 768px) 23vw, 46vw"><img src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover"></picture>
+            <span class="flex items-center justify-between gap-3 border-b border-ps-line pb-3 text-[17px] leading-tight tracking-[-0.01em] md:pb-4 md:text-[22px]"><span class="underline-offset-4 group-hover:underline">Palo Santo Suite</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          </a></li>
+        </ul>
+      </nav>
+      <a href="/es/habitaciones" class="ps-btn-line self-start min-h-[48px] px-6 text-xs md:min-h-[52px] md:text-[13px]">Explora nuestras categorías de habitaciones<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl md:flex md:items-start md:gap-10">
-    <div class="mb-8 md:mb-0 md:w-1/3 md:max-w-xs md:flex-none lg:max-w-sm">
-      <picture class="block overflow-hidden shadow-lg">
-        <img
-          src="/images-source/hotel/FachadaP-IMG_2285-155-3000px.jpg"
-          alt="Facade with vertical gardens at Palo Santo Hotel"
-          class="block h-auto w-full"
-          width="3000"
-          height="4000"
-          loading="lazy"
-          decoding="async" />
-      </picture>
+  <!-- RESTAURANTES Y ATRACCIONES -->
+  <section aria-labelledby="cerca-titulo" class="bg-ps-alt px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-12 lg:gap-x-24">
+      <div class="flex flex-col items-start gap-4 md:gap-6 lg:col-span-7">
+        <p class="ps-eyebrow">Alrededor del hotel</p>
+        <h2 id="cerca-titulo" class="ps-h2 max-w-[13em]">Restaurantes y atracciones cerca del hotel</h2>
+        <div class="flex max-w-[38em] flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-[17px]">
+          <p>Una de las ventajas de alojarse en <strong>Palermo Hollywood</strong> es la extraordinaria selección de restaurantes que lo rodea.</p>
+          <p>A pocas cuadras del hotel encontrarás algunos de los restaurantes más celebrados de Buenos Aires. La zona es reconocida por su cocina argentina moderna, bares de cócteles innovadores y una escena gastronómica vibrante.</p>
+          <p>Muchos huéspedes visitan restaurantes como <strong>Don Julio</strong>, constantemente rankeado entre los mejores steakhouses del mundo, además de numerosos locales de barrio que muestran la gastronomía argentina contemporánea.</p>
+          <p>Más allá de los restaurantes, el barrio ofrece mucho para explorar. Una breve caminata desde el hotel conduce a boutiques y tiendas de diseño en <strong>Palermo Soho</strong>. Numerosas galerías de arte también reflejan el espíritu creativo de Palermo.</p>
+          <p>Varias atracciones culturales están igualmente al alcance, incluyendo el <strong>museo MALBA</strong>, los parques de Palermo, la hermosa avenida del Libertador arbolada y el jardín botánico de la ciudad. Estos lugares hacen que el barrio sea ideal para quienes desean combinar cultura, espacios al aire libre y gastronomía durante su estadía en Buenos Aires.</p>
+          <p>Para los amantes de la música en vivo, el <strong>Movistar Arena</strong>, uno de los principales escenarios porteños, también se encuentra muy cerca, lo que lo convierte en una opción conveniente para quienes asisten a eventos allí.</p>
+        </div>
+        <a href="https://blog.palosantohotel.com/es" class="mt-1 inline-flex min-h-[44px] max-w-[30em] items-center gap-3 text-[15px] font-semibold leading-snug underline underline-offset-4 decoration-1 hover:decoration-2 md:text-base">Explora nuestra guía de Buenos Aires para más recomendaciones de restaurantes y atracciones<svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1 lg:gap-8 lg:pt-[52px]">
+        <figure class="flex flex-col gap-2.5">
+          <picture class="block"><source type="image/avif" srcset="/images/thumbnails/don-julio-400.avif 400w, /images/thumbnails/don-julio-500.avif 500w" sizes="(min-width: 1024px) 34vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/don-julio-400.webp 400w, /images/thumbnails/don-julio-500.webp 500w" sizes="(min-width: 1024px) 34vw, 100vw"><img src="/images-source/thumbnails/don-julio.jpg" alt="Parrilla Don Julio, en Palermo" width="500" height="333" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover"></picture>
+          <figcaption class="text-[13px] text-ps-muted">Don Julio</figcaption>
+        </figure>
+        <figure class="flex flex-col gap-2.5">
+          <picture class="block"><source type="image/avif" srcset="/images/thumbnails/malba-400.avif 400w, /images/thumbnails/malba-800.avif 800w, /images/thumbnails/malba-1200.avif 1200w" sizes="(min-width: 1024px) 34vw, 100vw"><source type="image/webp" srcset="/images/thumbnails/malba-400.webp 400w, /images/thumbnails/malba-800.webp 800w, /images/thumbnails/malba-1200.webp 1200w" sizes="(min-width: 1024px) 34vw, 100vw"><img src="/images-source/thumbnails/malba.jpg" alt="Museo MALBA, en Buenos Aires" width="1920" height="1080" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover"></picture>
+          <figcaption class="text-[13px] text-ps-muted">MALBA</figcaption>
+        </figure>
+      </div>
     </div>
+  </section>
 
-    <div class="space-y-5 md:min-w-0 md:flex-1">
-      <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-        Un hotel boutique sustentable en el corazón de Palermo
-      </h2>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Palo Santo Hotel es más que un hotel boutique en Palermo. Fue concebido como un <strong>oasis urbano sustentable</strong> que integra arquitectura, naturaleza y <a href="/es/verde" class="text-white underline decoration-1">hospitalidad responsable</a>.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        El edificio incorpora jardines verticales que cubren la fachada y los patios interiores, ayudando a regular la temperatura mientras aportan vegetación al entorno urbano. Estos jardines también crean una atmósfera tranquila que los huéspedes perciben desde su llegada.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        La sustentabilidad forma parte de la filosofía del hotel. La propiedad fue construida siguiendo estándares ambientales internacionales e incluye sistemas eficientes, estrategias de conservación de agua y materiales responsables con el ambiente.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        En el interior, la luz natural y la vegetación son elementos centrales del diseño, generando un espacio sereno donde los huéspedes pueden relajarse después de recorrer Buenos Aires.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Esta combinación de <strong>diseño, sustentabilidad y ubicación</strong> hace de Palo Santo uno de los hoteles boutique más distintivos de Palermo Hollywood.
-      </p>
-      <a href="/es/verde" class="mt-4 inline-flex items-center uppercase tracking-wide font-semibold text-white hover:text-ps-muted">
-          > Conocé más sobre nuestro compromiso sustentable
-      </a>
+  <!-- MAPA Y UBICACIÓN -->
+  <section aria-labelledby="mapa-titulo" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-2 lg:gap-x-24">
+      <div class="flex flex-col items-start gap-4 md:gap-6">
+        <p class="ps-eyebrow">Ubicación</p>
+        <h2 id="mapa-titulo" class="ps-h2">Mapa y ubicación</h2>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-[17px]">
+          <p>Palo Santo Hotel está ubicado en <strong><a href="/es/palermo" class="underline underline-offset-4 decoration-1 hover:decoration-2">Palermo Hollywood</a></strong>, uno de los barrios más convenientes para quienes visitan Buenos Aires.</p>
+          <p>El hotel se encuentra sobre una calle tranquila a pocos pasos de restaurantes, cafés y conexiones de transporte público. Desde allí, los huéspedes pueden recorrer fácilmente muchas de las zonas principales de la ciudad.</p>
+        </div>
+        <ul class="self-stretch border-b border-ps-line">
+          <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Aproximadamente <strong>15 minutos a Recoleta</strong></span></li>
+          <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4h12v18"/><path d="M2 22h20"/><path d="M10 7h.01"/><path d="M14 7h.01"/><path d="M10 11h.01"/><path d="M14 11h.01"/><path d="M10 15h.01"/><path d="M14 15h.01"/><path d="M10 22v-3h4v3"/></svg><span>Unos <strong>20 minutos al centro de Buenos Aires</strong></span></li>
+          <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><span>Acceso conveniente al <strong>aeropuerto Jorge Newbery (AEP)</strong></span></li>
+          <li class="flex items-center gap-4 border-t border-ps-line py-4 text-base md:text-[17px]"><svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><span>Conexiones directas con el <strong>aeropuerto internacional de Ezeiza (EZE)</strong></span></li>
+        </ul>
+        <div class="flex flex-col gap-4 text-base leading-relaxed text-ps-body md:gap-5 md:text-[17px]">
+          <p>Gracias a su ubicación central, Palo Santo ofrece una base práctica para explorar la ciudad mientras permite a los huéspedes regresar cada noche a un entorno sereno y verde.</p>
+          <p>Para quienes buscan un <strong>hotel boutique en Palermo Buenos Aires</strong>, la combinación de ubicación, sustentabilidad y confort hace de Palo Santo un lugar distintivo para alojarse.</p>
+        </div>
+      </div>
+      <div class="relative min-h-[360px] overflow-hidden border border-ps-line bg-ps-alt md:min-h-[480px]">
+        <iframe title="Mapa de Google con la ubicación de Palo Santo Hotel, Bonpland 2275, Palermo Hollywood" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.996501615177!2d-58.43468562299021!3d-34.578955072963325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5911aef258b%3A0x6dbe6b19813c454c!2sPalo%20Santo%20Hotel!5e0!3m2!1ses!2sar!4v1773152916490!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen class="absolute inset-0 h-full w-full border-0 grayscale"></iframe>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-ps-panel px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl space-y-5">
-    <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-      Nuestras habitaciones
-    </h2>
-    <div class="grid gap-4 md:grid-cols-3">
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/hotel/PremiumTwin-083b-2000-800.avif 800w,
-            /images/hotel/PremiumTwin-083b-2000-1200.avif 1200w,
-            /images/hotel/PremiumTwin-083b-2000-1600.avif 1600w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/hotel/PremiumTwin-083b-2000-800.webp 800w,
-            /images/hotel/PremiumTwin-083b-2000-1200.webp 1200w,
-            /images/hotel/PremiumTwin-083b-2000-1600.webp 1600w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/hotel/PremiumTwin-083b-2000.jpg"
-          alt="Premium Twin room at Palo Santo Hotel"
-          class="h-56 w-full object-cover"
-          width="2000"
-          height="1333"
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width: 768px) 33vw, 100vw" />
-      </picture>
-
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/hotel/Deluxe-036a-2000-800.avif 800w,
-            /images/hotel/Deluxe-036a-2000-1200.avif 1200w,
-            /images/hotel/Deluxe-036a-2000-1600.avif 1600w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/hotel/Deluxe-036a-2000-800.webp 800w,
-            /images/hotel/Deluxe-036a-2000-1200.webp 1200w,
-            /images/hotel/Deluxe-036a-2000-1600.webp 1600w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/hotel/Deluxe-036a-2000.jpg"
-          alt="Deluxe room at Palo Santo Hotel"
-          class="h-56 w-full object-cover"
-          width="2000"
-          height="1333"
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width: 768px) 33vw, 100vw" />
-      </picture>
-
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.avif 800w,
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.avif 1200w,
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1448.avif 1448w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-800.webp 800w,
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1200.webp 1200w,
-            /images/hotel/PaloSantoSuite-NEW/Living-desde-habitacion-1448.webp 1448w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/hotel/PaloSantoSuite-NEW/Living-desde-habitacion.jpg"
-          alt="Living de la Suite Palo Santo visto desde la habitación en Palo Santo Hotel"
-          class="h-56 w-full object-cover"
-          width="1448"
-          height="1086"
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width: 768px) 33vw, 100vw" />
-      </picture>
+  <!-- CIERRE -->
+  <section aria-label="Reservar" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">Los esperamos para vivir una verdadera experiencia boutique en Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Reservar</a>
     </div>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      Las habitaciones de Palo Santo Hotel están pensadas para brindar tanto confort como amplitud, una combinación que los viajeros valoran al elegir un hotel en Buenos Aires.
-    </p>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      Cuentan con grandes ventanales y balcones privados que dan hacia el jardín del hotel o hacia el barrio. Los interiores combinan materiales cálidos con un diseño contemporáneo, creando una atmósfera moderna y acogedora. Los planos espaciosos, la ropa de cama de calidad y las amenities seleccionadas aseguran un descanso reparador después de recorrer la ciudad.
-    </p>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg mb-10">
-      Ya sea que viajes por placer o por negocios, las habitaciones ofrecen un refugio cómodo en pleno Palermo Hollywood.
-    </p>
-  </div>
-  <div class="mx-auto mt-12 flex justify-center">
-    <a
-      href="/es/habitaciones"
-      class="border border-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30">
-      Explorá nuestras categorías de habitaciones
-    </a>
-  </div>
-</section>
-
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl md:flex md:items-start md:gap-10">
-    <div class="space-y-5 md:min-w-0 md:flex-1">
-      <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-        Restaurantes y atracciones cerca del hotel
-      </h2>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Una de las ventajas de alojarse en <strong>Palermo Hollywood</strong> es la extraordinaria selección de restaurantes que lo rodea.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        A pocas cuadras del hotel encontrarás algunos de los restaurantes más celebrados de Buenos Aires. La zona es reconocida por su cocina argentina moderna, bares de cócteles innovadores y una escena gastronómica vibrante.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Muchos huéspedes visitan restaurantes como <strong>Don Julio</strong>, constantemente rankeado entre los mejores steakhouses del mundo, además de numerosos locales de barrio que muestran la gastronomía argentina contemporánea.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Más allá de los restaurantes, el barrio ofrece mucho para explorar. Una breve caminata desde el hotel conduce a boutiques y tiendas de diseño en <strong>Palermo Soho</strong>. Numerosas galerías de arte también reflejan el espíritu creativo de Palermo.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Varias atracciones culturales están igualmente al alcance, incluyendo el <strong>museo MALBA</strong>, los parques de Palermo, la hermosa avenida del Libertador arbolada y el jardín botánico de la ciudad. Estos lugares hacen que el barrio sea ideal para quienes desean combinar cultura, espacios al aire libre y gastronomía durante su estadía en Buenos Aires.
-      </p>
-      <p class="text-base leading-relaxed text-ps-body md:text-lg">
-        Para los amantes de la música en vivo, el <strong>Movistar Arena</strong>, uno de los principales escenarios porteños, también se encuentra muy cerca, lo que lo convierte en una opción conveniente para quienes asisten a eventos allí.
-      </p>
-      <a href="https://blog.palosantohotel.com/es" class="mt-4 inline-flex items-center uppercase tracking-wide font-semibold text-white hover:text-ps-muted">
-          > Explorá nuestra guía de Buenos Aires para más recomendaciones de restaurantes y atracciones
-      </a>
-    </div>
-
-    <div class="mt-8 grid gap-6 md:mt-0 md:w-1/3 md:max-w-xs md:flex-none">
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/thumbnails/don-julio-400.avif 400w,
-            /images/thumbnails/don-julio-500.avif 500w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/thumbnails/don-julio-400.webp 400w,
-            /images/thumbnails/don-julio-500.webp 500w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/thumbnails/don-julio.jpg"
-          alt="Don Julio restaurant in Palermo"
-          class="h-full w-full object-cover"
-          style="aspect-ratio: 4 / 3;"
-          width="500"
-          height="333"
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw" />
-      </picture>
-
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/thumbnails/malba-400.avif 400w,
-            /images/thumbnails/malba-800.avif 800w,
-            /images/thumbnails/malba-1200.avif 1200w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/thumbnails/malba-400.webp 400w,
-            /images/thumbnails/malba-800.webp 800w,
-            /images/thumbnails/malba-1200.webp 1200w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/thumbnails/malba.jpg"
-          alt="MALBA museum in Buenos Aires"
-          class="h-full w-full object-cover"
-          style="aspect-ratio: 4 / 3;"
-          width="1200"
-          height="800"
-          loading="lazy"
-          decoding="async"
-          sizes="(min-width: 1024px) 20rem, (min-width: 640px) 50vw, 100vw" />
-      </picture>
-    </div>
-  </div>
-</section>
-
-<section class="bg-ps-panel px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl space-y-5">
-    <h2 class="text-2xl uppercase font-semibold text-white md:text-4xl">
-      Mapa y ubicación
-    </h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.996501615177!2d-58.43468562299021!3d-34.578955072963325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5911aef258b%3A0x6dbe6b19813c454c!2sPalo%20Santo%20Hotel!5e0!3m2!1ses!2suy!4v1773152916490!5m2!1ses!2suy"
-      class="w-full"
-      height="400"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      Palo Santo Hotel está ubicado en <strong><a class="text-white underline decoration-1" href="/es/palermo" target="_blank" rel="noopener noreferrer">Palermo Hollywood</a></strong>, uno de los barrios más convenientes para quienes visitan Buenos Aires.
-    </p>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      El hotel se encuentra sobre una calle tranquila a pocos pasos de restaurantes, cafés y conexiones de transporte público. Desde allí, los huéspedes pueden recorrer fácilmente muchas de las zonas principales de la ciudad.
-    </p>
-    <ul class="space-y-2 pl-5 text-base leading-relaxed text-ps-body marker:text-ps-muted md:text-lg list-disc">
-      <li>Aproximadamente <strong>15 minutos a Recoleta</strong></li>
-      <li>Unos <strong>20 minutos al centro de Buenos Aires</strong></li>
-      <li>Acceso conveniente al <strong>aeropuerto Jorge Newbery (AEP)</strong></li>
-      <li>Conexiones directas con el <strong>aeropuerto internacional de Ezeiza (EZE)</strong></li>
-    </ul>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      Gracias a su ubicación central, Palo Santo ofrece una base práctica para explorar la ciudad mientras permite a los huéspedes regresar cada noche a un entorno sereno y verde.
-    </p>
-    <p class="text-base leading-relaxed text-ps-body md:text-lg">
-      Para quienes buscan un <strong>hotel boutique en Palermo Buenos Aires</strong>, la combinación de ubicación, sustentabilidad y confort hace de Palo Santo un lugar distintivo para alojarse.
-    </p>
-    <div class="mt-12 flex justify-center">
-      <a
-        href="https://reservas.palosantohotel.com/es"
-        target="_blank"
-        rel="noopener"
-        class="border border-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-ps-ground focus:outline-none focus:ring-2 focus:ring-white/30">
-        Reservar
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
-
-<!-- CIERRE -->
-<section aria-label="Reservar" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">Los esperamos para vivir una verdadera experiencia boutique en Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/es" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Reservar</a>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">

@@ -29,12 +29,11 @@
 
 <body class="bg-ps-ground font-brand text-ps-text antialiased">
 
-<!-- MENÚ MOBILE - EN -->
 <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-white focus:px-4 focus:py-3 focus:text-ps-ground">Skip to content</a>
 
-<!-- HEADER -->
-<header class="relative z-30 border-b border-ps-line bg-ps-ground text-white">
-  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pb-3 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pb-6 xl:pt-[30px]">
+<!-- HEADER: transparente sobre la foto de portada -->
+<header class="absolute inset-x-0 top-0 z-30 text-white">
+  <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-4 pl-1.5 pr-3 pt-3.5 xl:gap-6 xl:px-12 xl:pt-[30px]">
     <div class="flex items-center">
       <button id="mobile-menu-toggle" type="button" class="flex h-11 w-11 items-center justify-center xl:hidden" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Open menu</span>
@@ -55,6 +54,7 @@
 
     <div class="flex items-center justify-end gap-x-[30px]">
       <nav aria-label="More sections" class="hidden items-center gap-x-[30px] text-sm font-semibold tracking-[0.06em] xl:flex">
+        <a href="/en/about-us" class="underline underline-offset-8" aria-current="page">About us</a>
         <a href="/en/photo-gallery" class="underline-offset-8 hover:underline">Photos</a>
         <a href="https://blog.palosantohotel.com/en" class="underline-offset-8 hover:underline">Blog</a>
         <a href="/en/contact-us" class="underline-offset-8 hover:underline">Contact</a>
@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 hidden border-b border-ps-line bg-ps-ground xl:hidden">
+  <div id="mobile-menu" class="absolute inset-x-0 top-full z-50 mt-3 hidden border-y border-ps-line bg-ps-ground xl:hidden">
     <nav aria-label="Mobile main menu" class="flex flex-col px-5 py-4 text-lg">
       <a href="/en/rooms" class="flex min-h-[48px] items-center">Rooms</a>
       <div class="flex flex-col pb-2 pl-4 text-base text-ps-muted">
@@ -86,82 +86,200 @@
   </div>
 </header>
 
-<main id="content">
+<main id="content" class="ps-claro bg-ps-ground">
 
-<!-- CONTENIDO PRINCIPAL-->
-<section class="bg-ps-ground px-4 py-16 sm:px-5 md:py-24 lg:px-6">
-  <div class="mx-auto max-w-6xl space-y-8 text-center">
-    <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">About us</p>
-    <h1 class="text-4xl font-bold leading-tight text-white sm:text-5xl">
-      A modern, intelligent and green luxury
-    </h1>
-  </div>
-
-<!-- MANIFIESTO -->
-  <div class="mx-auto mt-12 max-w-6xl">
-    <section class="border border-ps-line p-6 text-base leading-relaxed text-ps-body shadow-sm" aria-label="Manifesto">
-      <p class="text-xs uppercase tracking-[0.4em] text-ps-muted">Manifesto</p>
-      <div class="mt-4 space-y-4">
-        <p>We like to think that sometimes the infinite can be held inside the finite, as in that story by Borges where a poet discovers a place in his attic that holds the whole universe.</p>
-        <p>For us, a journey can reveal an essence, and some places express the whole in one tiny part. We love to find symmetries, relations, and secret connections: jazz dissonances and counterpoints in a Piazzolla tango; Paul Klee’s use of shape and color in his porteño contemporary Xul Solar.</p>
-        <p>Our travels are intellectual adventures and experiences. As we wander in Buenos Aires, a glance reminds us of Monica Vitti in an Antonioni movie, a woman smoothing her hair brings back Anna Karina from The Little Soldier, and a Martini evokes our beloved Hemingway’s character, Colonel Cantwell.</p>
-        <p>RWe are eclectic and passionate about diversity and detail. We are contemporary, we are nomads: we are a new generation.</p>
-        <p>When we imagine future architecture, iconic green buildings come to our minds: Jean Nouvel’s Musée du Quai Branly, Renzo Piano, and Caixa Forum headquarters in Madrid.</p>
-        <p>At Palo Santo Hotel, we propose a modern, intelligent luxury. We commit to the environment because we cannot conceive a world that doesn’t remain beautiful forever. We favor comfort, privacy, elegance, and beauty.</p>
+  <!-- PORTADA -->
+  <section aria-labelledby="title" class="ps-oscuro relative h-[560px] overflow-hidden bg-ps-deep text-white md:h-[640px]">
+    <picture>
+      <source type="image/avif" srcset="/images/hotel/PaloSanto-Fachada-Verde-2000-800.avif 800w, /images/hotel/PaloSanto-Fachada-Verde-2000-1200.avif 1200w, /images/hotel/PaloSanto-Fachada-Verde-2000-1600.avif 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <source type="image/webp" srcset="/images/hotel/PaloSanto-Fachada-Verde-2000-800.webp 800w, /images/hotel/PaloSanto-Fachada-Verde-2000-1200.webp 1200w, /images/hotel/PaloSanto-Fachada-Verde-2000-1600.webp 1600w" sizes="(max-width: 767px) 216vw, 100vw">
+      <img src="/images-source/hotel/PaloSanto-Fachada-Verde-2000.jpg" alt="Palo Santo's facade at dusk, with climbing plants growing up the iron frames of the balconies" width="1600" height="1067" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-[48%_50%]">
+    </picture>
+    <div aria-hidden="true" class="ps-page-hero__scrim pointer-events-none absolute inset-0"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 md:px-12 md:pb-14">
+      <div class="mx-auto flex max-w-[1344px] flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+        <div class="flex flex-col gap-4 md:gap-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85 md:text-xs">About us</p>
+          <h1 id="title" class="max-w-[12em] text-balance text-[42px] leading-none tracking-[-0.03em] [text-shadow:0_2px_28px_rgba(0,0,0,0.22)] md:text-[clamp(52px,5.6vw,80px)] md:leading-[0.98] md:tracking-[-0.035em]">A modern, intelligent and green luxury</h1>
+        </div>
+        <p class="max-w-[26em] text-[15px] leading-relaxed text-white/90 md:text-[17px] lg:max-w-[22em]">A green boutique hotel in Palermo, for travelers who love urban life, design and modern comfort.</p>
       </div>
-    </section>
-  </div>
-
-<!-- HISTORIA DEL HOTEL -->
-  <section class="mx-auto mt-12 max-w-6xl border border-ps-line bg-ps-panel px-6 py-12 shadow-[0_20px_45px_rgba(15,23,42,0.08)] md:flex md:items-center md:gap-10" aria-labelledby="historia-hotel">
-    <div class="md:w-1/2">
-      <picture class="block overflow-hidden shadow-lg">
-        <source
-          srcset="
-            /images/hotel/Pasillos-800.avif 800w,
-            /images/hotel/Pasillos-1200.avif 1200w,
-            /images/hotel/Pasillos-1600.avif 1600w
-          "
-          type="image/avif" />
-        <source
-          srcset="
-            /images/hotel/Pasillos-800.webp 800w,
-            /images/hotel/Pasillos-1200.webp 1200w,
-            /images/hotel/Pasillos-1600.webp 1600w
-          "
-          type="image/webp" />
-        <img
-          src="/images-source/hotel/Pasillos.jpg"
-          alt="Hallways of Palo Santo Hotel with plants and concrete walls"
-          class="h-full w-full object-cover"
-          style="aspect-ratio: 4 / 3;"
-          width="1600"
-          height="1066"
-          loading="lazy"
-          decoding="async"
-          sizes="(max-width: 768px) 100vw, 50vw" />
-      </picture>
-    </div>
-
-    <div class="mt-8 space-y-4 text-base leading-relaxed text-ps-body md:mt-0 md:w-1/2" id="historia-hotel">
-      <p class="text-xs uppercase tracking-[0.3em] text-ps-muted">Sustainability</p>
-      <h3 class="text-3xl font-semibold uppercase text-white">What’s the story behind Palo Santo?</h3>
-      <p>In 2005, Pablo left Buenos Aires to move in with his French girlfriend. From Paris, he witnessed the green building architectural revolution. Throughout Europe, iconic buildings such as the Quai Branly Museum and Bosco Verticale were under construction.</p>
-      <p>A few years later – his girlfriend is now his wife – he came back to his hometown determined to build a green hotel. He didn’t just want it to be green on the outside but also be sustainable. For Pablo, it seemed only natural that, in 2010, architects would need to consider the environmental impact of a new building. Thanks to his vision, he quickly convinced investors.</p>
-      <p>In 2014, Palo Santo opened its doors, a <a href="/en/hotel-palermo-buenos-aires" style="text-decoration-thickness:0.5px; text-underline-offset:4px; color:inherit;" class="text-white underline hover:no-underline">boutique hotel in Palermo</a> attracting travelers from all over the world who appreciate urban life, design, and comfort, and who want the planet to remain beautiful forever.</p>
     </div>
   </section>
 
-</section>
-</main>
+  <!-- CIFRAS -->
+  <section aria-label="Palo Santo in figures" class="ps-oscuro border-b border-ps-line bg-ps-ground px-5 md:px-12">
+    <dl class="mx-auto grid max-w-[1344px] grid-cols-2 gap-x-5 py-1 md:grid-cols-4 md:gap-x-8 md:py-0">
+      <div class="flex flex-col-reverse justify-end gap-2 border-b border-ps-line py-5 md:gap-2.5 md:border-b-0 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">we opened in Palermo Hollywood</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">2014</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 border-b border-ps-line py-5 md:gap-2.5 md:border-b-0 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">rooms and suites, over 8 floors</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">26</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 py-5 md:gap-2.5 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">sustainable building standards</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">LEED</dd>
+      </div>
+      <div class="flex flex-col-reverse justify-end gap-2 py-5 md:gap-2.5 md:py-9">
+        <dt class="text-[13px] leading-snug text-ps-muted md:text-sm">plants in our vertical gardens</dt>
+        <dd class="text-[34px] leading-none tracking-[-0.03em] md:text-[52px]">+900</dd>
+      </div>
+    </dl>
+  </section>
 
-<!-- CIERRE -->
-<section aria-label="Book now" class="px-5 pb-12 md:px-12 md:pb-[104px]">
-  <div class="mx-auto flex max-w-[1344px] flex-col gap-6 border-t border-ps-line pt-10 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:pt-[88px]">
-    <p class="max-w-[15em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[62px] md:leading-[1.04] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
-    <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn shrink-0 min-h-[56px] md:min-h-[64px] md:px-12">Book now</a>
-  </div>
-</section>
+  <!-- NUESTRA HISTORIA -->
+  <section id="story" aria-labelledby="story-title" class="px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto grid max-w-[1344px] gap-10 lg:grid-cols-[minmax(0,34%)_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-24 lg:gap-y-12">
+      <div class="flex flex-col items-start gap-3 md:gap-[18px]">
+        <p class="ps-eyebrow">Our story</p>
+        <h2 id="story-title" class="ps-h2 max-w-[10em]">The story behind Palo Santo</h2>
+      </div>
+
+      <ol class="flex flex-col gap-12 md:gap-16 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:pt-[34px]">
+        <li class="grid gap-4 border-t border-ps-text pt-5 md:grid-cols-[180px_minmax(0,1fr)] md:gap-x-10 md:pt-6">
+          <h3 class="flex items-baseline gap-4 md:flex-col md:gap-3">
+            <span class="text-[40px] leading-none tracking-[-0.03em] md:text-[56px]">2005</span>
+            <span class="ps-eyebrow">Paris</span>
+          </h3>
+          <p class="max-w-[36em] text-base leading-relaxed text-ps-body md:pt-1 md:text-[17px]">Pablo left Buenos Aires to move in with his French girlfriend. From Paris, he witnessed the green building architectural revolution. Throughout Europe, iconic buildings such as the Quai Branly Museum and Bosco Verticale were under construction.</p>
+        </li>
+        <li class="grid gap-4 border-t border-ps-text pt-5 md:grid-cols-[180px_minmax(0,1fr)] md:gap-x-10 md:pt-6">
+          <h3 class="flex items-baseline gap-4 md:flex-col md:gap-3">
+            <span class="text-[40px] leading-none tracking-[-0.03em] md:text-[56px]">2010</span>
+            <span class="ps-eyebrow">Buenos Aires</span>
+          </h3>
+          <p class="max-w-[36em] text-base leading-relaxed text-ps-body md:pt-1 md:text-[17px]">A few years later – his girlfriend is now his wife – he came back to his hometown determined to build a green hotel. He didn’t just want it to be green on the outside but also to be sustainable. For Pablo, it seemed only natural that, in 2010, architects would need to consider the environmental impact of a new building. Thanks to his vision, he quickly convinced investors.</p>
+        </li>
+        <li class="grid gap-4 border-t border-ps-text pt-5 md:grid-cols-[180px_minmax(0,1fr)] md:gap-x-10 md:pt-6">
+          <h3 class="flex items-baseline gap-4 md:flex-col md:gap-3">
+            <span class="text-[40px] leading-none tracking-[-0.03em] md:text-[56px]">2014</span>
+            <span class="ps-eyebrow">Palermo Hollywood</span>
+          </h3>
+          <p class="max-w-[36em] text-base leading-relaxed text-ps-body md:pt-1 md:text-[17px]">Palo Santo opened its doors: a <a href="/en/hotel-palermo-buenos-aires" class="text-ps-text underline decoration-1 underline-offset-4 hover:no-underline">boutique hotel in Palermo</a> attracting travelers from all over the world who appreciate urban life, design, and comfort, and who want the planet to remain beautiful forever.</p>
+        </li>
+      </ol>
+
+      <picture class="block lg:col-start-1 lg:row-start-2">
+        <source type="image/avif" srcset="/images/hotel/Pasillos-PSanto18-2000x2666-800.avif 800w, /images/hotel/Pasillos-PSanto18-2000x2666-1200.avif 1200w" sizes="(min-width: 1024px) 31vw, 100vw">
+        <source type="image/webp" srcset="/images/hotel/Pasillos-PSanto18-2000x2666-800.webp 800w, /images/hotel/Pasillos-PSanto18-2000x2666-1200.webp 1200w" sizes="(min-width: 1024px) 31vw, 100vw">
+        <img src="/images-source/hotel/Pasillos-PSanto18-2000x2666.jpg" alt="The hotel’s inner courtyard: each floor’s walkways surround a concrete light well where plants climb toward the sky" width="1200" height="1600" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover object-[50%_60%] lg:aspect-[3/4]">
+      </picture>
+    </div>
+  </section>
+
+  <!-- MANIFIESTO -->
+  <section id="manifesto" aria-labelledby="manifesto-title" class="ps-oscuro bg-ps-ground px-5 py-16 md:px-12 md:py-28">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-12 md:gap-20">
+      <div class="flex flex-col gap-6 md:gap-10">
+        <h2 id="manifesto-title" class="ps-eyebrow">Manifesto</h2>
+        <p class="max-w-[18em] text-balance text-[32px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.05] md:tracking-[-0.03em]">We like to think that sometimes the infinite can be held inside the finite.</p>
+      </div>
+
+      <div class="grid gap-5 text-base leading-relaxed text-ps-body md:grid-cols-2 md:gap-x-16 md:text-[17px] lg:gap-x-24">
+        <div class="flex flex-col gap-5">
+          <p>As in that story by Borges where a poet discovers, in the cellar of his house, a place that holds the whole universe.</p>
+          <p>For us, a journey can reveal an essence, and some places express the whole in one tiny part. We love to find symmetries, relations, and secret connections: jazz dissonances and counterpoints in a Piazzolla tango; Paul Klee’s use of shape and color in his porteño contemporary Xul Solar.</p>
+          <p>Our travels are intellectual adventures and experiences. As we wander in Buenos Aires, a glance reminds us of Monica Vitti in Antonioni’s <i>La Notte</i>, a woman smoothing her hair brings back Anna Karina in <i>The Little Soldier</i>, and a Martini evokes our beloved Hemingway’s character, Colonel Cantwell.</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <p>We are eclectic and passionate about diversity and detail. We are contemporary, we are nomads: we are a new generation.</p>
+          <p>When we imagine future architecture, iconic green buildings with vertical gardens come to our minds: Jean Nouvel’s Musée du Quai Branly in Paris, Renzo Piano’s Academy of Sciences in San Francisco, and CaixaForum in Madrid.</p>
+          <p>At Palo Santo Hotel, we propose a modern, intelligent luxury. We commit to the environment because we cannot conceive a world that doesn’t remain beautiful forever.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 border-t border-ps-line pt-8 md:gap-10 md:pt-12">
+        <p class="max-w-[20em] text-balance text-[26px] leading-[1.15] tracking-[-0.02em] md:text-[40px] md:leading-[1.1] md:tracking-[-0.025em]">We favor comfort, privacy, elegance, and beauty.</p>
+
+        <ul aria-label="What we love" class="grid grid-cols-2 gap-x-3 gap-y-6 md:gap-x-4 lg:grid-cols-4">
+          <li>
+            <figure class="flex flex-col gap-3 md:gap-4">
+              <picture class="block">
+                <source type="image/avif" srcset="/images/hotel/PaloSanto-Suite-Cama_MG_5323-2000-800.avif 800w, /images/hotel/PaloSanto-Suite-Cama_MG_5323-2000-1200.avif 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <source type="image/webp" srcset="/images/hotel/PaloSanto-Suite-Cama_MG_5323-2000-800.webp 800w, /images/hotel/PaloSanto-Suite-Cama_MG_5323-2000-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <img src="/images-source/hotel/PaloSanto-Suite-Cama_MG_5323-2000.jpg" alt="Bed with white linen and a woven throw" width="1200" height="800" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover object-[38%_50%]">
+              </picture>
+              <figcaption class="text-xs font-semibold uppercase tracking-[0.22em]">Comfort</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="flex flex-col gap-3 md:gap-4">
+              <picture class="block">
+                <source type="image/avif" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.avif 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.avif 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <source type="image/webp" srcset="/images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-800.webp 800w, /images/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2-1200.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <img src="/images-source/hotel/PaloSantoSuite-NEW/Cama-hacia-afuera-Noche-2.jpg" alt="Bedroom at night, with the balcony and the city lights beyond the window" width="1448" height="1086" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover object-[30%_50%]">
+              </picture>
+              <figcaption class="text-xs font-semibold uppercase tracking-[0.22em]">Privacy</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="flex flex-col gap-3 md:gap-4">
+              <picture class="block">
+                <source type="image/avif" srcset="/images/hotel/PaloSanto-Lobby-16-2000-800.avif 800w, /images/hotel/PaloSanto-Lobby-16-2000-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, 50vw">
+                <source type="image/webp" srcset="/images/hotel/PaloSanto-Lobby-16-2000-800.webp 800w, /images/hotel/PaloSanto-Lobby-16-2000-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, 50vw">
+                <img src="/images-source/hotel/PaloSanto-Lobby-16-2000.jpg" alt="Lobby with a marble table, sofas and plants beside the glass gallery" width="1200" height="1600" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover">
+              </picture>
+              <figcaption class="text-xs font-semibold uppercase tracking-[0.22em]">Elegance</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="flex flex-col gap-3 md:gap-4">
+              <picture class="block">
+                <source type="image/avif" srcset="/images/hotel/PaloSanto-Jardin-IMG_0825-2000-800.avif 800w, /images/hotel/PaloSanto-Jardin-IMG_0825-2000-1200.avif 1200w" sizes="(min-width: 1024px) 25vw, 50vw">
+                <source type="image/webp" srcset="/images/hotel/PaloSanto-Jardin-IMG_0825-2000-800.webp 800w, /images/hotel/PaloSanto-Jardin-IMG_0825-2000-1200.webp 1200w" sizes="(min-width: 1024px) 25vw, 50vw">
+                <img src="/images-source/hotel/PaloSanto-Jardin-IMG_0825-2000.jpg" alt="Wall covered in vines and flowers in the hotel garden" width="1200" height="1600" loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover">
+              </picture>
+              <figcaption class="text-xs font-semibold uppercase tracking-[0.22em]">Beauty</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGUE RECORRIENDO -->
+  <section aria-labelledby="more-title" class="px-5 py-16 md:px-12 md:py-24">
+    <div class="mx-auto flex max-w-[1344px] flex-col gap-4 md:gap-8">
+      <h2 id="more-title" class="ps-eyebrow">Keep exploring</h2>
+      <div class="flex flex-col border-t border-ps-line md:grid md:grid-cols-3 md:gap-8 md:border-t-0">
+        <a href="/en/green" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/FachadaP-IMG_2480-205-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/FachadaP-IMG_2480-205-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/FachadaP-IMG_2480-205-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Green</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/rooms" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.avif 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-400.webp 400w, /images/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/thumbnails/PaloSanto-PremiumRoom-IMG_7987-thumbnail.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Rooms</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+        <a href="/en/hotel" class="group flex items-center gap-4 border-b border-ps-line py-3 md:flex-col md:items-stretch md:gap-[18px] md:border-b-0 md:py-0">
+          <picture class="block shrink-0">
+            <source type="image/avif" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.avif 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <source type="image/webp" srcset="/images/hotel/Lobby-IMG_2509-213-2000-800.webp 800w" sizes="(min-width: 768px) 31vw, 88px">
+            <img src="/images-source/hotel/Lobby-IMG_2509-213-2000.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="h-[66px] w-[88px] object-cover md:aspect-[3/2] md:h-auto md:w-full">
+          </picture>
+          <span class="flex flex-1 items-center justify-between gap-4 text-[19px] leading-tight tracking-[-0.01em] md:border-b md:border-ps-line md:pb-4 md:text-2xl"><span class="underline-offset-4 group-hover:underline">Hotel &amp; services</span><svg class="h-[18px] w-[18px] shrink-0 md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section aria-label="Book now" class="px-3 pb-12 md:px-12 md:pb-28">
+    <div class="ps-oscuro mx-auto flex max-w-[1344px] flex-col gap-6 bg-ps-ground px-6 py-9 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-x-16 md:gap-y-10 md:p-20">
+      <p class="max-w-[15em] text-balance text-[30px] leading-[1.1] tracking-[-0.025em] md:text-[56px] md:leading-[1.06] md:tracking-[-0.03em]">A true boutique experience in Palermo.</p>
+      <a href="https://reservas.palosantohotel.com/en" target="_blank" rel="noopener" class="ps-btn-solid min-h-[56px] shrink-0 md:min-h-[64px] md:px-12">Book now</a>
+    </div>
+  </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="bg-ps-deep px-5 pb-6 pt-10 md:px-12 md:pb-8 md:pt-[72px]">
