@@ -1035,7 +1035,8 @@ video {
 @media (min-width: 1024px) {
   .ps-chapter {
     min-height: 48px;
-    width: 8rem;
+    width: auto;
+    min-width: 8rem;
     flex: none;
     gap: 0.75rem;
   }
