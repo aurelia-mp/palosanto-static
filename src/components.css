@@ -190,7 +190,7 @@
 
   /* Capítulos del video: una barra de progreso por clip */
   .ps-chapter {
-    @apply flex min-h-[44px] min-w-0 flex-1 flex-col items-stretch justify-end gap-2.5 text-left text-white opacity-60 transition-opacity duration-300 hover:opacity-100 lg:min-h-[48px] lg:w-32 lg:flex-none lg:gap-3;
+    @apply flex min-h-[44px] min-w-0 flex-1 flex-col items-stretch justify-end gap-2.5 text-left text-white opacity-60 transition-opacity duration-300 hover:opacity-100 lg:min-h-[48px] lg:w-auto lg:min-w-[8rem] lg:flex-none lg:gap-3;
   }
 
   .ps-chapter.is-active {
