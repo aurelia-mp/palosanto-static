@@ -2592,6 +2592,10 @@ video {
   font-size: 9px;
 }
 
+.text-\[clamp\(32px\2c 9\.8vw\2c 38px\)\] {
+  font-size: clamp(32px, 9.8vw, 38px);
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -2656,6 +2660,10 @@ video {
 
 .leading-\[0\.98\] {
   line-height: 0.98;
+}
+
+.leading-\[1\.02\] {
+  line-height: 1.02;
 }
 
 .leading-\[1\.05\] {
@@ -2919,6 +2927,10 @@ video {
   transition-duration: 1200ms;
 }
 
+.\[font-variant-caps\:all-small-caps\] {
+  font-variant-caps: all-small-caps;
+}
+
 .\[scrollbar-width\:none\] {
   scrollbar-width: none;
 }
@@ -2933,6 +2945,10 @@ video {
 
 .\[text-shadow\:0_2px_30px_rgba\(0\2c 0\2c 0\2c 0\.18\)\] {
   text-shadow: 0 2px 30px rgba(0,0,0,0.18);
+}
+
+.first-letter\:uppercase::first-letter {
+  text-transform: uppercase;
 }
 
 .focus-within\:outline:focus-within {
@@ -4029,12 +4045,12 @@ video {
     font-size: clamp(52px, 5.6vw, 80px);
   }
 
-  .md\:text-\[clamp\(56px\2c 6\.6vw\2c 96px\)\] {
-    font-size: clamp(56px, 6.6vw, 96px);
+  .md\:text-\[clamp\(52px\2c 5\.9vw\2c 88px\)\] {
+    font-size: clamp(52px, 5.9vw, 88px);
   }
 
-  .md\:text-\[clamp\(56px\2c 7\.2vw\2c 104px\)\] {
-    font-size: clamp(56px, 7.2vw, 104px);
+  .md\:text-\[clamp\(56px\2c 6\.6vw\2c 96px\)\] {
+    font-size: clamp(56px, 6.6vw, 96px);
   }
 
   .md\:text-\[clamp\(64px\2c 7\.4vw\2c 108px\)\] {
@@ -4064,10 +4080,6 @@ video {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .md\:leading-\[0\.95\] {
-    line-height: 0.95;
   }
 
   .md\:leading-\[0\.96\] {
