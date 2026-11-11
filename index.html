@@ -173,12 +173,12 @@
 
 <main id="contenido">
 
-  <!-- HERO: los tres videos se encadenan con un fundido; el primero se elige al azar -->
+  <!-- HERO: los videos se encadenan con un fundido; el primero se elige al azar -->
   <section class="ps-hero relative overflow-hidden bg-ps-deep text-white" aria-label="Palo Santo en video" data-hero>
     <div class="absolute inset-0">
       <div class="absolute inset-0 opacity-100 transition-opacity duration-[1200ms]" data-hero-clip data-hero-active
         data-video="https://media.palosantohotel.com/video-colibri-edit-2.mp4"
-        data-video-mobile="https://media.palosantohotel.com/video-colibri-edit-2-mobile.mp4">
+        data-video-mobile="https://media.palosantohotel.com/video-colibri-edit-2-mobile.mp4?v=708">
         <picture>
           <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-colibri-mobile-480.avif 480w, /images/heroMobile/hero-colibri-mobile-600.avif 600w, /images/heroMobile/hero-colibri-mobile-708.avif 708w" sizes="100vw">
           <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-colibri-mobile-480.webp 480w, /images/heroMobile/hero-colibri-mobile-600.webp 600w, /images/heroMobile/hero-colibri-mobile-708.webp 708w" sizes="100vw">
@@ -189,7 +189,7 @@
       </div>
       <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
         data-video="https://media.palosantohotel.com/terraza-flores.mp4"
-        data-video-mobile="https://media.palosantohotel.com/terraza-flores-mobile.mp4">
+        data-video-mobile="https://media.palosantohotel.com/terraza-flores-mobile.mp4?v=708">
         <picture>
           <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.avif 480w, /images/heroMobile/hero-terraza-flores-mobile-600.avif 600w, /images/heroMobile/hero-terraza-flores-mobile-708.avif 708w" sizes="100vw">
           <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-terraza-flores-mobile-480.webp 480w, /images/heroMobile/hero-terraza-flores-mobile-600.webp 600w, /images/heroMobile/hero-terraza-flores-mobile-708.webp 708w" sizes="100vw">
@@ -200,7 +200,7 @@
       </div>
       <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
         data-video="https://media.palosantohotel.com/video-suite-sushi.mp4"
-        data-video-mobile="https://media.palosantohotel.com/video-suite-sushi-mobile.mp4">
+        data-video-mobile="https://media.palosantohotel.com/video-suite-sushi-mobile.mp4?v=708">
         <picture>
           <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.avif 480w, /images/heroMobile/hero-suite-sushi-mobile-600.avif 600w, /images/heroMobile/hero-suite-sushi-mobile-708.avif 708w" sizes="100vw">
           <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-suite-sushi-mobile-480.webp 480w, /images/heroMobile/hero-suite-sushi-mobile-600.webp 600w, /images/heroMobile/hero-suite-sushi-mobile-708.webp 708w" sizes="100vw">
@@ -209,9 +209,25 @@
           <img src="/images-source/hero/hero-suite-sushi.jpg" alt="Sushi y champagne en una de las suites del hotel" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
         </picture>
       </div>
+      <!-- Rooftop: por ahora solo en desktop (en celulares lo saca el script de abajo). Para sumarlo en mobile:
+           quitar data-hero-desktop, agregar data-video-mobile=".../rooftop-mobile.mp4" y las fuentes de
+           /images/heroMobile/hero-rooftop-mobile-*, y sacar "hidden md:flex" del capítulo 04 -->
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip data-hero-desktop
+        data-video="https://media.palosantohotel.com/rooftop.mp4">
+        <picture>
+          <source type="image/avif" srcset="/images/hero/hero-rooftop-1620.avif 1620w" sizes="100vw">
+          <source type="image/webp" srcset="/images/hero/hero-rooftop-1620.webp 1620w" sizes="100vw">
+          <img src="/images-source/hero/hero-rooftop.jpg" alt="Hidromasaje del rooftop junto al jardín vertical" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+        </picture>
+      </div>
     </div>
     <script>
       (function () {
+        // Los clips marcados con data-hero-desktop no se muestran en celulares
+        if (window.matchMedia('(max-width: 767px)').matches) {
+          var soloDesktop = document.querySelectorAll('[data-hero-desktop]');
+          for (var j = 0; j < soloDesktop.length; j++) soloDesktop[j].remove();
+        }
         var clips = document.querySelectorAll('[data-hero-clip]');
         var pick = clips[Math.floor(Math.random() * clips.length)];
         for (var i = 0; i < clips.length; i++) {
@@ -256,6 +272,10 @@
           <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
             <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
             <span class="ps-chapter__label"><span class="hidden lg:inline">03</span><span>Suite</span></span>
+          </button>
+          <button type="button" class="ps-chapter hidden md:flex" data-hero-chapter aria-pressed="false">
+            <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
+            <span class="ps-chapter__label"><span class="hidden lg:inline">04</span><span>Rooftop</span></span>
           </button>
         </div>
         <button type="button" class="flex h-11 w-11 shrink-0 items-center justify-center border border-white/60 text-white transition-colors hover:bg-white/10 lg:h-12 lg:w-12" data-hero-toggle aria-label="Pausar video" data-label-pause="Pausar video" data-label-play="Reproducir video">
