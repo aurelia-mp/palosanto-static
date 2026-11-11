@@ -1008,13 +1008,14 @@ video {
   }
 }
 
-/* Capítulos del video: una barra de progreso por clip */
+/* Capítulos del video: una barra de progreso por clip. En celulares cada uno ocupa según su
+     palabra (flex-auto), para que entren los 4 en 360 px sin cortar "Hummingbird" */
 
 .ps-chapter {
   display: flex;
   min-height: 44px;
   min-width: 0px;
-  flex: 1 1 0%;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-end;

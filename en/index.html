@@ -23,7 +23,7 @@
     <!-- Fondo: ?fondo=verde muestra el verde #0E1B14 para comparar (ver src/components.css) -->
     <script>try{var f=new URLSearchParams(location.search).get('fondo');if(f)sessionStorage.setItem('ps-fondo',f);f=sessionStorage.getItem('ps-fondo');if(f&&f!=='carbon')document.documentElement.setAttribute('data-fondo',f)}catch(e){}</script>
     <!-- CSS -->
-    <link rel="stylesheet" href="/dist/output.css?v=20261013" />
+    <link rel="stylesheet" href="/dist/output.css?v=2026111101" />
 
     <!-- Main JS -->
     <script src="/js/main.js?v=2026100902" defer></script>
@@ -209,12 +209,12 @@
           <img src="/images-source/hero/hero-suite-sushi.jpg" alt="Sushi and champagne in one of the hotel suites" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
         </picture>
       </div>
-      <!-- Rooftop: por ahora solo en desktop (en celulares lo saca el script de abajo). Para sumarlo en mobile:
-           quitar data-hero-desktop, agregar data-video-mobile=".../rooftop-mobile.mp4" y las fuentes de
-           /images/heroMobile/hero-rooftop-mobile-*, y sacar "hidden md:flex" del capítulo 04 -->
-      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip data-hero-desktop
-        data-video="https://media.palosantohotel.com/rooftop.mp4">
+      <div class="absolute inset-0 hidden opacity-0 transition-opacity duration-[1200ms]" data-hero-clip
+        data-video="https://media.palosantohotel.com/rooftop.mp4"
+        data-video-mobile="https://media.palosantohotel.com/rooftop-mobile.mp4">
         <picture>
+          <source media="(max-width: 767px)" type="image/avif" srcset="/images/heroMobile/hero-rooftop-mobile-480.avif 480w, /images/heroMobile/hero-rooftop-mobile-600.avif 600w, /images/heroMobile/hero-rooftop-mobile-708.avif 708w" sizes="100vw">
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/heroMobile/hero-rooftop-mobile-480.webp 480w, /images/heroMobile/hero-rooftop-mobile-600.webp 600w, /images/heroMobile/hero-rooftop-mobile-708.webp 708w" sizes="100vw">
           <source type="image/avif" srcset="/images/hero/hero-rooftop-1620.avif 1620w" sizes="100vw">
           <source type="image/webp" srcset="/images/hero/hero-rooftop-1620.webp 1620w" sizes="100vw">
           <img src="/images-source/hero/hero-rooftop.jpg" alt="Rooftop hot tub beside the vertical garden" width="1620" height="1080" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
@@ -223,7 +223,7 @@
     </div>
     <script>
       (function () {
-        // Los clips marcados con data-hero-desktop no se muestran en celulares
+        // Un clip marcado con data-hero-desktop no se muestra en celulares (y su capítulo lleva "hidden md:flex")
         if (window.matchMedia('(max-width: 767px)').matches) {
           var soloDesktop = document.querySelectorAll('[data-hero-desktop]');
           for (var j = 0; j < soloDesktop.length; j++) soloDesktop[j].remove();
@@ -260,7 +260,7 @@
       </div>
 
       <div class="hidden items-end gap-4 lg:gap-7" data-hero-controls>
-        <div role="group" aria-label="Hotel videos" class="flex min-w-0 flex-1 gap-2.5 lg:flex-none lg:gap-5">
+        <div role="group" aria-label="Hotel videos" class="flex min-w-0 flex-1 gap-2 lg:flex-none lg:gap-5">
           <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
             <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
             <span class="ps-chapter__label"><span class="hidden lg:inline">01</span><span>Hummingbird</span></span>
@@ -273,7 +273,7 @@
             <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
             <span class="ps-chapter__label"><span class="hidden lg:inline">03</span><span>Suite</span></span>
           </button>
-          <button type="button" class="ps-chapter hidden md:flex" data-hero-chapter aria-pressed="false">
+          <button type="button" class="ps-chapter" data-hero-chapter aria-pressed="false">
             <span class="ps-chapter__bar"><span class="ps-chapter__fill" data-hero-fill></span></span>
             <span class="ps-chapter__label"><span class="hidden lg:inline">04</span><span>Rooftop</span></span>
           </button>
